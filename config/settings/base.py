@@ -87,6 +87,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "iacpaas_materials.users",
+    "iacpaas_materials.parser",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
