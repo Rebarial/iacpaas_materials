@@ -11,7 +11,7 @@ configs = {
 def get_prompt_text(properties_template, input_text):
     return "Извлеки информацию из текста в следующий формат JSON (Если необходимая информация отсутствует, вставь в поле символ '?'):" \
     "" \
-    f"{properties_template}" \
+    f"{json.dumps(properties_template)}" \
     "" \
     "Текст:" \
     "" \
@@ -49,7 +49,8 @@ def LLM_generate_for_extracted_data(data, properties_template, configs):
             responses = []
             responses += LLM_generate_multiple(soup, properties_template, configs)
             responses += LLM_generate_multiple(text, properties_template, configs)
-            product_link['responses'] = responses
+            response = compare_responses(responses, properties_template)
+            product_link['response'] = response
     return sources
 
 def compare_responses(responses, properties_template):

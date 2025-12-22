@@ -50,26 +50,24 @@ properties_template = {
     configs
 )
 def test_LLM_generate(config):
-    response = LLM_generate(text, json.dumps(properties_template), configs[config])
+    response = LLM_generate(text, properties_template, configs[config])
     assert isinstance(response, str)
 
 def test_LLM_generate_multiple():
-    responses = LLM_generate_multiple(text, json.dumps(properties_template), configs)
+    responses = LLM_generate_multiple(text, properties_template, configs)
     assert isinstance(responses, list)
     print(responses)
     for response in responses:
         assert isinstance(response, str)
 
 def test_LLM_generate_for_extracted_data():
-    sources = LLM_generate_for_extracted_data(input_json, json.dumps(properties_template), configs)
+    sources = LLM_generate_for_extracted_data(input_json, properties_template, configs)
     assert isinstance(sources, list)
     for source in sources:
         product_links = source['product_links']
         for product_link in product_links:
-            responses = product_link['responses']
-            assert isinstance(responses, list)
-            for response in responses:
-                assert isinstance(response, str)
+            response = product_link['response']
+            assert isinstance(response, dict)
 
 def test_compare_responses():
     response_strings = []
