@@ -30,7 +30,7 @@ class FillingMethodOption(models.Model):
     method = models.ForeignKey(FillingMethod, on_delete=models.CASCADE, verbose_name="Метод заполнения")
     name = models.CharField("Название опции", max_length=100)
     bool_fil = models.BooleanField("Флаг заполнения", default=False)
-
+    
     def __str__(self):
         return f"{self.method} — {self.name}"
 
@@ -53,7 +53,8 @@ class PowderClass(models.Model):
 class PowderType(models.Model):
     powder_type = models.ForeignKey(PowderClass, on_delete=models.CASCADE, verbose_name="Класс порошка")
     filling_method = models.ForeignKey(FillingMethodOption, on_delete=models.CASCADE, verbose_name="Метод заполнения")
-
+    adress_pow = models.CharField("Источник", max_length=200)
+    date_pow = models.DateTimeField("Дата внесения", auto_now_add=True)
     def __str__(self):
         return f"{self.powder_type} — {self.filling_method}"
 
@@ -118,7 +119,7 @@ class PropertyValue(models.Model):
     property_value = models.ForeignKey(PropertyValueType, on_delete=models.CASCADE, verbose_name="Тип значения")
     text_value = models.CharField("Текстовое значение", max_length=255, null=True, blank=True)
     unit = models.ForeignKey(Unit, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="Единица измерения")
-
+    
     def __str__(self):
         return f"{self.property}: {self.text_value or self.property_value}"
 
@@ -213,7 +214,8 @@ class Gas(models.Model):
     grade = models.CharField("Марка", max_length=50)
     brand = models.CharField("Бренд", max_length=50)
     standard = models.CharField("Стандарт", max_length=100)
-
+    adress_gas = models.CharField("Источник", max_length=200)
+    date_gas = models.DateTimeField("Дата внесения", auto_now_add=True)
     def __str__(self):
         return f"{self.formula} ({self.brand})"
 
@@ -302,7 +304,8 @@ class MetalWire(models.Model):
 class MetalWireProperty(models.Model):
     wire = models.ForeignKey(MetalWire, on_delete=models.CASCADE, verbose_name="Проволока")
     property_value = models.ForeignKey(PropertyValue, on_delete=models.CASCADE, verbose_name="Значение свойства")
-
+    adress_wire = models.CharField("Источник", max_length=200)
+    date_wire = models.DateTimeField("Дата внесения", auto_now_add=True)
     class Meta:
         verbose_name = "Свойство проволоки"
         verbose_name_plural = "Свойства проволоки"
