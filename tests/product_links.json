@@ -1,6 +1,8 @@
 {
   "sources": [
     {
+      "type": "gas",
+      "link": "https://www.niikm.ru/",
       "name": "НИИ КМ",
       "product_links": [
         {
