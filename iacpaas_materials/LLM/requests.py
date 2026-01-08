@@ -1,6 +1,7 @@
 import json
 
 from .fefu_cluster import *
+from .property_templates import property_type_dic
 
 
 configs = {
@@ -8,14 +9,17 @@ configs = {
     "gemma": config_fefu_cluster_gemma_3_27b
 }
 
+
+        
 def get_prompt_text(properties_template, input_text):
-    return "Извлеки информацию из текста в следующий формат JSON (Если необходимая информация отсутствует, вставь в поле символ '?'):" \
-    "" \
-    f"{json.dumps(properties_template)}" \
-    "" \
-    "Текст:" \
-    "" \
-    f"{input_text}"
+    return f"""Извлеки информацию из текста в данный формат JSON:    
+    {json.dumps(properties_template)}
+
+    Если необходимая информация отсутствует, вставь в поле символ '?'.
+    Числовые значения должны быть заполнены с единицами измерения.
+    
+    Текст:    
+    {input_text}"""
 
 def LLM_generate(input_text, properties_template, config):
     input = get_prompt_text(properties_template, input_text)
@@ -39,8 +43,10 @@ def LLM_generate_multiple(input_text, properties_template, configs):
             responses.append(LLM_generate(input_text, properties_template, config))
     return responses
 
-def LLM_generate_for_extracted_data(data, properties_template, configs):
+def LLM_generate_for_extracted_data(data, configs):
     sources = data['sources']
+    type = sources['type']
+    properties_template = property_type_dic[type]
     for source in sources:
         product_links = source['product_links']
         for product_link in product_links:
@@ -53,13 +59,14 @@ def LLM_generate_for_extracted_data(data, properties_template, configs):
             product_link['response'] = response
     return sources
 
+
 def compare_responses(responses, properties_template):
     # Парсим ответы от llm, если возможно
     parsed_responses = []
     for response in responses:
         response_str = str(response)
-        istart = response_str.index("{") if "{" in response_str else -1
-        iend = response_str.index("}") if "}" in response_str else -1
+        istart = response_str.find("{") if "{" in response_str else -1
+        iend = response_str.rfind("}") if "}" in response_str else -1
         if (istart < iend and istart != -1 and iend != -1):
             parsed_response = response_str[istart:iend + 1]
             try:
@@ -67,9 +74,9 @@ def compare_responses(responses, properties_template):
                 # print(parsed_response)
                 parsed_responses.append(parsed_response)
             except:
-                print("Неверный формат")
+                print("Неверный формат1")
         else:
-            print("Неверный формат")
+            print("Неверный формат2")
 
     # Сравниваем ответы, отсеиваем несовпадающие характеристики
     verified_response = {}
