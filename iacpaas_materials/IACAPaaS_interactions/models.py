@@ -196,8 +196,8 @@ class PowderParticleShape(models.Model):
     powder = models.ForeignKey(PowderType, on_delete=models.CASCADE, verbose_name="Тип порошка")
     shape = models.ForeignKey(ParticleShape, on_delete=models.CASCADE, verbose_name="Форма")
     size_value = models.FloatField("Размер")
-    interval_min = models.FloatField("Минимальный интервал", null=True, blank=True)
-    interval_max = models.FloatField("Максимальный интервал", null=True, blank=True)
+    value_powder = models.FloatField("Значение", null=True, blank=True)
+    
     bool_par = models.BooleanField("Флаг формы", default=False)
 
     class Meta:
@@ -250,9 +250,8 @@ class ChemicalDesignation(models.Model):
     gas = models.ForeignKey(Gas, on_delete=models.CASCADE, verbose_name="Газ")
     component = models.ForeignKey(ChemicalComponent, on_delete=models.CASCADE, verbose_name="Компонент")
     designation_type = models.ForeignKey(ChemicalDesignationType, on_delete=models.CASCADE, verbose_name="Тип обозначения")
-    percent_min = models.FloatField("Мин. %")
-    percent_max = models.FloatField("Макс. %")
-    type = models.CharField("Тип", max_length=100)
+    percent_value = models.FloatField("Мин. %")
+    
 
     class Meta:
         verbose_name = "Химическое обозначение газа"
