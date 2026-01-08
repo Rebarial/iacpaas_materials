@@ -21,6 +21,8 @@ urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path("users/", include("iacpaas_materials.users.urls", namespace="users")),
+    path("iacpaas/", include("iacpaas_materials.IACAPaaS_interactions.urls", namespace="iacpaas")),
+
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
     # ...

@@ -30,7 +30,7 @@ class FillingMethodOption(models.Model):
     method = models.ForeignKey(FillingMethod, on_delete=models.CASCADE, verbose_name="Метод заполнения")
     name = models.CharField("Название опции", max_length=100)
     bool_fil = models.BooleanField("Флаг заполнения", default=False)
-    
+
     def __str__(self):
         return f"{self.method} — {self.name}"
 
@@ -119,7 +119,7 @@ class PropertyValue(models.Model):
     property_value = models.ForeignKey(PropertyValueType, on_delete=models.CASCADE, verbose_name="Тип значения")
     text_value = models.CharField("Текстовое значение", max_length=255, null=True, blank=True)
     unit = models.ForeignKey(Unit, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="Единица измерения")
-    
+
     def __str__(self):
         return f"{self.property}: {self.text_value or self.property_value}"
 
@@ -197,7 +197,7 @@ class PowderParticleShape(models.Model):
     shape = models.ForeignKey(ParticleShape, on_delete=models.CASCADE, verbose_name="Форма")
     size_value = models.FloatField("Размер")
     value_powder = models.FloatField("Значение", null=True, blank=True)
-    
+
     bool_par = models.BooleanField("Флаг формы", default=False)
 
     class Meta:
@@ -251,7 +251,7 @@ class ChemicalDesignation(models.Model):
     component = models.ForeignKey(ChemicalComponent, on_delete=models.CASCADE, verbose_name="Компонент")
     designation_type = models.ForeignKey(ChemicalDesignationType, on_delete=models.CASCADE, verbose_name="Тип обозначения")
     percent_value = models.FloatField("Мин. %")
-    
+
 
     class Meta:
         verbose_name = "Химическое обозначение газа"

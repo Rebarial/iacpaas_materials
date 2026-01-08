@@ -10,15 +10,15 @@ configs = {
 }
 
 
-        
+
 def get_prompt_text(properties_template, input_text):
-    return f"""Извлеки информацию из текста в данный формат JSON:    
+    return f"""Извлеки информацию из текста в данный формат JSON:
     {json.dumps(properties_template)}
 
     Если необходимая информация отсутствует, вставь в поле символ '?'.
     Числовые значения должны быть заполнены с единицами измерения.
-    
-    Текст:    
+
+    Текст:
     {input_text}"""
 
 def LLM_generate(input_text, properties_template, config):
@@ -36,7 +36,7 @@ def LLM_generate(input_text, properties_template, config):
 
 def LLM_generate_multiple(input_text, properties_template, configs):
     attempts_per_config = 1
-    
+
     responses = []
     for config in configs.values():
         for i in range(attempts_per_config):
@@ -45,10 +45,10 @@ def LLM_generate_multiple(input_text, properties_template, configs):
 
 def LLM_generate_for_extracted_data(data, configs):
     sources = data['sources']
-    type = sources['type']
-    properties_template = property_type_dic[type]
     for source in sources:
         product_links = source['product_links']
+        type = source['type']
+        properties_template = property_type_dic[type]
         for product_link in product_links:
             soup = product_link['soup']
             text = product_link['text']
@@ -56,6 +56,7 @@ def LLM_generate_for_extracted_data(data, configs):
             responses += LLM_generate_multiple(soup, properties_template, configs)
             responses += LLM_generate_multiple(text, properties_template, configs)
             response = compare_responses(responses, properties_template)
+            print(responses)
             product_link['response'] = response
     return sources
 
@@ -92,5 +93,5 @@ def compare_responses(responses, properties_template):
             verified_response[key] = value
         else:
             verified_response[key] = "?"
-                
+
     return verified_response

@@ -34,6 +34,7 @@ powder_template = {
 }
 
 gas_template = {
+    "name": "",
     "formula": "",
     "grade": "",
     "brand": "",

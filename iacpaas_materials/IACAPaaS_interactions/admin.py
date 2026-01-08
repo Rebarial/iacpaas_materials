@@ -161,7 +161,6 @@ class ChemicalDesignationTypeAdmin(admin.ModelAdmin):
 @admin.register(models.ChemicalDesignation)
 class ChemicalDesignationAdmin(admin.ModelAdmin):
     list_display = auto_fields(models.ChemicalDesignation)
-    list_filter = ('designation_type', 'type')
     raw_id_fields = ('gas', 'component', 'designation_type')
 
 
