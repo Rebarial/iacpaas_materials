@@ -44,15 +44,14 @@ def LLM_generate_for_extracted_data(data, configs):
     sources = data['sources']
     for source in sources:
         product_links = source['product_links']
-        type = source['type']
-        properties_template = property_type_dic[type]
         for product_link in product_links:
             type = product_link['type']
             properties_template = property_type_dic[type]
             soup = product_link['soup']
             text = product_link['text']
             responses = []
-            responses += LLM_generate_multiple(soup, properties_template, configs)
+            # responses += LLM_generate_multiple(soup, properties_template, configs)
+            responses += LLM_generate_multiple(text, properties_template, configs)
             responses += LLM_generate_multiple(text, properties_template, configs)
             response = compare_responses(responses, properties_template)
             print(responses)
@@ -83,16 +82,19 @@ def compare_responses(responses, properties_template):
 def compare_properties(responses, properties_template):
     verified_response = {}
     for key in properties_template.keys():
-        if isinstance(properties_template[key], list) and (key in response) and isinstance(responses[0][key], list):
-            verified_response[key] = []
-            for i in range(len(responses[0][key])):
-                item = responses[0][key][i]
-                item_properties_template = item
-                item_responses = []
-                for response in responses:
-                    if len(responses[0][key]) > i and isinstance(response[key][i], dict):
-                        item_responses.append(response[key][i])
-                verified_response[key].append(compare_properties(item_responses, item_properties_template))
+        if isinstance(properties_template[key], list):
+            if [((key in response) and isinstance(response[key], list)) for response in responses]:
+                verified_response[key] = []
+                min_list_len = min([len(response[key]) for response in responses])
+                for i in range(min_list_len):
+                    item_properties_template = properties_template[key][0]
+                    item_responses = []
+                    for response in responses:
+                        if len(response[key]) > i and isinstance(response[key][i], dict):
+                            item_responses.append(response[key][i])
+                    verified_response[key].append(compare_properties(item_responses, item_properties_template))
+            else:
+                verified_response[key] = "?"
         else:
             value = None
             valid = True
@@ -109,5 +111,9 @@ def compare_properties(responses, properties_template):
     return verified_response
 
 def compare_text(string1, string2):
+    words = string1.partition(' ')
+    return string2.lower().startswith(words[0].lower())
+
+def all_responses_have_(string1, string2):
     words = string1.partition(' ')
     return string2.lower().startswith(words[0].lower())

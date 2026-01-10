@@ -64,6 +64,16 @@ responses_json = [
                 "percent_max": "221",
                 "type": "112",
             },
+            {
+                "component": "221",
+            },
+            {
+                "component": "221",
+                "designation_type": "112",
+                "percent_min": "221",
+                "percent_max": "221",
+                "type": "112",
+            },
         ],
     },
     {
@@ -72,6 +82,13 @@ responses_json = [
         "brand": "323",
         "standard": "323",
         "chemical_designations": [
+            {
+                "component": "221",
+                "designation_type": "112",
+                "percent_min": "221",
+                "percent_max": "221",
+                "type": "112",
+            },
             {
                 "component": "221",
                 "designation_type": "112",
@@ -94,6 +111,13 @@ response_validated_json = {
             "percent_min": "221",
             "percent_max": "221",
             "type": "112",
+        },
+        {
+            "component": "221",
+            "designation_type": "?",
+            "percent_min": "?",
+            "percent_max": "?",
+            "type": "?",
         },
     ],
 }
@@ -137,6 +161,7 @@ def test_LLM_generate_for_extracted_data():
 #         response_string = json.dumps(response)
 #         response_strings.append(response_string)
 #     result = compare_responses(response_strings, properties_template)
+#     print(result)
 #     assert result == response_validated_json
 
 # def test_compare_responses_invalid_strings():
