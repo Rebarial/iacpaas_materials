@@ -3,14 +3,11 @@ import json
 from .fefu_cluster import *
 from .property_templates import property_type_dic
 
-
 configs = {
     # "qwen": config_fefu_cluster_qwen_3_4b,
     "gemma": config_fefu_cluster_gemma_3_27b
 }
-
-
-
+        
 def get_prompt_text(properties_template, input_text):
     return f"""Извлеки информацию из текста в данный формат JSON:
     {json.dumps(properties_template)}
@@ -50,6 +47,8 @@ def LLM_generate_for_extracted_data(data, configs):
         type = source['type']
         properties_template = property_type_dic[type]
         for product_link in product_links:
+            type = product_link['type']
+            properties_template = property_type_dic[type]
             soup = product_link['soup']
             text = product_link['text']
             responses = []
@@ -59,7 +58,6 @@ def LLM_generate_for_extracted_data(data, configs):
             print(responses)
             product_link['response'] = response
     return sources
-
 
 def compare_responses(responses, properties_template):
     # Парсим ответы от llm, если возможно
@@ -80,18 +78,36 @@ def compare_responses(responses, properties_template):
             print("Неверный формат2")
 
     # Сравниваем ответы, отсеиваем несовпадающие характеристики
+    return compare_properties(parsed_responses, properties_template)
+    
+def compare_properties(responses, properties_template):
     verified_response = {}
     for key in properties_template.keys():
-        value = None
-        valid = True
-        for response in parsed_responses:
-            if (not (key in response) or response[key] == -1 or (value != None and response[key] != value)):
-                valid = False
-            elif (key in response):
-                value = response[key]
-        if (valid and value):
-            verified_response[key] = value
+        if isinstance(properties_template[key], list) and (key in response) and isinstance(responses[0][key], list):
+            verified_response[key] = []
+            for i in range(len(responses[0][key])):
+                item = responses[0][key][i]
+                item_properties_template = item
+                item_responses = []
+                for response in responses:
+                    if len(responses[0][key]) > i and isinstance(response[key][i], dict):
+                        item_responses.append(response[key][i])
+                verified_response[key].append(compare_properties(item_responses, item_properties_template))
         else:
-            verified_response[key] = "?"
-
+            value = None
+            valid = True
+            for response in responses:
+                if (not (key in response) or response[key] == -1 or ((value != None) and (not compare_text(response[key], value)))):
+                    valid = False
+                elif (key in response):
+                    value = response[key]
+            if (valid and value):
+                verified_response[key] = value
+            else:
+                verified_response[key] = "?"
+                
     return verified_response
+
+def compare_text(string1, string2):
+    words = string1.partition(' ')
+    return string2.lower().startswith(words[0].lower())

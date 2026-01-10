@@ -26,15 +26,6 @@ text = input_json["sources"][0]["product_links"][0]["text"]
 #         "Color": "Красный"
 #     }
 # ]
-response_validated_json = {
-    "Name": "Продукт",
-    "Description": "?",
-    "Density": "?",
-    "Yield Strength": "?",
-    "Thermal Conductivity": "?",
-    "Cost": "?",
-    "Color": "?"
-}
 # properties_template = {
 #     "Name": "",
 #     "Description": "",
@@ -91,16 +82,31 @@ responses_json = [
         ],
     }
 ]
+response_validated_json = {
+    "formula": "123",
+    "grade": "?",
+    "brand": "323",
+    "standard": "323",
+    "chemical_designations": [
+        {
+            "component": "221",
+            "designation_type": "112",
+            "percent_min": "221",
+            "percent_max": "221",
+            "type": "112",
+        },
+    ],
+}
 
 
-@pytest.mark.parametrize(
-    ("config"), 
-    configs
-)
-def test_LLM_generate(config):
-    response = LLM_generate(text, properties_template, configs[config])
-    print(response)
-    assert isinstance(response, str)
+# @pytest.mark.parametrize(
+#     ("config"), 
+#     configs
+# )
+# def test_LLM_generate(config):
+#     response = LLM_generate(text, properties_template, configs[config])
+#     print(response)
+#     assert isinstance(response, str)
 
 # def test_LLM_generate_multiple():
 #     responses = LLM_generate_multiple(text, properties_template, configs)
@@ -109,20 +115,19 @@ def test_LLM_generate(config):
 #     for response in responses:
 #         assert isinstance(response, str)
 
-# def test_LLM_generate_for_extracted_data():
-#     sources = LLM_generate_for_extracted_data(input_json, configs)
-#     assert isinstance(sources, list)
-#     for source in sources:
-#         product_links = source['product_links']
-#         for product_link in product_links:
-#             response = product_link['response']
-#             assert isinstance(response, dict)
-#     with open(os.path.join(settings.BASE_DIR, 'tests/data.json'), 'w') as f:
-#         a = json.dumps(sources)
-#         a = json.loads(a)
-#         json.dump(a, f, ensure_ascii=False, indent=4)
-
-
+def test_LLM_generate_for_extracted_data():
+    sources = LLM_generate_for_extracted_data(input_json, configs)
+    assert isinstance(sources, list)
+    for source in sources:
+        product_links = source['product_links']
+        for product_link in product_links:
+            response = product_link['response']
+            assert isinstance(response, dict)
+    with open(os.path.join(settings.BASE_DIR, 'tests/data.json'), 'w') as f:
+        a = json.dumps(sources)
+        a = json.loads(a)
+        json.dump(a, f, ensure_ascii=False, indent=4)
+    assert isinstance(sources, list)
     
 
 # def test_compare_responses():
