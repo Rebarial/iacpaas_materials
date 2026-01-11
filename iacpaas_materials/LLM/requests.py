@@ -54,7 +54,6 @@ def LLM_generate_for_extracted_data(data, configs):
             responses += LLM_generate_multiple(text, properties_template, configs)
             responses += LLM_generate_multiple(text, properties_template, configs)
             response = compare_responses(responses, properties_template)
-            print(responses)
             product_link['response'] = response
     return sources
 

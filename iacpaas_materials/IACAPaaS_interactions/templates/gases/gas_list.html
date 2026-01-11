@@ -1,0 +1,84 @@
+<!-- templates/gases/gas_list.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Список сохранённых газов</h2>
+
+    {% if gases %}
+        <!-- Единая форма для отправки выбранных газов -->
+        <form method="post" action="{% url 'iacpaas:send_to_iacpaas' %}">
+            {% csrf_token %}
+
+            <div class="d-flex justify-content mb-3">
+                <button type="submit" class="btn btn-primary">
+                    Отправить в IACAPaaS
+                </button>
+            </div>
+
+            <div class="row">
+                {% for gas in gases %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ gas.name_gas }}</h5>
+                            <p class="card-text">
+                                <strong>Формула:</strong> {{ gas.formula }}<br>
+                                <strong>Марка:</strong> {{ gas.brand }}<br>
+                                <strong>Степень чистоты:</strong> {{ gas.grade }}<br>
+                                <strong>Стандарт:</strong> {{ gas.standard }}<br>
+                                <strong>Источник:</strong> {{ gas.adress_gas }}
+                            </p>
+
+                            <h6 class="mt-3">Химический состав:</h6>
+                            {% if gas.chemicaldesignation_set.all %}
+                                <ul class="list-group list-group-flush">
+                                    {% for cd in gas.chemicaldesignation_set.all %}
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span>{{ cd.component.formula }} ({{ cd.designation_type.name }})</span>
+                                        <span class="badge bg-secondary">{{ cd.percent_value }}%</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <p class="text-muted"><em>Нет данных о составе</em></p>
+                            {% endif %}
+                        </div>
+
+                        <!-- Чекбокс "Участие в отправке" -->
+                        <div class="card-footer bg-light d-flex align-items-center">
+                            <div class="form-check me-3">
+                                <input class="form-check-input"
+                                       type="checkbox"
+                                       name="selected_gases"
+                                       value="{{ gas.id }}"
+                                       id="gas_{{ gas.id }}" checked>
+                                <label class="form-check-label" for="gas_{{ gas.id }}">
+                                    Участвует в отправке
+                                </label>
+                            </div>
+
+                            <!-- Кнопка удаления (оставляем) -->
+                            <form method="post" action="{% url 'iacpaas:delete_gas' gas.id %}"
+                                  onsubmit="return confirm('Удалить газ?');"
+                                  style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger btn-sm">
+                                    Удалить
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </form>
+    {% else %}
+        <div class="alert alert-info" role="alert">
+            Нет сохранённых газов.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

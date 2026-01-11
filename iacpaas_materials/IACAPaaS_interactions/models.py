@@ -210,6 +210,7 @@ class PowderParticleShape(models.Model):
 # =========================
 
 class Gas(models.Model):
+    name_gas = models.CharField("Название", max_length=100)
     formula = models.CharField("Формула", max_length=50)
     grade = models.CharField("Марка", max_length=50)
     brand = models.CharField("Бренд", max_length=50)
@@ -225,7 +226,7 @@ class Gas(models.Model):
 
 
 class ChemicalComponent(models.Model):
-    formula = models.CharField("Формула", max_length=50)
+    formula = models.CharField("Формула", max_length=150)
 
     def __str__(self):
         return self.formula
