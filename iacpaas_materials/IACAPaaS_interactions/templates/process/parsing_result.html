@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Полученные объекты — IACPaaS_materials{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <h3>Результаты обработки</h3>
+
+      <form method="post" action="">
+        {% csrf_token %}
+        <div class="mt-3">
+          <button type="submit" class="btn btn-primary">Сохранить выбранные</button>
+        </div>
+        <ul class="list-group mt-3">
+          {% for product in products %}
+            <li class="list-group-item">
+              <!-- Основная строка: чекбокс + название -->
+              <div class="d-flex align-items-center mb-2">
+                <div class="form-check me-3">
+                  <input class="form-check-input" type="checkbox" name="selected_products" value="{{ forloop.counter0 }}" checked>
+                  <label class="form-check-label">
+                    <strong>{{ product.name }}</strong>
+                  </label>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-secondary toggle-details" data-target="details-{{ forloop.counter0 }}">
+                  Показать характеристики
+                </button>
+              </div>
+
+              <!-- Блок с деталями (изначально скрыт) -->
+              <div id="details-{{ forloop.counter0 }}" class="product-details mt-2" style="display: none;">
+                <p><strong>Формула:</strong> {{ product.formula }}</p>
+                <p><strong>Сорт:</strong> {{ product.grade }}</p>
+                <p><strong>Производитель:</strong> {{ product.brand }}</p>
+                <p><strong>Стандарт:</strong> {{ product.standard }}</p>
+
+                <p><strong>Химический состав:</strong></p>
+                <ul class="mb-0">
+                  {% for comp in product.chemical_designations %}
+                    <li>{{ comp.component }} — {{ comp.designation_type }}: {{ comp.percent_value }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </li>
+          {% empty %}
+            <li class="list-group-item">Нет данных для отображения.</li>
+          {% endfor %}
+        </ul>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.toggle-details').forEach(button => {
+  button.addEventListener('click', function() {
+    const targetId = this.getAttribute('data-target');
+    const details = document.getElementById(targetId);
+    const isHidden = details.style.display === 'none';
+
+    details.style.display = isHidden ? 'block' : 'none';
+    this.textContent = isHidden ? 'Скрыть характеристики' : 'Показать характеристики';
+  });
+});
+</script>
+
+<style>
+/* Дополнительные стили, если нужно уточнить отступы */
+.product-details ul {
+  padding-left: 1.25rem;
+}
+</style>
+{% endblock %}

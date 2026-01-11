@@ -7,7 +7,7 @@ configs = {
     # "qwen": config_fefu_cluster_qwen_3_4b,
     "gemma": config_fefu_cluster_gemma_3_27b
 }
-        
+
 def get_prompt_text(properties_template, input_text):
     return f"""Извлеки информацию из текста в данный формат JSON:
     {json.dumps(properties_template)}
@@ -78,7 +78,7 @@ def compare_responses(responses, properties_template):
 
     # Сравниваем ответы, отсеиваем несовпадающие характеристики
     return compare_properties(parsed_responses, properties_template)
-    
+
 def compare_properties(responses, properties_template):
     verified_response = {}
     for key in properties_template.keys():
@@ -107,7 +107,7 @@ def compare_properties(responses, properties_template):
                 verified_response[key] = value
             else:
                 verified_response[key] = "?"
-                
+
     return verified_response
 
 def compare_text(string1, string2):

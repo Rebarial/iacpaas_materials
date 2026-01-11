@@ -1,0 +1,79 @@
+{
+  "sources": [
+    {
+      "name": "НИИ КМ",
+      "root_url": "https://www.niikm.ru/products/",
+      "product_detection": {
+        "or": [
+          {
+            "condition": {
+              "and":[
+                {
+                  "tag": "p",
+                  "text_contains": "Физико-химические свойства"
+                },
+                {
+                  "tag": "div",
+                  "attribute": "class",
+                  "value":"product-description__wrap",
+                  "exists":"True"
+                }
+              ]
+                
+              },
+            "type": "gas",
+            "extract": {
+                "from_tag": "div",
+                "attribute": "class",
+                "value": "product-description__wrap"
+              }
+          }
+        ]
+      }
+    },
+    {
+      "name": "РедМетСплав",
+      "root_url": "https://redmetsplav.ru/store/",
+      "product_detection": {
+        "or": [
+          {
+            "condition": {
+                "tag": "td",
+                "text_contains": "Сортамент"
+              },
+            "type": "metal",
+            "extract": {
+                "from_tag": "div",
+                "attribute": "class",
+                "value": "uss_shop_content2"
+              }
+          },
+          {
+            "condition": {
+              "tag": "th",
+              "text_contains": "Форма частиц"
+            },
+            "type": "powder",
+            "extract": {
+                "from_tag": "div",
+                "attribute": "class",
+                "value": "uss_shop_detail uss_shop_detail_pos order_one"
+              }
+          },
+          {
+            "condition": {
+              "tag": "h1",
+              "text_contains": "Проволока"
+            },
+            "type": "wire",
+            "extract": {
+                "from_tag": "div",
+                "attribute": "class",
+                "value": "uss_shop_detail uss_shop_detail_pos order_one"
+              }
+          }
+        ]
+      }
+    }
+  ]
+}
