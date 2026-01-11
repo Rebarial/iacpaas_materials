@@ -66,6 +66,7 @@ celerybeat-schedule
 .venv
 venv/
 ENV/
+.idea
 
 # Rope project settings
 .ropeproject
@@ -190,6 +191,7 @@ cmake-build-debug/
 
 # Mongo Explorer plugin:
 .idea/**/mongoSettings.xml
+.idea
 
 ## File-based project format:
 *.iws
@@ -201,6 +203,7 @@ out/
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
+venv
 
 # JIRA plugin
 atlassian-ide-plugin.xml
