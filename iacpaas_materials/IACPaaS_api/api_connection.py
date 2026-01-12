@@ -33,7 +33,7 @@ def signout():
 Возвращает строку с JSON с данными ресурса
 Параметры:
 API_KEY - X-API-KEY, выданный администратором ключ для авторизации
-path - путь до EX в "Мой Фонд", откуда экспортируется JSON 
+path - путь до EX в "Мой Фонд", откуда экспортируется JSON
 json_type - "universal" или "meta" или "simple"
 start_target_concept_path (необязательный) - путь до вершины, начиная с которой нужно экспортировать подграф
 export_depth (необязательный) - глубина экспорта (0 - экспортировать только одну вершину - корень или указанную в качестве начальной)
@@ -81,14 +81,146 @@ def import_resource(API_KEY, path, json, clearIfExists=True):
     data = r.json()
     return data
 
+"""
+key = signin('iagolnitckii.si@dvfu.ru', 'шфсзффышф')
+json_str = json.dumps(data, ensure_ascii=False)
+response = import_resource(
+    API_KEY=key,
+    path='Папка для тестирования',
+    json=json_str,
+    clearIfExists=True
+)
+
+"""
+
+
+data = {
+  "title" : "Газы",
+  "path" : "iagolnitckii.si@dvfu.ru / Мой Фонд / Папка для тестирования / База технологических газов$;",
+  "json_type" : "universal",
+  "ontology" : "iagolnitckii.si@dvfu.ru / Мой Фонд / Загрузки / Онтология базы технологических газов$;",
+  "name" : "Газы",
+  "type" : "КОРЕНЬ",
+  "meta" : "Газы",
+  "successors" :
+  [
+      {
+        "name" : "Многокомпонентные газовые смеси",
+        "type" : "НЕТЕРМИНАЛ",
+        "meta" : "Моногазы",
+        "successors" : [
+            {
+                "name": "Азот",
+                "type": "НЕТЕРМИНАЛ",
+                "meta": "Класс газов",
+                "successors":
+                    [
+                        {
+                            "name" : "Азот газообразный особой чистоты",
+                            "type" : "НЕТЕРМИНАЛ",
+                            "meta" : "Газ",
+                            "successors" :
+                            [
+                                {
+                                    "value": "H",
+                                    "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
+                                    "valtype": "STRING",
+                                    "meta": "Химическое обозначение",
+                                },
+                                {
+                                    "value": "БИОГАЗ N",
+                                    "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
+                                    "valtype": "STRING",
+                                    "meta": "Марка"
+                                },
+                                {
+                                    "value": "1 сорт",
+                                    "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
+                                    "valtype": "STRING",
+                                    "meta": "Сорт"
+                                },
+                                {
+                                    "name": "Объемные доли компонентов",
+                                    "type": "НЕТЕРМИНАЛ",
+                                    "meta": "Объемные доли компонентов",
+                                    "successors":
+                                    [
+                                        {
+                                            "name": "1",
+                                            "type": "НЕТЕРМИНАЛ",
+                                            "meta": "Компонент",
+                                            "successors":
+                                            [
+                                                {
+                                                    "name": "He",
+                                                    "type": "НЕТЕРМИНАЛ",
+                                                    "meta": "Химическое обозначение",
+                                                    "successors":
+                                                        [
+                                                            {
+                                                                "value": "%",
+                                                                "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
+                                                                "valtype": "STRING",
+                                                                "meta": "%"
+                                                            },
+                                                            {
+                                                                "name": "Не менее",
+                                                                "type": "НЕТЕРМИНАЛ",
+                                                                "meta": "Не менее",
+                                                                "successors":
+                                                                    [
+                                                                        {
+                                                                            "value": "≥",
+                                                                            "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
+                                                                            "valtype": "STRING",
+                                                                            "meta": "≥"
+                                                                        },
+                                                                        {
+                                                                            "value": 99.995,
+                                                                            "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
+                                                                            "valtype": "REAL",
+                                                                            "meta": "Числовое значение"
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                  "value" : "ТУ 2114 - 010 - 45905715 - 2011",
+                                  "type" : "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
+                                  "valtype" : "STRING",
+                                  "meta" : "Стандарт (норматив)",
+                                }
+                            ]
+                        }
+                    ]
+            }
+        ]
+      },
+  ]
+}
+
+data = json.dumps(data)
+
+key = signin('iagolnitckii.si@dvfu.ru', 'шфсзффышф')
+#data = export_resource(API_KEY=key, path="Папка для тестирования/База технологических газов", json_type='universal')
+data2 = import_resource(API_KEY=key, json=data,path='Папка для тестирования', clearIfExists=True)
+print(data2)
+
+
+
 '''
 # Пример копирования и создания базы:
 # Здесь вносятся логин и пароль для авторизации
-key = signin('', '')
-data = export_resource(API_KEY=key, path="Папка для тестирования/База металлопорошковых материалов", json_type='universal')
-data2 = import_resource(API_KEY=key, json=data['data'],path='Папка для тестирования/База металлопорошковых материалов копия', clearIfExists=True)
+key = signin('iagolnitckii.si@dvfu.ru', 'шфсзффышф')
+data = export_resource(API_KEY=key, path="Папка для тестирования/База технологических газов", json_type='universal')
+data2 = import_resource(API_KEY=key, json=data['data'],path='Папка для тестирования/База технологических газов копия', clearIfExists=True)
+print(data2)
 '''
-
 #Пример json-строки для базы (необходима ссылка на файл онтологии)
 json_data = '''{
   "title" : "Пустая целевая2",

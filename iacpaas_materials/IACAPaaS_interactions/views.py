@@ -170,7 +170,7 @@ def save_selected_gases(request):
 
         # === 3. Создаём новый химический состав ===
         for comp in product.get("chemical_designations", []):
-            component_name = comp.get("component", "").strip()
+            component_name = comp.get("component_formula", "").strip()
             designation_type_name = comp.get("designation_type", "").strip()
             percent_str = comp.get("percent_value", "").strip()
 
@@ -231,7 +231,9 @@ from django.contrib import messages
 from .models import Gas
 
 from ..IACPaaS_api.api_connection import signin, import_resource
-from .serialize import serialize_gases_to_iacpaas_json
+from ..IACPaaS_api.serialize_gas import Gas_serialize
+from ..IACPaaS_api.api_config import acount_login, acount_password, default_path
+from .serialize import gases_to_iacpaas_dicts
 
 def send_to_iacpaas(request):
     if request.method != "POST":
@@ -248,8 +250,8 @@ def send_to_iacpaas(request):
         return redirect('iacpaas:gas_list')
 
     try:
-        username = os.getenv('IACPAAS_USERNAME', 'iagolnitckii.si@dvfu.ru')
-        password = os.getenv('IACPAAS_PASSWORD', 'шфсзффышф')
+        username = os.getenv('IACPAAS_USERNAME', acount_login)
+        password = os.getenv('IACPAAS_PASSWORD', acount_password)
 
         if not password:
             raise ValueError("Пароль IACPaaS не задан в переменных окружения")
@@ -259,18 +261,27 @@ def send_to_iacpaas(request):
         if not api_key:
             raise Exception("Не удалось получить токен доступа")
 
+        gas_serialize = Gas_serialize()
+        json_data = Gas_serialize()
+
         # Сериализация
-        json_payload = serialize_gases_to_iacpaas_json(gases, base_name="Газы из Django")
+        gases_dict = gases_to_iacpaas_dicts(gases)
+        gas_serialize = Gas_serialize()
+        gas_serialize.add_elements(gases_dict)
+
+        json_payload = gas_serialize.get_json()
 
         # Отправка через connection.py
         result = import_resource(
             API_KEY=api_key,
-            path="Газы",
+            path=default_path,
             json=json_payload,
-            clearIfExists=False
+            clearIfExists=True
         )
 
-        if result.get('code') == 200:
+        print(result)
+
+        if result.get('success'):
             messages.success(request, f"Успешно отправлено {gases.count()} газ(ов) в IACPaaS.")
         else:
             messages.error(request, f"Ошибка IACPaaS: {result.get('message', result)}")

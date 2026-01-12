@@ -39,7 +39,7 @@
                 <p><strong>Химический состав:</strong></p>
                 <ul class="mb-0">
                   {% for comp in product.chemical_designations %}
-                    <li>{{ comp.component }} — {{ comp.designation_type }}: {{ comp.percent_value }}</li>
+                    <li>{{ comp.component_formula }} — {{ comp.designation_type }}: {{ comp.percent_value }}</li>
                   {% endfor %}
                 </ul>
               </div>

@@ -41,7 +41,7 @@ gas_template = {
     "standard": "",
     "chemical_designations": [
         {
-            "component": "",
+            "component_formula": "",
             "designation_type": "",
             "percent_value": "",
             # "percent_min": "",
