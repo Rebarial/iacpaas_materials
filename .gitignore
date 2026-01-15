@@ -333,3 +333,9 @@ iacpaas_materials/media/
 .env
 .envs/*
 !.envs/.local/
+
+
+migrations/
+temp_llm_result.json
+product_links.json
+product_links_2.json

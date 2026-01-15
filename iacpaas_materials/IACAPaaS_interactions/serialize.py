@@ -4,13 +4,16 @@ def gases_to_iacpaas_dicts(gases):
     successors = []
     for gas in gases:
         gas_node = {
-            "el_name": gas.name_gas,
-            "el_property": [
+            "name": gas.name_gas,
+            "property": [
                 {"Химическое обозначение": gas.formula},
                 {"Марка": gas.brand},
                 {"Сорт": gas.grade},
-                 {"Стандарт": gas.standard},
+                {"Стандарт": gas.standard},
             ],
+            "adress": {"Источник": gas.adress_gas,
+                       "Дата": gas.date_gas,
+                       },
             "components": [
                 {
                     "formula": f"Компонент: {cd.component.formula}",

@@ -126,9 +126,64 @@ class Gas_serialize:
 
         return prop
 
-    def add_element(self, el_name, el_property, components, class_name=""):
+    def __add_adress(self, element, el_adress):
+
+        adress_json =  \
+        {
+          "name" : "Источник",
+          "type" : "НЕТЕРМИНАЛ",
+          "meta" : "Источник",
+          "successors" :
+          [
+          {
+            "name" : "Тип",
+            "type" : "НЕТЕРМИНАЛ",
+            "meta" : "Тип",
+            "successors" :
+            [
+            {
+              "value" : "Интернет-сайт",
+              "type" : "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
+              "valtype" : "STRING",
+              "meta" : "Интернет-сайт"
+            }
+            ]
+          },
+          {
+            "name" : "Адрес",
+            "type" : "НЕТЕРМИНАЛ",
+            "meta" : "Адрес",
+            "successors" :
+            [
+            {
+              "value" : f"{el_adress['Источник']}",
+              "type" : "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
+              "valtype" : "STRING",
+              "meta" : "URL",
+            }
+            ]
+          },
+          {
+            "value" : f"{el_adress['Дата'].strftime('%d.%m.%Y-%H:%M:%S.%f')[:-3]}",
+            "type" : "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
+            "valtype" : "DATE",
+            "meta" : "Время загрузки"
+          }
+          ]
+        }
+
+        element["successors"].append(adress_json)
+
+    def add_element(self, gase):  # el_property, components, class_name=""):
+        class_name = ""
+        el_name = gase["name"]
+        el_property = gase["property"]
+        components = gase["components"]
+        el_adress = gase["adress"]
+
         if not class_name:
             class_name = self.__generate_class_name(el_name)
+
 
         successors = self.__template["successors"][0]["successors"]
 
@@ -150,6 +205,8 @@ class Gas_serialize:
 
         element = element["successors"][0]
 
+        self.__add_adress(element, el_adress)
+
         for prop in el_property:
             for key, value in prop.items():
                 new_prop = {"meta": key, "value": str(value)}
@@ -160,7 +217,7 @@ class Gas_serialize:
 
     def add_elements(self, gases):
         for gase in gases:
-            self.add_element(gase["el_name"], gase["el_property"], gase["components"])
+            self.add_element(gase)
 
     def __add_components(self, element, components):
 

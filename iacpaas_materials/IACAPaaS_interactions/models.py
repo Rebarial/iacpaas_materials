@@ -251,7 +251,7 @@ class ChemicalDesignation(models.Model):
     gas = models.ForeignKey(Gas, on_delete=models.CASCADE, verbose_name="Газ")
     component = models.ForeignKey(ChemicalComponent, on_delete=models.CASCADE, verbose_name="Компонент")
     designation_type = models.ForeignKey(ChemicalDesignationType, on_delete=models.CASCADE, verbose_name="Тип обозначения")
-    percent_value = models.FloatField("Мин. %")
+    percent_value = models.CharField("Мин. %", max_length=100)
 
 
     class Meta:

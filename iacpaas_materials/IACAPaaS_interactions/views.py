@@ -34,31 +34,65 @@ def choice_link(request):
 
     return render(request, 'process/choice_link.html', {'sources': sources})
 
+
 def choice_materials(request):
     source_id = request.GET.get('source')
     if not source_id or not source_id.isdigit():
-        source_id = 0
+        source_id = None  # Не фиксируем на 0, а просто показываем все
     else:
         source_id = int(source_id)
 
     config = get_parser_config()
-    source_data = config["sources"][source_id]
+
+    # Получаем все источники или один, если указан source_id
+    if source_id is not None and 0 <= source_id < len(config["sources"]):
+        sources_to_show = [config["sources"][source_id]]
+        source_name = config["sources"][source_id]["name"]
+    else:
+        sources_to_show = config["sources"]
+        source_name = "Все источники"
 
     preload = request.GET.get('preload')
 
     if not preload:
-        process_and_save_source(source_data, "product_links.json")
+        # Если нужно обрабатывать все источники при отсутствии preload — можно цикл добавить
+        for src in sources_to_show:
+            process_and_save_source(src, "product_links.json")
 
+    # Собираем все ссылки из всех выбранных источников
+    all_links = []
+    link_id = 0
+    for src_idx, source in enumerate(sources_to_show):
+        links_data = get_links_data().get("sources", [])
+        if src_idx < len(links_data):
+            product_links = links_data[src_idx].get("product_links", [])
+        else:
+            product_links = []
 
-    links = get_links_data()["sources"][0]["product_links"]
+        for link in product_links:
+            link = link.copy()  # чтобы не менять оригинал
+            link['id'] = link_id
+            link['source_name'] = source['name']
+            link['source_id'] = src_idx if source_id is None else source_id
+            all_links.append(link)
+            link_id += 1
 
-    for idx, link in enumerate(links):
-        link['id'] = idx
+    # Фильтрация по type и name (через GET-параметры)
+    filter_type = request.GET.get('filter_type', '').strip()
+    filter_name = request.GET.get('filter_name', '').strip()
+
+    if filter_type:
+        all_links = [l for l in all_links if l.get('type', '') == filter_type]
+    if filter_name:
+        all_links = [l for l in all_links if filter_name.lower() in l.get('link', '').lower()]
 
     return render(request, 'process/choice_materials.html', {
-        'source_name': source_data['name'],
-        'links': links,
-        'source_id': source_id
+        'source_name': source_name,
+        'links': all_links,
+        'source_id': source_id,
+        'filter_type': filter_type,
+        'filter_name': filter_name,
+        'all_types': sorted(set(l.get('type', '') for l in all_links if l.get('type'))),
     })
 
 def llm_parsing(request):
@@ -172,20 +206,11 @@ def save_selected_gases(request):
         for comp in product.get("chemical_designations", []):
             component_name = comp.get("component_formula", "").strip()
             designation_type_name = comp.get("designation_type", "").strip()
-            percent_str = comp.get("percent_value", "").strip()
+            percent_value = comp.get("percent_value", "").strip().replace(".", ",")
+            percent_value = re.sub(r'[^0-9.,?]', '', percent_value)
 
             if not (component_name and designation_type_name):
                 continue
-
-            # Извлекаем числовое значение
-            percent_value = 0.0
-            cleaned = percent_str.replace(',', '.').lower()
-            match = re.search(r'[\d.]+', cleaned)
-            if match:
-                try:
-                    percent_value = float(match.group())
-                except ValueError:
-                    pass
 
             component, _ = ChemicalComponent.objects.get_or_create(formula=component_name)
             designation_type, _ = ChemicalDesignationType.objects.get_or_create(name=designation_type_name)
@@ -203,14 +228,39 @@ def save_selected_gases(request):
     request.session.pop('parsed_products', None)
     return redirect('iacpaas:gas_list')  # или другая страница
 
-
+from django.db.models import Q
 
 def gas_list(request):
+    # Определяем, включён ли фильтр
+    show_with_question = request.GET.get('with_question') == '1'
+
     gases = Gas.objects.select_related().prefetch_related(
         'chemicaldesignation_set__component',
         'chemicaldesignation_set__designation_type'
-    ).all()
-    return render(request, 'gases/gas_list.html', {'gases': gases})
+    )
+
+    if show_with_question:
+        # Фильтруем по полям Gas
+        gas_fields_with_q = Q(
+            name_gas__contains='?',
+        ) | Q(formula__contains='?') | Q(grade__contains='?') | \
+            Q(brand__contains='?') | Q(standard__contains='?') | \
+            Q(adress_gas__contains='?')
+
+        # Фильтруем по связанным ChemicalDesignation
+        cd_fields_with_q = Q(
+            chemicaldesignation__component__formula__contains='?'
+        ) | Q(chemicaldesignation__designation_type__name__contains='?') | \
+           Q(chemicaldesignation__percent_value__contains='?')
+
+        # Но percent_value — float, и '?' там быть не может, так что игнорируем его
+        # Однако, если вы где-то храните '?' как строку вместо числа — уточните.
+        # Пока исключаем percent_value из проверки на '?'
+
+        # Ищем газы, у которых есть '?' в основных полях ИЛИ в связанных
+        gases = gases.filter(gas_fields_with_q | cd_fields_with_q).distinct()
+
+    return render(request, 'gases/gas_list.html', {'gases': gases, 'show_with_question': show_with_question})
 
 def delete_gas(request, gas_id):
     if request.method == "POST":

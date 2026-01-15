@@ -6,6 +6,27 @@
 <div class="container mt-4">
     <h2 class="mb-4">Список сохранённых газов</h2>
 
+    <!-- Фильтр: показать только с "?" -->
+    <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="filter-question"
+               onchange="toggleQuestionFilter(this.checked)"
+               {% if show_with_question %}checked{% endif %}>
+        <label class="form-check-label" for="filter-question">
+            Показать только с "?"
+        </label>
+    </div>
+
+    <script>
+        function toggleQuestionFilter(checked) {
+            const url = new URL(window.location);
+            if (checked) {
+                url.searchParams.set('with_question', '1');
+            } else {
+                url.searchParams.delete('with_question');
+            }
+            window.location.href = url.toString();
+        }
+    </script>
     {% if gases %}
         <!-- Единая форма для отправки выбранных газов -->
         <form method="post" action="{% url 'iacpaas:send_to_iacpaas' %}">

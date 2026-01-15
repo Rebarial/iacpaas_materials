@@ -6,9 +6,37 @@
 <div class="container mt-4">
   <h3>Источник: {{ source_name }}</h3>
 
+  <!-- Форма фильтрации -->
+  <form method="get" class="mb-4">
+    <div class="row g-2">
+      <div class="col-md-4">
+        <input type="text" class="form-control" name="filter_name" value="{{ filter_name }}" placeholder="Фильтр по URL / названию">
+      </div>
+      <div class="col-md-3">
+        <select class="form-select" name="filter_type">
+          <option value="">Все типы</option>
+          {% for t in all_types %}
+            <option value="{{ t }}" {% if filter_type == t %}selected{% endif %}>{{ t }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-outline-secondary">Применить</button>
+      </div>
+      {% if source_id is not None %}
+        <input type="hidden" name="source" value="{{ source_id }}">
+      {% endif %}
+      {% if request.GET.preload %}
+        <input type="hidden" name="preload" value="{{ request.GET.preload }}">
+      {% endif %}
+    </div>
+  </form>
+
   <form method="post" action="/iacpaas/llm_parsing/">
     {% csrf_token %}
-    <input type="hidden" name="source" value="{{ source_id }}">
+    {% if source_id is not None %}
+      <input type="hidden" name="source" value="{{ source_id }}">
+    {% endif %}
 
     <div class="mt-3 mb-3">
       <button type="button" class="btn btn-outline-primary me-2" onclick="toggleAll(true)">Выбрать все</button>
@@ -16,12 +44,10 @@
       <button type="submit" class="btn btn-success">Далее</button>
     </div>
 
-  <div class="form-check mb-3">
-  <input class="form-check-input" type="checkbox" name="use_preload" id="use_preload" checked>
-  <label class="form-check-label" for="use_preload">
-    Предзагрузка
-  </label>
-</div>
+    <div class="form-check mb-3">
+      <input class="form-check-input" type="checkbox" name="use_preload" id="use_preload" checked>
+      <label class="form-check-label" for="use_preload">Предзагрузка</label>
+    </div>
 
     <ul class="list-group">
       {% for link in links %}
@@ -34,6 +60,7 @@
             checked
           >
           <label class="ms-2 mb-0" for="link_{{ link.id }}">
+            <small class="text-muted">{{ link.source_name }} | {{ link.type|default:"—" }}</small><br>
             {{ link.link }}
           </label>
         </li>
@@ -41,7 +68,6 @@
         <li class="list-group-item">Нет материалов для отображения</li>
       {% endfor %}
     </ul>
-
   </form>
 </div>
 
