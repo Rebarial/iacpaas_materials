@@ -1,4 +1,3 @@
-<!-- templates/gases/gas_list.html -->
 {% extends "base.html" %}
 {% load static %}
 
@@ -27,6 +26,7 @@
             window.location.href = url.toString();
         }
     </script>
+
     {% if gases %}
         <!-- Единая форма для отправки выбранных газов -->
         <form method="post" action="{% url 'iacpaas:send_to_iacpaas' %}">
@@ -40,7 +40,7 @@
 
             <div class="row">
                 {% for gas in gases %}
-                <div class="col-md-6 col-lg-4 mb-4">
+                <div class="col-md-6 col-lg-4 mb-4" id="gas-card-{{ gas.id }}">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
                             <h5 class="card-title">{{ gas.name_gas }}</h5>
@@ -80,21 +80,15 @@
                                 </label>
                             </div>
 
-                            <!-- Кнопка удаления (оставляем) -->
-                            <form method="post" action="{% url 'iacpaas:delete_gas' gas.id %}"
-                                  onsubmit="return confirm('Удалить газ?');"
-                                  style="display:inline;">
-                                {% csrf_token %}
-                                <button type="submit" class="btn btn-danger btn-sm">
-                                    Удалить
-                                </button>
-                            </form>
+                            <!-- Кнопка удаления — без вложенной формы -->
+                            <button type="button" class="btn btn-danger btn-sm" onclick="deleteGas({{ gas.id }})">
+                                Удалить
+                            </button>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
             </div>
-
         </form>
     {% else %}
         <div class="alert alert-info" role="alert">
@@ -102,4 +96,45 @@
         </div>
     {% endif %}
 </div>
+
+<!-- JavaScript для удаления газа -->
+<script>
+function deleteGas(gasId) {
+    if (!confirm('Удалить газ?')) {
+        return;
+    }
+
+    // Получаем CSRF-токен из формы (он есть внутри основной формы)
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+    // Генерируем URL для удаления (заменяем /0/ на реальный ID)
+    // Работает, если URL вида .../delete-gas/0/ → .../delete-gas/123/
+    const deleteUrl = `{% url 'iacpaas:delete_gas' 0 %}`.replace('/0/', '/' + gasId + '/');
+
+    fetch(deleteUrl, {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': csrfToken,
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            // Удаляем карточку из DOM
+            const card = document.getElementById('gas-card-' + gasId);
+            if (card) {
+                card.remove();
+            }
+            // Опционально: можно показать уведомление
+            // alert('Газ успешно удалён.');
+        } else {
+            alert('Ошибка при удалении газа.');
+        }
+    })
+    .catch(error => {
+        console.error('Ошибка:', error);
+        alert('Произошла ошибка при удалении.');
+    });
+}
+</script>
 {% endblock %}

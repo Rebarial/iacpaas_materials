@@ -82,10 +82,9 @@ link_collector.collect_product_links(source: Dict[str, Any]) -> Dict[str, Any]:
 ```
 
 ```python
-link_collector.process_and_save_source(source: Dict[str, Any], output_file: str = "product_links.json"
-) -> Dict[str, Any]:
-"""
-Сбор ссылок, сохранение в output_file
-"""
+link_collector.process_and_save_source(source: Dict[str, Any], output_file: str = "product_links.json") -> Dict[str, Any]:
+    """
+    Сбор ссылок, сохранение в output_file
+    """
 ```
    

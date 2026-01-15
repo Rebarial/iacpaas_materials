@@ -74,6 +74,35 @@
           }
         ]
       }
+    },
+    {
+      "name": "Московский Газоперерабатывающий Завод",
+      "root_url": "https://mgpz.ru/catalog/monogazy/",
+      "product_detection": {
+        "or": [
+          {
+            "condition": {
+              "and":[
+                {
+                  "tag": "h2",
+                  "text_contains": "Характеристики"
+                },
+                {
+                  "tag": "span",
+                  "text_contains": "Чистота:"
+                }
+              ]
+                
+              },
+            "type": "gas",
+            "extract": {
+                "from_tag": "div",
+                "attribute": "class",
+                "value": "page-content"
+              }
+          }
+        ]
+      }
     }
   ]
 }

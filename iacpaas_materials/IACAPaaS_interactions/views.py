@@ -206,7 +206,7 @@ def save_selected_gases(request):
         for comp in product.get("chemical_designations", []):
             component_name = comp.get("component_formula", "").strip()
             designation_type_name = comp.get("designation_type", "").strip()
-            percent_value = comp.get("percent_value", "").strip().replace(".", ",")
+            percent_value = comp.get("percent_value", "").strip().replace(",", ".")
             percent_value = re.sub(r'[^0-9.,?]', '', percent_value)
 
             if not (component_name and designation_type_name):
