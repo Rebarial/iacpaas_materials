@@ -51,6 +51,7 @@ gas_template = {
     ],
 }
 gas_mixture_template = {
+    "name": "",
     "formula": "",
     "grade": "",
     "brand": "",
@@ -84,10 +85,26 @@ metal_wire_template = {
     ],
 }
 
+metal_template = {
+    "name": "",
+    "properties": [
+        {
+            "property": "",
+            "value": "",
+        },
+    ],
+    "elemental_composition": [
+        {
+            "element": "",
+        },
+    ],
+}
+
 
 property_type_dic = {
     "powder": powder_template,
     "gas": gas_template,
     "gas_mixture": gas_mixture_template,
-    "metal": metal_wire_template,
+    "wire": metal_wire_template,
+    "metal": metal_template,
 }

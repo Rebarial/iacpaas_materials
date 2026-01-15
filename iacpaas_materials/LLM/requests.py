@@ -81,7 +81,13 @@ def compare_responses(responses, properties_template):
 def compare_properties(responses, properties_template):
     verified_response = {}
     for key in properties_template.keys():
-        if isinstance(properties_template[key], list):
+        if isinstance(properties_template[key], dict):
+            item_properties_template = properties_template[key]
+            item_responses = []
+            for response in responses:
+                if isinstance(response[key], dict):
+                    item_responses.append(response[key])
+        elif isinstance(properties_template[key], list):
             if [((key in response) and isinstance(response[key], list)) for response in responses]:
                 verified_response[key] = []
                 min_list_len = min([len(response[key]) for response in responses])
@@ -94,7 +100,7 @@ def compare_properties(responses, properties_template):
                     verified_response[key].append(compare_properties(item_responses, item_properties_template))
             else:
                 verified_response[key] = "?"
-        else:
+        elif isinstance(properties_template[key], str):
             value = None
             valid = True
             for response in responses:
@@ -110,9 +116,5 @@ def compare_properties(responses, properties_template):
     return verified_response
 
 def compare_text(string1, string2):
-    words = string1.partition(' ')
-    return string2.lower().startswith(words[0].lower())
-
-def all_responses_have_(string1, string2):
     words = string1.partition(' ')
     return string2.lower().startswith(words[0].lower())
