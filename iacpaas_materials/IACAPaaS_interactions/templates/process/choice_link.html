@@ -6,43 +6,35 @@
   <div class="container mt-4">
     <div class="row">
       <div class="col">
-        <h3>Выберите источник для парсинга:</h3>
+        <h3>Выберите источники для парсинга:</h3>
 
-        <!-- Чекбокс "Предзагрузка" -->
-        <div class="form-check mb-3">
-          <input class="form-check-input" type="checkbox" id="preloadCheckbox" checked>
-          <label class="form-check-label" for="preloadCheckbox">
-            Предзагрузка
-          </label>
-        </div>
+        <form method="get" action="{% url 'iacpaas:choice_materials' %}">
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" id="preloadCheckbox" name="preload" value="1" checked>
+            <label class="form-check-label" for="preloadCheckbox">
+              Предзагрузка
+            </label>
+          </div>
 
-        <ul class="list-group mt-3">
-          {% for source in sources %}
-            <li class="list-group-item">
-              <a href="#" class="source-link" data-source-id="{{ source.id }}">
-                {{ source.name }}
-              </a>
-            </li>
-          {% empty %}
-            <li class="list-group-item">Источники не найдены</li>
-          {% endfor %}
-        </ul>
+          <ul class="list-group mt-3">
+            {% for source in sources %}
+              <li class="list-group-item">
+                <div class="form-check">
+                  <input class="form-check-input source-checkbox" type="checkbox"
+                         id="source_{{ source.id }}" name="sources" value="{{ source.id }}" checked>
+                  <label class="form-check-label" for="source_{{ source.id }}">
+                    {{ source.name }}
+                  </label>
+                </div>
+              </li>
+            {% empty %}
+              <li class="list-group-item">Источники не найдены</li>
+            {% endfor %}
+          </ul>
+
+          <button type="submit" class="btn btn-primary mt-3">Продолжить</button>
+        </form>
       </div>
     </div>
   </div>
-
-  <script>
-    document.querySelectorAll('.source-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const sourceId = this.getAttribute('data-source-id');
-        const preloadChecked = document.getElementById('preloadCheckbox').checked;
-        let url = `/iacpaas/choice_materials/?source=${sourceId}`;
-        if (preloadChecked) {
-          url += '&preload=1';
-        }
-        window.location.href = url;
-      });
-    });
-  </script>
 {% endblock content %}
