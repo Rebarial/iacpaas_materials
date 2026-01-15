@@ -7,7 +7,7 @@ configs = {
     # "qwen": config_fefu_cluster_qwen_3_4b,
     "gemma": config_fefu_cluster_gemma_3_27b
 }
-        
+
 def get_prompt_text(properties_template, input_text):
     return f"""Извлеки информацию из текста в данный формат JSON:
     {json.dumps(properties_template)}
@@ -47,7 +47,7 @@ def LLM_generate_for_extracted_data(data, configs):
         for product_link in product_links:
             type = product_link['type']
             properties_template = property_type_dic[type]
-            soup = product_link['soup']
+            #soup = product_link['soup']
             text = product_link['text']
             responses = []
             # responses += LLM_generate_multiple(soup, properties_template, configs)
@@ -56,6 +56,8 @@ def LLM_generate_for_extracted_data(data, configs):
             response = compare_responses(responses, properties_template)
             print(responses)
             product_link['response'] = response
+            product_link.pop('soup', None)
+            product_link.pop('text', None)
     return sources
 
 def compare_responses(responses, properties_template):
@@ -78,7 +80,7 @@ def compare_responses(responses, properties_template):
 
     # Сравниваем ответы, отсеиваем несовпадающие характеристики
     return compare_properties(parsed_responses, properties_template)
-    
+
 def compare_properties(responses, properties_template):
     verified_response = {}
     for key in properties_template.keys():
@@ -113,7 +115,7 @@ def compare_properties(responses, properties_template):
                 verified_response[key] = value
             else:
                 verified_response[key] = "?"
-                
+
     return verified_response
 
 def compare_text(string1, string2):
