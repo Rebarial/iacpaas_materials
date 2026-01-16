@@ -56,7 +56,7 @@ def LLM_generate_for_extracted_data(data, configs):
             response = compare_responses(responses, properties_template)
             print(responses)
             response['link'] = product_link['link']
-            responses['type'] = type
+            response['type'] = type
             product_link['response'] = response
             product_link.pop('soup', None)
             product_link.pop('text', None)
