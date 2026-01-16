@@ -28,20 +28,32 @@
                   Показать характеристики
                 </button>
               </div>
-
-              <!-- Блок с деталями (изначально скрыт) -->
               <div id="details-{{ forloop.counter0 }}" class="product-details mt-2" style="display: none;">
-                <p><strong>Формула:</strong> {{ product.formula }}</p>
-                <p><strong>Марка:</strong> {{ product.grade }}</p>
-                <p><strong>Бренд:</strong> {{ product.brand }}</p>
-                <p><strong>Стандарт:</strong> {{ product.standard }}</p>
-
-                <p><strong>Химический состав:</strong></p>
-                <ul class="mb-0">
-                  {% for comp in product.chemical_designations %}
-                    <li>{{ comp.component_formula }} — {{ comp.designation_type }}: {{ comp.percent_value }}</li>
-                  {% endfor %}
-                </ul>
+                {% for key, value in product.items %}
+                    {% if value is not None and value != "" and value != "?" %}
+                      {% if key == 'chemical_designations' or key == 'elemental_composition' %}
+                        <p><strong>Химический состав:</strong></p>
+                        <ul class="mb-0">
+                          {% for comp in value %}
+                            {% if comp.component_formula and comp.percent_value %}
+                              <li>{{ comp.component_formula }} — {{ comp.designation_type|default:"" }}: {{ comp.percent_value }}</li>
+                            {% elif comp.element %}
+                              <li>{{ comp.element }}{% if comp.percent %}: {{ comp.percent }}{% endif %}</li>
+                            {% endif %}
+                          {% endfor %}
+                        </ul>
+                      {% elif value is list %}
+                        <p><strong>{{ key|title }}:</strong></p>
+                        <ul class="mb-0">
+                          {% for item in value %}
+                            <li>{{ item }}</li>
+                          {% endfor %}
+                        </ul>
+                      {% else %}
+                        <p><strong>{{ key|title }}:</strong> {{ value }}</p>
+                      {% endif %}
+                    {% endif %}
+                {% endfor %}
               </div>
             </li>
           {% empty %}

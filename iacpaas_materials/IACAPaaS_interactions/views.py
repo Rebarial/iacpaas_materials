@@ -152,15 +152,18 @@ def llm_parsing(request):
                 json.dump(result, f, ensure_ascii=False, indent=2)
 
         # === Шаг D: Подготовка результата для отображения ===
-        products = result[0].get('product_links', []) if result else []
-        rs = [re.get("response", "") for re in products]
+        products = []
+        if result:
+            for source in result:
+                for prod in source.get("product_links", []):
+                    products.append(prod.get("response", {}))
+
 
         request.session['parsed_products'] = products
         print(products)
 
-        return render(request, "process/parsing_result.html", {"products": rs})
+        return render(request, "process/parsing_result.html", {"products": products})
 
-    # GET-запрос — просто показываем пустой результат
     return render(request, "process/parsing_result.html", {"products": []})
 
 import re
