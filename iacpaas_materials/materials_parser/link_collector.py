@@ -1,31 +1,26 @@
 from typing import Dict, Any, List
 from .storage import load_sources, save_sources, update_or_add_source
-from .crawler import get_next_links_feature
+from .crawler import crawl_site
 
 
 
-def collect_product_links(source: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Собирает ссылки продуктов для одного источника.
-    Возвращает словарь ссылок с метаданными.
-    """
-    links = {
-        source['root_url']: {"IsProduct": False, "Soup": None, "Text": ""}
-    }
+def collect_product_links(source: Dict[str, Any], max_pages: int = 777777, max_depth: int = 10, max_workers: int = 10) -> Dict[str, Any]:
 
-    try:
-        get_next_links_feature(links, source['root_url'], source['product_detection'])
-    except KeyboardInterrupt as e:
-        print('KeyboardInterrupt')
+    results = crawl_site(
+    start_url= source['root_url'],
+    detection_rules= source['product_detection'],
+    max_pages=max_pages,
+    max_depth=max_depth,
+    max_workers=max_workers
+    )
 
     product_links = [
         {
             "link": url,
             "type":data["Type"],
-            "soup": data["Soup"],
             "text": data["Text"]
         }
-        for url, data in links.items()
+        for url, data in results.items()
         if data['IsProduct'] is True
     ]
 
@@ -34,9 +29,9 @@ def collect_product_links(source: Dict[str, Any]) -> Dict[str, Any]:
         "product_links": product_links
     }
 
-def process_and_save_source(source: Dict[str, Any], output_file: str = "product_links.json") -> None:
+def process_and_save_source(source: Dict[str, Any], output_file: str = "product_links.json", max_pages: int = 777777, max_depth: int = 10, num_threads: int = 10) -> None:
     """Обёртка: собрать + сохранить."""
-    new_source = collect_product_links(source)
+    new_source = collect_product_links(source, max_pages, max_depth, num_threads)
     data = load_sources(output_file)
     update_or_add_source(data, new_source)
     save_sources(data, output_file)
