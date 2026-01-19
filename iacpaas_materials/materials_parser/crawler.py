@@ -1,46 +1,68 @@
-from selenium import webdriver
-from bs4 import BeautifulSoup, Tag
+from urllib.parse import urljoin, urlparse, urlsplit
+from bs4 import BeautifulSoup
 import requests
 import re
-from urllib.parse import urljoin, urlparse, urlsplit
-import time
-from typing import Union, Dict, List, Any, Optional
+from typing import Dict, List, Optional, Tuple, Any
+from collections import deque
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from threading import Lock
 
-def get_next_links_feature(links: dict, url: str, cur_feature: str):
 
-    parsed = urlsplit(url)
+def is_internal_link(url: str, base_netloc: str) -> bool:
+    try:
+        parsed = urlparse(url)
+        return not parsed.netloc or parsed.netloc == base_netloc
+    except Exception:
+        return False
+
+
+def extract_internal_links(soup: BeautifulSoup, current_url: str, base_netloc: str) -> List[str]:
+    
+    parsed = urlsplit(current_url)
     base_url = f"{parsed.scheme}://{parsed.netloc}"
     path = parsed.path  
 
-
-    try:
-        print(f'Get: {url}')
-        resp = requests.get(url, timeout=10)
-        
-        resp.raise_for_status()
-        soup = BeautifulSoup(resp.text, 'lxml')
-        time.sleep(1)
-        
-        #Check if product
-        detection_result = detect_and_extract(soup, cur_feature)
-        if detection_result:
-            print(detection_result["type"])
-            #div = soup.find('div', class_="uss_shop_content2")
-            links[url] = {"IsProduct": True, "Type":detection_result["type"], "Soup": detection_result["content"]["Soup"], "Text": detection_result["content"]["Text"]}
-
-        # Recursion for all links
-        for a in soup.find_all('a', href=re.compile(f'{path}', re.IGNORECASE)):
+    links = []
+    for a in soup.find_all('a', href=re.compile(f'{path}', re.IGNORECASE)):
             #if is_internal_link(a['href'], cur_domain):
                 full_url = urljoin(base_url, a['href'])
-                if full_url not in links:
-                    links[full_url] = {"IsProduct": False, "Soup": None, "Text": ""}
-                    get_next_links_feature(links, full_url, cur_feature)
+                links.append(full_url)
 
-        return links
+    return links
+
+
+def process_page(url: str, detection_rules: Dict) -> Tuple[List[str], Optional[Dict]]:
+
+    try:
+        print(f"Fetching: {url}")
+        resp = requests.get(url, timeout=50)
+        resp.raise_for_status()
+        soup = BeautifulSoup(resp.text, 'lxml')
+
+        
+        parsed = urlparse(url)
+        base_url = f"{parsed.scheme}://{parsed.netloc}"
+        base_netloc = parsed.netloc
+
+        
+        detection_result = detect_and_extract(soup, detection_rules)
+        product_data = None
+        if detection_result:
+            print(f"✅ Product found at {url}: {detection_result['type']}")
+            product_data = {
+                "IsProduct": True,
+                "Type": detection_result["type"],
+                "Text": detection_result["content"]["Text"]
+            }
+
+        
+        new_links = extract_internal_links(soup, url, base_netloc)
+
+        return new_links, product_data
 
     except Exception as e:
-        print(f"Ошибка при загрузке {url}: {e}")
-        return links
+        print(f"❌ Error on {url}: {e}")
+        return [], None
     
 
 def detect_and_extract(soup: BeautifulSoup, detection_rules: Dict) -> Optional[Dict[str, Any]]:
@@ -144,3 +166,67 @@ def _extract_value(soup: BeautifulSoup, rule: Dict) -> Optional[Dict[str, str]]:
         "Soup": inner_html,
         "Text": text
     }
+
+
+def crawl_site(
+    start_url: str,
+    detection_rules: Dict,
+    max_pages: int = 50,
+    max_depth: int = 3,
+    max_workers: int = 10
+) -> Dict[str, Dict]:
+    
+    parsed_start = urlparse(start_url)
+    base_netloc = parsed_start.netloc
+
+    
+    to_visit = deque([(start_url, 0)])
+    visited = set()
+    results = {}
+    visited_lock = Lock()
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        while to_visit and len(visited) < max_pages:
+            
+            batch = []
+            while to_visit and len(batch) < max_workers and len(visited) < max_pages:
+                url, depth = to_visit.popleft()
+                if url in visited or depth > max_depth:
+                    continue
+                with visited_lock:
+                    if url in visited:
+                        continue
+                    visited.add(url)
+                batch.append((url, depth))
+
+            if not batch:
+                break
+
+            
+            future_to_url = {
+                executor.submit(process_page, url, detection_rules): (url, depth)
+                for url, depth in batch
+            }
+
+            
+            for future in as_completed(future_to_url):
+                url, depth = future_to_url[future]
+                try:
+                    new_links, product_data = future.result()
+                    if product_data:
+                        results[url] = product_data
+
+                    
+                    if depth + 1 <= max_depth:
+                        for link in new_links:
+                            if link not in visited:
+                                to_visit.append((link, depth + 1))
+
+                except Exception as e:
+                    print(f"⚠️ Unexpected error processing {url}: {e}")
+
+        print(f'Visiteds:{len(visited)}')
+        print(f'Products:{len(results)}')
+
+
+    return results
