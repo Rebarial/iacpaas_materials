@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Список сохранённых материалов</h2>
+
+    <!-- Фильтр по типу -->
+  <form method="get" class="mb-3">
+      <label for="type_filter" class="form-label">Тип материала:</label>
+      <select name="type" id="type_filter" class="form-select" onchange="this.form.submit()">
+          {% if 'gas' in available_types %}
+              <option value="gas"{% if selected_type == 'gas' %} selected{% endif %}>Газы</option>
+          {% endif %}
+          {% if 'powder' in available_types %}
+              <option value="powder"{% if selected_type == 'powder' %} selected{% endif %}>Порошки</option>
+          {% endif %}
+          {% if 'wire' in available_types %}
+              <option value="wire"{% if selected_type == 'wire' %} selected{% endif %}>Проволока</option>
+          {% endif %}
+      </select>
+  </form>
+
+    {% if not gases and not powders and not wires %}
+        <div class="alert alert-info" role="alert">
+            Нет сохранённых материалов.
+        </div>
+    {% else %}
+        <form method="post" action="{% url 'iacpaas:send_to_iacpaas' %}">
+            {% csrf_token %}
+
+            <div class="d-flex justify-content mb-3">
+                <button type="submit" class="btn btn-primary">
+                    Отправить в IACAPaaS
+                </button>
+            </div>
+
+            <div class="row">
+                <!-- Газы -->
+                {% for gas in gases %}
+                <div class="col-md-6 col-lg-4 mb-4" id="gas-card-{{ gas.id }}">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ gas.name_gas }}</h5>
+                            <p class="card-text">
+                                <strong>Формула:</strong> {{ gas.formula }}<br>
+                                <strong>Бренд:</strong> {{ gas.brand }}<br>
+                                <strong>Марка:</strong> {{ gas.grade }}<br>
+                                <strong>Стандарт:</strong> {{ gas.standard }}<br>
+                                <strong>Источник:</strong>
+                                <a href="{{ gas.adress_gas }}" target="_blank" rel="noopener">{{ gas.adress_gas }}</a>
+                            </p>
+
+                            <h6 class="mt-3">Химический состав:</h6>
+                            {% if gas.chemicaldesignation_set.all %}
+                                <ul class="list-group list-group-flush">
+                                    {% for cd in gas.chemicaldesignation_set.all %}
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span>{{ cd.component.formula }} ({{ cd.designation_type.name }})</span>
+                                        <span class="badge bg-secondary">{{ cd.percent_value }}%</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <p class="text-muted"><em>Нет данных о составе</em></p>
+                            {% endif %}
+                        </div>
+                        <div class="card-footer bg-light d-flex align-items-center">
+                            <div class="form-check me-3">
+                                <input class="form-check-input" type="checkbox" name="selected_gases" value="{{ gas.id }}" id="gas_{{ gas.id }}" checked>
+                                <label class="form-check-label" for="gas_{{ gas.id }}">Участвует в отправке</label>
+                            </div>
+                            <button type="button" class="btn btn-danger btn-sm" onclick="deleteGas({{ gas.id }})">Удалить</button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <!-- Порошки -->
+                {% for powder in powders %}
+                <div class="col-md-6 col-lg-4 mb-4" id="powder-card-{{ powder.id }}">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Порошок {{ powder.powder_type.name }}</h5>
+                            <p class="card-text">
+                                <strong>Класс:</strong> {{ powder.powder_type.name }}<br>
+                                <strong>Метод заполнения:</strong> {{ powder.filling_method.name }}<br>
+                                <strong>Источник:</strong>
+                                <a href="{{ powder.adress_pow }}" target="_blank" rel="noopener">{{ powder.adress_pow }}</a>
+                            </p>
+
+                            <!-- Свойства порошка (если есть) -->
+                            <h6 class="mt-3">Свойства:</h6>
+                            {% with props=powder.powderproperty_set.all %}
+                                {% if props %}
+                                    <ul class="list-group list-group-flush">
+                                        {% for pp in props %}
+                                        <li class="list-group-item">
+                                            {{ pp.property_value.property.name }}:
+                                            {{ pp.property_value.text_value|default:pp.property_value.property_value.name }}
+                                            {% if pp.property_value.unit %}
+                                                {{ pp.property_value.unit.name }}
+                                            {% endif %}
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    <p class="text-muted"><em>Нет свойств</em></p>
+                                {% endif %}
+                            {% endwith %}
+                        </div>
+                        <div class="card-footer bg-light d-flex align-items-center">
+                            <div class="form-check me-3">
+                                <input class="form-check-input" type="checkbox" name="selected_powders" value="{{ powder.id }}" id="powder_{{ powder.id }}" checked>
+                                <label class="form-check-label" for="powder_{{ powder.id }}">Участвует</label>
+                            </div>
+                            <button type="button" class="btn btn-danger btn-sm" onclick="deletePowder({{ powder.id }})">Удалить</button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- Проволока -->
+                {% for wire in wires %}
+                <div class="col-md-6 col-lg-4 mb-4" id="wire-card-{{ wire.id }}">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Проволока Ø{{ wire.diameter_value }} {{ wire.diameter_unit.name }}</h5>
+
+                            <p class="card-text">
+                                <strong>Диаметр:</strong> {{ wire.diameter_value }} {{ wire.diameter_unit.name }}<br>
+                                {% if wire.interval %}
+                                    <strong>Интервал:</strong> {{ wire.interval }} {{ wire.diameter_unit.name }}<br>
+                                {% endif %}
+
+                                <!-- Источник: берём из первого MetalWireProperty -->
+                                {% with first_prop=wire.metalwireproperty_set.first %}
+                                    {% if first_prop and first_prop.adress_wire %}
+                                        <strong>Источник:</strong>
+                                        <a href="{{ first_prop.adress_wire }}" target="_blank" rel="noopener">
+                                            {{ first_prop.adress_wire }}
+                                        </a><br>
+                                    {% endif %}
+                                {% endwith %}
+                            </p>
+
+                            <!-- Свойства проволоки -->
+                            <h6 class="mt-3">Свойства:</h6>
+                            {% with props=wire.metalwireproperty_set.all %}
+                                {% if props %}
+                                    <ul class="list-group list-group-flush">
+                                        {% for mwp in props %}
+                                        <li class="list-group-item">
+                                            {{ mwp.property_value.property.name }}:
+                                            {{ mwp.property_value.text_value|default:mwp.property_value.property_value.name }}
+                                            {% if mwp.property_value.unit %}
+                                                {{ mwp.property_value.unit.name }}
+                                            {% endif %}
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    <p class="text-muted"><em>Нет свойств</em></p>
+                                {% endif %}
+                            {% endwith %}
+
+                            <!-- Элементный состав -->
+                            <h6 class="mt-3">Элементный состав:</h6>
+                            {% with comps=wire.elementalcomposition_set.all %}
+                                {% if comps %}
+                                    <ul class="list-group list-group-flush">
+                                        {% for ec in comps %}
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <span>{{ ec.element.name }}</span>
+                                            <span class="badge bg-info">{{ ec.fraction }}%</span>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    <p class="text-muted"><em>Нет состава</em></p>
+                                {% endif %}
+                            {% endwith %}
+                        </div>
+                        <div class="card-footer bg-light d-flex align-items-center">
+                            <div class="form-check me-3">
+                                <input class="form-check-input" type="checkbox" name="selected_wires" value="{{ wire.id }}" id="wire_{{ wire.id }}" checked>
+                                <label class="form-check-label" for="wire_{{ wire.id }}">Участвует</label>
+                            </div>
+                            <button type="button" class="btn btn-danger btn-sm" onclick="deleteWire({{ wire.id }})">Удалить</button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </form>
+    {% endif %}
+</div>
+
+<!-- JavaScript для удаления -->
+<script>
+function deleteGas(gasId) {
+    if (!confirm('Удалить газ?')) return;
+    const csrf = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    const url = `{% url 'iacpaas:delete_gas' 0 %}`.replace('/0/', '/' + gasId + '/');
+    fetch(url, { method: 'POST', headers: { 'X-CSRFToken': csrf } })
+        .then(r => r.ok ? document.getElementById('gas-card-' + gasId)?.remove() : alert('Ошибка'))
+        .catch(e => alert('Ошибка удаления'));
+}
+
+function deletePowder(powderId) {
+    if (!confirm('Удалить порошок?')) return;
+    const csrf = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    const url = `{% url 'iacpaas:delete_powder' 0 %}`.replace('/0/', '/' + powderId + '/');
+    fetch(url, { method: 'POST', headers: { 'X-CSRFToken': csrf } })
+        .then(r => r.ok ? document.getElementById('powder-card-' + powderId)?.remove() : alert('Ошибка'))
+        .catch(e => alert('Ошибка удаления'));
+}
+
+function deleteWire(wireId) {
+    if (!confirm('Удалить проволоку?')) return;
+    const csrf = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    const url = `{% url 'iacpaas:delete_wire' 0 %}`.replace('/0/', '/' + wireId + '/');
+    fetch(url, { method: 'POST', headers: { 'X-CSRFToken': csrf } })
+        .then(r => r.ok ? document.getElementById('wire-card-' + wireId)?.remove() : alert('Ошибка'))
+        .catch(e => alert('Ошибка удаления'));
+}
+</script>
+{% endblock %}

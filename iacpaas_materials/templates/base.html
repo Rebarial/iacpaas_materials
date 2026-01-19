@@ -77,6 +77,9 @@
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'iacpaas:gas_list' %}">Газы <span class="visually-hidden">(current)</span></a>
             </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'iacpaas:material_list' %}">Материалы <span class="visually-hidden">(current)</span></a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'about' %}">About</a>
             </li>
@@ -120,7 +123,7 @@
     {% endif %}
     {% block main %}
       {% block content %}
-        
+
       {% endblock content %}
     {% endblock main %}
 

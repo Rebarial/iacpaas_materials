@@ -156,7 +156,26 @@ def llm_parsing(request):
         if result:
             for source in result:
                 for prod in source.get("product_links", []):
-                    products.append(prod.get("response", {}))
+                    resp = prod.get("response", {})
+
+                    if resp.get("type") == "wire":
+                        diameter = resp.get("diameter", "?")
+                        interval_min = resp.get("interval_min", "?")
+                        elements = [
+                            comp.get("element")
+                            for comp in resp.get("elemental_composition", [])
+                            if comp.get("element")
+                        ]
+                        elements_str = ", ".join(elements) if elements else "не указан состав"
+                        name = f"{diameter} – {interval_min}: {elements_str}"
+
+                        new_resp = {"name": name}
+                        for k, v in resp.items():
+                            if k != "name":
+                                new_resp[k] = v
+                        resp = new_resp
+
+                    products.append(resp)
 
 
         request.session['parsed_products'] = products
@@ -261,6 +280,30 @@ def save_selected_gases(request):
     return redirect('iacpaas:gas_list')  # или другая страница
 
 from django.db.models import Q
+
+def material_list(request):
+    available_types = []
+    if Gas.objects.exists():
+        available_types.append('gas')
+    if PowderType.objects.exists():
+        available_types.append('powder')
+    if MetalWire.objects.exists():
+        available_types.append('wire')
+
+    selected_type = request.GET.get('type')
+
+    if not selected_type or selected_type not in available_types:
+        selected_type = available_types[0] if available_types else None
+
+    context = {
+        'selected_type': selected_type,
+        'available_types': available_types,
+        'gases': Gas.objects.all() if selected_type == 'gas' else Gas.objects.none(),
+        'powders': PowderType.objects.all() if selected_type == 'powder' else PowderType.objects.none(),
+        'wires': MetalWire.objects.all() if selected_type == 'wire' else MetalWire.objects.none(),
+    }
+
+    return render(request, 'materials/material_list.html', context)
 
 def gas_list(request):
     # Определяем, включён ли фильтр
@@ -372,3 +415,285 @@ def send_to_iacpaas(request):
         messages.error(request, f"Ошибка: {str(e)}")
 
     return redirect('iacpaas:gas_list')
+
+
+import os
+import re
+import json
+from django.conf import settings
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.http import JsonResponse
+
+# Модели
+from .models import (
+    Gas,
+    ChemicalComponent,
+    ChemicalDesignationType,
+    ChemicalDesignation,
+    PowderClass,
+    FillingMethod,
+    FillingMethodOption,
+    PowderType,
+    MetalWire,
+    Unit,
+    Element,
+    ElementalComposition,
+    PropertyValueType,
+    Property,
+    MetalWireProperty,
+    PropertyValue
+)
+
+# views.py
+def save_selected_products(request):
+    if request.method != "POST":
+        return redirect('iacpaas:llm_parsing')
+
+    selected_indices = request.POST.getlist("selected_products")
+    products = request.session.get('parsed_products', [])
+
+    if not selected_indices or not products:
+        messages.error(request, "Нет данных для сохранения.")
+        return redirect('iacpaas:llm_parsing')
+
+    saved_count = 0
+
+    for idx_str in selected_indices:
+        try:
+            idx = int(idx_str)
+            item = products[idx]  # ← это уже СЛОВАРЬ с полями: type, name, link, и т.д.
+        except (ValueError, IndexError, KeyError):
+            continue
+
+        # У item уже есть все поля: type, link, name и т.д.
+        mat_type = item.get("type")
+        link = item.get("link", "").strip()
+
+        if not mat_type or not link:
+            continue
+
+        if mat_type == "gas":
+            name_gas_val = item.get("name", "").strip() or "Без названия"
+            grade_val = item.get("grade", "").strip() or "N/A"
+            brand_val = item.get("brand", "").strip() or "N/A"
+
+            Gas.objects.filter(
+                name_gas=name_gas_val,
+                adress_gas=link,
+                grade=grade_val,
+                brand=brand_val
+            ).delete()
+
+            gas = Gas.objects.create(
+                name_gas=name_gas_val,
+                formula=item.get("formula", "").strip() or "N/A",
+                grade=grade_val,
+                brand=brand_val,
+                standard=item.get("standard", "").strip() or "N/A",
+                adress_gas=link,
+            )
+
+            for comp in item.get("chemical_designations", []):
+                component_name = comp.get("component_formula", "").strip()
+                designation_type_name = comp.get("designation_type", "").strip()
+                percent_value = re.sub(r'[^0-9.,?]', '', comp.get("percent_value", "").strip().replace(",", "."))
+
+                if component_name and designation_type_name:
+                    component, _ = ChemicalComponent.objects.get_or_create(formula=component_name)
+                    designation_type, _ = ChemicalDesignationType.objects.get_or_create(name=designation_type_name)
+                    ChemicalDesignation.objects.create(
+                        gas=gas,
+                        component=component,
+                        designation_type=designation_type,
+                        percent_value=percent_value
+                    )
+
+            saved_count += 1
+
+        elif mat_type == "powder":
+            # --- Сохраняем порошок ---
+            # Пример: предположим, что у вас есть FillingMethodOption с нужным методом
+            method_name = item.get("filling_method", "Не указан")
+            method, _ = FillingMethod.objects.get_or_create(name="Основной метод")
+            option, _ = FillingMethodOption.objects.get_or_create(
+                method=method,
+                name=method_name,
+                defaults={"bool_fil": True}
+            )
+            powder_class, _ = PowderClass.objects.get_or_create(name="Вольфрамовый")
+
+            PowderType.objects.filter(adress_pow=link).delete()
+
+            powder = PowderType.objects.create(
+                powder_type=powder_class,
+                filling_method=option,
+                adress_pow=link
+            )
+
+            # Можно добавить свойства, формы частиц и т.д. по аналогии
+            saved_count += 1
+
+
+        elif mat_type == "wire":
+
+            # --- Сохраняем проволоку ---
+
+            diameter_str = item.get("diameter", "0").replace(" мм", "").strip()
+
+            try:
+
+                diameters = [float(x.replace(',', '.')) for x in re.findall(r'[\d,\.]+', diameter_str)]
+
+                diameter = min(diameters) if diameters else 0.0
+
+                interval = max(diameters) if diameters and len(diameters) > 1 else None
+
+            except Exception:
+
+                diameter = 0.0
+
+                interval = None
+
+            unit, _ = Unit.objects.get_or_create(name="мм")
+
+            # Удаляем старую проволоку с таким же диаметром и источником (если нужно)
+
+            # Но так как источник не хранится в MetalWire, удаляем по диаметру + интервалу
+
+            MetalWire.objects.filter(
+
+                diameter_value=diameter,
+
+                diameter_unit=unit,
+
+                interval=interval
+
+            ).delete()
+
+            wire = MetalWire.objects.create(
+
+                diameter_value=diameter,
+
+                diameter_unit=unit,
+
+                interval=interval
+
+            )
+
+            source_link = item.get("link", "").strip()
+
+            # === Сохраняем свойства проволоки ===
+
+            for prop_data in item.get("properties", []):
+
+                prop_name = prop_data.get("property", "").strip()
+
+                prop_value_text = prop_data.get("value", "").strip()
+
+                if not prop_name or not prop_value_text:
+                    continue
+
+                # 1. Получаем или создаём Property
+
+                prop_obj, _ = Property.objects.get_or_create(name=prop_name)
+
+                # 2. Создаём тип значения (например, "Текстовое значение")
+
+                value_type, _ = PropertyValueType.objects.get_or_create(name="Текст")
+
+                # 3. Создаём PropertyValue
+
+                prop_val_obj = PropertyValue.objects.create(
+
+                    property=prop_obj,
+
+                    property_value=value_type,
+
+                    text_value=prop_value_text,
+
+                    unit=None  # для текстовых свойств единица измерения не нужна
+
+                )
+
+                # 4. Привязываем к проволоке через MetalWireProperty
+
+                MetalWireProperty.objects.create(
+
+                    wire=wire,
+
+                    property_value=prop_val_obj,
+
+                    adress_wire=source_link
+
+                    # date_wire проставится автоматически
+
+                )
+
+            # === Сохраняем элементный состав ===
+
+            for el_data in item.get("elemental_composition", []):
+
+                el_name = el_data.get("element", "").strip()
+
+                if el_name:
+                    element, _ = Element.objects.get_or_create(name=el_name)
+
+                    ElementalComposition.objects.create(
+
+                        wire=wire,
+
+                        element=element,
+
+                        fraction=100.0  # или парсить, если будет процент
+
+                    )
+
+            saved_count += 1
+
+    messages.success(request, f"Успешно сохранено {saved_count} материалов.")
+    request.session.pop('parsed_products', None)
+    return redirect('iacpaas:material_list')
+
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_http_methods
+from .models import Gas, PowderType, MetalWire
+
+# Удаление газа
+@require_http_methods(["POST"])
+def delete_gas(request, pk):
+    try:
+        gas = Gas.objects.get(pk=pk)
+        gas.delete()
+        return JsonResponse({"success": True})
+    except Gas.DoesNotExist:
+        return JsonResponse({"success": False, "error": "Gas not found"}, status=404)
+    except Exception as e:
+        return JsonResponse({"success": False, "error": str(e)}, status=500)
+
+
+# Удаление порошка
+@require_http_methods(["POST"])
+def delete_powder(request, pk):
+    try:
+        powder = PowderType.objects.get(pk=pk)
+        powder.delete()
+        return JsonResponse({"success": True})
+    except PowderType.DoesNotExist:
+        return JsonResponse({"success": False, "error": "Powder not found"}, status=404)
+    except Exception as e:
+        return JsonResponse({"success": False, "error": str(e)}, status=500)
+
+
+# Удаление проволоки
+@require_http_methods(["POST"])
+def delete_wire(request, pk):
+    try:
+        wire = MetalWire.objects.get(pk=pk)
+        wire.delete()
+        return JsonResponse({"success": True})
+    except MetalWire.DoesNotExist:
+        return JsonResponse({"success": False, "error": "Wire not found"}, status=404)
+    except Exception as e:
+        return JsonResponse({"success": False, "error": str(e)}, status=500)
