@@ -11,6 +11,6 @@ config_path = Path(__file__).parent / "parser_config.json"
 with open(config_path, 'r', encoding='utf-8') as f:
     config = json.load(f)
 
-process_and_save_source(config["sources"][2], "product_links.json", "product_data.json", max_pages=1000, max_depth=10, num_threads=50)
+process_and_save_source(config["sources"][0], "product_links.json", "product_data.json", max_pages=1000, max_depth=10, num_threads=50)
 
 

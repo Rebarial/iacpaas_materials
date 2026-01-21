@@ -4,7 +4,7 @@ from .crawler import crawl_site
 import hashlib
 
 def url_to_id(url: str) -> str:
-    return hashlib.sha1(url.encode('utf-8')).hexdigest()[:12]
+    return hashlib.sha1(url.encode()).hexdigest()
 
 def collect_product_links(source: Dict[str, Any], max_pages: int = 777777, max_depth: int = 10, max_workers: int = 10) -> Dict[str, Any]:
 
@@ -27,14 +27,15 @@ def collect_product_links(source: Dict[str, Any], max_pages: int = 777777, max_d
         if data['IsProduct'] is True
     ]
 
-    product_data = [
-        {
-            "id":  url_to_id(url),
+    product_data = {
+        url_to_id(url): {
+            "link": url,
+            "type": data['Type'],
             "text": data["Text"]
         }
         for url, data in results.items()
-        if data['IsProduct'] is True
-    ]
+        if data.get("IsProduct") is True
+    }
 
     return {
         "name": source['name'],
