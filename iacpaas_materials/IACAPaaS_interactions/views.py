@@ -15,36 +15,40 @@ def get_parser_config():
         config = json.load(f)
     return config
 
-def get_links_data():
-    with open("product_links.json", 'r', encoding='utf-8') as f:
+def get_links():
+    with open("iacpaas_materials/materials_parser/product_links.json", 'r', encoding='utf-8') as f:
         links = json.load(f)
     return links
 
+def get_parse_data():
+    with open("iacpaas_materials/materials_parser/product_data.json", 'r', encoding='utf-8') as f:
+        links = json.load(f)
+    return links
+
+config = get_parser_config()
+sources = [
+    {
+        'name': source['name'],
+        'id': str(index)
+    }
+    for index, source in enumerate(config['sources'])
+]
 
 def choice_link(request):
-    config = get_parser_config()
-
-    sources = [
-        {
-            'name': source['name'],
-            'id': str(index)
-        }
-        for index, source in enumerate(config['sources'])
-    ]
-
     return render(request, 'process/choice_link.html', {'sources': sources})
 
 from iacpaas_materials.LLM.property_templates import property_type_dic
 
 def choice_materials(request):
-    # Получаем список выбранных source_id
     source_ids = request.GET.getlist('sources')
     preload = request.GET.get('preload')
+    max_pages_raw = request.GET.get('max_pages', '')
+
+    max_pages = int(max_pages_raw) if max_pages_raw.strip().isdigit() else 50
 
     config = get_parser_config()
     all_sources = config["sources"]
 
-    # Валидация и преобразование ID в целые числа
     valid_source_ids = []
     for sid in source_ids:
         if sid.isdigit():
@@ -52,22 +56,22 @@ def choice_materials(request):
             if 0 <= sid_int < len(all_sources):
                 valid_source_ids.append(sid_int)
 
-    # Если ничего не выбрано — показываем все
     if not valid_source_ids:
         valid_source_ids = list(range(len(all_sources)))
 
-    # Формируем список источников для обработки
     sources_to_show = [all_sources[i] for i in valid_source_ids]
 
-    # Предзагрузка: вызываем process_and_save_source только если preload НЕ задан
     if not preload:
         for src in sources_to_show:
-            process_and_save_source(src, "product_links.json")
+            process_and_save_source(
+                src,
+                "product_links.json",
+                max_pages=max_pages
+            )
 
-    # Сбор всех ссылок из выбранных источников
     all_links = []
     link_id = 0
-    links_data = get_links_data().get("sources", [])
+    links_data = get_links().get("sources", [])
 
     for src_idx in valid_source_ids:
         source = all_sources[src_idx]
@@ -78,13 +82,9 @@ def choice_materials(request):
 
         for link in product_links:
             link = link.copy()
-            link['id'] = link_id
-            link['source_name'] = source['name']
-            link['source_id'] = src_idx
             all_links.append(link)
             link_id += 1
 
-    # Фильтрация
     filter_type = request.GET.get('filter_type', '').strip()
     filter_name = request.GET.get('filter_name', '').strip()
 
@@ -96,51 +96,28 @@ def choice_materials(request):
     return render(request, 'process/choice_materials.html', {
         'source_name': ', '.join(s['name'] for s in sources_to_show) if len(sources_to_show) < 5 else f"{len(sources_to_show)} источников",
         'links': all_links,
-        'source_ids': valid_source_ids,  # можно использовать для обратной связи
+        'source_ids': valid_source_ids,
         'filter_type': filter_type,
         'filter_name': filter_name,
         'all_types': property_type_dic.keys(),
+        'max_pages': max_pages,
     })
-
 import os
 import json
 from django.conf import settings
 from django.shortcuts import render
 
 def llm_parsing(request):
-    data = get_links_data()  # {'sources': [{'name': ..., 'product_links': [...]}, ...]}
-    sources = data.get("sources", [])
+    data = get_parse_data()
 
     if request.method == "POST":
-        # Получаем список глобальных ID, выбранных пользователем
-        selected_global_ids = set(int(x) for x in request.POST.getlist("selected_links"))
+        selected_global_ids = request.POST.getlist("selected_links")
         use_preload = 'use_preload' in request.POST
 
-        # === Шаг A: Построим маппинг глобальный_id → (source_idx, local_idx) ===
-        global_id_to_ref = {}
-        current_id = 0
-        for src_idx, source in enumerate(sources):
-            for local_idx in range(len(source.get("product_links", []))):
-                global_id_to_ref[current_id] = (src_idx, local_idx)
-                current_id += 1
+        filtered_data = []
+        for src_idx in selected_global_ids:
+            filtered_data.append(data[src_idx])
 
-        # === Шаг B: Соберём только выбранные ссылки по источникам ===
-        new_sources = []
-        for src_idx, source in enumerate(sources):
-            # Извлекаем product_links, но только те, чей глобальный ID выбран
-            filtered_links = []
-            for local_idx, link in enumerate(source.get("product_links", [])):
-                global_id = next(gid for gid, (si, li) in global_id_to_ref.items() if si == src_idx and li == local_idx)
-                if global_id in selected_global_ids:
-                    filtered_links.append(link)
-            # Создаём новый источник с отфильтрованными ссылками
-            new_source = {**source, "product_links": filtered_links}
-            new_sources.append(new_source)
-
-        # Обновляем данные для LLM
-        filtered_data = {"sources": new_sources}
-
-        # === Шаг C: Запуск LLM или загрузка из файла ===
         json_path = os.path.join(settings.BASE_DIR, 'temp_llm_result.json')
 
         if use_preload and os.path.exists(json_path):
@@ -151,31 +128,29 @@ def llm_parsing(request):
             with open(json_path, 'w', encoding='utf-8') as f:
                 json.dump(result, f, ensure_ascii=False, indent=2)
 
-        # === Шаг D: Подготовка результата для отображения ===
         products = []
         if result:
-            for source in result:
-                for prod in source.get("product_links", []):
-                    resp = prod.get("response", {})
+            for prod in result:
+                resp = prod.get("response", {})
 
-                    if resp.get("type") == "wire":
-                        diameter = resp.get("diameter", "?")
-                        interval_min = resp.get("interval_min", "?")
-                        elements = [
-                            comp.get("element")
-                            for comp in resp.get("elemental_composition", [])
-                            if comp.get("element")
-                        ]
-                        elements_str = ", ".join(elements) if elements else "не указан состав"
-                        name = f"{diameter} – {interval_min}: {elements_str}"
+                if resp.get("type") == "wire":
+                    diameter = resp.get("diameter", "?")
+                    interval_min = resp.get("interval_min", "?")
+                    elements = [
+                        comp.get("element")
+                        for comp in resp.get("elemental_composition", [])
+                        if comp.get("element")
+                    ]
+                    elements_str = ", ".join(elements) if elements else "не указан состав"
+                    name = f"{diameter} – {interval_min}: {elements_str}"
 
-                        new_resp = {"name": name}
-                        for k, v in resp.items():
-                            if k != "name":
-                                new_resp[k] = v
-                        resp = new_resp
+                    new_resp = {"name": name}
+                    for k, v in resp.items():
+                        if k != "name":
+                            new_resp[k] = v
+                    resp = new_resp
 
-                    products.append(resp)
+                products.append(resp)
 
 
         request.session['parsed_products'] = products

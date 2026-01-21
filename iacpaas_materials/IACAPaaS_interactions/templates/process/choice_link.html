@@ -9,6 +9,10 @@
         <h3>Выберите источники для парсинга:</h3>
 
         <form method="get" action="{% url 'iacpaas:choice_materials' %}">
+          <div class="mb-3">
+            <label for="maxPagesInput" class="form-label">Макс. страниц на источник</label>
+            <input type="number" class="form-control" id="maxPagesInput" name="max_pages" value="{{ max_pages|default:"50" }}" min="1">
+          </div>
           <div class="form-check mb-2">
             <input class="form-check-input" type="checkbox" id="preloadCheckbox" name="preload" value="1" checked>
             <label class="form-check-label" for="preloadCheckbox">

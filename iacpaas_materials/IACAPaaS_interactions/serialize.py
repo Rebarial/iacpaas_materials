@@ -25,3 +25,21 @@ def gases_to_iacpaas_dicts(gases):
         successors.append(gas_node)
 
     return successors
+
+def powder_to_iacpaas_dicts(powders):
+    successors = []
+    for powder in powders:
+        powder_node = {
+            "class": powder.powder_type.name,
+            "filling_method": powder.filling_method,
+            "property": [
+            ],
+            "adress": {"Источник": powder.adress_pow,
+                       "Дата": powder.date_pow,
+                       },
+            "components": [
+            ]
+        }
+        successors.append(powder_node)
+
+    return successors

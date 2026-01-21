@@ -41,25 +41,23 @@ def LLM_generate_multiple(input_text, properties_template, configs):
     return responses
 
 def LLM_generate_for_extracted_data(data, configs):
-    sources = data['sources']
-    for source in sources:
-        product_links = source['product_links']
-        for product_link in product_links:
-            type = product_link['type']
-            properties_template = property_type_dic[type]
-            #soup = product_link['soup']
-            text = product_link['text']
-            responses = []
-            # responses += LLM_generate_multiple(soup, properties_template, configs)
-            responses += LLM_generate_multiple(text, properties_template, configs)
-            responses += LLM_generate_multiple(text, properties_template, configs)
-            response = compare_responses(responses, properties_template)
-            print(responses)
-            response['link'] = product_link['link']
-            response['type'] = type
-            product_link['response'] = response
-            product_link.pop('soup', None)
-            product_link.pop('text', None)
+    sources = data
+    for product_link in sources:
+        type = product_link['type']
+        properties_template = property_type_dic[type]
+        #soup = product_link['soup']
+        text = product_link['text']
+        responses = []
+        # responses += LLM_generate_multiple(soup, properties_template, configs)
+        responses += LLM_generate_multiple(text, properties_template, configs)
+        responses += LLM_generate_multiple(text, properties_template, configs)
+        response = compare_responses(responses, properties_template)
+        print(responses)
+        response['link'] = product_link['link']
+        response['type'] = type
+        product_link['response'] = response
+        product_link.pop('soup', None)
+        product_link.pop('text', None)
     return sources
 
 def compare_responses(responses, properties_template):
