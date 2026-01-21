@@ -417,7 +417,8 @@ from .models import (
     PropertyValueType,
     Property,
     MetalWireProperty,
-    PropertyValue
+    PropertyValue,
+    PowderProperty
 )
 
 def save_selected_products(request):
@@ -436,7 +437,7 @@ def save_selected_products(request):
     for idx_str in selected_indices:
         try:
             idx = int(idx_str)
-            raw_item = parsed_products[idx]  # ← это словарь с полями: type, link, response
+            raw_item = parsed_products[idx]
         except (ValueError, IndexError, KeyError, TypeError):
             continue
 
@@ -446,51 +447,162 @@ def save_selected_products(request):
         if not mat_type or not link:
             continue
 
-        # Извлекаем данные из response
-        item = raw_item.get("response", {})
-        item["link"] = link  # чтобы не терять ссылку внутри логики
+        item = raw_item
+        item["link"] = link
         item["type"] = mat_type
 
         if mat_type == "gas":
-            # ... (остаётся без изменений, если структура gas не менялась)
-            pass
+            name_gas_val = item.get("name", "").strip() or "Без названия"
+            grade_val = item.get("grade", "").strip() or "N/A"
+            brand_val = item.get("brand", "").strip() or "N/A"
+
+            Gas.objects.filter(
+                name_gas=name_gas_val,
+                adress_gas=link,
+                grade=grade_val,
+                brand=brand_val
+            ).delete()
+
+            gas = Gas.objects.create(
+                name_gas=name_gas_val,
+                formula=item.get("formula", "").strip() or "N/A",
+                grade=grade_val,
+                brand=brand_val,
+                standard=item.get("standard", "").strip() or "N/A",
+                adress_gas=link,
+            )
+
+            for comp in item.get("chemical_designations", []):
+                component_name = comp.get("component_formula", "").strip()
+                designation_type_name = comp.get("designation_type", "").strip()
+                percent_value = re.sub(r'[^0-9.,?]', '', comp.get("percent_value", "").strip().replace(",", "."))
+
+                if component_name and designation_type_name:
+                    component, _ = ChemicalComponent.objects.get_or_create(formula=component_name)
+                    designation_type, _ = ChemicalDesignationType.objects.get_or_create(name=designation_type_name)
+                    ChemicalDesignation.objects.create(
+                        gas=gas,
+                        component=component,
+                        designation_type=designation_type,
+                        percent_value=percent_value
+                    )
+
+            saved_count += 1
 
         elif mat_type == "powder":
-            # ... (аналогично, если структура powder не менялась)
-            pass
+
+            name_powder = item.get("name", "").strip()
+
+            if not name_powder:
+                name_powder = "Без названия"
+
+            words = name_powder.split()
+
+            if len(words) >= 2:
+
+                powder_class_name = " ".join(words[:2])
+
+            else:
+
+                powder_class_name = name_powder
+
+            method_name = item.get("filling_method", "Не указан").strip()
+
+            link = raw_item.get("link", "").strip()
+
+            if not link:
+                continue
+
+            method, _ = FillingMethod.objects.get_or_create(name="Основной метод")
+
+            option, _ = FillingMethodOption.objects.get_or_create(
+
+                method=method,
+
+                name=method_name,
+
+                defaults={"bool_fil": True}
+
+            )
+
+            powder_class, _ = PowderClass.objects.get_or_create(name=powder_class_name)
+
+            PowderType.objects.filter(adress_pow=link).delete()
+
+            powder = PowderType.objects.create(
+
+                powder_type=powder_class,
+
+                filling_method=option,
+
+                adress_pow=link
+
+            )
+
+            for prop_data in item.get("properties", []):
+
+                prop_name = prop_data.get("property", "").strip()
+
+                prop_value_text = prop_data.get("value", "").strip()
+
+                if not prop_name or not prop_value_text:
+                    continue
+
+                prop_obj, _ = Property.objects.get_or_create(name=prop_name)
+
+                value_type, _ = PropertyValueType.objects.get_or_create(name="Текст")
+
+                prop_val = PropertyValue.objects.create(
+
+                    property=prop_obj,
+
+                    property_value=value_type,
+
+                    text_value=prop_value_text,
+
+                    unit=None
+
+                )
+
+                PowderProperty.objects.create(
+
+                    powder=powder,
+
+                    property_value=prop_val
+
+                )
+
+            saved_count += 1
 
         elif mat_type == "wire":
+            response_data = item
             diameter_str = item.get("diameter", "0").replace(" мм", "").strip()
 
+            print(item)
+
             try:
-                # Извлекаем все числа из строки диаметра
                 numbers = re.findall(r'[\d,\.]+', diameter_str.replace(',', '.'))
                 diameters = [float(x) for x in numbers]
-                diameter = min(diameters) if diameters else 0.0
-                interval = max(diameters) if len(diameters) > 1 else None
+                diameter_min = min(diameters) if diameters else 0.0
+                diameter_max = max(diameters) if len(diameters) > 1 else diameter_min
             except Exception:
-                diameter = 0.0
-                interval = None
+                diameter_min = 0.0
+                diameter_max = 0.0
 
             unit, _ = Unit.objects.get_or_create(name="мм")
 
-            # Удаляем старую запись по диаметру, интервалу и ссылке (если вы хотите уникальность по ссылке)
-            MetalWire.objects.filter(
-                diameter_value=diameter,
-                diameter_unit=unit,
-                interval=interval
-            ).delete()
-
-            wire = MetalWire.objects.create(
-                diameter_value=diameter,
-                diameter_unit=unit,
-                interval=interval
-            )
-
             source_link = item.get("link", "").strip()
 
-            # Сохраняем свойства (properties)
-            for prop_data in item.get("properties", []):
+            MetalWire.objects.filter(adress_wire=source_link).delete()
+
+            wire = MetalWire.objects.create(
+                name_wire=response_data.get("name", "Неизвестно"),
+                diameter_value=str(diameter_min),
+                diameter_unit=unit,
+                adress_wire=source_link
+            )
+
+            for prop_data in response_data.get("properties", []):
                 prop_name = prop_data.get("property", "").strip()
                 prop_value_text = prop_data.get("value", "").strip()
                 if not prop_name or not prop_value_text:
@@ -506,19 +618,17 @@ def save_selected_products(request):
                 )
                 MetalWireProperty.objects.create(
                     wire=wire,
-                    property_value=prop_val_obj,
-                    adress_wire=source_link
+                    property_value=prop_val_obj
                 )
 
-            # Сохраняем элементный состав
-            for el_data in item.get("elemental_composition", []):
+            for el_data in response_data.get("elemental_composition", []):
                 el_name = el_data.get("element", "").strip()
-                if el_name and el_name != "?":  # пропускаем неопределённые элементы
+                if el_name and el_name != "?":
                     element, _ = Element.objects.get_or_create(name=el_name)
                     ElementalComposition.objects.create(
                         wire=wire,
                         element=element,
-                        fraction=100.0  # или уточните логику расчёта доли
+                        fraction=-1
                     )
 
             saved_count += 1

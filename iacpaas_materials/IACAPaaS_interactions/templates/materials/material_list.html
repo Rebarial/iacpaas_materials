@@ -127,6 +127,7 @@
                             <h5 class="card-title">Проволока Ø{{ wire.diameter_value }} {{ wire.diameter_unit.name }}</h5>
 
                             <p class="card-text">
+                                <strong>Ссылка:</strong> {{ wire.adress_wire }}<br>
                                 <strong>Диаметр:</strong> {{ wire.diameter_value }} {{ wire.diameter_unit.name }}<br>
                                 {% if wire.interval %}
                                     <strong>Интервал:</strong> {{ wire.interval }} {{ wire.diameter_unit.name }}<br>
