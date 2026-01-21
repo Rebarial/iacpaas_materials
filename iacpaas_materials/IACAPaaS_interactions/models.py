@@ -153,7 +153,7 @@ class BulkDensity(models.Model):
 
 class Flowability(models.Model):
     powder = models.ForeignKey(PowderType, on_delete=models.CASCADE, verbose_name="Тип порошка")
-    value = models.FloatField("Значение")
+    value = models.FloatField("Значение", max_length=255, null=True, blank=True)
     unit = models.ForeignKey(Unit, on_delete=models.CASCADE, verbose_name="Единица измерения")
     bool_fil = models.BooleanField("Флаг заполнения", default=False)
 
@@ -289,10 +289,12 @@ class GasMixtureComponent(models.Model):
 # =========================
 
 class MetalWire(models.Model):
-    diameter_value = models.FloatField("Диаметр")
+    name_wire = models.CharField("Марка", max_length=50)
+    diameter_value = models.CharField("Диаметр", max_length=50)
     diameter_unit = models.ForeignKey(Unit, on_delete=models.CASCADE, verbose_name="Единица измерения диаметра")
-    interval = models.FloatField("Интервал", null=True, blank=True)
 
+    adress_wire = models.CharField("Источник", max_length=200)
+    date_wire = models.DateTimeField("Дата внесения", auto_now_add=True)
     def __str__(self):
         return f"Проволока Ø{self.diameter_value} {self.diameter_unit}"
 
@@ -304,8 +306,7 @@ class MetalWire(models.Model):
 class MetalWireProperty(models.Model):
     wire = models.ForeignKey(MetalWire, on_delete=models.CASCADE, verbose_name="Проволока")
     property_value = models.ForeignKey(PropertyValue, on_delete=models.CASCADE, verbose_name="Значение свойства")
-    adress_wire = models.CharField("Источник", max_length=200)
-    date_wire = models.DateTimeField("Дата внесения", auto_now_add=True)
+    
     class Meta:
         verbose_name = "Свойство проволоки"
         verbose_name_plural = "Свойства проволоки"
