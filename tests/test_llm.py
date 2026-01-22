@@ -6,7 +6,7 @@ from django.conf import settings
 from iacpaas_materials.LLM.requests import LLM_generate, LLM_generate_multiple, configs, LLM_generate_for_extracted_data, compare_responses
 from iacpaas_materials.IACAPaaS_interactions.models import Gas
 
-input_json = json.load(open(os.path.join(settings.BASE_DIR, 'tests/product_links_wire.json')))
+input_json = json.load(open(os.path.join(settings.BASE_DIR, 'tests/product_links.json')))
 # text = input_json["sources"][0]["product_links"][0]["text"]
 text = input_json[0]["text"]
 # responses_json = [

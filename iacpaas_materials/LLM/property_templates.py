@@ -24,13 +24,22 @@ powder_template = {
         "average_value": "",
         "mass_fraction": "",
     },
-    "powder_particle_shape": {
-        "name": "",
-        "size_value": "",
-        "interval": "",
-        # "interval_min": "",
-        # "interval_max": "",
-    },
+    "powder_particle_shape": [
+        {
+            "name": "",
+            "obtaining_method": "",
+            "size_value": "",
+            "interval": "",
+            # "interval_min": "",
+            # "interval_max": "",
+        },
+    ],
+    "powder_particle_sizes": [
+        {
+            "size_value": "",
+            "application_method": "",
+        },
+    ],
 }
 
 gas_template = {
