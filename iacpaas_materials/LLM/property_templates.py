@@ -26,18 +26,16 @@ powder_template = {
     },
     "powder_particle_shape": [
         {
-            "name": "",
+            "shape": "",
             "obtaining_method": "",
             "size_value": "",
-            "interval": "",
-            # "interval_min": "",
-            # "interval_max": "",
+            "value_powder": "",
         },
     ],
     "powder_particle_sizes": [
         {
             "size_value": "",
-            "application_method": "",
+            "application_method": "", # filling_method?
         },
     ],
 }
@@ -53,9 +51,6 @@ gas_template = {
             "component_formula": "",
             "designation_type": "",
             "percent_value": "",
-            # "percent_min": "",
-            # "percent_max": "",
-            # "type": "",
         },
     ],
 }
@@ -74,6 +69,7 @@ gas_mixture_template = {
 }
 
 metal_wire_template = {
+    "name": "",
     "diameter": "",
     "interval_min": "",
     "analogs": [
@@ -90,6 +86,7 @@ metal_wire_template = {
     "elemental_composition": [
         {
             "element": "",
+            "fraction": "",
         },
     ],
 }
