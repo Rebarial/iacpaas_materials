@@ -72,42 +72,43 @@ def compare_lists(lists, properties_template):
         if option in properties_template:
             main_key = option
 
-    n = len(lists)
-    m = []
-    for i in range(n):
-        m.append(len(lists[i]))
-        score.append([0] * len(lists[i]))
-        groups.append([-1] * len(lists[i]))
-    for i1 in range(n):
-        for j1 in range(m[i1]):
-            if (score[i1][j1] == 0):
-                best_matches = [-1] * n
-                best_matches_len = [0] * n
-                match_count = 0
-                for i2 in range(n):
-                    best_match = -1
-                    best_match_len = 0
-                    for j2 in range(m[i2]):
-                        if (score[i2][j2] == 0):
-                            match = compare_text(lists[i1][j1][main_key], lists[i2][j2][main_key])
-                            if (match and not best_match_len):
-                                best_match_len = match
-                                best_match = j2
-                    if (best_match_len):
-                        best_matches[i2] = best_match
-                        best_matches_len[i2] = best_match_len
-                        match_count += 1
-                
-                comparison_list = []
-                for i2 in range(n):
-                    if (best_matches[i2] != -1):
-                        score[i2][best_matches[i2]] = match_count
-                        groups[i2][best_matches[i2]] = {i1, j1}
-                        comparison_item = lists[i2][best_matches[i2]]
-                        comparison_list.append(comparison_item)
-                comparison_result = compare_properties(comparison_list, properties_template)
-                comparison_result['result_appearance'] = match_count / n
-                result.append(comparison_result)
+    if main_key:
+        n = len(lists)
+        m = []
+        for i in range(n):
+            m.append(len(lists[i]))
+            score.append([0] * len(lists[i]))
+            groups.append([-1] * len(lists[i]))
+        for i1 in range(n):
+            for j1 in range(m[i1]):
+                if (score[i1][j1] == 0):
+                    best_matches = [-1] * n
+                    best_matches_len = [0] * n
+                    match_count = 0
+                    for i2 in range(n):
+                        best_match = -1
+                        best_match_len = 0
+                        for j2 in range(m[i2]):
+                            if (score[i2][j2] == 0):
+                                match = compare_text(lists[i1][j1][main_key], lists[i2][j2][main_key])
+                                if (match and not best_match_len):
+                                    best_match_len = match
+                                    best_match = j2
+                        if (best_match_len):
+                            best_matches[i2] = best_match
+                            best_matches_len[i2] = best_match_len
+                            match_count += 1
+
+                    comparison_list = []
+                    for i2 in range(n):
+                        if (best_matches[i2] != -1):
+                            score[i2][best_matches[i2]] = match_count
+                            groups[i2][best_matches[i2]] = {i1, j1}
+                            comparison_item = lists[i2][best_matches[i2]]
+                            comparison_list.append(comparison_item)
+                    comparison_result = compare_properties(comparison_list, properties_template)
+                    comparison_result['result_appearance'] = match_count / n
+                    result.append(comparison_result)
     return result
 
 

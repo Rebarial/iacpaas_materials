@@ -260,7 +260,7 @@ def material_list(request):
     available_types = []
     if Gas.objects.exists():
         available_types.append('gas')
-    if PowderType.objects.exists():
+    if PowderClass.objects.exists():
         available_types.append('powder')
     if MetalWire.objects.exists():
         available_types.append('wire')
@@ -274,7 +274,7 @@ def material_list(request):
         'selected_type': selected_type,
         'available_types': available_types,
         'gases': Gas.objects.all() if selected_type == 'gas' else Gas.objects.none(),
-        'powders': PowderType.objects.all() if selected_type == 'powder' else PowderType.objects.none(),
+        'powders': PowderClass.objects.all() if selected_type == 'powder' else PowderClass.objects.none(),
         'wires': MetalWire.objects.all() if selected_type == 'wire' else MetalWire.objects.none(),
     }
 
@@ -407,18 +407,8 @@ from .models import (
     ChemicalDesignationType,
     ChemicalDesignation,
     PowderClass,
-    FillingMethod,
-    FillingMethodOption,
-    PowderType,
     MetalWire,
-    Unit,
-    Element,
-    ElementalComposition,
-    PropertyValueType,
-    Property,
-    MetalWireProperty,
-    PropertyValue,
-    PowderProperty
+    PowderClass,
 )
 
 def save_selected_products(request):
@@ -513,23 +503,11 @@ def save_selected_products(request):
             if not link:
                 continue
 
-            method, _ = FillingMethod.objects.get_or_create(name="Основной метод")
-
-            option, _ = FillingMethodOption.objects.get_or_create(
-
-                method=method,
-
-                name=method_name,
-
-                defaults={"bool_fil": True}
-
-            )
-
             powder_class, _ = PowderClass.objects.get_or_create(name=powder_class_name)
 
-            PowderType.objects.filter(adress_pow=link).delete()
+            PowderClass.objects.filter(adress_pow=link).delete()
 
-            powder = PowderType.objects.create(
+            powder = PowderClass.objects.create(
 
                 powder_type=powder_class,
 
@@ -640,7 +618,7 @@ def save_selected_products(request):
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
-from .models import Gas, PowderType, MetalWire
+from .models import Gas, PowderClass, MetalWire
 
 # Удаление газа
 @require_http_methods(["POST"])
@@ -659,10 +637,10 @@ def delete_gas(request, pk):
 @require_http_methods(["POST"])
 def delete_powder(request, pk):
     try:
-        powder = PowderType.objects.get(pk=pk)
+        powder = PowderClass.objects.get(pk=pk)
         powder.delete()
         return JsonResponse({"success": True})
-    except PowderType.DoesNotExist:
+    except PowderClass.DoesNotExist:
         return JsonResponse({"success": False, "error": "Powder not found"}, status=404)
     except Exception as e:
         return JsonResponse({"success": False, "error": str(e)}, status=500)

@@ -1,8 +1,9 @@
 
 
 powder_template = {
-    "name": "",
-    "filling_method": "",
+    "physical_form": "",
+    "base_material": "",
+    "grade": "",
     "analogs": [
         {
             "name": "",

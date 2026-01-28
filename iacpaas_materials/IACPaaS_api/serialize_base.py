@@ -1,13 +1,19 @@
 import json
 from copy import deepcopy
 
-from .api_config import default_path, default_ontology_path
+from .api_config import default_path, default_ontology_path_gase
 
 
 
 class serialize_base:
 
     meta_types_template = {
+        "Порошок": {
+            "name": "",
+            "type": "НЕТЕРМИНАЛ",
+            "meta": "Металлический порошок",
+            "successors": []
+        },
         "Химическое обозначение": {
             "value": "",
             "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
@@ -78,39 +84,38 @@ class serialize_base:
         }
     }
 
-    def __generate_template(self, root_type, group_type):
-        template_serialize = {
+    def _generate_template(self, root_type, ontology_path):
+        self.__template = {
             "title": f"{root_type}",
             "path": default_path,
             "json_type": "universal",
-            "ontology": default_ontology_path,
+            "ontology": ontology_path,
             "name": f"{root_type}",
             "type": "КОРЕНЬ",
             "meta": f"{root_type}",
-            "successors":
-                [
-                    {
-                        "name": f"{group_type}",
-                        "type": "НЕТЕРМИНАЛ",
-                        "meta": f"{group_type}",
-                        "successors": [],
-                    }
-                ]
+            "successors": []
         }
-        return template_serialize
 
-    def __generate_class_name(self, el_name):
+    def _add_group_type(self, group_type):
+        sucessors = []
+        self.__template["successors"].append(
+            {
+                "name": f"{group_type}",
+                "type": "НЕТЕРМИНАЛ",
+                "meta": f"{group_type}",
+                "successors": sucessors,
+            }
+
+        )
+        return sucessors
+
+    def _generate_class_name(self, el_name):
         return el_name.split()[0] if el_name.strip() else ""
 
     def __init__(self):
-        root_type = "Газы"
-        group_type = "Моногазы"
-        self.__class_type = "Класс газов"
-        self.__el_type = "Газ"
+        pass
 
-        self.__template = self.__generate_template(root_type, group_type)
-
-    def __add_property(self, element, property_to_add):
+    def _add_property(self, element, property_to_add):
 
         meta = property_to_add["meta"]
         prop_value = property_to_add["value"]
@@ -127,7 +132,7 @@ class serialize_base:
 
         return prop
 
-    def __add_adress(self, element, el_adress):
+    def _add_adress(self, element, el_adress):
 
         adress_json =  \
         {
@@ -175,87 +180,15 @@ class serialize_base:
 
         element["successors"].append(adress_json)
 
-    def add_element(self, gase):  # el_property, components, class_name=""):
-        class_name = ""
-        el_name = gase["name"]
-        el_property = gase["property"]
-        components = gase["components"]
-        el_adress = gase["adress"]
-
-        if not class_name:
-            class_name = self.__generate_class_name(el_name)
-
-
-        successors = self.__template["successors"][0]["successors"]
-
-        element = {
-                "name": f"{class_name}",
-                "type": "НЕТЕРМИНАЛ",
-                "meta": f"{self.__class_type}",
-                "successors": [
-                    {
-                        "name": f"{el_name}",
-                        "type": "НЕТЕРМИНАЛ",
-                        "meta": f"{self.__el_type}",
-                        "successors":
-                            []
-                    }
-                ]
-            }
-        successors.append(element)
-
-        element = element["successors"][0]
-
-        self.__add_adress(element, el_adress)
-
-        for prop in el_property:
-            for key, value in prop.items():
-                new_prop = {"meta": key, "value": str(value)}
-                self.__add_property(element, new_prop)
-
-        self.__add_components(element, components)
-
+    def add_element(self, element_data):  # el_property, components, class_name=""):
+        pass
 
     def add_elements(self, gases):
         for gase in gases:
             self.add_element(gase)
 
-    def __add_components(self, element, components):
-
-        property_data = {"meta": "Доли", "value": ""}
-
-        comp_successors = self.__add_property(element, property_data)
-
-        index = 0
-        for comp in components:
-            index += 1
-            meta = "Компонент"
-
-            property_data = {"meta": meta, "value": f"{index}"}
-
-            sub_comp_successors = self.__add_property(comp_successors, property_data)
-
-            property_data = {"meta": "Химическое обозначение компонент", "value": f"{comp['formula']}"}
-
-            chim_value = self.__add_property(sub_comp_successors, property_data)
-
-            chim_value["successors"] = []
-
-            property_data = {"meta": "%", "value": ""}
-
-            self.__add_property(chim_value, property_data)
-
-            property_data = {"meta": "Не менее", "value": ""}
-
-            not_lower_successor = self.__add_property(chim_value, property_data)
-
-            property_data = {"meta": "≥", "value": ""}
-
-            self.__add_property(not_lower_successor, property_data)
-
-            property_data = {"meta": "Значение", "value": comp["value"]}
-
-            self.__add_property(not_lower_successor, property_data)
+    def _add_components(self, element, components):
+        pass
 
     def get_json(self):
         print(self.__template)
