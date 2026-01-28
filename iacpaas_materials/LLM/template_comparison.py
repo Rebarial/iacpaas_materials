@@ -18,13 +18,25 @@ powder_comparison = {
         }
     },
     "Particle_form": {
-        "powder_particle_shape": { ##Скорее всего другое название и тд
+        "powder_particle_shape": { ##Скорее всего другое название и тд надо доделать я только для газов сделал
 
         }
     }
 }
 
 gas_comparison = {
+    "Gas" : {
+        "name": "name",
+        "formula": "formula",
+        "grade": "grade",
+        "brand": "brand",
+        "standard": "standard",
+        "link": "adress",
+    },
+    "ChemicalDesignation": {
+        "component_formula": "element.name",
+        "percent_value": "percent_value",
+    },
 
 }
 
@@ -41,7 +53,7 @@ metal_comparison = {
 }
 
 
-comparison_type = {
+comparison_type_dic = {
     "powder": powder_comparison,
     "gas": gas_comparison,
     "gas_mixture": gas_mixture_comparison,

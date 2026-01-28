@@ -31,8 +31,8 @@ class PowderClass(models.Model):
 class Powder(models.Model):
     powder_class = models.ForeignKey(PowderClass, on_delete=models.CASCADE, verbose_name="Класс порошка")
     name = models.CharField("Название", max_length=100)
-    adress_pow = models.CharField("Источник", max_length=200)
-    date_pow = models.DateTimeField("Дата внесения", auto_now_add=True)
+    adress= models.CharField("Источник", max_length=200)
+    date = models.DateTimeField("Дата внесения", auto_now_add=True)
     standards = models.CharField("Стандарты", max_length=300)
 
     def __str__(self):
@@ -48,8 +48,8 @@ class ElementalComposition_powder(models.Model):
     fraction = models.FloatField("Массовая доля")
 
     class Meta:
-        verbose_name = "Элементный состав проволоки"
-        verbose_name_plural = "Элементный состав проволоки"
+        verbose_name = "Элементный состав порошка"
+        verbose_name_plural = "Элементный состав порошка"
 
 class Particle_form(models.Model):
     powder = models.ForeignKey(Powder, on_delete=models.CASCADE, verbose_name="Порошок")
@@ -88,13 +88,13 @@ class PowderPropertyValue(models.Model):
 # =========================
 
 class Gas(models.Model):
-    name_gas = models.CharField("Название", max_length=100)
+    name = models.CharField("Название", max_length=100)
     formula = models.CharField("Формула", max_length=50)
     grade = models.CharField("Марка", max_length=50)
     brand = models.CharField("Бренд", max_length=50)
     standard = models.CharField("Стандарт", max_length=100)
-    adress_gas = models.CharField("Источник", max_length=200)
-    date_gas = models.DateTimeField("Дата внесения", auto_now_add=True)
+    adress = models.CharField("Источник", max_length=200)
+    date = models.DateTimeField("Дата внесения", auto_now_add=True)
     def __str__(self):
         return f"{self.formula} ({self.brand})"
 
@@ -102,32 +102,10 @@ class Gas(models.Model):
         verbose_name = "Газ"
         verbose_name_plural = "Газы"
 
-class ChemicalComponent(models.Model):
-    formula = models.CharField("Формула", max_length=150)
-
-    def __str__(self):
-        return self.formula
-
-    class Meta:
-        verbose_name = "Химический компонент"
-        verbose_name_plural = "Химические компоненты"
-
-class ChemicalDesignationType(models.Model):
-    name = models.CharField("Название", max_length=100)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = "Тип обозначения химсостава"
-        verbose_name_plural = "Типы обозначений химсостава"
-
 class ChemicalDesignation(models.Model):
     gas = models.ForeignKey(Gas, on_delete=models.CASCADE, verbose_name="Газ")
-    component = models.ForeignKey(ChemicalComponent, on_delete=models.CASCADE, verbose_name="Компонент")
-    designation_type = models.ForeignKey(ChemicalDesignationType, on_delete=models.CASCADE, verbose_name="Тип обозначения")
+    element = models.ForeignKey(Element, on_delete=models.CASCADE, verbose_name="Компонент")
     percent_value = models.CharField("Мин. %", max_length=100)
-
 
     class Meta:
         verbose_name = "Химическое обозначение газа"
@@ -159,26 +137,25 @@ class GasMixtureComponent(models.Model):
 # Металлическая проволока
 # =========================
 
-class MetalWireClass(models.Model)
+class MetalWireClass(models.Model):
     name = models.CharField("Название", max_length=100)
 
     def __str__(self):
         return self.name
 
     class Meta:
-        verbose_name = "Класс порошка"
-        verbose_name_plural = "Классы порошков"
+        verbose_name = "Класс проволки"
+        verbose_name_plural = "Классы проволки"
 
 
 class MetalWire(models.Model):
     name = models.CharField("Марка", max_length=50)
     wire_class = models.ForeignKey(MetalWireClass, on_delete=models.CASCADE, verbose_name="Класс проволки")
-    diameter_value = models.CharField("Диаметр", max_length=50)
+    adress = models.CharField("Источник", max_length=200)
+    date = models.DateTimeField("Дата внесения", auto_now_add=True)
 
-    adress_wire = models.CharField("Источник", max_length=200)
-    date_wire = models.DateTimeField("Дата внесения", auto_now_add=True)
     def __str__(self):
-        return f"Проволока Ø{self.diameter_value} {self.diameter_unit}"
+        return f"Проволока {self.name}"
 
     class Meta:
         verbose_name = "Металлическая проволока"
@@ -194,7 +171,7 @@ class MetalWireProperty(models.Model):
 class MetalWirePropertyValue(models.Model):
     wire = models.ForeignKey(MetalWire, on_delete=models.CASCADE, verbose_name="Проволока")
     property = models.ForeignKey(MetalWireProperty, on_delete=models.CASCADE, verbose_name="Свойство")
-    property_value = models.CharField("Значение", max_length=200)
+    value = models.CharField("Значение", max_length=200)
 
     class Meta:
         verbose_name = "Свойство проволоки"
@@ -234,16 +211,16 @@ class MetalClass(models.Model):
 class Metal(models.Model):
     metal_class = models.ForeignKey(MetalClass, on_delete=models.CASCADE, verbose_name="Класс сплава")
     name = models.CharField("Стандарты", max_length=200)
-    adress_pow = models.CharField("Источник", max_length=200)
-    date_pow = models.DateTimeField("Дата внесения", auto_now_add=True)
+    adress = models.CharField("Источник", max_length=200)
+    date = models.DateTimeField("Дата внесения", auto_now_add=True)
     standards = models.CharField("Стандарты", max_length=300)
 
     def __str__(self):
         return f"{self.powder_class}"
 
     class Meta:
-        verbose_name = "Тип порошка"
-        verbose_name_plural = "Типы порошков"
+        verbose_name = "Тип сплава"
+        verbose_name_plural = "Типы сплавов"
 
 class MetalPropery(models.Model):
     name = models.CharField("Название", max_length=200)
@@ -251,7 +228,7 @@ class MetalPropery(models.Model):
 class MetalPropertyValue(models.Model):
     metal = models.ForeignKey(Metal, on_delete=models.CASCADE, verbose_name="Металл")
     property = models.ForeignKey(MetalPropery, on_delete=models.CASCADE, verbose_name="Свойство")
-    property_value = models.CharField("Значение", max_length=200)
+    value = models.CharField("Значение", max_length=200)
 
     class Meta:
         verbose_name = "Свойство металла"

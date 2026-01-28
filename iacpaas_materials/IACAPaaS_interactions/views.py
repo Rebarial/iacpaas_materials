@@ -161,19 +161,11 @@ def llm_parsing(request):
     return render(request, "process/parsing_result.html", {"products": []})
 
 import re
-from .models import Gas, ChemicalComponent, ChemicalDesignationType, ChemicalDesignation
-from django.shortcuts import redirect
-from django.contrib import messages
-
+from .models import Gas, ChemicalDesignation, Element
 from django.shortcuts import redirect
 from django.contrib import messages
 import re
-from .models import Gas, ChemicalComponent, ChemicalDesignationType, ChemicalDesignation
 
-from django.shortcuts import redirect
-from django.contrib import messages
-import re
-from .models import Gas, ChemicalComponent, ChemicalDesignationType, ChemicalDesignation
 
 
 def save_selected_gases(request):
@@ -238,8 +230,7 @@ def save_selected_gases(request):
             if not (component_name and designation_type_name):
                 continue
 
-            component, _ = ChemicalComponent.objects.get_or_create(formula=component_name)
-            designation_type, _ = ChemicalDesignationType.objects.get_or_create(name=designation_type_name)
+            component, _ = Element.objects.get_or_create(formula=component_name)
 
             ChemicalDesignation.objects.create(
                 gas=gas,
@@ -403,8 +394,7 @@ from django.http import JsonResponse
 # Модели
 from .models import (
     Gas,
-    ChemicalComponent,
-    ChemicalDesignationType,
+    Element,
     ChemicalDesignation,
     PowderClass,
     MetalWire,
@@ -468,8 +458,7 @@ def save_selected_products(request):
                 percent_value = re.sub(r'[^0-9.,?]', '', comp.get("percent_value", "").strip().replace(",", "."))
 
                 if component_name and designation_type_name:
-                    component, _ = ChemicalComponent.objects.get_or_create(formula=component_name)
-                    designation_type, _ = ChemicalDesignationType.objects.get_or_create(name=designation_type_name)
+                    component, _ = Element.objects.get_or_create(formula=component_name)
                     ChemicalDesignation.objects.create(
                         gas=gas,
                         component=component,
