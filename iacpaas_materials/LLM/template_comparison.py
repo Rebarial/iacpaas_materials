@@ -39,3 +39,12 @@ metal_wire_comparison = {
 metal_comparison = {
 
 }
+
+
+comparison_type = {
+    "powder": powder_comparison,
+    "gas": gas_comparison,
+    "gas_mixture": gas_mixture_comparison,
+    "wire": metal_wire_comparison,
+    "metal": metal_comparison,
+}
