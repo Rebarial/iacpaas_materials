@@ -159,8 +159,20 @@ class GasMixtureComponent(models.Model):
 # Металлическая проволока
 # =========================
 
+class MetalWireClass(models.Model)
+    name = models.CharField("Название", max_length=100)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Класс порошка"
+        verbose_name_plural = "Классы порошков"
+
+
 class MetalWire(models.Model):
-    name_wire = models.CharField("Марка", max_length=50)
+    name = models.CharField("Марка", max_length=50)
+    wire_class = models.ForeignKey(MetalWireClass, on_delete=models.CASCADE, verbose_name="Класс проволки")
     diameter_value = models.CharField("Диаметр", max_length=50)
 
     adress_wire = models.CharField("Источник", max_length=200)
@@ -221,6 +233,7 @@ class MetalClass(models.Model):
 
 class Metal(models.Model):
     metal_class = models.ForeignKey(MetalClass, on_delete=models.CASCADE, verbose_name="Класс сплава")
+    name = models.CharField("Стандарты", max_length=200)
     adress_pow = models.CharField("Источник", max_length=200)
     date_pow = models.DateTimeField("Дата внесения", auto_now_add=True)
     standards = models.CharField("Стандарты", max_length=300)
@@ -244,4 +257,12 @@ class MetalPropertyValue(models.Model):
         verbose_name = "Свойство металла"
         verbose_name_plural = "Свойства металла"
 
+class ElementalComposition_metal(models.Model):
+    metal = models.ForeignKey(Metal, on_delete=models.CASCADE, verbose_name="Металл")
+    element = models.ForeignKey(Element, on_delete=models.CASCADE, verbose_name="Элемент")
+    fraction = models.FloatField("Массовая доля")
+
+    class Meta:
+        verbose_name = "Элементный состав металла"
+        verbose_name_plural = "Элементный состав металла"
 
