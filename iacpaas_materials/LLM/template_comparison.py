@@ -3,7 +3,8 @@ from iacpaas_materials.iacpaas_materials.IACAPaaS_interactions.models import Pow
 powder_comparison = {
     "Powder": {
         "grade": "name",
-        "base_material": "powder_class.name"
+        "base_material": "powder_class.name",
+        "standards": ""
     },
     "PowderAnalog": {
       "analogs": {
@@ -14,6 +15,11 @@ powder_comparison = {
         "properties": {
             "property": "property.name",
             "value": "property_value"
+        }
+    },
+    "Particle_form": {
+        "powder_particle_shape": { ##Скорее всего другое название и тд
+
         }
     }
 }
