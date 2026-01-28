@@ -49,7 +49,7 @@
                                 <strong>Бренд:</strong> {{ gas.brand }}<br>
                                 <strong>Марка:</strong> {{ gas.grade }}<br>
                                 <strong>Стандарт:</strong> {{ gas.standard }}<br>
-                                <strong>Источник:</strong> {{ gas.adress_gas }}
+                                <strong>Источник:</strong> {{ gas.adress }}
                             </p>
 
                             <h6 class="mt-3">Химический состав:</h6>
@@ -57,7 +57,7 @@
                                 <ul class="list-group list-group-flush">
                                     {% for cd in gas.chemicaldesignation_set.all %}
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        <span>{{ cd.component.formula }} ({{ cd.designation_type.name }})</span>
+                                        <span>{{ cd.element.name }} ({{ cd.designation_type.name }})</span>
                                         <span class="badge bg-secondary">{{ cd.percent_value }}%</span>
                                     </li>
                                     {% endfor %}

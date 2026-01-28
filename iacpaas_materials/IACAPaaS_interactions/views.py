@@ -132,29 +132,9 @@ def llm_parsing(request):
         if result:
             for prod in result:
                 resp = prod.get("response", {})
-
-                if resp.get("type") == "wire":
-                    diameter = resp.get("diameter", "?")
-                    interval_min = resp.get("interval_min", "?")
-                    elements = [
-                        comp.get("element")
-                        for comp in resp.get("elemental_composition", [])
-                        if comp.get("element")
-                    ]
-                    elements_str = ", ".join(elements) if elements else "не указан состав"
-                    name = f"{diameter} – {interval_min}: {elements_str}"
-
-                    new_resp = {"name": name}
-                    for k, v in resp.items():
-                        if k != "name":
-                            new_resp[k] = v
-                    resp = new_resp
-
                 products.append(resp)
 
-
         request.session['parsed_products'] = products
-        print(products)
 
         return render(request, "process/parsing_result.html", {"products": products})
 
@@ -166,14 +146,11 @@ from django.shortcuts import redirect
 from django.contrib import messages
 import re
 
-
-
 def save_selected_gases(request):
     if request.method != "POST":
         return redirect('iacpaas:llm_parsing')
 
     selected_indices = request.POST.getlist("selected_products")
-    print(selected_indices)
 
     if not selected_indices:
         messages.error(request, "Не выбрано ни одного продукта.")
@@ -181,7 +158,6 @@ def save_selected_gases(request):
 
     products = request.session.get('parsed_products', [])
 
-    print(products)
     if not products:
         messages.error(request, "Нет данных для сохранения.")
         return redirect('iacpaas:llm_parsing')
@@ -400,6 +376,28 @@ from .models import (
     MetalWire,
     PowderClass,
 )
+from django.apps import apps
+
+from ..LLM.template_comparison import comparison_type_dic
+
+def generate_obj_dict(model, data_dict, item_data, base, main_obj):
+    obj_data = {}
+    for key, prop in data_dict.items():
+        if "." in prop:
+            prop = prop.split(".")
+            prop_model = apps.get_model('IACAPaaS_interactions', f'{prop[0]}')
+            model_param = {f'{prop[1]}': f'{item_data[key]}'}
+            element, created = prop_model.objects.get_or_create(**model_param)
+            obj_data[prop[0]] = element
+            print(obj_data)
+        else:
+            obj_data[prop] = item_data[key]
+
+    if hasattr(model, base):
+        obj_data[base] = main_obj
+
+    return obj_data
+
 
 def save_selected_products(request):
     if request.method != "POST":
@@ -431,174 +429,43 @@ def save_selected_products(request):
         item["link"] = link
         item["type"] = mat_type
 
-        if mat_type == "gas":
-            name_gas_val = item.get("name", "").strip() or "Без названия"
-            grade_val = item.get("grade", "").strip() or "N/A"
-            brand_val = item.get("brand", "").strip() or "N/A"
+        comparison_type_dic[mat_type]
 
-            Gas.objects.filter(
-                name_gas=name_gas_val,
-                adress_gas=link,
-                grade=grade_val,
-                brand=brand_val
-            ).delete()
+        saved_count = 0
+        first = True
+        main_obj = None
+        for key, data in comparison_type_dic[mat_type].items():
+            model = apps.get_model('IACAPaaS_interactions', f'{key}')
+            obj_data = {}
 
-            gas = Gas.objects.create(
-                name_gas=name_gas_val,
-                formula=item.get("formula", "").strip() or "N/A",
-                grade=grade_val,
-                brand=brand_val,
-                standard=item.get("standard", "").strip() or "N/A",
-                adress_gas=link,
-            )
-
-            for comp in item.get("chemical_designations", []):
-                component_name = comp.get("component_formula", "").strip()
-                designation_type_name = comp.get("designation_type", "").strip()
-                percent_value = re.sub(r'[^0-9.,?]', '', comp.get("percent_value", "").strip().replace(",", "."))
-
-                if component_name and designation_type_name:
-                    component, _ = Element.objects.get_or_create(formula=component_name)
-                    ChemicalDesignation.objects.create(
-                        gas=gas,
-                        component=component,
-                        designation_type=designation_type,
-                        percent_value=percent_value
-                    )
-
-            saved_count += 1
-
-        elif mat_type == "powder":
-
-            name_powder = item.get("name", "").strip()
-
-            if not name_powder:
-                name_powder = "Без названия"
-
-            words = name_powder.split()
-
-            if len(words) >= 2:
-
-                powder_class_name = " ".join(words[:2])
-
-            else:
-
-                powder_class_name = name_powder
-
-            method_name = item.get("filling_method", "Не указан").strip()
-
-            link = raw_item.get("link", "").strip()
-
-            if not link:
-                continue
-
-            powder_class, _ = PowderClass.objects.get_or_create(name=powder_class_name)
-
-            PowderClass.objects.filter(adress_pow=link).delete()
-
-            powder = PowderClass.objects.create(
-
-                powder_type=powder_class,
-
-                filling_method=option,
-
-                adress_pow=link
-
-            )
-
-            for prop_data in item.get("properties", []):
-
-                prop_name = prop_data.get("property", "").strip()
-
-                prop_value_text = prop_data.get("value", "").strip()
-
-                if not prop_name or not prop_value_text:
-                    continue
-
-                prop_obj, _ = Property.objects.get_or_create(name=prop_name)
-
-                value_type, _ = PropertyValueType.objects.get_or_create(name="Текст")
-
-                prop_val = PropertyValue.objects.create(
-
-                    property=prop_obj,
-
-                    property_value=value_type,
-
-                    text_value=prop_value_text,
-
-                    unit=None
-
-                )
-
-                PowderProperty.objects.create(
-
-                    powder=powder,
-
-                    property_value=prop_val
-
-                )
-
-            saved_count += 1
-
-        elif mat_type == "wire":
-            response_data = item
-            diameter_str = item.get("diameter", "0").replace(" мм", "").strip()
-
+            item = raw_item
             print(item)
+            for model_data in data:
+                if type(data[model_data]) == dict:
+                    data = data[model_data]
+                    item = raw_item[model_data]
+                break
 
-            try:
-                numbers = re.findall(r'[\d,\.]+', diameter_str.replace(',', '.'))
-                diameters = [float(x) for x in numbers]
-                diameter_min = min(diameters) if diameters else 0.0
-                diameter_max = max(diameters) if len(diameters) > 1 else diameter_min
-            except Exception:
-                diameter_min = 0.0
-                diameter_max = 0.0
+            if first:
+                model.objects.filter(
+                    adress=raw_item['link'],
+                ).delete()
 
-            unit, _ = Unit.objects.get_or_create(name="мм")
+            if type(item) == list:
+                for it in item:
+                    obj_data = {}
+                    obj_data = generate_obj_dict(model, data, it, mat_type, main_obj)
+                    obj = model.objects.create(**obj_data)
+            else:
+                obj_data = generate_obj_dict(model, data, item, mat_type, main_obj)
+                obj = model.objects.create(**obj_data)
 
-            source_link = item.get("link", "").strip()
+            if first:
+                first = False
+                main_obj = obj
 
-            MetalWire.objects.filter(adress_wire=source_link).delete()
+        saved_count += 1
 
-            wire = MetalWire.objects.create(
-                name_wire=response_data.get("name", "Неизвестно"),
-                diameter_value=str(diameter_min),
-                diameter_unit=unit,
-                adress_wire=source_link
-            )
-
-            for prop_data in response_data.get("properties", []):
-                prop_name = prop_data.get("property", "").strip()
-                prop_value_text = prop_data.get("value", "").strip()
-                if not prop_name or not prop_value_text:
-                    continue
-
-                prop_obj, _ = Property.objects.get_or_create(name=prop_name)
-                value_type, _ = PropertyValueType.objects.get_or_create(name="Текст")
-                prop_val_obj = PropertyValue.objects.create(
-                    property=prop_obj,
-                    property_value=value_type,
-                    text_value=prop_value_text,
-                    unit=None
-                )
-                MetalWireProperty.objects.create(
-                    wire=wire,
-                    property_value=prop_val_obj
-                )
-
-            for el_data in response_data.get("elemental_composition", []):
-                el_name = el_data.get("element", "").strip()
-                if el_name and el_name != "?":
-                    element, _ = Element.objects.get_or_create(name=el_name)
-                    ElementalComposition.objects.create(
-                        wire=wire,
-                        element=element,
-                        fraction=-1
-                    )
-
-            saved_count += 1
 
     messages.success(request, f"Успешно сохранено {saved_count} материалов.")
     request.session.pop('parsed_products', None)

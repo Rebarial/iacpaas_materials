@@ -1,5 +1,3 @@
-from iacpaas_materials.iacpaas_materials.IACAPaaS_interactions.models import Powder
-
 powder_comparison = {
     "Powder": {
         "grade": "name",
@@ -34,8 +32,10 @@ gas_comparison = {
         "link": "adress",
     },
     "ChemicalDesignation": {
-        "component_formula": "element.name",
-        "percent_value": "percent_value",
+        "chemical_designations": {
+            "component_formula": "element.name",
+            "percent_value": "percent_value",
+        }
     },
 
 }

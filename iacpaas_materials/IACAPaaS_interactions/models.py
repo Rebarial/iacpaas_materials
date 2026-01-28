@@ -43,7 +43,7 @@ class Powder(models.Model):
         verbose_name_plural = "Порошок"
 
 class ElementalComposition_powder(models.Model):
-    wire = models.ForeignKey(Powder, on_delete=models.CASCADE, verbose_name="Порошок")
+    powder = models.ForeignKey(Powder, on_delete=models.CASCADE, verbose_name="Порошок")
     element = models.ForeignKey(Element, on_delete=models.CASCADE, verbose_name="Элемент")
     fraction = models.FloatField("Массовая доля")
 

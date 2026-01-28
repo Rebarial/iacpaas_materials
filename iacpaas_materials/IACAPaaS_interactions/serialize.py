@@ -11,12 +11,12 @@ def gases_to_iacpaas_dicts(gases):
                 {"Сорт": gas.grade},
                 {"Стандарт": gas.standard},
             ],
-            "adress": {"Источник": gas.adress_gas,
+            "adress": {"Источник": gas.adress,
                        "Дата": gas.date_gas,
                        },
             "components": [
                 {
-                    "formula": f"Компонент: {cd.component.formula}",
+                    "formula": f"Компонент: {cd.element.name}",
                         "value": str(cd.percent_value),
                 }
                 for cd in gas.chemicaldesignation_set.all()
