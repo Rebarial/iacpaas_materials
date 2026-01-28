@@ -7,7 +7,8 @@ from iacpaas_materials.LLM.requests import LLM_generate, LLM_generate_multiple, 
 from iacpaas_materials.IACAPaaS_interactions.models import Gas
 
 input_json = json.load(open(os.path.join(settings.BASE_DIR, 'tests/product_links.json')))
-text = input_json["sources"][0]["product_links"][0]["text"]
+# text = input_json["sources"][0]["product_links"][0]["text"]
+text = input_json[0]["text"]
 # responses_json = [
 #     {
 #         "Name": "Продукт",
@@ -44,9 +45,9 @@ properties_template = {
         {
             "component": "",
             "designation_type": "",
-            "percent_min": "",
-            "percent_max": "",
-            "type": "",
+            # "percent_min": "",
+            # "percent_max": "",
+            # "type": "",
         },
     ],
 }
@@ -60,19 +61,13 @@ responses_json = [
             {
                 "component": "221",
                 "designation_type": "112",
-                "percent_min": "221",
-                "percent_max": "221",
-                "type": "112",
             },
             {
                 "component": "221",
             },
             {
-                "component": "221",
+                "component": "333",
                 "designation_type": "112",
-                "percent_min": "221",
-                "percent_max": "221",
-                "type": "112",
             },
         ],
     },
@@ -83,18 +78,12 @@ responses_json = [
         "standard": "323",
         "chemical_designations": [
             {
-                "component": "221",
+                "component": "221 232",
                 "designation_type": "112",
-                "percent_min": "221",
-                "percent_max": "221",
-                "type": "112",
             },
             {
-                "component": "221",
-                "designation_type": "112",
-                "percent_min": "221",
-                "percent_max": "221",
-                "type": "112",
+                "component": "333 1",
+                "designation_type": "111",
             },
         ],
     }
@@ -106,18 +95,19 @@ response_validated_json = {
     "standard": "323",
     "chemical_designations": [
         {
-            "component": "221",
+            "component": "221 232",
             "designation_type": "112",
-            "percent_min": "221",
-            "percent_max": "221",
-            "type": "112",
+            "result_appearance": 1.0,
         },
         {
             "component": "221",
             "designation_type": "?",
-            "percent_min": "?",
-            "percent_max": "?",
-            "type": "?",
+            "result_appearance": 0.5,
+        },
+        {
+            "component": "333 1",
+            "designation_type": "?",
+            "result_appearance": 1.0,
         },
     ],
 }
@@ -143,19 +133,17 @@ def test_LLM_generate_for_extracted_data():
     sources = LLM_generate_for_extracted_data(input_json, configs)
     assert isinstance(sources, list)
     for source in sources:
-        product_links = source['product_links']
-        for product_link in product_links:
-            response = product_link['response']
-            assert isinstance(response, dict)
+        response = source['response']
+        assert isinstance(response, dict)
     with open(os.path.join(settings.BASE_DIR, 'tests/data.json'), 'w') as f:
         a = json.dumps(sources)
         a = json.loads(a)
         json.dump(a, f, ensure_ascii=False, indent=4)
+    print(sources)
     assert isinstance(sources, list)
     
 
 # def test_compare_responses():
-#     assert [1,{"a": "b"},3] == [1,{"a": "b"},3]
 #     response_strings = []
 #     for response in responses_json:
 #         response_string = json.dumps(response)

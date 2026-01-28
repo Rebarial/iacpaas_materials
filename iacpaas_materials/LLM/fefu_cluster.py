@@ -16,9 +16,9 @@ def get_prompt_fefu_cluster(text, auth_token, model_name):
         "generation_config":
         {
             "temperature": 0.01,
-            "max_new_tokens": 8000,
-            "max_length": 300,
-            "max_time": 120,
+            "max_new_tokens": 32000,
+            "max_length": 1000,
+            "max_time": 360,
             "repetition_penalty": 1.00,
             "top_p": 1,
             "top_k": 60
@@ -27,7 +27,7 @@ def get_prompt_fefu_cluster(text, auth_token, model_name):
 
 def send_request_fefu_cluster(prompt, generate_url):
     response = requests.post(generate_url, json=prompt, timeout=1200)
-    print(response)
+    # print(response)
     if response.status_code == 200:
         if "exception" in response.json():
             print(response.json()["exception"])
