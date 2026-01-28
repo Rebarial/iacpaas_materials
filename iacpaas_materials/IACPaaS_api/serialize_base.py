@@ -2,9 +2,10 @@ import json
 from copy import deepcopy
 
 from .api_config import default_path, default_ontology_path
-from serialize_base import serialize_base
 
-class Gas_serialize(serialize_base):
+
+
+class serialize_base:
 
     meta_types_template = {
         "Химическое обозначение": {
@@ -78,7 +79,7 @@ class Gas_serialize(serialize_base):
     }
 
     def __generate_template(self, root_type, group_type):
-        template_serialize_gas = {
+        template_serialize = {
             "title": f"{root_type}",
             "path": default_path,
             "json_type": "universal",
@@ -96,8 +97,7 @@ class Gas_serialize(serialize_base):
                     }
                 ]
         }
-
-        return template_serialize_gas
+        return template_serialize
 
     def __generate_class_name(self, el_name):
         return el_name.split()[0] if el_name.strip() else ""
@@ -260,7 +260,3 @@ class Gas_serialize(serialize_base):
     def get_json(self):
         print(self.__template)
         return json.dumps(self.__template)
-
-
-
-
