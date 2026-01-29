@@ -24,10 +24,16 @@ class PropertyType(models.Model):
     name = models.CharField("Название", max_length=200)
     in_iacpaas = models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.name
+
 class Property(models.Model):
     name = models.CharField("Название", max_length=200)
     type = models.ForeignKey(PropertyType, on_delete=models.CASCADE, verbose_name="Класс свойства")
     in_iacpaas = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.type} - {self.name}"
 
 # =========================
 # Порошки

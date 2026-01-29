@@ -56,7 +56,13 @@
                                 <ul class="list-group list-group-flush">
                                     {% for cd in gas.chemicaldesignation_set.all %}
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        <span>{{ cd.element.name }} {{ cd.designation_type.name }}</span>
+                                      {% if cd.percent_value == "?" %}
+                                          <span style="color: red;">{{ cd.element.formula }} {{ cd.designation_type.name }}</span>
+                                      {% elif cd.element.in_iacpaas %}
+                                          <span>{{ cd.element.formula }} {{ cd.designation_type.name }}</span>
+                                      {% else %}
+                                          <span style="color: orange;">{{ cd.element.formula }} {{ cd.designation_type.name }}</span>
+                                      {% endif %}
                                         <span class="badge bg-secondary">{{ cd.percent_value }}%</span>
                                     </li>
                                     {% endfor %}
