@@ -133,7 +133,7 @@ def test_LLM_generate_for_extracted_data():
     sources = LLM_generate_for_extracted_data(input_json, configs)
     assert isinstance(sources, list)
     for source in sources:
-        response = source['response']
+        response = source
         assert isinstance(response, dict)
     with open(os.path.join(settings.BASE_DIR, 'tests/data.json'), 'w') as f:
         a = json.dumps(sources)
