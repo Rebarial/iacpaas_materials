@@ -5,14 +5,29 @@ from django.db import models
 # =========================
 
 class Element(models.Model):
+    formula =models.CharField("Формула", max_length=100)
     name = models.CharField("Название", max_length=100)
+    in_iacpaas = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.name
+        return self.formula
 
     class Meta:
         verbose_name = "Химический элемент"
         verbose_name_plural = "Химические элементы"
+
+# =========================
+# Свойства
+# =========================
+
+class PropertyType(models.Model):
+    name = models.CharField("Название", max_length=200)
+    in_iacpaas = models.BooleanField(default=False)
+
+class Property(models.Model):
+    name = models.CharField("Название", max_length=200)
+    type = models.ForeignKey(PropertyType, on_delete=models.CASCADE, verbose_name="Класс свойства")
+    in_iacpaas = models.BooleanField(default=False)
 
 # =========================
 # Порошки
@@ -71,12 +86,9 @@ class PowderAnalog(models.Model):
         verbose_name = "Аналог порошка"
         verbose_name_plural = "Аналоги порошков"
 
-class PowdePropery(models.Model):
-    name = models.CharField("Название", max_length=200)
-
 class PowderPropertyValue(models.Model):
     powder = models.ForeignKey(Powder, on_delete=models.CASCADE, verbose_name="Порошок")
-    property = models.ForeignKey(PowdePropery, on_delete=models.CASCADE, verbose_name="Свойство")
+    property = models.ForeignKey(Property, on_delete=models.CASCADE, verbose_name="Свойство")
     property_value = models.CharField("Значение", max_length=100)
 
     class Meta:
@@ -165,12 +177,9 @@ class MetalWire_diametrs(models.Model):
     wire = models.ForeignKey(MetalWire, on_delete=models.CASCADE, verbose_name="Проволока")
     value = models.FloatField("Значение диаметра")
 
-class MetalWireProperty(models.Model):
-    name = models.CharField("Название", max_length=200)
-
 class MetalWirePropertyValue(models.Model):
     wire = models.ForeignKey(MetalWire, on_delete=models.CASCADE, verbose_name="Проволока")
-    property = models.ForeignKey(MetalWireProperty, on_delete=models.CASCADE, verbose_name="Свойство")
+    property = models.ForeignKey(Property, on_delete=models.CASCADE, verbose_name="Свойство")
     value = models.CharField("Значение", max_length=200)
 
     class Meta:
@@ -222,12 +231,9 @@ class Metal(models.Model):
         verbose_name = "Тип сплава"
         verbose_name_plural = "Типы сплавов"
 
-class MetalPropery(models.Model):
-    name = models.CharField("Название", max_length=200)
-
 class MetalPropertyValue(models.Model):
     metal = models.ForeignKey(Metal, on_delete=models.CASCADE, verbose_name="Металл")
-    property = models.ForeignKey(MetalPropery, on_delete=models.CASCADE, verbose_name="Свойство")
+    property = models.ForeignKey(Property, on_delete=models.CASCADE, verbose_name="Свойство")
     value = models.CharField("Значение", max_length=200)
 
     class Meta:
