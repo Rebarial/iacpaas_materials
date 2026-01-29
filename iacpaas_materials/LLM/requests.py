@@ -5,8 +5,8 @@ from .property_templates import property_type_dic
 from .response_comparison import compare_responses
 
 configs = {
-    # "qwen": config_fefu_cluster_qwen_3_4b,
-    "gemma": config_fefu_cluster_gemma_3_27b
+    "qwen": config_fefu_cluster_qwen_3_4b,
+    # "gemma": config_fefu_cluster_gemma_3_27b
 }
 
 def get_prompt_text(properties_template, input_text):
@@ -46,18 +46,15 @@ def LLM_generate_for_extracted_data(data, configs):
     for product_link in sources:
         type = product_link['type']
         properties_template = property_type_dic[type]
-        soup = product_link['soup']
+        # soup = product_link['soup']
         text = product_link['text']
         responses = []
         # responses += LLM_generate_multiple(soup, properties_template, configs)
-        responses += LLM_generate_multiple(soup, properties_template, configs)
-        responses += LLM_generate_multiple(soup, properties_template, configs)
+        responses += LLM_generate_multiple(text, properties_template, configs)
+        responses += LLM_generate_multiple(text, properties_template, configs)
         response = compare_responses(responses, properties_template)
         print(responses)
-        response['link'] = product_link['link']
-        response['type'] = type
-        product_link['response'] = response
-        product_link.pop('soup', None)
-        product_link.pop('text', None)
+        for key in response.keys():
+            product_link[key] = response[key]
     return sources
 
