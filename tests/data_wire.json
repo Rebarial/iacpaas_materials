@@ -1,0 +1,35 @@
+[
+    {
+        "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-mr-47zvp/provoloka-volframovaya-mr-47zvp/",
+        "type": "wire",
+        "name": "Проволока вольфрамовая",
+        "wire_class": "МР-47ЗВП",
+        "diameter_options": [],
+        "analogs": [
+            {
+                "name": "-",
+                "result_appearance": 1.0
+            }
+        ],
+        "material": "вольфрам",
+        "elemental_composition": [
+            {
+                "element": "-",
+                "fraction": "-",
+                "result_appearance": 1.0
+            }
+        ],
+        "properties": [
+            {
+                "property": "Соответствие стандартам",
+                "value": "ГОСТ, ТУ, AISI, ANSI, AMS, ASI, API, ASME, ASTM, AWS, SAE, UNS",
+                "result_appearance": 1.0
+            },
+            {
+                "property": "Форма",
+                "value": "катушка, бухты",
+                "result_appearance": 1.0
+            }
+        ]
+    }
+]

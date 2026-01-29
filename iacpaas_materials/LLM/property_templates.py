@@ -73,7 +73,7 @@ gas_mixture_template = {
 metal_wire_template = {
     "name": "", # Добавить пример деления на name и wire_class
     "wire_class": "",
-    "diameter_options": [ ##!!!
+    "diameter_options": [
         {
             "value": "",
         },
@@ -83,7 +83,6 @@ metal_wire_template = {
             "name": "",
         },
     ],
-    "material": "", #Можно найти сплав и его состав из уже спарженых?
     "elemental_composition": [
         {
             "element": "",
