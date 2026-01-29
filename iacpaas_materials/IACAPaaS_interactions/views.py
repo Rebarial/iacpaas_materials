@@ -128,11 +128,11 @@ def llm_parsing(request):
             with open(json_path, 'w', encoding='utf-8') as f:
                 json.dump(result, f, ensure_ascii=False, indent=2)
 
-        products = []
-        if result:
-            for prod in result:
-                resp = prod.get("response", {})
-                products.append(resp)
+        products = result
+        #if result:
+         #   for prod in result:
+         #       resp = prod.get("response", {})
+          #      products.append(resp)
 
         request.session['parsed_products'] = products
 
@@ -172,7 +172,7 @@ def save_selected_gases(request):
             continue
 
         adress_gas_val = product["link"]
-        product = product["response"]
+        product = product
 
         name_gas_val = product.get("name", "").strip() or "Без названия"
         grade_val = product.get("grade", "").strip() or "N/A"
@@ -248,7 +248,6 @@ def material_list(request):
     return render(request, 'materials/material_list.html', context)
 
 def gas_list(request):
-    # Определяем, включён ли фильтр
     show_with_question = request.GET.get('with_question') == '1'
 
     gases = Gas.objects.select_related().prefetch_related(
@@ -301,6 +300,7 @@ from ..IACPaaS_api.api_connection import signin, import_resource
 from ..IACPaaS_api.serialize_gas import Gas_serialize
 from ..IACPaaS_api.api_config import acount_login, acount_password, default_path
 from .serialize import gases_to_iacpaas_dicts
+from ..IACPaaS_api.gas_iasp import generate_gson_to_iacpaas_gase
 
 def send_to_iacpaas(request):
     if request.method != "POST":
@@ -309,12 +309,12 @@ def send_to_iacpaas(request):
     selected_ids = request.POST.getlist('selected_gases')
     if not selected_ids:
         messages.warning(request, "Не выбрано ни одного газа для отправки.")
-        return redirect('iacpaas:gas_list')
+        return redirect('iacpaas:material_list')
 
     gases = Gas.objects.filter(id__in=selected_ids)
     if not gases.exists():
         messages.error(request, "Выбранные газы не найдены.")
-        return redirect('iacpaas:gas_list')
+        return redirect('iacpaas:material_list')
 
     try:
         username = os.getenv('IACPAAS_USERNAME', acount_login)
@@ -332,17 +332,13 @@ def send_to_iacpaas(request):
         json_data = Gas_serialize()
 
         # Сериализация
-        gases_dict = gases_to_iacpaas_dicts(gases)
-        gas_serialize = Gas_serialize()
-        gas_serialize.add_elements(gases_dict)
-
-        json_payload = gas_serialize.get_json()
+        gases_json = generate_gson_to_iacpaas_gase(gases)
 
         # Отправка через connection.py
         result = import_resource(
             API_KEY=api_key,
             path=default_path,
-            json=json_payload,
+            json=gases_json,
             clearIfExists=True
         )
 
@@ -356,7 +352,7 @@ def send_to_iacpaas(request):
     except Exception as e:
         messages.error(request, f"Ошибка: {str(e)}")
 
-    return redirect('iacpaas:gas_list')
+    return redirect('iacpaas:material_list')
 
 
 import os
@@ -383,13 +379,22 @@ from ..LLM.template_comparison import comparison_type_dic
 def generate_obj_dict(model, data_dict, item_data, base, main_obj):
     obj_data = {}
     for key, prop in data_dict.items():
+        item_data[key] = item_data[key].replace('%', '').replace(' ', '').replace(',', '.')
         if "." in prop:
             prop = prop.split(".")
             prop_model = apps.get_model('IACAPaaS_interactions', f'{prop[0]}')
-            model_param = {f'{prop[1]}': f'{item_data[key]}'}
-            element, created = prop_model.objects.get_or_create(**model_param)
+
+            value_without_digits = ''.join(char for char in str(item_data[key]) if not char.isdigit())
+
+            model_param_without_digits = {f'{prop[1]}': value_without_digits}
+            try:
+                element = prop_model.objects.get(**model_param_without_digits)
+                created = False
+            except prop_model.DoesNotExist:
+                model_param_with_digits = {f'{prop[1]}': f'{item_data[key]}'}
+                element, created = prop_model.objects.get_or_create(**model_param_with_digits)
+
             obj_data[prop[0]] = element
-            print(obj_data)
         else:
             obj_data[prop] = item_data[key]
 
@@ -397,7 +402,6 @@ def generate_obj_dict(model, data_dict, item_data, base, main_obj):
         obj_data[base] = main_obj
 
     return obj_data
-
 
 def save_selected_products(request):
     if request.method != "POST":
@@ -431,7 +435,6 @@ def save_selected_products(request):
 
         comparison_type_dic[mat_type]
 
-        saved_count = 0
         first = True
         main_obj = None
         for key, data in comparison_type_dic[mat_type].items():
@@ -513,3 +516,127 @@ def delete_wire(request, pk):
         return JsonResponse({"success": False, "error": "Wire not found"}, status=404)
     except Exception as e:
         return JsonResponse({"success": False, "error": str(e)}, status=500)
+
+
+
+from .element_fiiller import import_elements_from_json
+from pathlib import Path
+from ..IACPaaS_api.api_config import default_element_path_short, default_properties_path_short, acount_login, acount_password
+from ..IACPaaS_api.api_connection import signin, export_resource
+
+def json_to_element(request):
+    key = signin(acount_login, acount_password)
+    elements = export_resource(key, default_element_path_short)
+    with open('test2.json', 'w', encoding='utf-8') as f:
+        json.dump(elements, f, ensure_ascii=False, indent=4)
+
+    elements = elements['data']
+    import_elements_from_json(elements)
+
+    referer = request.META.get('HTTP_REFERER')
+    return redirect(referer if referer else '/')
+
+from .properties_filler import import_properties_from_json
+
+def json_to_property(request):
+    key = signin(acount_login, acount_password)
+
+    elements = export_resource(key, default_properties_path_short)['data']
+
+    print(elements)
+
+    import_properties_from_json(json.loads(elements))
+
+    referer = request.META.get('HTTP_REFERER')
+    return redirect(referer if referer else '/')
+
+
+from django.shortcuts import render
+from django.core.paginator import Paginator
+from .models import Element
+
+
+def elements_list(request):
+    """
+    Отображение списка химических элементов с фильтрами
+    """
+    in_iacpaas_filter = request.GET.get('in_iacpaas')
+    composite_filter = request.GET.get('composite')
+    search_query = request.GET.get('search', '').strip()
+
+    elements = Element.objects.all()
+
+    if in_iacpaas_filter == 'true':
+        elements = elements.filter(in_iacpaas=True)
+    elif in_iacpaas_filter == 'false':
+        elements = elements.filter(in_iacpaas=False)
+
+    if composite_filter == 'true':
+        elements = elements.filter(formula__contains='+')
+    elif composite_filter == 'false':
+        elements = elements.exclude(formula__contains='+')
+
+    if search_query:
+        elements = elements.filter(
+            Q(name__icontains=search_query) |
+            Q(formula__icontains=search_query)
+        )
+
+    elements = elements.order_by('formula')
+
+    paginator = Paginator(elements, 20)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'elements': page_obj,
+    }
+
+    return render(request, 'elements/element_list.html', context)
+
+
+from django.shortcuts import render
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.db.models import Q
+from .models import Property, PropertyType
+
+
+def property_list(request):
+    """Список свойств с фильтрацией и пагинацией"""
+    queryset = Property.objects.all().select_related('type').order_by('name')
+
+    in_iacpaas = request.GET.get('in_iacpaas')
+    if in_iacpaas == 'true':
+        queryset = queryset.filter(in_iacpaas=True)
+    elif in_iacpaas == 'false':
+        queryset = queryset.filter(in_iacpaas=False)
+
+    type_id = request.GET.get('type')
+    if type_id:
+        queryset = queryset.filter(type_id=type_id)
+
+    search = request.GET.get('search')
+    if search:
+        queryset = queryset.filter(
+            Q(name__icontains=search) |
+            Q(type__name__icontains=search)
+        )
+
+    paginator = Paginator(queryset, 20)
+    page_number = request.GET.get('page')
+
+    try:
+        properties = paginator.page(page_number)
+    except PageNotAnInteger:
+        properties = paginator.page(1)
+    except EmptyPage:
+        properties = paginator.page(paginator.num_pages)
+
+    property_types = PropertyType.objects.all().order_by('name')
+
+    context = {
+        'properties': properties,
+        'property_types': property_types,
+    }
+
+    return render(request, 'properties/property_list.html', context)

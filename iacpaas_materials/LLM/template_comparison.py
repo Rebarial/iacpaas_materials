@@ -35,7 +35,7 @@ gas_comparison = {
     },
     "ChemicalDesignation": {
         "chemical_designations": {
-            "component_formula": "element.name",
+            "component_formula": "element.formula",
             "percent_value": "percent_value",
         }
     },
