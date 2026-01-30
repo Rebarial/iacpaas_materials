@@ -29,7 +29,7 @@ class PropertyType(models.Model):
 
 class Property(models.Model):
     name = models.CharField("Название", max_length=200)
-    type = models.ForeignKey(PropertyType, on_delete=models.CASCADE, verbose_name="Класс свойства")
+    type = models.ForeignKey(PropertyType, null=True, blank=True, on_delete=models.SET_NULL, verbose_name="Класс свойства")
     in_iacpaas = models.BooleanField(default=False)
 
     def __str__(self):
@@ -110,7 +110,7 @@ class Gas(models.Model):
     formula = models.CharField("Формула", max_length=50)
     grade = models.CharField("Марка", max_length=50)
     brand = models.CharField("Бренд", max_length=50)
-    standard = models.CharField("Стандарт", max_length=100)
+    standards = models.CharField("Стандарты", max_length=300)
     adress = models.CharField("Источник", max_length=200)
     date = models.DateTimeField("Дата внесения", auto_now_add=True)
     def __str__(self):
@@ -133,7 +133,7 @@ class GasMixture(models.Model):
     formula = models.CharField("Формула", max_length=100)
     grade = models.CharField("Марка", max_length=50)
     brand = models.CharField("Бренд", max_length=50)
-    standard = models.CharField("Стандарт", max_length=100)
+    standards = models.CharField("Стандарты", max_length=300)
 
     def __str__(self):
         return f"{self.formula} ({self.brand})"
@@ -171,6 +171,8 @@ class MetalWire(models.Model):
     wire_class = models.ForeignKey(MetalWireClass, on_delete=models.CASCADE, verbose_name="Класс проволки")
     adress = models.CharField("Источник", max_length=200)
     date = models.DateTimeField("Дата внесения", auto_now_add=True)
+    standards = models.CharField("Стандарты", max_length=300)
+
 
     def __str__(self):
         return f"Проволока {self.name}"
