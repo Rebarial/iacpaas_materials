@@ -130,10 +130,10 @@
                 <div class="col-md-6 col-lg-4 mb-4" id="wire-card-{{ wire.id }}">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Проволока Ø{{ wire.diameter_value }} {{ wire.diameter_unit.name }}</h5>
+                            <h5 class="card-title">{{ wire.wire_class.name }} - {{ wire.name }}</h5>
 
                             <p class="card-text">
-                                <strong>Ссылка:</strong> {{ wire.adress_wire }}<br>
+                                <strong>Ссылка:</strong> {{ wire.adress }}<br>
                                 <strong>Диаметр:</strong> {{ wire.diameter_value }} {{ wire.diameter_unit.name }}<br>
                                 {% if wire.interval %}
                                     <strong>Интервал:</strong> {{ wire.interval }} {{ wire.diameter_unit.name }}<br>
@@ -152,13 +152,13 @@
 
                             <!-- Свойства проволоки -->
                             <h6 class="mt-3">Свойства:</h6>
-                            {% with props=wire.metalwireproperty_set.all %}
+                            {% with props=wire.metalwirepropertyvalue_set.all %}
                                 {% if props %}
                                     <ul class="list-group list-group-flush">
                                         {% for mwp in props %}
                                         <li class="list-group-item">
-                                            {{ mwp.property_value.property.name }}:
-                                            {{ mwp.property_value.text_value|default:mwp.property_value.property_value.name }}
+                                            {{ mwp.property.name }}:
+                                            {{ mwp.value }}
                                             {% if mwp.property_value.unit %}
                                                 {{ mwp.property_value.unit.name }}
                                             {% endif %}

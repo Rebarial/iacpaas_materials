@@ -379,10 +379,10 @@ from ..LLM.template_comparison import comparison_type_dic
 def generate_obj_dict(model, data_dict, item_data, base, main_obj):
     obj_data = {}
     for key, prop in data_dict.items():
-        item_data[key] = item_data[key].replace('%', '').replace(' ', '').replace(',', '.')
+        item_data[key] = item_data[key].replace('%', '').replace(',', '.')
         if "." in prop:
             prop = prop.split(".")
-            prop_model = apps.get_model('IACAPaaS_interactions', f'{prop[0]}')
+            prop_model = model._meta.get_field(prop[0]).related_model#apps.get_model('IACAPaaS_interactions', f'{prop[0]}')
 
             value_without_digits = ''.join(char for char in str(item_data[key]) if not char.isdigit())
 
