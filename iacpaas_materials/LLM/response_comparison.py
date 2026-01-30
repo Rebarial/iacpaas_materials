@@ -16,6 +16,7 @@ def compare_responses(responses, properties_template):
                 parsed_responses.append(parsed_response)
             except:
                 print("Неверный формат1")
+                # print(response)
         else:
             print("Неверный формат2")
 
@@ -80,7 +81,7 @@ def compare_lists(lists, properties_template):
         groups.append([-1] * len(lists[i]))
     for i1 in range(n):
         for j1 in range(m[i1]):
-            if (score[i1][j1] == 0 and (main_key in lists[i1][j1])):
+            if (score[i1][j1] == 0 and (main_key in lists[i1][j1]) and (lists[i1][j1][main_key] != '-')):
                 best_matches = [-1] * n
                 best_matches_len = [0] * n
                 match_count = 0
