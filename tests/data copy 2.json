@@ -1,0 +1,509 @@
+[
+    {
+        "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-evi-1-1/poroshok-volframovyy-evi-1/",
+        "type": "powder",
+        "base_material": "Вольфрам",
+        "grade": "Марка ЭВИ-1",
+        "standards": "ГОСТ, ТУ, AISI, ANSI, AMS, ASI, API, ASME, ASTM, AWS, SAE, UNS",
+        "analogs": [],
+        "powder_particle_shape": [
+            {
+                "shape": "Сферическая",
+                "obtaining_method": "Карбонильный, распыление",
+                "result_appearance": 1.0
+            },
+            {
+                "shape": "Губчатая",
+                "obtaining_method": "Восстановление",
+                "result_appearance": 1.0
+            },
+            {
+                "shape": "Тарельчатая",
+                "obtaining_method": "Вихревое измельчение",
+                "result_appearance": 1.0
+            },
+            {
+                "shape": "Осколочная",
+                "obtaining_method": "Измельчение в шаровых и вибрационных мельницах",
+                "result_appearance": 1.0
+            },
+            {
+                "shape": "Дендритная",
+                "obtaining_method": "Электролиз",
+                "result_appearance": 1.0
+            },
+            {
+                "shape": "Плоская или чешуйчатая",
+                "obtaining_method": "Измельчение в бегунах",
+                "result_appearance": 1.0
+            },
+            {
+                "shape": "Ленты, волокна, иглы",
+                "obtaining_method": "Высокоскоростное затвердевание расплава",
+                "result_appearance": 1.0
+            }
+        ],
+        "powder_particle_sizes": [
+            {
+                "size_range": "< 40 мкм",
+                "size_min": "-",
+                "size_max": "40 мкм",
+                "size_value_unit": "мкм",
+                "coating_application_method": "Детонационное и высокоскоростное напыление",
+                "result_appearance": 1.0
+            },
+            {
+                "size_range": "< 63 (20-63) мкм",
+                "size_min": "-",
+                "size_max": "63 мкм",
+                "size_value_unit": "мкм",
+                "coating_application_method": "Детонационное и высокоскоростное напыление",
+                "result_appearance": 1.0
+            },
+            {
+                "size_range": "20-63 мкм",
+                "size_min": "20 мкм",
+                "size_max": "63 мкм",
+                "size_value_unit": "мкм",
+                "coating_application_method": "Детонационное и высокоскоростное напыление",
+                "result_appearance": 1.0
+            },
+            {
+                "size_range": "< 100 мкм",
+                "size_min": "-",
+                "size_max": "100 мкм",
+                "size_value_unit": "мкм",
+                "coating_application_method": "Газопламенное и плазменное напыление- газопорошковая, лазерная и электроискровая наплавка",
+                "result_appearance": 1.0
+            },
+            {
+                "size_range": "40-100 мкм",
+                "size_min": "40 мкм",
+                "size_max": "100 мкм",
+                "size_value_unit": "мкм",
+                "coating_application_method": "Газопламенное и плазменное напыление- газопорошковая, лазерная и электроискровая наплавка",
+                "result_appearance": 1.0
+            },
+            {
+                "size_range": "45-90 мкм",
+                "size_min": "45 мкм",
+                "size_max": "90 мкм",
+                "size_value_unit": "мкм",
+                "coating_application_method": "Газопламенное и плазменное напыление- газопорошковая, лазерная и электроискровая наплавка",
+                "result_appearance": 1.0
+            },
+            {
+                "size_range": "< 125 мкм",
+                "size_min": "-",
+                "size_max": "125 мкм",
+                "size_value_unit": "мкм",
+                "coating_application_method": "Газопламенное и плазменное напыление- газопорошковая, лазерная и электроискровая наплавка",
+                "result_appearance": 1.0
+            },
+            {
+                "size_range": "63-125 мкм",
+                "size_min": "63 мкм",
+                "size_max": "125 мкм",
+                "size_value_unit": "мкм",
+                "coating_application_method": "Плазменная наплавка-напыление",
+                "result_appearance": 1.0
+            },
+            {
+                "size_range": "80-160мкм",
+                "size_min": "80 мкм",
+                "size_max": "160 мкм",
+                "size_value_unit": "мкм",
+                "coating_application_method": "Плазменная наплавка-напыление",
+                "result_appearance": 1.0
+            },
+            {
+                "size_range": "94-280 мкм",
+                "size_min": "94 мкм",
+                "size_max": "280 мкм",
+                "size_value_unit": "мкм",
+                "coating_application_method": "Плазменная наплавка-напыление",
+                "result_appearance": 1.0
+            },
+            {
+                "size_range": "140-280 мкм",
+                "size_min": "140 мкм",
+                "size_max": "280 мкм",
+                "size_value_unit": "мкм",
+                "coating_application_method": "Плазменная наплавка-напыление",
+                "result_appearance": 1.0
+            },
+            {
+                "size_range": "94-280 мкм",
+                "size_min": "94 мкм",
+                "size_max": "280 мкм",
+                "size_value_unit": "мкм",
+                "coating_application_method": "Индукционная наплавка",
+                "result_appearance": 1.0
+            },
+            {
+                "size_range": "40-630 мкм",
+                "size_min": "40 мкм",
+                "size_max": "630 мкм",
+                "size_value_unit": "мкм",
+                "coating_application_method": "Индукционная наплавка",
+                "result_appearance": 1.0
+            },
+            {
+                "size_range": "100-630 мкм",
+                "size_min": "100 мкм",
+                "size_max": "630 мкм",
+                "size_value_unit": "мкм",
+                "coating_application_method": "Индукционная наплавка",
+                "result_appearance": 1.0
+            },
+            {
+                "size_range": "< 630 мкм",
+                "size_min": "-",
+                "size_max": "630 мкм",
+                "size_value_unit": "мкм",
+                "coating_application_method": "Индукционная наплавка",
+                "result_appearance": 1.0
+            },
+            {
+                "size_range": "< 800 мкм",
+                "size_min": "-",
+                "size_max": "800 мкм",
+                "size_value_unit": "мкм",
+                "coating_application_method": "Индукционная наплавка",
+                "result_appearance": 1.0
+            }
+        ],
+        "properties": [
+            {
+                "property": "Размеры частиц",
+                "value": "40 мкм (~400 меш) и 45 мкм (325 меш)",
+                "property_type": "Физическое/Механическое свойство",
+                "result_appearance": 1.0
+            }
+        ]
+    },
+    {
+        "link": "https://www.niikm.ru/products/azot/liquid_nitrogen_26/",
+        "type": "gas",
+        "name": "Азот жидкий технический 1 сорт",
+        "mark_sort_or_grade": "1 сорт",
+        "formula": "-",
+        "brand": "-",
+        "standards": "ГОСТ 9293 - 74",
+        "chemical_composition": [
+            {
+                "component_name": "азота",
+                "percent_value": "99,6 % не менее",
+                "result_appearance": 1.0
+            },
+            {
+                "component_name": "кислорода",
+                "percent_value": "0,4 % не более",
+                "result_appearance": 1.0
+            },
+            {
+                "component_name": "сла, механических примесей и влаги",
+                "percent_value": "выдерживает испытание",
+                "result_appearance": 1.0
+            }
+        ]
+    },
+    {
+        "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-mr-47zvp/provoloka-volframovaya-mr-47zvp/",
+        "type": "wire",
+        "full_name": "Проволока вольфрамовая МР-47ЗВП",
+        "base_material": "Вольфрам",
+        "standards": "ГОСТ, ТУ, AISI, ANSI, AMS, ASI, API, ASME, ASTM, AWS, SAE, UNS",
+        "diameter_options": [
+            {
+                "size_value": "0,05 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "0,10 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "0,15 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "0,20 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "0,25 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "0,30 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "0,32 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "0,35 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "0,40 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "0,45 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "0,50 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "0,55 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "0,60 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "0,70 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "0,75 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "0,80 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "0,90 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "1,0 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "1,2 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "1,5 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "1,8 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "2,0 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "2,2 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "2,5 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "2,8 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "3 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "3,5 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "4 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "4,5 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "5 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "5,5 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "6 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "6,5 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "7 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "8 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "8,5 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "9 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "9,5 мм",
+                "result_appearance": 1.0
+            },
+            {
+                "size_value": "10 мм",
+                "result_appearance": 1.0
+            }
+        ],
+        "analogs": [],
+        "elemental_composition": [],
+        "properties": [
+            {
+                "property": "Механические",
+                "value": "-",
+                "property_type": "Физические/Механические свойства",
+                "result_appearance": 1.0
+            }
+        ]
+    },
+    {
+        "link": "https://www.niikm.ru/products/mix_welding/welding_ar_he/",
+        "type": "gas_mixture",
+        "name": "Сварочная смесь гелий - аргон",
+        "mark_sort_or_grade": "-",
+        "formula": "-",
+        "brand": "-",
+        "standards": "16-45905715-2015, ГОСТ 14175-2010",
+        "gas_composition": [
+            {
+                "gas": "гелий",
+                "concentration": "-",
+                "result_appearance": 1.0
+            },
+            {
+                "gas": "аргон",
+                "concentration": "-",
+                "result_appearance": 1.0
+            }
+        ]
+    },
+    {
+        "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vr-20/",
+        "type": "metal",
+        "metal_material": "Вольфрам",
+        "full_name": "Вольфрам ВР-20",
+        "standards": "-",
+        "elemental_composition": [
+            {
+                "element": "As",
+                "fraction": "-",
+                "result_appearance": 1.0
+            },
+            {
+                "element": "H",
+                "fraction": "-",
+                "result_appearance": 1.0
+            },
+            {
+                "element": "Mo",
+                "fraction": "-",
+                "result_appearance": 1.0
+            },
+            {
+                "element": "N",
+                "fraction": "-",
+                "result_appearance": 1.0
+            },
+            {
+                "element": "O",
+                "fraction": "-",
+                "result_appearance": 1.0
+            },
+            {
+                "element": "P",
+                "fraction": "-",
+                "result_appearance": 1.0
+            },
+            {
+                "element": "Pb",
+                "fraction": "-",
+                "result_appearance": 1.0
+            },
+            {
+                "element": "Re",
+                "fraction": "19.25 - 20.75",
+                "result_appearance": 1.0
+            },
+            {
+                "element": "Sn",
+                "fraction": "-",
+                "result_appearance": 1.0
+            },
+            {
+                "element": "W",
+                "fraction": "Остальное",
+                "result_appearance": 1.0
+            },
+            {
+                "element": "OT",
+                "fraction": "< 0.1",
+                "result_appearance": 1.0
+            }
+        ],
+        "properties": [
+            {
+                "property": "Тепловое расширение",
+                "value": "10,1 - 17.,1",
+                "property_type": "Физическое свойство",
+                "result_appearance": 1.0
+            },
+            {
+                "property": "Теплопроводность",
+                "value": "55,4 - 75,5",
+                "property_type": "Физическое свойство",
+                "result_appearance": 1.0
+            },
+            {
+                "property": "Удельная теплоемкость",
+                "value": "456",
+                "property_type": "Физическое свойство",
+                "result_appearance": 1.0
+            },
+            {
+                "property": "Температура плавления",
+                "value": "1370 - 1400",
+                "property_type": "Физическое свойство",
+                "result_appearance": 1.0
+            },
+            {
+                "property": "Рабочая температура",
+                "value": "0 - 500",
+                "property_type": "Физическое свойство",
+                "result_appearance": 1.0
+            },
+            {
+                "property": "Плотность",
+                "value": "8000 - 8000",
+                "property_type": "Физическое свойство",
+                "result_appearance": 1.0
+            }
+        ]
+    }
+]
