@@ -79,7 +79,7 @@ def process_page(url: str, detection_rules: Dict) -> Tuple[List[str], Optional[D
         resp.raise_for_status()
         resp.encoding = 'utf-8'
         #resp.encoding = resp.apparent_encoding
-        tree = html.fromstring(resp.content)
+        tree = html.fromstring(resp.text)
         tree.make_links_absolute(url)
 
         base_netloc = urlparse(url).netloc

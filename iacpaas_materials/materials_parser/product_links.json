@@ -4,38 +4,13 @@
       "name": "НИИ КМ",
       "product_links": [
         {
-          "id": "990f80ae96cd6a8468370ef5fac54934c13b72d1",
-          "link": "https://www.niikm.ru/products/azot/nitrogen_50/",
+          "id": "cea9f46fa5d82ee4f71e58c09aed395ff7ca2add",
+          "link": "https://www.niikm.ru/products/azot/liquid_nitrogen_50_2/",
           "type": "gas"
         },
         {
-          "id": "fccb607aacd714fbf4651e7f0620c20f41a83a70",
-          "link": "https://www.niikm.ru/products/azot/nitrogen_0_50/",
-          "type": "gas"
-        },
-        {
-          "id": "f189b6cbb12eb6c1376f1df85c5e687da218b30e",
-          "link": "https://www.niikm.ru/products/acetylene/acetylene_25/",
-          "type": "gas"
-        },
-        {
-          "id": "4b3edc80d6ce2ad7ef800629a9064a6f33836c3f",
-          "link": "https://www.niikm.ru/products/azot/nitrogen_26/",
-          "type": "gas"
-        },
-        {
-          "id": "14da5a57414315fdcc9e8c6cfa50db2a5e52ca69",
-          "link": "https://www.niikm.ru/products/acetylene/acetylene_21/",
-          "type": "gas"
-        },
-        {
-          "id": "1330569b034636cd057f3f4f7f0dc91ce7c7a57d",
-          "link": "https://www.niikm.ru/products/argon/argon_43/",
-          "type": "gas"
-        },
-        {
-          "id": "9324292439c3f5b0ae29a111e4c15cfee8617ba8",
-          "link": "https://www.niikm.ru/products/argon/argon_48/",
+          "id": "593bd9801bbe5a1b641ee2c46b79d6d819ec8824",
+          "link": "https://www.niikm.ru/products/oxygen/oxygen_27/",
           "type": "gas"
         },
         {
@@ -44,23 +19,8 @@
           "type": "gas"
         },
         {
-          "id": "cea9f46fa5d82ee4f71e58c09aed395ff7ca2add",
-          "link": "https://www.niikm.ru/products/azot/liquid_nitrogen_50_2/",
-          "type": "gas"
-        },
-        {
-          "id": "9061cb218569bb4aa2fce95c6ef382fd86e2e002",
-          "link": "https://www.niikm.ru/products/azot/nitrogen_60/",
-          "type": "gas"
-        },
-        {
-          "id": "0d87bd51150d87f0ded4166c96f5056c513a2417",
-          "link": "https://www.niikm.ru/products/argon/argon_55/",
-          "type": "gas"
-        },
-        {
-          "id": "52f7baad8ed486744eb0085904365aff5d90603f",
-          "link": "https://www.niikm.ru/products/azot/liquid_nitrogen_26/",
+          "id": "4b3edc80d6ce2ad7ef800629a9064a6f33836c3f",
+          "link": "https://www.niikm.ru/products/azot/nitrogen_26/",
           "type": "gas"
         },
         {
@@ -69,8 +29,53 @@
           "type": "gas"
         },
         {
-          "id": "d44733332cc4b2c1bb3d8fb0b66a8e777f829b24",
-          "link": "https://www.niikm.ru/products/neon/neon_48/",
+          "id": "52f7baad8ed486744eb0085904365aff5d90603f",
+          "link": "https://www.niikm.ru/products/azot/liquid_nitrogen_26/",
+          "type": "gas"
+        },
+        {
+          "id": "d755399ff16a9f187faa5674b84f3ad2c999c7f8",
+          "link": "https://www.niikm.ru/products/oxygen/oxygen_27_e948/",
+          "type": "gas"
+        },
+        {
+          "id": "fe7274b76546a53d326c6bb28b140342e35e008e",
+          "link": "https://www.niikm.ru/products/oxygen/oxygen_35/",
+          "type": "gas"
+        },
+        {
+          "id": "fccb607aacd714fbf4651e7f0620c20f41a83a70",
+          "link": "https://www.niikm.ru/products/azot/nitrogen_0_50/",
+          "type": "gas"
+        },
+        {
+          "id": "990f80ae96cd6a8468370ef5fac54934c13b72d1",
+          "link": "https://www.niikm.ru/products/azot/nitrogen_50/",
+          "type": "gas"
+        },
+        {
+          "id": "52ace129332d8fb9367ce7fb4f3c8c63b218ed0c",
+          "link": "https://www.niikm.ru/products/oxygen/oxygen_40/",
+          "type": "gas"
+        },
+        {
+          "id": "9061cb218569bb4aa2fce95c6ef382fd86e2e002",
+          "link": "https://www.niikm.ru/products/azot/nitrogen_60/",
+          "type": "gas"
+        },
+        {
+          "id": "bd5397bd65d07ae067560aec68380030535cd0f2",
+          "link": "https://www.niikm.ru/products/oxygen/oxygen_30/",
+          "type": "gas"
+        },
+        {
+          "id": "f6a22cf18331cb1013a68768c954298ebf377494",
+          "link": "https://www.niikm.ru/products/helium/helium_28/",
+          "type": "gas"
+        },
+        {
+          "id": "041a436ec350edf568bddeee787d68e60fbd2b47",
+          "link": "https://www.niikm.ru/products/oxygen/liquid_oxygen/",
           "type": "gas"
         },
         {
@@ -79,8 +84,53 @@
           "type": "gas"
         },
         {
+          "id": "4872390a9f6edaaf5a02168a4cb20bd00efc6172",
+          "link": "https://www.niikm.ru/products/helium/helium_70/",
+          "type": "gas"
+        },
+        {
+          "id": "1330569b034636cd057f3f4f7f0dc91ce7c7a57d",
+          "link": "https://www.niikm.ru/products/argon/argon_43/",
+          "type": "gas"
+        },
+        {
+          "id": "8d25a86370c843f41fa603df6d619efc71f4910e",
+          "link": "https://www.niikm.ru/products/helium/helium_55/",
+          "type": "gas"
+        },
+        {
+          "id": "0d87bd51150d87f0ded4166c96f5056c513a2417",
+          "link": "https://www.niikm.ru/products/argon/argon_55/",
+          "type": "gas"
+        },
+        {
+          "id": "9324292439c3f5b0ae29a111e4c15cfee8617ba8",
+          "link": "https://www.niikm.ru/products/argon/argon_48/",
+          "type": "gas"
+        },
+        {
+          "id": "c2909abd9b2982e29449d5b4a163d8ecda5d6fa5",
+          "link": "https://www.niikm.ru/products/oxygen/osoboj_chistoty/",
+          "type": "gas"
+        },
+        {
+          "id": "6c833686f7d76253982a0ff5936ead8edf195e92",
+          "link": "https://www.niikm.ru/products/helium/helium_46/",
+          "type": "gas"
+        },
+        {
+          "id": "c6cacb68e6715df454514273ff78d75154824ddb",
+          "link": "https://www.niikm.ru/products/helium/helium_50/",
+          "type": "gas"
+        },
+        {
           "id": "b02f6007ec8db79e9d6667405d1a6dddb55242ed",
           "link": "https://www.niikm.ru/products/helium/liquid_helium/",
+          "type": "gas"
+        },
+        {
+          "id": "dad068e31788e0ce3b42a851ace0c6c069285d57",
+          "link": "https://www.niikm.ru/products/helium/helium_45/",
           "type": "gas"
         },
         {
@@ -94,38 +144,53 @@
           "type": "gas"
         },
         {
-          "id": "c6cacb68e6715df454514273ff78d75154824ddb",
-          "link": "https://www.niikm.ru/products/helium/helium_50/",
-          "type": "gas"
-        },
-        {
-          "id": "f6a22cf18331cb1013a68768c954298ebf377494",
-          "link": "https://www.niikm.ru/products/helium/helium_28/",
-          "type": "gas"
-        },
-        {
-          "id": "4872390a9f6edaaf5a02168a4cb20bd00efc6172",
-          "link": "https://www.niikm.ru/products/helium/helium_70/",
-          "type": "gas"
-        },
-        {
-          "id": "dad068e31788e0ce3b42a851ace0c6c069285d57",
-          "link": "https://www.niikm.ru/products/helium/helium_45/",
-          "type": "gas"
-        },
-        {
           "id": "e50be9ef9cb8695bbafde6d6f25a5b735bf28c3f",
           "link": "https://www.niikm.ru/products/argon/liquid_argon/",
           "type": "gas"
         },
         {
-          "id": "6c833686f7d76253982a0ff5936ead8edf195e92",
-          "link": "https://www.niikm.ru/products/helium/helium_46/",
+          "id": "058d68732999cf4d23fe4ccd7cf00b0a4e86ebf6",
+          "link": "https://www.niikm.ru/products/carbon_dioxide/carbon_dioxide_45/",
           "type": "gas"
         },
         {
-          "id": "8d25a86370c843f41fa603df6d619efc71f4910e",
-          "link": "https://www.niikm.ru/products/helium/helium_55/",
+          "id": "e56ac1e1a0dd23e278d69231d200b36e277914c1",
+          "link": "https://www.niikm.ru/products/xenon/xenon_55/",
+          "type": "gas"
+        },
+        {
+          "id": "e813f029ca18c6db64a7fbaac82d56083fc52ee4",
+          "link": "https://www.niikm.ru/products/hydrogen/hydrogen_50/",
+          "type": "gas"
+        },
+        {
+          "id": "bc9977443ccbe690012f171ce25db3a1b92255d2",
+          "link": "https://www.niikm.ru/products/carbon_dioxide/carbon_dioxide_40_med/",
+          "type": "gas"
+        },
+        {
+          "id": "dff7875effcd12937800be45501ad6f4dd95baff",
+          "link": "https://www.niikm.ru/products/hydrogen/hydrogen_40/",
+          "type": "gas"
+        },
+        {
+          "id": "f881d42462cedc9e6a3109109735a9d08b2d34ce",
+          "link": "https://www.niikm.ru/products/methane/methane_30/",
+          "type": "gas"
+        },
+        {
+          "id": "14da5a57414315fdcc9e8c6cfa50db2a5e52ca69",
+          "link": "https://www.niikm.ru/products/acetylene/acetylene_21/",
+          "type": "gas"
+        },
+        {
+          "id": "1db76e761d07b123e2f53163782121cdf0cd533f",
+          "link": "https://www.niikm.ru/products/carbon_dioxide/carbon_dioxide_28/",
+          "type": "gas"
+        },
+        {
+          "id": "f189b6cbb12eb6c1376f1df85c5e687da218b30e",
+          "link": "https://www.niikm.ru/products/acetylene/acetylene_25/",
           "type": "gas"
         },
         {
@@ -139,28 +204,13 @@
           "type": "gas"
         },
         {
-          "id": "fe7274b76546a53d326c6bb28b140342e35e008e",
-          "link": "https://www.niikm.ru/products/oxygen/oxygen_35/",
+          "id": "9c6d20e24cbc12d266bcdc150e0c5055af92285f",
+          "link": "https://www.niikm.ru/products/krypton/krypton_55/",
           "type": "gas"
         },
         {
-          "id": "e813f029ca18c6db64a7fbaac82d56083fc52ee4",
-          "link": "https://www.niikm.ru/products/hydrogen/hydrogen_50/",
-          "type": "gas"
-        },
-        {
-          "id": "058d68732999cf4d23fe4ccd7cf00b0a4e86ebf6",
-          "link": "https://www.niikm.ru/products/carbon_dioxide/carbon_dioxide_45/",
-          "type": "gas"
-        },
-        {
-          "id": "bd5397bd65d07ae067560aec68380030535cd0f2",
-          "link": "https://www.niikm.ru/products/oxygen/oxygen_30/",
-          "type": "gas"
-        },
-        {
-          "id": "c2909abd9b2982e29449d5b4a163d8ecda5d6fa5",
-          "link": "https://www.niikm.ru/products/oxygen/osoboj_chistoty/",
+          "id": "d44733332cc4b2c1bb3d8fb0b66a8e777f829b24",
+          "link": "https://www.niikm.ru/products/neon/neon_48/",
           "type": "gas"
         },
         {
@@ -174,58 +224,8 @@
           "type": "gas"
         },
         {
-          "id": "593bd9801bbe5a1b641ee2c46b79d6d819ec8824",
-          "link": "https://www.niikm.ru/products/oxygen/oxygen_27/",
-          "type": "gas"
-        },
-        {
-          "id": "1db76e761d07b123e2f53163782121cdf0cd533f",
-          "link": "https://www.niikm.ru/products/carbon_dioxide/carbon_dioxide_28/",
-          "type": "gas"
-        },
-        {
           "id": "c4e6791167b0ed4002b508a7f9cc50bbbba38e31",
           "link": "https://www.niikm.ru/products/hydrogen/hydrogen_2s/",
-          "type": "gas"
-        },
-        {
-          "id": "dff7875effcd12937800be45501ad6f4dd95baff",
-          "link": "https://www.niikm.ru/products/hydrogen/hydrogen_40/",
-          "type": "gas"
-        },
-        {
-          "id": "d755399ff16a9f187faa5674b84f3ad2c999c7f8",
-          "link": "https://www.niikm.ru/products/oxygen/oxygen_27_e948/",
-          "type": "gas"
-        },
-        {
-          "id": "bc9977443ccbe690012f171ce25db3a1b92255d2",
-          "link": "https://www.niikm.ru/products/carbon_dioxide/carbon_dioxide_40_med/",
-          "type": "gas"
-        },
-        {
-          "id": "52ace129332d8fb9367ce7fb4f3c8c63b218ed0c",
-          "link": "https://www.niikm.ru/products/oxygen/oxygen_40/",
-          "type": "gas"
-        },
-        {
-          "id": "041a436ec350edf568bddeee787d68e60fbd2b47",
-          "link": "https://www.niikm.ru/products/oxygen/liquid_oxygen/",
-          "type": "gas"
-        },
-        {
-          "id": "9c6d20e24cbc12d266bcdc150e0c5055af92285f",
-          "link": "https://www.niikm.ru/products/krypton/krypton_55/",
-          "type": "gas"
-        },
-        {
-          "id": "f881d42462cedc9e6a3109109735a9d08b2d34ce",
-          "link": "https://www.niikm.ru/products/methane/methane_30/",
-          "type": "gas"
-        },
-        {
-          "id": "e56ac1e1a0dd23e278d69231d200b36e277914c1",
-          "link": "https://www.niikm.ru/products/xenon/xenon_55/",
           "type": "gas"
         },
         {
@@ -1664,6 +1664,16 @@
       "name": "Hyundai Welding",
       "product_links": [
         {
+          "id": "dacf207891fc2b5a560d21ea94d73213b7fc585a",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-uglerodistykh-i-/supercored-71/",
+          "type": "wire"
+        },
+        {
+          "id": "3777a1bba99c328ed1b62a92eb1d8f8372fa0c6d",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-uglerodistykh-i-/sf-70mx/",
+          "type": "wire"
+        },
+        {
           "id": "1aa1dd7d0f90ef39c6b20663ad11534aa2a4f610",
           "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-uglerodistykh-i-/supercored-71h/",
           "type": "wire"
@@ -1684,8 +1694,8 @@
           "type": "wire"
         },
         {
-          "id": "3777a1bba99c328ed1b62a92eb1d8f8372fa0c6d",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-uglerodistykh-i-/sf-70mx/",
+          "id": "780c247308908195d1e806bcbb36a6153a017a9e",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-uglerodistykh-i-/sc-71mj/",
           "type": "wire"
         },
         {
@@ -1699,23 +1709,8 @@
           "type": "wire"
         },
         {
-          "id": "dacf207891fc2b5a560d21ea94d73213b7fc585a",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-uglerodistykh-i-/supercored-71/",
-          "type": "wire"
-        },
-        {
-          "id": "780c247308908195d1e806bcbb36a6153a017a9e",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-uglerodistykh-i-/sc-71mj/",
-          "type": "wire"
-        },
-        {
           "id": "f64a6accb8004f7d72389f3404d6a5143a587da1",
           "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-uglerodistykh-i-/supercored-71mag/",
-          "type": "wire"
-        },
-        {
-          "id": "91bed6a4e4f49eb1e6a235b0ff35560dfdb0942f",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-vy/supercored-81/",
           "type": "wire"
         },
         {
@@ -1724,8 +1719,23 @@
           "type": "wire"
         },
         {
-          "id": "4b7b866463e78d6262c9f8a83adc87e38b28d038",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-vy/sc-55f-cored/",
+          "id": "e9e6343caedf349c3658123d951a918617bb16d2",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-uglerodistykh-i-/supercored-70mxh/",
+          "type": "wire"
+        },
+        {
+          "id": "f05c9d49235e45d017c5484c473df9fb80f1e334",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-vy/sf-80mx/",
+          "type": "wire"
+        },
+        {
+          "id": "54e0f23a51ad209c2dd3f9d23fa0f57298618604",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-uglerodistykh-i-/supercored-70b/",
+          "type": "wire"
+        },
+        {
+          "id": "dfeba1bf0d6ade2284f93e343666acdde7ea70dd",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-uglerodistykh-i-/sc-70h-cored/",
           "type": "wire"
         },
         {
@@ -1739,8 +1749,48 @@
           "type": "wire"
         },
         {
+          "id": "3462adfec9914f66ad31a8ab96366b5e4dce14fb",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-uglerodistykh-i-/sc-eg2-cored/",
+          "type": "wire"
+        },
+        {
+          "id": "4b7b866463e78d6262c9f8a83adc87e38b28d038",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-vy/sc-55f-cored/",
+          "type": "wire"
+        },
+        {
+          "id": "3f5c39173391b57c5a03a73a8d96ea5dc458ddec",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-vy/sc-90/",
+          "type": "wire"
+        },
+        {
+          "id": "6d1705bc6a8d218d6979172a0aeb66b95441fcc9",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-vy/sc-80m/",
+          "type": "wire"
+        },
+        {
+          "id": "3600db6e359c8bec315bfde2c0d3d11d6adb8871",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-uglerodistykh-i-/supercored-70sb/",
+          "type": "wire"
+        },
+        {
+          "id": "72d27621ef8c3bf3c5cd0709c95710ae9c2595f2",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-vy/sc-91p/",
+          "type": "wire"
+        },
+        {
+          "id": "91bed6a4e4f49eb1e6a235b0ff35560dfdb0942f",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-vy/supercored-81/",
+          "type": "wire"
+        },
+        {
           "id": "f4b9872a2060319d6ba6f942f1abacf03efb8399",
           "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-vy/sc-90m/",
+          "type": "wire"
+        },
+        {
+          "id": "b360541612b67c21582dfb9d600fe73ab57492a2",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-vy/sc-91lp/",
           "type": "wire"
         },
         {
@@ -1759,58 +1809,38 @@
           "type": "wire"
         },
         {
-          "id": "f05c9d49235e45d017c5484c473df9fb80f1e334",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-vy/sf-80mx/",
-          "type": "wire"
-        },
-        {
-          "id": "6d1705bc6a8d218d6979172a0aeb66b95441fcc9",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-vy/sc-80m/",
-          "type": "wire"
-        },
-        {
-          "id": "3600db6e359c8bec315bfde2c0d3d11d6adb8871",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-uglerodistykh-i-/supercored-70sb/",
-          "type": "wire"
-        },
-        {
-          "id": "b360541612b67c21582dfb9d600fe73ab57492a2",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-vy/sc-91lp/",
-          "type": "wire"
-        },
-        {
-          "id": "72d27621ef8c3bf3c5cd0709c95710ae9c2595f2",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-vy/sc-91p/",
-          "type": "wire"
-        },
-        {
-          "id": "3462adfec9914f66ad31a8ab96366b5e4dce14fb",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-uglerodistykh-i-/sc-eg2-cored/",
-          "type": "wire"
-        },
-        {
-          "id": "e9e6343caedf349c3658123d951a918617bb16d2",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-uglerodistykh-i-/supercored-70mxh/",
-          "type": "wire"
-        },
-        {
-          "id": "54e0f23a51ad209c2dd3f9d23fa0f57298618604",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-uglerodistykh-i-/supercored-70b/",
-          "type": "wire"
-        },
-        {
-          "id": "3f5c39173391b57c5a03a73a8d96ea5dc458ddec",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-vy/sc-90/",
-          "type": "wire"
-        },
-        {
-          "id": "dfeba1bf0d6ade2284f93e343666acdde7ea70dd",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-uglerodistykh-i-/sc-70h-cored/",
+          "id": "6683e161c82e85565d60d2cd834433d553a869ad",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-staley-rabotayus/sc-80k2/",
           "type": "wire"
         },
         {
           "id": "bed9bb73c0298e5fc659d7f00f0cc2a400591ca4",
           "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-vy/sc-91k2-cored/",
+          "type": "wire"
+        },
+        {
+          "id": "2033377eaaa5118347a9f44ac7b134da7c4c2bd9",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-te/sc-91b3/",
+          "type": "wire"
+        },
+        {
+          "id": "9c8c820c26f917b7cb52cf312473d96afb605a32",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-staley-rabotayus/sc-71sr/",
+          "type": "wire"
+        },
+        {
+          "id": "32a6d92b0cf0865b7fef4daa3d14bc94e9be5905",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-staley-rabotayus/sc-460/",
+          "type": "wire"
+        },
+        {
+          "id": "eb89b63b8a00e81f5ba2dcd1b5b8a78ee1292f9b",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-staley-rabotayus/sc-80mr/",
+          "type": "wire"
+        },
+        {
+          "id": "f8e19e1df063407b65172dc991c5b1139d6fe4b4",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-te/sc-80d2/",
           "type": "wire"
         },
         {
@@ -1824,13 +1854,8 @@
           "type": "wire"
         },
         {
-          "id": "eb89b63b8a00e81f5ba2dcd1b5b8a78ee1292f9b",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-staley-rabotayus/sc-80mr/",
-          "type": "wire"
-        },
-        {
-          "id": "ad89ecae59fae514410d3f0cb00bf3bd85a0db6b",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-vy/sc-110m-cored/",
+          "id": "1acb7325bb6c7b64061812f5071aa52810e922b9",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-atmosferoustoych/sf-70w/",
           "type": "wire"
         },
         {
@@ -1839,23 +1864,8 @@
           "type": "wire"
         },
         {
-          "id": "8bdbd55a7b32601a65fd5cafb8ef4d0e5fd34714",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-staley-rabotayus/supercored-81mag/",
-          "type": "wire"
-        },
-        {
-          "id": "1acb7325bb6c7b64061812f5071aa52810e922b9",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-atmosferoustoych/sf-70w/",
-          "type": "wire"
-        },
-        {
-          "id": "f8e19e1df063407b65172dc991c5b1139d6fe4b4",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-te/sc-80d2/",
-          "type": "wire"
-        },
-        {
-          "id": "6683e161c82e85565d60d2cd834433d553a869ad",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-staley-rabotayus/sc-80k2/",
+          "id": "5f0304abb133b015ddf282f7d01d5287298fe6c8",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-staley-rabotayus/supercored-81-k2mag/",
           "type": "wire"
         },
         {
@@ -1864,23 +1874,8 @@
           "type": "wire"
         },
         {
-          "id": "32a6d92b0cf0865b7fef4daa3d14bc94e9be5905",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-staley-rabotayus/sc-460/",
-          "type": "wire"
-        },
-        {
-          "id": "5f0304abb133b015ddf282f7d01d5287298fe6c8",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-staley-rabotayus/supercored-81-k2mag/",
-          "type": "wire"
-        },
-        {
-          "id": "2033377eaaa5118347a9f44ac7b134da7c4c2bd9",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-te/sc-91b3/",
-          "type": "wire"
-        },
-        {
-          "id": "9ed00821332349e3e91d2044576669a52c695888",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-atmosferoustoych/sf-80w/",
+          "id": "8bdbd55a7b32601a65fd5cafb8ef4d0e5fd34714",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-staley-rabotayus/supercored-81mag/",
           "type": "wire"
         },
         {
@@ -1889,53 +1884,13 @@
           "type": "wire"
         },
         {
-          "id": "9c8c820c26f917b7cb52cf312473d96afb605a32",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-staley-rabotayus/sc-71sr/",
+          "id": "ad89ecae59fae514410d3f0cb00bf3bd85a0db6b",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-legirovannykh-vy/sc-110m-cored/",
           "type": "wire"
         },
         {
-          "id": "0793df32a4917e1fde5d2368ca508bffbfff9de8",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-308l-cored/",
-          "type": "wire"
-        },
-        {
-          "id": "3ddc75d241f16540902d078007ee9088f28ca359",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/samozaschitnye-poroshkovye-provoloki-dlya-svarki-u/supershield-4/",
-          "type": "wire"
-        },
-        {
-          "id": "a3d31f9a36de2fce87dc6ea1989d2e5339ccbfd0",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/supercored-309l/",
-          "type": "wire"
-        },
-        {
-          "id": "6b5e5931460e5e749fa968f9ac564ac6f64f1791",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-316lt/",
-          "type": "wire"
-        },
-        {
-          "id": "0fe1745bfc2ccd11f55e7666ae962842ddbff8bf",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-317l-cored/",
-          "type": "wire"
-        },
-        {
-          "id": "e85c16b3a1fea82aa903ad43f427beb48cff25a1",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-308lt/",
-          "type": "wire"
-        },
-        {
-          "id": "11a727262d96f5d5b6919fabaadecc8bd54fc5c5",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/supercored-308l/",
-          "type": "wire"
-        },
-        {
-          "id": "781bd041b38397787061dc1c770340b36fdf0c7f",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-309l-cored/",
-          "type": "wire"
-        },
-        {
-          "id": "27475bd62248f81306303f2a157d5bbf882c1cad",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-347-cored/",
+          "id": "9ed00821332349e3e91d2044576669a52c695888",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-atmosferoustoych/sf-80w/",
           "type": "wire"
         },
         {
@@ -1944,38 +1899,8 @@
           "type": "wire"
         },
         {
-          "id": "3c57e133a9647faa6f1dd1ab2173be5c6536ba3a",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-309mol-cored/",
-          "type": "wire"
-        },
-        {
-          "id": "50b540f7de7958233ceff2e592c625c3ba1134f9",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-309lns-cored/",
-          "type": "wire"
-        },
-        {
-          "id": "12dd500a08f694bc36ed061c9a54c1afe9925b99",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/samozaschitnye-poroshkovye-provoloki-dlya-svarki-u/supershield-71gs/",
-          "type": "wire"
-        },
-        {
-          "id": "88905799c6226625f3517115b133a450a80d5c36",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/samozaschitnye-poroshkovye-provoloki-dlya-svarki-u/supershield-11/",
-          "type": "wire"
-        },
-        {
-          "id": "fb603e4c2eaf8196bd1e76575568c90cc7a3b512",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-307ns-cored/",
-          "type": "wire"
-        },
-        {
-          "id": "c09a01adce37b7091e9a913c3c2f98a03627efcd",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-316l-cored/",
-          "type": "wire"
-        },
-        {
-          "id": "4acb010ab59cdb52e1a12710882d77ad8b51c13c",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-2209-cored/",
+          "id": "11a727262d96f5d5b6919fabaadecc8bd54fc5c5",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/supercored-308l/",
           "type": "wire"
         },
         {
@@ -1984,13 +1909,153 @@
           "type": "wire"
         },
         {
-          "id": "bc1dd859cb5ebdb49a4db6cde26841cc0a6df0ca",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sf-430/",
+          "id": "50b540f7de7958233ceff2e592c625c3ba1134f9",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-309lns-cored/",
+          "type": "wire"
+        },
+        {
+          "id": "e85c16b3a1fea82aa903ad43f427beb48cff25a1",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-308lt/",
+          "type": "wire"
+        },
+        {
+          "id": "4acb010ab59cdb52e1a12710882d77ad8b51c13c",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-2209-cored/",
+          "type": "wire"
+        },
+        {
+          "id": "3c57e133a9647faa6f1dd1ab2173be5c6536ba3a",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-309mol-cored/",
+          "type": "wire"
+        },
+        {
+          "id": "12dd500a08f694bc36ed061c9a54c1afe9925b99",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/samozaschitnye-poroshkovye-provoloki-dlya-svarki-u/supershield-71gs/",
+          "type": "wire"
+        },
+        {
+          "id": "0793df32a4917e1fde5d2368ca508bffbfff9de8",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-308l-cored/",
+          "type": "wire"
+        },
+        {
+          "id": "27475bd62248f81306303f2a157d5bbf882c1cad",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-347-cored/",
+          "type": "wire"
+        },
+        {
+          "id": "c09a01adce37b7091e9a913c3c2f98a03627efcd",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-316l-cored/",
+          "type": "wire"
+        },
+        {
+          "id": "fb603e4c2eaf8196bd1e76575568c90cc7a3b512",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-307ns-cored/",
+          "type": "wire"
+        },
+        {
+          "id": "6b5e5931460e5e749fa968f9ac564ac6f64f1791",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-316lt/",
+          "type": "wire"
+        },
+        {
+          "id": "3ddc75d241f16540902d078007ee9088f28ca359",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/samozaschitnye-poroshkovye-provoloki-dlya-svarki-u/supershield-4/",
+          "type": "wire"
+        },
+        {
+          "id": "88905799c6226625f3517115b133a450a80d5c36",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/samozaschitnye-poroshkovye-provoloki-dlya-svarki-u/supershield-11/",
+          "type": "wire"
+        },
+        {
+          "id": "781bd041b38397787061dc1c770340b36fdf0c7f",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-309l-cored/",
+          "type": "wire"
+        },
+        {
+          "id": "a3d31f9a36de2fce87dc6ea1989d2e5339ccbfd0",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/supercored-309l/",
+          "type": "wire"
+        },
+        {
+          "id": "0fe1745bfc2ccd11f55e7666ae962842ddbff8bf",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sw-317l-cored/",
           "type": "wire"
         },
         {
           "id": "625b8c0fe9df9d48556bf4bdd39065d0c961d887",
           "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/supercored-316l/",
+          "type": "wire"
+        },
+        {
+          "id": "bc1dd859cb5ebdb49a4db6cde26841cc0a6df0ca",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sf-430/",
+          "type": "wire"
+        },
+        {
+          "id": "d9de73e7c9b898ff5fdc7efdf9012ba7b69e35b8",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sf-409ti/",
+          "type": "wire"
+        },
+        {
+          "id": "26ce5fb1fafb9865091d44bb6f6ac8e46c06069b",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-700h/",
+          "type": "wire"
+        },
+        {
+          "id": "c488c5b983b987c72a807b679f53d3b60dbdd478",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-600h/",
+          "type": "wire"
+        },
+        {
+          "id": "fad16e6f87ac2deb02c9461bd0b3e00b4476ab05",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-307-o/",
+          "type": "wire"
+        },
+        {
+          "id": "03c2fc82be30194b683fc4b6bc12bfed9f2d03fd",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-bu-cored/",
+          "type": "wire"
+        },
+        {
+          "id": "0c632977f24129d3c1a6c8a5865b651bec671515",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-350h/",
+          "type": "wire"
+        },
+        {
+          "id": "15ab782a5e9fa65565b784545d4c2f1fe57ba0a3",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-250h/",
+          "type": "wire"
+        },
+        {
+          "id": "8f5d260a54fa7c49468a57ac8dc644022a6d1928",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-16mn-o/",
+          "type": "wire"
+        },
+        {
+          "id": "732830660e0947c51868c419245a6eeafe30988b",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-42h/",
+          "type": "wire"
+        },
+        {
+          "id": "e5aae3c3edffd6bda09439aa0f6833dc0a0d0fdc",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-600hm/",
+          "type": "wire"
+        },
+        {
+          "id": "ed8a481546c26ba3a0ee3ba6a62632529aba71f3",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-450h/",
+          "type": "wire"
+        },
+        {
+          "id": "25d6dba212f5b369136eeecedb6ac77c7723a1a1",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-309l-o/",
+          "type": "wire"
+        },
+        {
+          "id": "7e6777da834d36ea9364c033125f6bba551befd0",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sf-436/",
           "type": "wire"
         },
         {
@@ -2004,46 +2069,6 @@
           "type": "wire"
         },
         {
-          "id": "0c632977f24129d3c1a6c8a5865b651bec671515",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-350h/",
-          "type": "wire"
-        },
-        {
-          "id": "7e6777da834d36ea9364c033125f6bba551befd0",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sf-436/",
-          "type": "wire"
-        },
-        {
-          "id": "d9de73e7c9b898ff5fdc7efdf9012ba7b69e35b8",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sf-409ti/",
-          "type": "wire"
-        },
-        {
-          "id": "732830660e0947c51868c419245a6eeafe30988b",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-42h/",
-          "type": "wire"
-        },
-        {
-          "id": "15ab782a5e9fa65565b784545d4c2f1fe57ba0a3",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-250h/",
-          "type": "wire"
-        },
-        {
-          "id": "26ce5fb1fafb9865091d44bb6f6ac8e46c06069b",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-700h/",
-          "type": "wire"
-        },
-        {
-          "id": "03c2fc82be30194b683fc4b6bc12bfed9f2d03fd",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-bu-cored/",
-          "type": "wire"
-        },
-        {
-          "id": "8f5d260a54fa7c49468a57ac8dc644022a6d1928",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-16mn-o/",
-          "type": "wire"
-        },
-        {
           "id": "c668aa5c678e33643fea20b5b1d116ea7f049e1f",
           "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-svarki-nerzhaveyuschikh/sf-430nb/",
           "type": "wire"
@@ -2054,33 +2079,43 @@
           "type": "wire"
         },
         {
-          "id": "25d6dba212f5b369136eeecedb6ac77c7723a1a1",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-309l-o/",
+          "id": "560a4cb837f9beb93f233d5ef05a775e5a6b7257",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-414s/",
           "type": "wire"
         },
         {
-          "id": "ed8a481546c26ba3a0ee3ba6a62632529aba71f3",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-450h/",
+          "id": "7551d64fccff14b4d6b9362d4afcc912d1959140",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-420sg/",
           "type": "wire"
         },
         {
-          "id": "fad16e6f87ac2deb02c9461bd0b3e00b4476ab05",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-307-o/",
+          "id": "b35b1c4a3a862172f4bb16f6aa043694ed4c893e",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-45s/",
           "type": "wire"
         },
         {
-          "id": "c488c5b983b987c72a807b679f53d3b60dbdd478",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-600h/",
+          "id": "68633d79f7433dc4c23cd48c6621cb77c10c6beb",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-430-o/",
           "type": "wire"
         },
         {
-          "id": "e5aae3c3edffd6bda09439aa0f6833dc0a0d0fdc",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-600hm/",
+          "id": "bf58e4af357c8849970a271e6651e59a071ca881",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-crcw/",
           "type": "wire"
         },
         {
-          "id": "9078334bd65ffe6cb86c0cbb1173e4a38b279d97",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-410nimo-o/",
+          "id": "9895d52cf4b77b2e6ba5376a7f19b531ecb75637",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-crcnb5/",
+          "type": "wire"
+        },
+        {
+          "id": "c2080aa1b372b5743f75553ae0e1c7f849918291",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-a4s/",
+          "type": "wire"
+        },
+        {
+          "id": "427d9639eaf058c0959b35542a5b9b78a84ec2fa",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-420s/",
           "type": "wire"
         },
         {
@@ -2089,13 +2124,48 @@
           "type": "wire"
         },
         {
+          "id": "cf28e36d2e2a8431a14d87a8b3b52f1ee93687e8",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-410nimos/",
+          "type": "wire"
+        },
+        {
+          "id": "9078334bd65ffe6cb86c0cbb1173e4a38b279d97",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-410nimo-o/",
+          "type": "wire"
+        },
+        {
+          "id": "85693528c94457c057dea0c097dbb6c4244ff10d",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-423s/",
+          "type": "wire"
+        },
+        {
+          "id": "f8424bda304c60140ea90f50db0fe4451537880f",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-crcb/",
+          "type": "wire"
+        },
+        {
+          "id": "f838f4dfaaae6f574208c55ac6c992ceb150f78f",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-crcmo/",
+          "type": "wire"
+        },
+        {
+          "id": "b138ef531e052f8643e2297c11bac101ca220037",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-crch/",
+          "type": "wire"
+        },
+        {
+          "id": "c506544faf51d8fc40e1edbb5132bc6b0cdae621",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-crcnb/",
+          "type": "wire"
+        },
+        {
           "id": "9f6c3c0be0f2c36f92f9bbefac79c56dd6619a35",
           "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-48s/",
           "type": "wire"
         },
         {
-          "id": "b35b1c4a3a862172f4bb16f6aa043694ed4c893e",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-45s/",
+          "id": "c3410e8eea13cca9b846acaacdc16e6d6508c747",
+          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-30s/",
           "type": "wire"
         },
         {
@@ -2106,76 +2176,6 @@
         {
           "id": "ede347bd1e08d1879a0df6e563366dee1e81b219",
           "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-crc/",
-          "type": "wire"
-        },
-        {
-          "id": "68633d79f7433dc4c23cd48c6621cb77c10c6beb",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-430-o/",
-          "type": "wire"
-        },
-        {
-          "id": "560a4cb837f9beb93f233d5ef05a775e5a6b7257",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-414s/",
-          "type": "wire"
-        },
-        {
-          "id": "f8424bda304c60140ea90f50db0fe4451537880f",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-crcb/",
-          "type": "wire"
-        },
-        {
-          "id": "b138ef531e052f8643e2297c11bac101ca220037",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-crch/",
-          "type": "wire"
-        },
-        {
-          "id": "c2080aa1b372b5743f75553ae0e1c7f849918291",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-a4s/",
-          "type": "wire"
-        },
-        {
-          "id": "7551d64fccff14b4d6b9362d4afcc912d1959140",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-420sg/",
-          "type": "wire"
-        },
-        {
-          "id": "9895d52cf4b77b2e6ba5376a7f19b531ecb75637",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-crcnb5/",
-          "type": "wire"
-        },
-        {
-          "id": "427d9639eaf058c0959b35542a5b9b78a84ec2fa",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-420s/",
-          "type": "wire"
-        },
-        {
-          "id": "c506544faf51d8fc40e1edbb5132bc6b0cdae621",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-crcnb/",
-          "type": "wire"
-        },
-        {
-          "id": "f838f4dfaaae6f574208c55ac6c992ceb150f78f",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-crcmo/",
-          "type": "wire"
-        },
-        {
-          "id": "c3410e8eea13cca9b846acaacdc16e6d6508c747",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-30s/",
-          "type": "wire"
-        },
-        {
-          "id": "cf28e36d2e2a8431a14d87a8b3b52f1ee93687e8",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-410nimos/",
-          "type": "wire"
-        },
-        {
-          "id": "85693528c94457c057dea0c097dbb6c4244ff10d",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/sc-423s/",
-          "type": "wire"
-        },
-        {
-          "id": "bf58e4af357c8849970a271e6651e59a071ca881",
-          "link": "https://hyundaiwelding-rus.ru/catalog/poroshkovye-provoloki/poroshkovye-provoloki-dlya-naplavki-i-remonta-deta/supershield-crcw/",
           "type": "wire"
         },
         {
