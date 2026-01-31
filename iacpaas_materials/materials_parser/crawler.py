@@ -1,11 +1,10 @@
-from urllib.parse import urljoin, urlparse, urlsplit
-from bs4 import BeautifulSoup
+from urllib.parse import urljoin, urlparse
 import requests
-import re
 from typing import Dict, List, Optional, Tuple, Any
 from collections import deque
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
+from lxml import html, etree
 
 
 def is_internal_link(url: str, base_netloc: str) -> bool:
@@ -16,36 +15,40 @@ def is_internal_link(url: str, base_netloc: str) -> bool:
         return False
 
 
-def extract_internal_links(soup: BeautifulSoup, current_url: str, base_netloc: str) -> List[str]:
+def extract_internal_links(tree, current_url: str, base_netloc: str) -> List[str]:
+    cur_path = urlparse(current_url).path.strip('/')
+    cur_segments = cur_path.split('/') if cur_path else []
     
-    parsed = urlsplit(current_url)
-    base_url = f"{parsed.scheme}://{parsed.netloc}"
-    path = parsed.path  
-
     links = []
-    for a in soup.find_all('a', href=re.compile(f'{path}', re.IGNORECASE)):
-            #if is_internal_link(a['href'], cur_domain):
-                full_url = urljoin(base_url, a['href'])
-                links.append(full_url)
-
+    for href in tree.xpath('//a[@href]/@href'):
+        full_url = urljoin(current_url, href)
+        parsed = urlparse(full_url)
+        
+        if parsed.netloc and parsed.netloc != base_netloc:
+            continue
+            
+        path = parsed.path.strip('/')
+        segments = path.split('/') if path else []
+        
+        if len(segments) > len(cur_segments) and segments[:len(cur_segments)] == cur_segments:
+            links.append(f"{parsed.scheme}://{base_netloc}/{path}/")
+            
     return links
 
 
 def process_page(url: str, detection_rules: Dict) -> Tuple[List[str], Optional[Dict]]:
-
     try:
         print(f"Fetching: {url}")
         resp = requests.get(url, timeout=50)
         resp.raise_for_status()
-        soup = BeautifulSoup(resp.text, 'lxml')
+        resp.encoding = 'utf-8'
+        tree = html.fromstring(resp.content)
+        tree.make_links_absolute(url)
 
-        
-        parsed = urlparse(url)
-        base_url = f"{parsed.scheme}://{parsed.netloc}"
-        base_netloc = parsed.netloc
+        base_netloc = urlparse(url).netloc
 
-        
-        detection_result = detect_and_extract(soup, detection_rules)
+        # Проверка по правилам
+        detection_result = detect_and_extract(tree, detection_rules)
         product_data = None
         if detection_result:
             print(f"✅ Product found at {url}: {detection_result['type']}")
@@ -55,117 +58,99 @@ def process_page(url: str, detection_rules: Dict) -> Tuple[List[str], Optional[D
                 "Text": detection_result["content"]["Text"]
             }
 
-        
-        new_links = extract_internal_links(soup, url, base_netloc)
-
+        new_links = extract_internal_links(tree, url, base_netloc)
         return new_links, product_data
 
     except Exception as e:
         print(f"❌ Error on {url}: {e}")
         return [], None
-    
 
-def detect_and_extract(soup: BeautifulSoup, detection_rules: Dict) -> Optional[Dict[str, Any]]:
-    return _match_and_extract(soup, detection_rules)
 
-def _match_and_extract(soup: BeautifulSoup, rule: Any) -> Optional[Dict[str, Any]]:
+
+def detect_and_extract(tree: etree._ElementTree, detection_rules: Dict) -> Optional[Dict[str, Any]]:
+    return _match_and_extract(tree, detection_rules)
+
+
+def _match_and_extract(tree: etree._ElementTree, rule: Any) -> Optional[Dict[str, Any]]:
     if isinstance(rule, dict):
         if "or" in rule:
             for item in rule["or"]:
-                result = _match_and_extract(soup, item)
+                result = _match_and_extract(tree, item)
                 if result is not None:
                     return result
             return None
 
         elif "condition" in rule and "type" in rule:
-            if _evaluate_condition(soup, rule["condition"]):
+            if _evaluate_condition(tree, rule["condition"]):
                 extracted = None
                 if "extract" in rule:
-                    extracted = _extract_value(soup, rule["extract"])
+                    extracted = _extract_value(tree, rule["extract"])
                 return {
                     "type": rule["type"],
                     "content": extracted
                 }
             else:
                 return None
-
     return None
 
-def _evaluate_condition(soup: BeautifulSoup, cond: Any) -> bool:
+
+def _evaluate_condition(tree: etree._ElementTree, cond: Any) -> bool:
     if isinstance(cond, list):
-        return all(_evaluate_condition(soup, c) for c in cond)
+        return all(_evaluate_condition(tree, c) for c in cond)
     if not isinstance(cond, dict):
         return False
     if "and" in cond:
-        return all(_evaluate_condition(soup, c) for c in cond["and"])
+        return all(_evaluate_condition(tree, c) for c in cond["and"])
     if "or" in cond:
-        return any(_evaluate_condition(soup, c) for c in cond["or"])
+        return any(_evaluate_condition(tree, c) for c in cond["or"])
 
-    tag = cond.get("tag")
-    if not tag:
+
+    xpath_expr = cond.get("xpath")
+    if not xpath_expr:
         return False
-    elements = soup.find_all(tag)
 
-    if cond.get("exists") is True:
-        return len(elements) > 0
+    try:
+        elements = tree.xpath(xpath_expr)
+        exists = cond.get("exists", True)
 
-    attribute = cond.get("attribute")
-    value = cond.get("value")
-    content_expected = cond.get("content")
-    text_contains = cond.get("text_contains")
+        if exists:
+            return len(elements) > 0
+        else:
+            return len(elements) == 0
 
-    for el in elements:
-        attr_ok = True
-        if attribute is not None:
-            attr_val = el.get(attribute)
-            if isinstance(attr_val, list):
-                attr_val = " ".join(attr_val)
-            attr_ok = (attr_val == value)
+    except Exception as e:
+        print(f"⚠️ XPath error in condition: {xpath_expr} — {e}")
+        return False
 
-        content_ok = True
-        if content_expected is not None:
-            content_ok = (el.get("content") == content_expected)
 
-        text_ok = True
-        if text_contains is not None:
-            txt = (el.get_text() or "").strip()
-            if isinstance(text_contains, str):
-                text_ok = (text_contains in txt)
-            elif isinstance(text_contains, bool):
-                text_ok = bool(txt) if text_contains else True
-
-        if attr_ok and content_ok and text_ok:
-            return True
-    return False
-
-def _extract_value(soup: BeautifulSoup, rule: Dict) -> Optional[Dict[str, str]]:
-    from_tag = rule.get("from_tag")
-    if not from_tag:
+def _extract_value(tree: etree._ElementTree, rule: Dict) -> Optional[Dict[str, str]]:
+    xpath_expr = rule.get("xpath")
+    if not xpath_expr:
         return None
 
-    attrs = {}
-    if "attribute" in rule and "value" in rule:
-        attrs[rule["attribute"]] = rule["value"]
+    try:
+        elements = tree.xpath(xpath_expr)
+        if not elements:
+            return None
 
-    candidates = soup.find_all(from_tag, attrs=attrs)
+        el = elements[0]
 
-    if "text_contains" in rule:
-        substr = rule["text_contains"]
-        candidates = [el for el in candidates if substr in (el.get_text() or "")]
+        # Получаем текст (включая текст потомков)
+        if isinstance(el, str):
+            text = el.strip()
+            inner_html = el
+        else:
+            text = ' '.join(el.xpath('.//text()')).strip()
+            inner_html = etree.tostring(el, encoding='unicode', method='html')
 
-    if not candidates:
+        return {
+            "Soup": inner_html,
+            "Text": text
+        }
+
+    except Exception as e:
+        print(f"⚠️ XPath extraction error: {xpath_expr} — {e}")
         return None
-
-    el = candidates[0]
-
-    #inner_html = "".join(str(child) for child in el.children)
-    inner_html = str(el)
-    text = el.get_text(separator=" ", strip=True)
-
-    return {
-        "Soup": inner_html,
-        "Text": text
-    }
 
 
 def crawl_site(
@@ -179,7 +164,6 @@ def crawl_site(
     parsed_start = urlparse(start_url)
     base_netloc = parsed_start.netloc
 
-    
     to_visit = deque([(start_url, 0)])
     visited = set()
     results = {}
@@ -187,7 +171,6 @@ def crawl_site(
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         while to_visit and len(visited) < max_pages:
-            
             batch = []
             while to_visit and len(batch) < max_workers and len(visited) < max_pages:
                 url, depth = to_visit.popleft()
@@ -202,13 +185,11 @@ def crawl_site(
             if not batch:
                 break
 
-            
             future_to_url = {
                 executor.submit(process_page, url, detection_rules): (url, depth)
                 for url, depth in batch
             }
 
-            
             for future in as_completed(future_to_url):
                 url, depth = future_to_url[future]
                 try:
@@ -216,7 +197,6 @@ def crawl_site(
                     if product_data:
                         results[url] = product_data
 
-                    
                     if depth + 1 <= max_depth:
                         for link in new_links:
                             if link not in visited:
@@ -225,8 +205,7 @@ def crawl_site(
                 except Exception as e:
                     print(f"⚠️ Unexpected error processing {url}: {e}")
 
-        print(f'Visiteds:{len(visited)}')
-        print(f'Products:{len(results)}')
-
+        print(f'Visited: {len(visited)}')
+        print(f'Products: {len(results)}')
 
     return results

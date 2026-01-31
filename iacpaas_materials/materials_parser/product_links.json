@@ -4,38 +4,13 @@
       "name": "НИИ КМ",
       "product_links": [
         {
-          "id": "e50be9ef9cb8695bbafde6d6f25a5b735bf28c3f",
-          "link": "https://www.niikm.ru/products/argon/liquid_argon/",
-          "type": "gas"
-        },
-        {
-          "id": "82a50decf2b23814cb9bb89cfb6da6e40bee8d72",
-          "link": "https://www.niikm.ru/products/hydrogen/hydrogen_hs/",
-          "type": "gas"
-        },
-        {
-          "id": "52f7baad8ed486744eb0085904365aff5d90603f",
-          "link": "https://www.niikm.ru/products/azot/liquid_nitrogen_26/",
-          "type": "gas"
-        },
-        {
           "id": "c4e6791167b0ed4002b508a7f9cc50bbbba38e31",
           "link": "https://www.niikm.ru/products/hydrogen/hydrogen_2s/",
           "type": "gas"
         },
         {
-          "id": "cea9f46fa5d82ee4f71e58c09aed395ff7ca2add",
-          "link": "https://www.niikm.ru/products/azot/liquid_nitrogen_50_2/",
-          "type": "gas"
-        },
-        {
-          "id": "14da5a57414315fdcc9e8c6cfa50db2a5e52ca69",
-          "link": "https://www.niikm.ru/products/acetylene/acetylene_21/",
-          "type": "gas"
-        },
-        {
-          "id": "1330569b034636cd057f3f4f7f0dc91ce7c7a57d",
-          "link": "https://www.niikm.ru/products/argon/argon_43/",
+          "id": "593bd9801bbe5a1b641ee2c46b79d6d819ec8824",
+          "link": "https://www.niikm.ru/products/oxygen/oxygen_27/",
           "type": "gas"
         },
         {
@@ -44,63 +19,8 @@
           "type": "gas"
         },
         {
-          "id": "9324292439c3f5b0ae29a111e4c15cfee8617ba8",
-          "link": "https://www.niikm.ru/products/argon/argon_48/",
-          "type": "gas"
-        },
-        {
-          "id": "e56ac1e1a0dd23e278d69231d200b36e277914c1",
-          "link": "https://www.niikm.ru/products/xenon/xenon_55/",
-          "type": "gas"
-        },
-        {
-          "id": "9061cb218569bb4aa2fce95c6ef382fd86e2e002",
-          "link": "https://www.niikm.ru/products/azot/nitrogen_60/",
-          "type": "gas"
-        },
-        {
-          "id": "0d87bd51150d87f0ded4166c96f5056c513a2417",
-          "link": "https://www.niikm.ru/products/argon/argon_55/",
-          "type": "gas"
-        },
-        {
-          "id": "65c9faa7cc88a465f26064e4c51bc15da1b99264",
-          "link": "https://www.niikm.ru/products/azot/liquid_nitrogen_50/",
-          "type": "gas"
-        },
-        {
-          "id": "dad068e31788e0ce3b42a851ace0c6c069285d57",
-          "link": "https://www.niikm.ru/products/helium/helium_45/",
-          "type": "gas"
-        },
-        {
-          "id": "f6a22cf18331cb1013a68768c954298ebf377494",
-          "link": "https://www.niikm.ru/products/helium/helium_28/",
-          "type": "gas"
-        },
-        {
-          "id": "f2cc28c417e819d70e2b8d0d3396193fa2f013be",
-          "link": "https://www.niikm.ru/products/helium/helium_40/",
-          "type": "gas"
-        },
-        {
-          "id": "8d25a86370c843f41fa603df6d619efc71f4910e",
-          "link": "https://www.niikm.ru/products/helium/helium_55/",
-          "type": "gas"
-        },
-        {
-          "id": "c6cacb68e6715df454514273ff78d75154824ddb",
-          "link": "https://www.niikm.ru/products/helium/helium_50/",
-          "type": "gas"
-        },
-        {
-          "id": "c65e45c5e5dc7facea2f4f323f6152f395fc0f83",
-          "link": "https://www.niikm.ru/products/hydrogen/hydrogen_1s/",
-          "type": "gas"
-        },
-        {
-          "id": "f189b6cbb12eb6c1376f1df85c5e687da218b30e",
-          "link": "https://www.niikm.ru/products/acetylene/acetylene_25/",
+          "id": "dff7875effcd12937800be45501ad6f4dd95baff",
+          "link": "https://www.niikm.ru/products/hydrogen/hydrogen_40/",
           "type": "gas"
         },
         {
@@ -109,18 +29,108 @@
           "type": "gas"
         },
         {
+          "id": "f189b6cbb12eb6c1376f1df85c5e687da218b30e",
+          "link": "https://www.niikm.ru/products/acetylene/acetylene_25/",
+          "type": "gas"
+        },
+        {
+          "id": "4b3edc80d6ce2ad7ef800629a9064a6f33836c3f",
+          "link": "https://www.niikm.ru/products/azot/nitrogen_26/",
+          "type": "gas"
+        },
+        {
+          "id": "c65e45c5e5dc7facea2f4f323f6152f395fc0f83",
+          "link": "https://www.niikm.ru/products/hydrogen/hydrogen_1s/",
+          "type": "gas"
+        },
+        {
+          "id": "52f7baad8ed486744eb0085904365aff5d90603f",
+          "link": "https://www.niikm.ru/products/azot/liquid_nitrogen_26/",
+          "type": "gas"
+        },
+        {
+          "id": "fe7274b76546a53d326c6bb28b140342e35e008e",
+          "link": "https://www.niikm.ru/products/oxygen/oxygen_35/",
+          "type": "gas"
+        },
+        {
+          "id": "b85b7361f06f0ed27718150bbbf0ac839a0ecc0d",
+          "link": "https://www.niikm.ru/products/argon/argon_60/",
+          "type": "gas"
+        },
+        {
+          "id": "9061cb218569bb4aa2fce95c6ef382fd86e2e002",
+          "link": "https://www.niikm.ru/products/azot/nitrogen_60/",
+          "type": "gas"
+        },
+        {
+          "id": "1330569b034636cd057f3f4f7f0dc91ce7c7a57d",
+          "link": "https://www.niikm.ru/products/argon/argon_43/",
+          "type": "gas"
+        },
+        {
+          "id": "cea9f46fa5d82ee4f71e58c09aed395ff7ca2add",
+          "link": "https://www.niikm.ru/products/azot/liquid_nitrogen_50_2/",
+          "type": "gas"
+        },
+        {
           "id": "fccb607aacd714fbf4651e7f0620c20f41a83a70",
           "link": "https://www.niikm.ru/products/azot/nitrogen_0_50/",
           "type": "gas"
         },
         {
-          "id": "248e36745d8ffebcca5d8ec844b26a32ea7008dc",
-          "link": "https://www.niikm.ru/products/helium/helium_60/",
+          "id": "65c9faa7cc88a465f26064e4c51bc15da1b99264",
+          "link": "https://www.niikm.ru/products/azot/liquid_nitrogen_50/",
           "type": "gas"
         },
         {
-          "id": "b02f6007ec8db79e9d6667405d1a6dddb55242ed",
-          "link": "https://www.niikm.ru/products/helium/liquid_helium/",
+          "id": "c2909abd9b2982e29449d5b4a163d8ecda5d6fa5",
+          "link": "https://www.niikm.ru/products/oxygen/osoboj_chistoty/",
+          "type": "gas"
+        },
+        {
+          "id": "c6cacb68e6715df454514273ff78d75154824ddb",
+          "link": "https://www.niikm.ru/products/helium/helium_50/",
+          "type": "gas"
+        },
+        {
+          "id": "14da5a57414315fdcc9e8c6cfa50db2a5e52ca69",
+          "link": "https://www.niikm.ru/products/acetylene/acetylene_21/",
+          "type": "gas"
+        },
+        {
+          "id": "041a436ec350edf568bddeee787d68e60fbd2b47",
+          "link": "https://www.niikm.ru/products/oxygen/liquid_oxygen/",
+          "type": "gas"
+        },
+        {
+          "id": "bc9977443ccbe690012f171ce25db3a1b92255d2",
+          "link": "https://www.niikm.ru/products/carbon_dioxide/carbon_dioxide_40_med/",
+          "type": "gas"
+        },
+        {
+          "id": "058d68732999cf4d23fe4ccd7cf00b0a4e86ebf6",
+          "link": "https://www.niikm.ru/products/carbon_dioxide/carbon_dioxide_45/",
+          "type": "gas"
+        },
+        {
+          "id": "f2cc28c417e819d70e2b8d0d3396193fa2f013be",
+          "link": "https://www.niikm.ru/products/helium/helium_40/",
+          "type": "gas"
+        },
+        {
+          "id": "9c6d20e24cbc12d266bcdc150e0c5055af92285f",
+          "link": "https://www.niikm.ru/products/krypton/krypton_55/",
+          "type": "gas"
+        },
+        {
+          "id": "bd5397bd65d07ae067560aec68380030535cd0f2",
+          "link": "https://www.niikm.ru/products/oxygen/oxygen_30/",
+          "type": "gas"
+        },
+        {
+          "id": "82a50decf2b23814cb9bb89cfb6da6e40bee8d72",
+          "link": "https://www.niikm.ru/products/hydrogen/hydrogen_hs/",
           "type": "gas"
         },
         {
@@ -134,83 +144,8 @@
           "type": "gas"
         },
         {
-          "id": "00979eea0376282876b727271d56051555451699",
-          "link": "https://www.niikm.ru/products/carbon_dioxide/carbon_dioxide_40/",
-          "type": "gas"
-        },
-        {
-          "id": "6c833686f7d76253982a0ff5936ead8edf195e92",
-          "link": "https://www.niikm.ru/products/helium/helium_46/",
-          "type": "gas"
-        },
-        {
-          "id": "b85b7361f06f0ed27718150bbbf0ac839a0ecc0d",
-          "link": "https://www.niikm.ru/products/argon/argon_60/",
-          "type": "gas"
-        },
-        {
-          "id": "1db76e761d07b123e2f53163782121cdf0cd533f",
-          "link": "https://www.niikm.ru/products/carbon_dioxide/carbon_dioxide_28/",
-          "type": "gas"
-        },
-        {
-          "id": "d44733332cc4b2c1bb3d8fb0b66a8e777f829b24",
-          "link": "https://www.niikm.ru/products/neon/neon_48/",
-          "type": "gas"
-        },
-        {
-          "id": "bc9977443ccbe690012f171ce25db3a1b92255d2",
-          "link": "https://www.niikm.ru/products/carbon_dioxide/carbon_dioxide_40_med/",
-          "type": "gas"
-        },
-        {
-          "id": "f881d42462cedc9e6a3109109735a9d08b2d34ce",
-          "link": "https://www.niikm.ru/products/methane/methane_30/",
-          "type": "gas"
-        },
-        {
-          "id": "4872390a9f6edaaf5a02168a4cb20bd00efc6172",
-          "link": "https://www.niikm.ru/products/helium/helium_70/",
-          "type": "gas"
-        },
-        {
-          "id": "dff7875effcd12937800be45501ad6f4dd95baff",
-          "link": "https://www.niikm.ru/products/hydrogen/hydrogen_40/",
-          "type": "gas"
-        },
-        {
-          "id": "4b3edc80d6ce2ad7ef800629a9064a6f33836c3f",
-          "link": "https://www.niikm.ru/products/azot/nitrogen_26/",
-          "type": "gas"
-        },
-        {
-          "id": "058d68732999cf4d23fe4ccd7cf00b0a4e86ebf6",
-          "link": "https://www.niikm.ru/products/carbon_dioxide/carbon_dioxide_45/",
-          "type": "gas"
-        },
-        {
-          "id": "d755399ff16a9f187faa5674b84f3ad2c999c7f8",
-          "link": "https://www.niikm.ru/products/oxygen/oxygen_27_e948/",
-          "type": "gas"
-        },
-        {
-          "id": "bd5397bd65d07ae067560aec68380030535cd0f2",
-          "link": "https://www.niikm.ru/products/oxygen/oxygen_30/",
-          "type": "gas"
-        },
-        {
-          "id": "9c6d20e24cbc12d266bcdc150e0c5055af92285f",
-          "link": "https://www.niikm.ru/products/krypton/krypton_55/",
-          "type": "gas"
-        },
-        {
-          "id": "c2909abd9b2982e29449d5b4a163d8ecda5d6fa5",
-          "link": "https://www.niikm.ru/products/oxygen/osoboj_chistoty/",
-          "type": "gas"
-        },
-        {
-          "id": "041a436ec350edf568bddeee787d68e60fbd2b47",
-          "link": "https://www.niikm.ru/products/oxygen/liquid_oxygen/",
+          "id": "248e36745d8ffebcca5d8ec844b26a32ea7008dc",
+          "link": "https://www.niikm.ru/products/helium/helium_60/",
           "type": "gas"
         },
         {
@@ -219,13 +154,78 @@
           "type": "gas"
         },
         {
-          "id": "fe7274b76546a53d326c6bb28b140342e35e008e",
-          "link": "https://www.niikm.ru/products/oxygen/oxygen_35/",
+          "id": "e50be9ef9cb8695bbafde6d6f25a5b735bf28c3f",
+          "link": "https://www.niikm.ru/products/argon/liquid_argon/",
           "type": "gas"
         },
         {
-          "id": "593bd9801bbe5a1b641ee2c46b79d6d819ec8824",
-          "link": "https://www.niikm.ru/products/oxygen/oxygen_27/",
+          "id": "8d25a86370c843f41fa603df6d619efc71f4910e",
+          "link": "https://www.niikm.ru/products/helium/helium_55/",
+          "type": "gas"
+        },
+        {
+          "id": "dad068e31788e0ce3b42a851ace0c6c069285d57",
+          "link": "https://www.niikm.ru/products/helium/helium_45/",
+          "type": "gas"
+        },
+        {
+          "id": "0d87bd51150d87f0ded4166c96f5056c513a2417",
+          "link": "https://www.niikm.ru/products/argon/argon_55/",
+          "type": "gas"
+        },
+        {
+          "id": "d44733332cc4b2c1bb3d8fb0b66a8e777f829b24",
+          "link": "https://www.niikm.ru/products/neon/neon_48/",
+          "type": "gas"
+        },
+        {
+          "id": "f6a22cf18331cb1013a68768c954298ebf377494",
+          "link": "https://www.niikm.ru/products/helium/helium_28/",
+          "type": "gas"
+        },
+        {
+          "id": "00979eea0376282876b727271d56051555451699",
+          "link": "https://www.niikm.ru/products/carbon_dioxide/carbon_dioxide_40/",
+          "type": "gas"
+        },
+        {
+          "id": "9324292439c3f5b0ae29a111e4c15cfee8617ba8",
+          "link": "https://www.niikm.ru/products/argon/argon_48/",
+          "type": "gas"
+        },
+        {
+          "id": "d755399ff16a9f187faa5674b84f3ad2c999c7f8",
+          "link": "https://www.niikm.ru/products/oxygen/oxygen_27_e948/",
+          "type": "gas"
+        },
+        {
+          "id": "b02f6007ec8db79e9d6667405d1a6dddb55242ed",
+          "link": "https://www.niikm.ru/products/helium/liquid_helium/",
+          "type": "gas"
+        },
+        {
+          "id": "f881d42462cedc9e6a3109109735a9d08b2d34ce",
+          "link": "https://www.niikm.ru/products/methane/methane_30/",
+          "type": "gas"
+        },
+        {
+          "id": "1db76e761d07b123e2f53163782121cdf0cd533f",
+          "link": "https://www.niikm.ru/products/carbon_dioxide/carbon_dioxide_28/",
+          "type": "gas"
+        },
+        {
+          "id": "6c833686f7d76253982a0ff5936ead8edf195e92",
+          "link": "https://www.niikm.ru/products/helium/helium_46/",
+          "type": "gas"
+        },
+        {
+          "id": "4872390a9f6edaaf5a02168a4cb20bd00efc6172",
+          "link": "https://www.niikm.ru/products/helium/helium_70/",
+          "type": "gas"
+        },
+        {
+          "id": "e56ac1e1a0dd23e278d69231d200b36e277914c1",
+          "link": "https://www.niikm.ru/products/xenon/xenon_55/",
           "type": "gas"
         }
       ]
@@ -233,11 +233,6 @@
     {
       "name": "Московский Газоперерабатывающий Завод",
       "product_links": [
-        {
-          "id": "1119f7ba3d8b77ccb57fd286668f97b8e0d2ac38",
-          "link": "https://mgpz.ru/catalog/monogazy/azot/azot_povyshennoy_chistoty_1_sort/",
-          "type": "gas"
-        },
         {
           "id": "ca2f012a743ba38e8747a07786193d3726eb6779",
           "link": "https://mgpz.ru/catalog/monogazy/azot/gazoobraznyy_tekhnicheskiy_1_sort/",
@@ -249,18 +244,18 @@
           "type": "gas"
         },
         {
-          "id": "5a9e3027ccc47899c5cf3d8dfd6953eba1ca16ce",
-          "link": "https://mgpz.ru/catalog/monogazy/azot/poverochnyy_nulevoy_gaz_azot_marki_b-2/",
+          "id": "48db138f9cde205e4817c3de1cd9eec24362b2e8",
+          "link": "https://mgpz.ru/catalog/monogazy/argon/argon_gazoobraznyy_vysshiy_sort_marka_4_3/",
           "type": "gas"
         },
         {
-          "id": "248d71cbfd9b36b599dd02044bb43bdee135450a",
-          "link": "https://mgpz.ru/catalog/monogazy/azot/azot_gazoobraznyy_vysokoy_chistoty_5_0_6_0/",
+          "id": "b890792a9d96118ce2876475932e31a13649fc71",
+          "link": "https://mgpz.ru/catalog/monogazy/atsetilen/rastvorennyy_marki_b_pervyy_sort/",
           "type": "gas"
         },
         {
-          "id": "d126b0f2ef9ea8cf0fe742b78189afc517d50952",
-          "link": "https://mgpz.ru/catalog/monogazy/atsetilen/atsetilen_rastvorennyy_marki_a/",
+          "id": "1119f7ba3d8b77ccb57fd286668f97b8e0d2ac38",
+          "link": "https://mgpz.ru/catalog/monogazy/azot/azot_povyshennoy_chistoty_1_sort/",
           "type": "gas"
         },
         {
@@ -269,13 +264,113 @@
           "type": "gas"
         },
         {
-          "id": "48db138f9cde205e4817c3de1cd9eec24362b2e8",
-          "link": "https://mgpz.ru/catalog/monogazy/argon/argon_gazoobraznyy_vysshiy_sort_marka_4_3/",
+          "id": "a3565ff8deef0e9411d40ff1e5149d1a7dabc32f",
+          "link": "https://mgpz.ru/catalog/monogazy/argon/argon_gazoobraznyy_vysokoy_chistoty_marka_4_8/",
+          "type": "gas"
+        },
+        {
+          "id": "248d71cbfd9b36b599dd02044bb43bdee135450a",
+          "link": "https://mgpz.ru/catalog/monogazy/azot/azot_gazoobraznyy_vysokoy_chistoty_5_0_6_0/",
+          "type": "gas"
+        },
+        {
+          "id": "1f9ad1af230628c9fe7c58cc4b104fecb8f93a59",
+          "link": "https://mgpz.ru/catalog/monogazy/argon/argon_gazoobraznyy_vysokoy_chistoty_marka_4_8_6_0/",
+          "type": "gas"
+        },
+        {
+          "id": "5a9e3027ccc47899c5cf3d8dfd6953eba1ca16ce",
+          "link": "https://mgpz.ru/catalog/monogazy/azot/poverochnyy_nulevoy_gaz_azot_marki_b-2/",
+          "type": "gas"
+        },
+        {
+          "id": "4ebdbc7dd71b4bc5094e5c3cab5c4be1247d6a16",
+          "link": "https://mgpz.ru/catalog/monogazy/argon/gazoobraznyy_1_sort/",
+          "type": "gas"
+        },
+        {
+          "id": "35efa3d788f1dfe898d0268aabe2f4b09fb8f11d",
+          "link": "https://mgpz.ru/catalog/monogazy/vodorod/vodorod_gazoobraznyy_osobo_chistyy_marki_b/",
           "type": "gas"
         },
         {
           "id": "b84dbfe60954f1e153cb90e3bd524954d4360257",
           "link": "https://mgpz.ru/catalog/monogazy/vodorod/vodorod_gazoobraznyy_tekhnicheskiy_marki_b-2/",
+          "type": "gas"
+        },
+        {
+          "id": "3d193fc683745307ec5ae06cfec818b26c99f041",
+          "link": "https://mgpz.ru/catalog/monogazy/vodorod/gazoobraznyy_tekhnicheskiy_marki_a/",
+          "type": "gas"
+        },
+        {
+          "id": "f6cb3472b7695ba099c725edace5e6027b33d1d5",
+          "link": "https://mgpz.ru/catalog/monogazy/dvuokis_ugleroda/vysshiy_sort_99_8_/",
+          "type": "gas"
+        },
+        {
+          "id": "128a4d98db584866c1824bb1fe73699258bff815",
+          "link": "https://mgpz.ru/catalog/monogazy/geliy/marka_5_0/",
+          "type": "gas"
+        },
+        {
+          "id": "29cc18a441a0c28aa734016205f0d5b552a401c9",
+          "link": "https://mgpz.ru/catalog/monogazy/kislorod/kislorod_gazoobraznyy_osoboy_chistoty_marka_5_0-2/",
+          "type": "gas"
+        },
+        {
+          "id": "7e8d36fbefcc4b7ca59815428ae70c7e1e41328f",
+          "link": "https://mgpz.ru/catalog/monogazy/geliy/geliy_gazoobraznyy_szhatyy_marka_a/",
+          "type": "gas"
+        },
+        {
+          "id": "d126b0f2ef9ea8cf0fe742b78189afc517d50952",
+          "link": "https://mgpz.ru/catalog/monogazy/atsetilen/atsetilen_rastvorennyy_marki_a/",
+          "type": "gas"
+        },
+        {
+          "id": "599c8b4b9d96a0428e7d03b681c93babebd4301f",
+          "link": "https://mgpz.ru/catalog/monogazy/geliy/geliy_gazoobraznyy_vysokoy_chistoty_marka_6_0/",
+          "type": "gas"
+        },
+        {
+          "id": "4dbbcebf7f014acac307425d24dc8fdb3e012766",
+          "link": "https://mgpz.ru/catalog/monogazy/dvuokis_ugleroda/vysokoy_chistoty/",
+          "type": "gas"
+        },
+        {
+          "id": "cba1410293eb2f141ca201c96bb5d3bbe19c1c75",
+          "link": "https://mgpz.ru/catalog/monogazy/dvuokis_ugleroda/dvuokis_ugleroda_vysokoy_chistoty_marki_4_0/",
+          "type": "gas"
+        },
+        {
+          "id": "7c6be157b3896b3eeb3f1ac3f5d34e44ea1d529b",
+          "link": "https://mgpz.ru/catalog/monogazy/vodorod/gazoobraznyy_osobo_chistyy_marki_v/",
+          "type": "gas"
+        },
+        {
+          "id": "bc6aa3845bacea528f93acc3a0df5a97b1058a46",
+          "link": "https://mgpz.ru/catalog/monogazy/dvuokis_ugleroda/dvuokis_ugleroda_vysokoy_chistoty_marki_4_5/",
+          "type": "gas"
+        },
+        {
+          "id": "fbeb94e7dda6c7353c44112075aa918074c8e3da",
+          "link": "https://mgpz.ru/catalog/monogazy/metan/metan_gazoobraznyy_chistyy/",
+          "type": "gas"
+        },
+        {
+          "id": "a29c9de624d11572a10e79ab10f40bc68793fcf5",
+          "link": "https://mgpz.ru/catalog/monogazy/kislorod/1_sort/",
+          "type": "gas"
+        },
+        {
+          "id": "17106def1c731b293a2fa8c739b8e1e9bca6a076",
+          "link": "https://mgpz.ru/catalog/monogazy/kislorod/kislorod_gazoobraznyy_povyshennoy_chistoty_marka_3_8/",
+          "type": "gas"
+        },
+        {
+          "id": "d2733816a646b04ca04374ed7ec9691cbc71b9af",
+          "link": "https://mgpz.ru/catalog/monogazy/geliy/geliy_gazoobraznyy_vysokoy_chistoty_marka_4_6/",
           "type": "gas"
         },
         {
@@ -289,118 +384,8 @@
           "type": "gas"
         },
         {
-          "id": "3d193fc683745307ec5ae06cfec818b26c99f041",
-          "link": "https://mgpz.ru/catalog/monogazy/vodorod/gazoobraznyy_tekhnicheskiy_marki_a/",
-          "type": "gas"
-        },
-        {
-          "id": "cba1410293eb2f141ca201c96bb5d3bbe19c1c75",
-          "link": "https://mgpz.ru/catalog/monogazy/dvuokis_ugleroda/dvuokis_ugleroda_vysokoy_chistoty_marki_4_0/",
-          "type": "gas"
-        },
-        {
-          "id": "cf65438009f5c848dd63bf3fd13bf3f565ddf12c",
-          "link": "https://mgpz.ru/catalog/monogazy/geliy/geliy_gazoobraznyy_szhatyy_marka_b/",
-          "type": "gas"
-        },
-        {
-          "id": "7e8d36fbefcc4b7ca59815428ae70c7e1e41328f",
-          "link": "https://mgpz.ru/catalog/monogazy/geliy/geliy_gazoobraznyy_szhatyy_marka_a/",
-          "type": "gas"
-        },
-        {
-          "id": "d2733816a646b04ca04374ed7ec9691cbc71b9af",
-          "link": "https://mgpz.ru/catalog/monogazy/geliy/geliy_gazoobraznyy_vysokoy_chistoty_marka_4_6/",
-          "type": "gas"
-        },
-        {
-          "id": "128a4d98db584866c1824bb1fe73699258bff815",
-          "link": "https://mgpz.ru/catalog/monogazy/geliy/marka_5_0/",
-          "type": "gas"
-        },
-        {
-          "id": "b890792a9d96118ce2876475932e31a13649fc71",
-          "link": "https://mgpz.ru/catalog/monogazy/atsetilen/rastvorennyy_marki_b_pervyy_sort/",
-          "type": "gas"
-        },
-        {
-          "id": "a3565ff8deef0e9411d40ff1e5149d1a7dabc32f",
-          "link": "https://mgpz.ru/catalog/monogazy/argon/argon_gazoobraznyy_vysokoy_chistoty_marka_4_8/",
-          "type": "gas"
-        },
-        {
-          "id": "35efa3d788f1dfe898d0268aabe2f4b09fb8f11d",
-          "link": "https://mgpz.ru/catalog/monogazy/vodorod/vodorod_gazoobraznyy_osobo_chistyy_marki_b/",
-          "type": "gas"
-        },
-        {
           "id": "1cf86027ff452a6b89e04ecfa5e7d3f2ee20e9f7",
           "link": "https://mgpz.ru/catalog/monogazy/neon/neon_gazoobraznyy_vysokoy_chistoty_marka_5_5/",
-          "type": "gas"
-        },
-        {
-          "id": "1f9ad1af230628c9fe7c58cc4b104fecb8f93a59",
-          "link": "https://mgpz.ru/catalog/monogazy/argon/argon_gazoobraznyy_vysokoy_chistoty_marka_4_8_6_0/",
-          "type": "gas"
-        },
-        {
-          "id": "29cc18a441a0c28aa734016205f0d5b552a401c9",
-          "link": "https://mgpz.ru/catalog/monogazy/kislorod/kislorod_gazoobraznyy_osoboy_chistoty_marka_5_0-2/",
-          "type": "gas"
-        },
-        {
-          "id": "599c8b4b9d96a0428e7d03b681c93babebd4301f",
-          "link": "https://mgpz.ru/catalog/monogazy/geliy/geliy_gazoobraznyy_vysokoy_chistoty_marka_6_0/",
-          "type": "gas"
-        },
-        {
-          "id": "a29c9de624d11572a10e79ab10f40bc68793fcf5",
-          "link": "https://mgpz.ru/catalog/monogazy/kislorod/1_sort/",
-          "type": "gas"
-        },
-        {
-          "id": "a9a6283de886053556bf01c97073b7e49474dffb",
-          "link": "https://mgpz.ru/catalog/monogazy/kripton/kripton_gazoobraznyy_vysokoy_chistoty_marka_5_5/",
-          "type": "gas"
-        },
-        {
-          "id": "17106def1c731b293a2fa8c739b8e1e9bca6a076",
-          "link": "https://mgpz.ru/catalog/monogazy/kislorod/kislorod_gazoobraznyy_povyshennoy_chistoty_marka_3_8/",
-          "type": "gas"
-        },
-        {
-          "id": "d8c6507c3b1019514d2bee64932a3c07c18114b3",
-          "link": "https://mgpz.ru/catalog/monogazy/ksenon/ksenon_gazoobraznyy_vysokoy_chistoty_marka_5_5/",
-          "type": "gas"
-        },
-        {
-          "id": "f6cb3472b7695ba099c725edace5e6027b33d1d5",
-          "link": "https://mgpz.ru/catalog/monogazy/dvuokis_ugleroda/vysshiy_sort_99_8_/",
-          "type": "gas"
-        },
-        {
-          "id": "bc6aa3845bacea528f93acc3a0df5a97b1058a46",
-          "link": "https://mgpz.ru/catalog/monogazy/dvuokis_ugleroda/dvuokis_ugleroda_vysokoy_chistoty_marki_4_5/",
-          "type": "gas"
-        },
-        {
-          "id": "7c6be157b3896b3eeb3f1ac3f5d34e44ea1d529b",
-          "link": "https://mgpz.ru/catalog/monogazy/vodorod/gazoobraznyy_osobo_chistyy_marki_v/",
-          "type": "gas"
-        },
-        {
-          "id": "fbeb94e7dda6c7353c44112075aa918074c8e3da",
-          "link": "https://mgpz.ru/catalog/monogazy/metan/metan_gazoobraznyy_chistyy/",
-          "type": "gas"
-        },
-        {
-          "id": "4dbbcebf7f014acac307425d24dc8fdb3e012766",
-          "link": "https://mgpz.ru/catalog/monogazy/dvuokis_ugleroda/vysokoy_chistoty/",
-          "type": "gas"
-        },
-        {
-          "id": "ce23502c972399f5073d2537f6b17d4b6d2aaa66",
-          "link": "https://mgpz.ru/catalog/monogazy/kislorod/marka_3_5/",
           "type": "gas"
         },
         {
@@ -409,8 +394,23 @@
           "type": "gas"
         },
         {
-          "id": "4ebdbc7dd71b4bc5094e5c3cab5c4be1247d6a16",
-          "link": "https://mgpz.ru/catalog/monogazy/argon/gazoobraznyy_1_sort/",
+          "id": "ce23502c972399f5073d2537f6b17d4b6d2aaa66",
+          "link": "https://mgpz.ru/catalog/monogazy/kislorod/marka_3_5/",
+          "type": "gas"
+        },
+        {
+          "id": "d8c6507c3b1019514d2bee64932a3c07c18114b3",
+          "link": "https://mgpz.ru/catalog/monogazy/ksenon/ksenon_gazoobraznyy_vysokoy_chistoty_marka_5_5/",
+          "type": "gas"
+        },
+        {
+          "id": "cf65438009f5c848dd63bf3fd13bf3f565ddf12c",
+          "link": "https://mgpz.ru/catalog/monogazy/geliy/geliy_gazoobraznyy_szhatyy_marka_b/",
+          "type": "gas"
+        },
+        {
+          "id": "a9a6283de886053556bf01c97073b7e49474dffb",
+          "link": "https://mgpz.ru/catalog/monogazy/kripton/kripton_gazoobraznyy_vysokoy_chistoty_marka_5_5/",
           "type": "gas"
         }
       ]
@@ -419,33 +419,503 @@
       "name": "РедМетСплав",
       "product_links": [
         {
-          "id": "ee6c3f2dc57d11d958afbcda964554bfd3db22ac",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-e110k-1/",
+          "id": "5c665407487213df788be501a4fc46cfa0fb1320",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mbvp-2/",
           "type": "metal"
         },
         {
-          "id": "9729aaca0ad6a4570c20365f6ef97a2b96ca015c",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-704-zr-olovo-1/",
+          "id": "d96cf77c786b0cd9073eb0e2a8c23e97377b7092",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mpn-1/",
           "type": "metal"
         },
         {
-          "id": "6aaac0e8f80fb8ba49a4316b5adafdd7598fb573",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-125b-1/",
+          "id": "ec2f777fa5c060553b23b374d62860dcbf441c4f",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-m-mp-2/",
           "type": "metal"
         },
         {
-          "id": "2c11e0f19336e89aacb4684239ce59f644152621",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pcrk1/",
+          "id": "18b217cfdb51456f9bd5a1c0261de9c8d932f010",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mnb-m-3/",
           "type": "metal"
         },
         {
-          "id": "eebffd483a4ba79a5231238669b09c8c6b1d710d",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-125-1/",
+          "id": "d42ab08aca412dcf26df247b34e14ace114ace22",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mv20-1/",
           "type": "metal"
         },
         {
-          "id": "c37c714ae3f0dee2c8c27d5309819f79397d6bea",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pcrk2/",
+          "id": "123dfa40c2d75f688ac3f3a2f2309c16978678b8",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mch-m-1/",
+          "type": "metal"
+        },
+        {
+          "id": "85b68bba6974af1a29d8169b27dca1d4cd9ebf23",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mp-1-1/",
+          "type": "metal"
+        },
+        {
+          "id": "299ce3768bc46309e3f0c56548808261a39ce780",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mch-2/",
+          "type": "metal"
+        },
+        {
+          "id": "c456fac8207b27bf2b8118323ae8ffcc0eeb7c6f",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mv-50-1/",
+          "type": "metal"
+        },
+        {
+          "id": "ee32be15630bf683a963ca4e3877f6fa2e21758e",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-1/",
+          "type": "metal"
+        },
+        {
+          "id": "bba49fcc9793effb2bbc24a9d06f0cb49e640a25",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mch-zl-1/",
+          "type": "metal"
+        },
+        {
+          "id": "7f714b880d4a73e116dba44ca519cfc795fc9183",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mpch-2/",
+          "type": "metal"
+        },
+        {
+          "id": "029a27f8c609cbeaf7e2a72ac7c52579c02014b3",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mch-t-1/",
+          "type": "metal"
+        },
+        {
+          "id": "f0792cc95de8d304cc70790c937b6f93f57e72ab",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mchvp-2/",
+          "type": "metal"
+        },
+        {
+          "id": "66eb407e2996e37ed7bb6495e118aa8980a12d71",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mzpm-1/",
+          "type": "metal"
+        },
+        {
+          "id": "fe7fc80c7ee116e620c9825165c533746d6fd92a",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mp-v-1/",
+          "type": "metal"
+        },
+        {
+          "id": "bc2426a4fbb9ed4903bad9c7842754fe5d9bcf8f",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-nimo-20-2/",
+          "type": "metal"
+        },
+        {
+          "id": "e800893697939dcef7df44b6bc6028ea86f56d40",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mk-2/",
+          "type": "metal"
+        },
+        {
+          "id": "2c6d1cb606d74f780b815605528f0f9ba9b0e578",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-ms-zhnh-2/",
+          "type": "metal"
+        },
+        {
+          "id": "dced4d481101871580660fd0dbcb8b2185f5c132",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-ochm-om-1/",
+          "type": "metal"
+        },
+        {
+          "id": "46274b2abd6a6eece46a1106db59a0d5a3118b9d",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-md-25-1/",
+          "type": "metal"
+        },
+        {
+          "id": "b9753193c5ac6155302ce09e0d2e2415e8106748",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-pnmo49-1/",
+          "type": "metal"
+        },
+        {
+          "id": "0e39b30ef54200b86368fb8668c7aa2d4bade56b",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mtc-9-1/",
+          "type": "metal"
+        },
+        {
+          "id": "a583b6f9956cdca25e69b9f727c15b0b04aed52a",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-md-8/",
+          "type": "metal"
+        },
+        {
+          "id": "a37c5bf15d2b2c7368bc2ec3230979c289e5e934",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-vm-1/",
+          "type": "metal"
+        },
+        {
+          "id": "18610f42ff06dba714d637bdd991df29712b4c48",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-msh-1-1/",
+          "type": "metal"
+        },
+        {
+          "id": "028a2c487f866517ad412eddb07ac5519d2473ac",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-1/",
+          "type": "metal"
+        },
+        {
+          "id": "25e4511b9b2056b954df63acb61cd38a5b5c6aa9",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-ml-zvp-1/",
+          "type": "metal"
+        },
+        {
+          "id": "7664f6fd74bedf5af35dc335edbd9af89033dcf8",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-vm1d-1/",
+          "type": "metal"
+        },
+        {
+          "id": "7deb85aeb6855c427b7ddc38e56df4077e0377c6",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-md-40-1/",
+          "type": "metal"
+        },
+        {
+          "id": "3b2865248934211e7b3a3493c9296e39c7fddf27",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-vm2-2/",
+          "type": "metal"
+        },
+        {
+          "id": "366ca3f32e55aeb6e763610ceb33558755e997f3",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mt-15-3/",
+          "type": "metal"
+        },
+        {
+          "id": "d04ce16ff04cd34ca6e9e63ae5e3c499ce133631",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-msh-v-1/",
+          "type": "metal"
+        },
+        {
+          "id": "a4713080499e27e561173a75b16d0c751822e4ba",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-msh-2-1/",
+          "type": "metal"
+        },
+        {
+          "id": "c98e3e819f7194a5f0209e885a826f9cb57b0f0e",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-5/",
+          "type": "metal"
+        },
+        {
+          "id": "c2d8b1545a2f2b320b6265cd581491d6ef3dce34",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-vm1-2/",
+          "type": "metal"
+        },
+        {
+          "id": "4bff8fcb8dd4b690434d0855ebfeef359f39eb40",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-ochm-v-2/",
+          "type": "metal"
+        },
+        {
+          "id": "c29d1406e8c1ebc14f551f69d4bd6369df0d573a",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-md-50-1/",
+          "type": "metal"
+        },
+        {
+          "id": "4e958be196698eadd5cbc48510a88a00f2a94a20",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-vm3-2/",
+          "type": "metal"
+        },
+        {
+          "id": "77d31eb2a096dc061826bc643fbbb60c559db569",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-md15np-1/",
+          "type": "metal"
+        },
+        {
+          "id": "256367a49b9652c95d66dd391460a9a952030e79",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-md50n2k-2/",
+          "type": "metal"
+        },
+        {
+          "id": "67d7f164ecdc8561a26ae9a8311b7b2fc7d9fdb1",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-md-30-1/",
+          "type": "metal"
+        },
+        {
+          "id": "018eeca6f320d57a2b69dc685144f664f4d58e96",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mv30-1/",
+          "type": "metal"
+        },
+        {
+          "id": "92dc8995d4e3c6e6c5fdc1b129a4c1c767f73166",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-ms-2/",
+          "type": "metal"
+        },
+        {
+          "id": "07a800a0de918c3da66f879ca29719ed70fe0bba",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-ochm-2/",
+          "type": "metal"
+        },
+        {
+          "id": "0a18f7a94babcf715852637efebb96aa0042c438",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-nimo-25-3/",
+          "type": "metal"
+        },
+        {
+          "id": "3cd4c4c64df678652271fa95d99ba093b1b4578a",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-p-mch-1/",
+          "type": "metal"
+        },
+        {
+          "id": "dc4ce8af7f4be8bb5f887860674389045794455b",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-md-60-1/",
+          "type": "metal"
+        },
+        {
+          "id": "74301bb376c2a02df2312ff9a48d143a686fc0d8",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-md-55-1/",
+          "type": "metal"
+        },
+        {
+          "id": "c5443233d81de1756ef5c9425832734f2419edaf",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-tcm3-1/",
+          "type": "metal"
+        },
+        {
+          "id": "e52b0876312c9dc3adf17b35b07a6230643f375f",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mshvsh-2-1/",
+          "type": "metal"
+        },
+        {
+          "id": "a9bf29af08b8dc3f76dfea53555381ce69a55db2",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-sm3-1/",
+          "type": "metal"
+        },
+        {
+          "id": "4f4a71a643e05e7a7bfac1a861f6d5f2ec16ebee",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-cm3-4/",
+          "type": "metal"
+        },
+        {
+          "id": "4bd70dff8434b82cb80eaeb5f0810470fc70867c",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-cu60-1/",
+          "type": "metal"
+        },
+        {
+          "id": "68345349ec92f9477e9afcaaf8a41103926e8ff2",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-la-1/",
+          "type": "metal"
+        },
+        {
+          "id": "d733b0825142cba8aa37b1ce4beacc36cf36d13a",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-tsm4605-1/",
+          "type": "metal"
+        },
+        {
+          "id": "353d60b2400aa45ed11bd1998a11fa2d898ab149",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-cu20-1/",
+          "type": "metal"
+        },
+        {
+          "id": "6be0085e22bb326db0ee08c5c188bdae1dbb0a69",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-4604-1/",
+          "type": "metal"
+        },
+        {
+          "id": "6699646f1a56707928a750c988b3b9e38e7e3811",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-fmo55a-1/",
+          "type": "metal"
+        },
+        {
+          "id": "655f1af939505ffcec5800fa01cf3740b66e0b6b",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-fmo52-1/",
+          "type": "metal"
+        },
+        {
+          "id": "ef1899074e9ed4cc06f1470ec62a58e9c37b44ac",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-cm-1-1/",
+          "type": "metal"
+        },
+        {
+          "id": "8cc41fe07c60489a94e9901cf75bd0e89bd1435b",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-cu40-1/",
+          "type": "metal"
+        },
+        {
+          "id": "b91ae00c2228095c9b20d5aa2a907d48ccc79246",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mrv-3/",
+          "type": "metal"
+        },
+        {
+          "id": "ee514a58cf856e0492f33d4ccfde9d93f9e59a30",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mr-47/",
+          "type": "metal"
+        },
+        {
+          "id": "1048e8a0391c48b058d7dba78ab6b7f1ebbca492",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-8/",
+          "type": "metal"
+        },
+        {
+          "id": "7539086d302990b1d7bdf5edf06f2779332ca8c3",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-fmo55b-1/",
+          "type": "metal"
+        },
+        {
+          "id": "267331980031b3367422e2c892872a03c347586d",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mshch-1-1/",
+          "type": "metal"
+        },
+        {
+          "id": "1c9e830c0e05a663dd69f4aa3819d6398ab33ab7",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mr-47zvp-1/",
+          "type": "metal"
+        },
+        {
+          "id": "dd917b4029cf94de1cc6759bbf0a6c25c7a9a2be",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mr-10-1/",
+          "type": "metal"
+        },
+        {
+          "id": "4efacfc9c52d0beff2d91d12bcc8145031c96c7d",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-cu70-1/",
+          "type": "metal"
+        },
+        {
+          "id": "8d62cca0a4618e7dcf2f7321261a824c00e7e0cf",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-w30-1/",
+          "type": "metal"
+        },
+        {
+          "id": "63e2da57aec6d0ce86d4fd1fc0de86d9b7a0a823",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-4605-1/",
+          "type": "metal"
+        },
+        {
+          "id": "0de1d599d4ea8945c6b648e5fcc8decc5148854a",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-dm-1/",
+          "type": "metal"
+        },
+        {
+          "id": "0dc2e7ccc9ed8aa4f4f855490018bb4da0b5fc37",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-cm10vd/",
+          "type": "metal"
+        },
+        {
+          "id": "2ba43e45e0d132bba3c4384d19eb41a7bec9ea4a",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-fmo60-1/",
+          "type": "metal"
+        },
+        {
+          "id": "04376d4a36c51652d276c32ed832b83b39c73db9",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-tsm-1/",
+          "type": "metal"
+        },
+        {
+          "id": "4365acaaba8de0b12d938fde4b2acc6deccd9eba",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-tzc-1/",
+          "type": "metal"
+        },
+        {
+          "id": "8d5622714ba33eaeb1547bc77d3f8304d33db69a",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-cm5-4/",
+          "type": "metal"
+        },
+        {
+          "id": "877aed647ffb8232d3af1e60cb359b5538afed63",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-cm-2a-1/",
+          "type": "metal"
+        },
+        {
+          "id": "9edbd440d6c367f28567a0b43623fd0688d580fd",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-cu10-1/",
+          "type": "metal"
+        },
+        {
+          "id": "0bcf8f77045afa87550a8dba2f141e9a586e223a",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mr-47vp-1/",
+          "type": "metal"
+        },
+        {
+          "id": "4321816649b0b3277db5031c9206fffa6ef152eb",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-fmo58-1/",
+          "type": "metal"
+        },
+        {
+          "id": "3b0be0416399396dbf30309a50102a6c168faff1",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mlt-1/",
+          "type": "metal"
+        },
+        {
+          "id": "324ff320b30c1d47a7e59ef9f30e3fc8cb6cce6f",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mshch-2-1/",
+          "type": "metal"
+        },
+        {
+          "id": "f533f3dd1bdbefd7e9dd4168b4008bb11a4af9e0",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-58/",
+          "type": "metal"
+        },
+        {
+          "id": "a96a08952e8858ca2e606b829285013afebb5951",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-dmi-7/",
+          "type": "metal"
+        },
+        {
+          "id": "b12eb99544e1ec57481b9395a8295a22314ec7d0",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mr-lbv-1/",
+          "type": "metal"
+        },
+        {
+          "id": "51d141641cbd2ba92209c3280edd4dff9d5b8b25",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-tsm4-1/",
+          "type": "metal"
+        },
+        {
+          "id": "d4de31b30a531da018af85b91f341cf1ef013cab",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mrn-3/",
+          "type": "metal"
+        },
+        {
+          "id": "54c47c1220f8f54231e560f67259adb27d3d4a38",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-cm6-3/",
+          "type": "metal"
+        },
+        {
+          "id": "7468f607bda06463b3a0fe95178c060e1f831e38",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-cmv30-5/",
+          "type": "metal"
+        },
+        {
+          "id": "84119101df2aabe42de37595758cd5374c172625",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-csdm-3/",
+          "type": "metal"
+        },
+        {
+          "id": "4b81f95441c3f2b310e66c22b17148ad4caf207a",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-tzm-1/",
+          "type": "metal"
+        },
+        {
+          "id": "6bccf74a027da68d24e8bb8901855a73f2333980",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-cu50-1/",
+          "type": "metal"
+        },
+        {
+          "id": "ead637e6d8ccb0183d50e9072f9db59134eefd4c",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-cm-2/",
+          "type": "metal"
+        },
+        {
+          "id": "45c31d847b25577b1fe8612559aeba15ba73b00c",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-sprabond-1/",
+          "type": "metal"
+        },
+        {
+          "id": "4d18cf0a6aebda9718cdab8323cb41fdf3e2c40b",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-sh-mch-1/",
+          "type": "metal"
+        },
+        {
+          "id": "6e41252563703cf9642735208e4466d7b4610668",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-cu30-1/",
+          "type": "metal"
+        },
+        {
+          "id": "a16453bc5978378157140fd7057a1fbf43772c8f",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-cmv50-3/",
+          "type": "metal"
+        },
+        {
+          "id": "1543340e14eb7040473ce263f8fee6b6533b3b49",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mpv/",
           "type": "metal"
         },
         {
@@ -454,18 +924,8 @@
           "type": "metal"
         },
         {
-          "id": "f874a3eec000969d9c8415e16e9fe88c81e53e94",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-kcp-63/",
-          "type": "metal"
-        },
-        {
-          "id": "4fee96542c11ee87b5b36c1f8447452c15df99b9",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pcrk1m/",
-          "type": "metal"
-        },
-        {
-          "id": "8ff5011432810f1c25206824a3ea4b43708ca6f5",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-702-chistyy-klass-1/",
+          "id": "d2860c503b09365496411125501a5f934bb649e6",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mvch/",
           "type": "metal"
         },
         {
@@ -474,23 +934,13 @@
           "type": "metal"
         },
         {
-          "id": "58685580243d3130c9840ccb72eb78ffdd99db62",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pcrk2m/",
+          "id": "55156acaa77f1dafc0e8c6f25b70e9e2c47c9a93",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-pmch/",
           "type": "metal"
         },
         {
-          "id": "23a6b84fe2d2d69ed7817447d16423ef362b7144",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy/",
-          "type": "metal"
-        },
-        {
-          "id": "581e3185e4bf16fdd7d22c9438d758c5a6509744",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pce-zrbm/",
-          "type": "metal"
-        },
-        {
-          "id": "84fd7bfb5ff000853ae29d72b40d6b4c452b03a5",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pc-or/",
+          "id": "50aeed452798638dad105e27b66fe94fabf02290",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-kmf-6/",
           "type": "metal"
         },
         {
@@ -499,8 +949,43 @@
           "type": "metal"
         },
         {
-          "id": "b60990a99d4c930cb4a36656f0718ba90841100e",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pce-zr/",
+          "id": "c4e5e87a55bc61bda57fb00db7909c816f1e3956",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-e125-1/",
+          "type": "metal"
+        },
+        {
+          "id": "e2d52a5ecc965ed80ab283d13ade65bb035fe379",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pce-zro-ch/",
+          "type": "metal"
+        },
+        {
+          "id": "9f3d3e911b670047337e58fce7fbf34662e4a0fb",
+          "link": "https://redmetsplav.ru/store/gafniy-i-ego-splavy/gafniy-b-776-grade-r3---astm-b776/",
+          "type": "metal"
+        },
+        {
+          "id": "58685580243d3130c9840ccb72eb78ffdd99db62",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pcrk2m/",
+          "type": "metal"
+        },
+        {
+          "id": "096e0584cc9c126039a1cccca9523e72302d838a",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pcrkzm/",
+          "type": "metal"
+        },
+        {
+          "id": "e5cf7399cb63e3b67fdad89d350e1380a873a7cc",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev40---gost-27130-94/",
+          "type": "metal"
+        },
+        {
+          "id": "321f39eb7ebd26650974afd5953f47b85b197b56",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-cirkoloy-46/",
+          "type": "metal"
+        },
+        {
+          "id": "ee6c3f2dc57d11d958afbcda964554bfd3db22ac",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-e110k-1/",
           "type": "metal"
         },
         {
@@ -509,8 +994,58 @@
           "type": "metal"
         },
         {
-          "id": "2955ed832d4d7281b2bdfa73d85815d1e5116319",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-110b4-1/",
+          "id": "84fd7bfb5ff000853ae29d72b40d6b4c452b03a5",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pc-or/",
+          "type": "metal"
+        },
+        {
+          "id": "23a6b84fe2d2d69ed7817447d16423ef362b7144",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy/",
+          "type": "metal"
+        },
+        {
+          "id": "a0f0c39f7ced192ba6a295fb9c152dce3277873c",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-e110-1/",
+          "type": "metal"
+        },
+        {
+          "id": "2c11e0f19336e89aacb4684239ce59f644152621",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pcrk1/",
+          "type": "metal"
+        },
+        {
+          "id": "51b825283241e011c43d49cd921140803726fd41",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-cn25t3-1/",
+          "type": "metal"
+        },
+        {
+          "id": "e0bcda1b773b707378adbf228d332caca4f5fc5c",
+          "link": "https://redmetsplav.ru/store/gafniy-i-ego-splavy/gafniy-b-737-grade-r3---astm-b737/",
+          "type": "metal"
+        },
+        {
+          "id": "1c81a31aafc175b145d477940627ea3f749a070c",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-40u0-75-2---tu-14-115-43-97/",
+          "type": "metal"
+        },
+        {
+          "id": "71f0d879fbcc31ff6e1257d5701235baf3269b86",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-40n8-mn6---tu-14-115-24-96/",
+          "type": "metal"
+        },
+        {
+          "id": "eebffd483a4ba79a5231238669b09c8c6b1d710d",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-125-1/",
+          "type": "metal"
+        },
+        {
+          "id": "2ce5881748bc1ddd4096ad2ec7464785ec0c4bbe",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-2/",
+          "type": "metal"
+        },
+        {
+          "id": "f874a3eec000969d9c8415e16e9fe88c81e53e94",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-kcp-63/",
           "type": "metal"
         },
         {
@@ -524,23 +1059,8 @@
           "type": "metal"
         },
         {
-          "id": "096e0584cc9c126039a1cccca9523e72302d838a",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pcrkzm/",
-          "type": "metal"
-        },
-        {
-          "id": "a0f0c39f7ced192ba6a295fb9c152dce3277873c",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-e110-1/",
-          "type": "metal"
-        },
-        {
-          "id": "321f39eb7ebd26650974afd5953f47b85b197b56",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-cirkoloy-46/",
-          "type": "metal"
-        },
-        {
-          "id": "e2d52a5ecc965ed80ab283d13ade65bb035fe379",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pce-zro-ch/",
+          "id": "e5c94257e6395bba634548156523b5111b6fafa7",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-cirkoloy-2/",
           "type": "metal"
         },
         {
@@ -549,193 +1069,8 @@
           "type": "metal"
         },
         {
-          "id": "51b825283241e011c43d49cd921140803726fd41",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-cn25t3-1/",
-          "type": "metal"
-        },
-        {
-          "id": "9f3d3e911b670047337e58fce7fbf34662e4a0fb",
-          "link": "https://redmetsplav.ru/store/gafniy-i-ego-splavy/gafniy-b-776-grade-r3---astm-b776/",
-          "type": "metal"
-        },
-        {
-          "id": "e5c94257e6395bba634548156523b5111b6fafa7",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-cirkoloy-2/",
-          "type": "metal"
-        },
-        {
-          "id": "039ecfcba55a375043163a9cb20880864d98eccb",
-          "link": "https://redmetsplav.ru/store/gafniy-i-ego-splavy/gafniy-b-737-grade-r1---astm-b737/",
-          "type": "metal"
-        },
-        {
-          "id": "1e163b775489a2dff16109362b8bc347f04d2e9c",
-          "link": "https://redmetsplav.ru/store/gafniy-i-ego-splavy/gafniy-b-776-grade-r1---astm-b776/",
-          "type": "metal"
-        },
-        {
-          "id": "c4e5e87a55bc61bda57fb00db7909c816f1e3956",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-e125-1/",
-          "type": "metal"
-        },
-        {
-          "id": "e0bcda1b773b707378adbf228d332caca4f5fc5c",
-          "link": "https://redmetsplav.ru/store/gafniy-i-ego-splavy/gafniy-b-737-grade-r3---astm-b737/",
-          "type": "metal"
-        },
-        {
-          "id": "9f987a8a03454bd9528acbb5f20a565d7ef01c4f",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-tn-3-1/",
-          "type": "metal"
-        },
-        {
-          "id": "a415d21dfc0382132c46d7fba544547e5136fda3",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-t-4-1/",
-          "type": "metal"
-        },
-        {
-          "id": "bc378635ca42aaab2eb2d55bed37db89e7da0778",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-5b/",
-          "type": "metal"
-        },
-        {
-          "id": "a0dac01e1b21c5e4c20836945ca4f3b3fd44bd29",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-ta/",
-          "type": "metal"
-        },
-        {
-          "id": "4bce5f3044bd9375b97ca42bbfa2215a9e9a271d",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-tvch-1-1/",
-          "type": "metal"
-        },
-        {
-          "id": "35661b465405f520e58e003824c9b46075de988f",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-tv15-1/",
-          "type": "metal"
-        },
-        {
-          "id": "ade28bcc3a5937c1ea3e236df864981b80b0299d",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-2a/",
-          "type": "metal"
-        },
-        {
-          "id": "06c8a80da9f795f6c99c760fc2bd9edf5da6e4d1",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-tapm/",
-          "type": "metal"
-        },
-        {
-          "id": "6fc372fffe52beef59e8b9e53a36c7c9899dbe6a",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-ta-nb20-1/",
-          "type": "metal"
-        },
-        {
-          "id": "d20c1fe354a2f72cf57a96e438bcb4421ce7bd4b",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-4b/",
-          "type": "metal"
-        },
-        {
-          "id": "d904ea1697f68835d76398d9923d0569c4cddd18",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-tv-5-1/",
-          "type": "metal"
-        },
-        {
-          "id": "285ccc5e7cbc88f272885d22b8e5c5e64c8ebad9",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-3/",
-          "type": "metal"
-        },
-        {
-          "id": "546d9291435f9874d8427ebf872443ae9bdefdaf",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-vv-2/",
-          "type": "metal"
-        },
-        {
-          "id": "9a13e5adacbe11a8e9f360d361089d282d070af6",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-tapa/",
-          "type": "metal"
-        },
-        {
-          "id": "b55cf43ae6e28ed0fe6f89d398fd6586575a8b43",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-5a/",
-          "type": "metal"
-        },
-        {
-          "id": "3bc89bbf5e11983da19076dca9409ca215289a57",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-vv-3/",
-          "type": "metal"
-        },
-        {
-          "id": "6397dc25ca48cf8bd1c9b0f1aa245c2a647a3ea8",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-1/",
-          "type": "metal"
-        },
-        {
-          "id": "902d68d2a0c1ab8bf4e7ae31c783ab42638f6b4b",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-4a/",
-          "type": "metal"
-        },
-        {
-          "id": "7836bf11c3529ba8ca7e1f14132578a4a7da8c48",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-tapb/",
-          "type": "metal"
-        },
-        {
-          "id": "cb3236ebc1e40d4afa286b536d48f378a30ed243",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-vv-1/",
-          "type": "metal"
-        },
-        {
-          "id": "eb3f49a7f076809c9de94e383d2d085426d7ce62",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev80al12---iso-5451/",
-          "type": "metal"
-        },
-        {
-          "id": "795fd6a6f40ab4e171c8c494d9af8f14a4ab35c2",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev60---gost-27130-94/",
-          "type": "metal"
-        },
-        {
-          "id": "119e8bb5d937462c6aaea31290ba83fb7397ddbc",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-tn-20-1/",
-          "type": "metal"
-        },
-        {
-          "id": "8db7eeed3ca42efcb183f3390945a2c789e3f850",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-t-5-1/",
-          "type": "metal"
-        },
-        {
-          "id": "a43fa4b51ccd50f36935260595facde7137a423a",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-tv-10-1/",
-          "type": "metal"
-        },
-        {
-          "id": "05696f9dd195672c252f996216c40a9ec256b06b",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-ta-w10/",
-          "type": "metal"
-        },
-        {
-          "id": "877728233e31280db00f428bf66d2b7cf4188faf",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-t-15-1/",
-          "type": "metal"
-        },
-        {
-          "id": "41fc6283157b7b3958032dfed3e93dc62494f8c7",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-ta-nb40-1/",
-          "type": "metal"
-        },
-        {
-          "id": "e693ed36479e3cca4d5ed04cac3ed721054edde6",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-t-10-1/",
-          "type": "metal"
-        },
-        {
-          "id": "768fb185316f8fc3fe2f346b5107ff181a25e37a",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-ta-nb30-1/",
-          "type": "metal"
-        },
-        {
-          "id": "ad469ce76ff33c7d27a5f1e57a3423322ba0035c",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev80---gost-27130-94/",
+          "id": "d96cf787f376a3ab2aab7a592b154e85952082b9",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-40n10mn3---tu-14-115-24-96/",
           "type": "metal"
         },
         {
@@ -744,13 +1079,18 @@
           "type": "metal"
         },
         {
-          "id": "a251e254181b0a990f61455473ab663f53dd0dc7",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-tn-1-1/",
+          "id": "eaf5c82d3b0c14711a6f83373aa6770e12c9d2ed",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-50u0-6-2---tu-14-115-43-97/",
           "type": "metal"
         },
         {
-          "id": "1c81a31aafc175b145d477940627ea3f749a070c",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-40u0-75-2---tu-14-115-43-97/",
+          "id": "2955ed832d4d7281b2bdfa73d85815d1e5116319",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-110b4-1/",
+          "type": "metal"
+        },
+        {
+          "id": "1e163b775489a2dff16109362b8bc347f04d2e9c",
+          "link": "https://redmetsplav.ru/store/gafniy-i-ego-splavy/gafniy-b-776-grade-r1---astm-b776/",
           "type": "metal"
         },
         {
@@ -759,673 +1099,18 @@
           "type": "metal"
         },
         {
-          "id": "7c9cd1842f9ec937a9a37c2b6c44ebdc7178567c",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-t-1/",
-          "type": "metal"
-        },
-        {
-          "id": "8bc1fab2cda117028f392b467326c5c0717b1e63",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-ta-w2-5/",
-          "type": "metal"
-        },
-        {
-          "id": "6a2fcd48760e457d1e5cbf1737180d78b6f6dcc7",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-ta-nb3-1/",
-          "type": "metal"
-        },
-        {
-          "id": "eaf5c82d3b0c14711a6f83373aa6770e12c9d2ed",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-50u0-6-2---tu-14-115-43-97/",
-          "type": "metal"
-        },
-        {
           "id": "a3f98950fe778319dd1dd0cef6d350d9127236b6",
           "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev40---iso-5451/",
           "type": "metal"
         },
         {
-          "id": "e5cf7399cb63e3b67fdad89d350e1380a873a7cc",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev40---gost-27130-94/",
+          "id": "9729aaca0ad6a4570c20365f6ef97a2b96ca015c",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-704-zr-olovo-1/",
           "type": "metal"
         },
         {
-          "id": "ac11f871a670b84b664eff02fba4f04390ff15f8",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-tvch-2/",
-          "type": "metal"
-        },
-        {
-          "id": "d96cf787f376a3ab2aab7a592b154e85952082b9",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-40n10mn3---tu-14-115-24-96/",
-          "type": "metal"
-        },
-        {
-          "id": "a8ff9cf99ffddd91695cca7f55554974fc4b697e",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-cr1---en-14700-2014/",
-          "type": "metal"
-        },
-        {
-          "id": "91b4c55c61bf562f5a86fbaab9a8b2acb270e5b8",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev80---iso-5451/",
-          "type": "metal"
-        },
-        {
-          "id": "71f0d879fbcc31ff6e1257d5701235baf3269b86",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-40n8-mn6---tu-14-115-24-96/",
-          "type": "metal"
-        },
-        {
-          "id": "267a017b0bae327c6f4e949813805b1888d04c53",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev60---iso-5451/",
-          "type": "metal"
-        },
-        {
-          "id": "9609087f4798a96f4935b416909efa75da957dfd",
-          "link": "https://redmetsplav.ru/store/tantal-i-ego-splavy/tantal-2b/",
-          "type": "metal"
-        },
-        {
-          "id": "977098df087493ed1dd7e0d5f48e9457948384ab",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vnal-1d---tu-48-4-505-99/",
-          "type": "metal"
-        },
-        {
-          "id": "a31fae73f7279d6205ece2522a715980fedbc7e9",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fvd50u0-6---gost-27130-94/",
-          "type": "metal"
-        },
-        {
-          "id": "3d0be93cb37e58848c8ec032b834fc809dd774fa",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev80al14---iso-5451/",
-          "type": "metal"
-        },
-        {
-          "id": "c6009470de5255e7b37e7404ef5e7ba61ddc142b",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-low-aluminum---stratcor-1/",
-          "type": "metal"
-        },
-        {
-          "id": "fb73bc5121b0697bd50e4fd1d788df6e16b4665d",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-regular---stratcor/",
-          "type": "metal"
-        },
-        {
-          "id": "d30eb8969247a1c274104f5b53ed8bf6842c287e",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vnm99-5---tu-1761-037-2587982-2002/",
-          "type": "metal"
-        },
-        {
-          "id": "7b96a308588f6b208aba4af5f19dca71bd92ce37",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vnm99-8---tu-1761-037-2587982-2002/",
-          "type": "metal"
-        },
-        {
-          "id": "d9677fa91dc97c6134f8a669730bbc7f500c1160",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fvd40u0-75---gost-27130-94/",
-          "type": "metal"
-        },
-        {
-          "id": "700d75d4d8ff42d8c5d2065e4d081431db2db7ad",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vnm-1---tu-48-4-272-73/",
-          "type": "metal"
-        },
-        {
-          "id": "302938235f99f7cc0aaedd0a0d7b190363baa1ad",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vel-2/",
-          "type": "metal"
-        },
-        {
-          "id": "072c20653af4b948e44dd5c6380a19141c88203a",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vel-1/",
-          "type": "metal"
-        },
-        {
-          "id": "547d8c25fe2044bfb72b37777214d2a8a3c57909",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-nitrovan-16---stratcor-1/",
-          "type": "metal"
-        },
-        {
-          "id": "c216321ea9f71e130143a65c9c9e1d1ea6244d60",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-low-aluminum---stratcor/",
-          "type": "metal"
-        },
-        {
-          "id": "bba49fcc9793effb2bbc24a9d06f0cb49e640a25",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mch-zl-1/",
-          "type": "metal"
-        },
-        {
-          "id": "a8f5ca86d53bd23816c7be8df73b4cab04408001",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-nitrovan-16---stratcor/",
-          "type": "metal"
-        },
-        {
-          "id": "028a2c487f866517ad412eddb07ac5519d2473ac",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-1/",
-          "type": "metal"
-        },
-        {
-          "id": "34b2efe60c0e957b886e90c10f09ee5a802c2d06",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fvd20s20---tu-14-141-08-91/",
-          "type": "metal"
-        },
-        {
-          "id": "f7fe4de80a9d2abade1b978527c704259f5f3d69",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev80al12---gost-27130-94/",
-          "type": "metal"
-        },
-        {
-          "id": "f0792cc95de8d304cc70790c937b6f93f57e72ab",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mchvp-2/",
-          "type": "metal"
-        },
-        {
-          "id": "63931c368e37054f1707244c78ffaea67a1d48fb",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-nitrovan-12---stratcor/",
-          "type": "metal"
-        },
-        {
-          "id": "d634301c207a823ca25694364189f5eac589d690",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fvd50u0-3---gost-27130-94/",
-          "type": "metal"
-        },
-        {
-          "id": "557ca94a8bbffd4e7d95b40eef234fcee9253082",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vnm-2---tu-48-4-272-73/",
-          "type": "metal"
-        },
-        {
-          "id": "5aa326da81f2baf0fdb8c1f7fb3edd40b3d8eb40",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev80al14---gost-27130-94/",
-          "type": "metal"
-        },
-        {
-          "id": "61e1ae252d2542a7f7348c99f18d57a85f69c501",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-regular---stratcor-1/",
-          "type": "metal"
-        },
-        {
-          "id": "5c14083b6e4a51ef6949a908389d15002ad565fc",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vel-3/",
-          "type": "metal"
-        },
-        {
-          "id": "951c6a196ec6dc9f51b65847c6939843bbc8a341",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-a-102---astm-a102-1/",
-          "type": "metal"
-        },
-        {
-          "id": "65b9740f5ffad2224f71685a428da60554eaa6ce",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vnm99-9---tu-1761-037-2587982-2002/",
-          "type": "metal"
-        },
-        {
-          "id": "365f2bf5634aca176fe32a300d45ddd1022c3ef2",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-nitrovan-12---stratcor-1/",
-          "type": "metal"
-        },
-        {
-          "id": "bebd7815bccdaa7a2c59a0cefc13ea62c5f88c62",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vnm99-99---tu-1761-043-2587982-2002/",
-          "type": "metal"
-        },
-        {
-          "id": "123dfa40c2d75f688ac3f3a2f2309c16978678b8",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mch-m-1/",
-          "type": "metal"
-        },
-        {
-          "id": "18b217cfdb51456f9bd5a1c0261de9c8d932f010",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mnb-m-3/",
-          "type": "metal"
-        },
-        {
-          "id": "ec2f777fa5c060553b23b374d62860dcbf441c4f",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-m-mp-2/",
-          "type": "metal"
-        },
-        {
-          "id": "ee32be15630bf683a963ca4e3877f6fa2e21758e",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-1/",
-          "type": "metal"
-        },
-        {
-          "id": "fe7fc80c7ee116e620c9825165c533746d6fd92a",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mp-v-1/",
-          "type": "metal"
-        },
-        {
-          "id": "e800893697939dcef7df44b6bc6028ea86f56d40",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mk-2/",
-          "type": "metal"
-        },
-        {
-          "id": "6302c21ead857de7cf70235f361b18c605caeba1",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fvd50u0-75---gost-27130-94/",
-          "type": "metal"
-        },
-        {
-          "id": "299ce3768bc46309e3f0c56548808261a39ce780",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mch-2/",
-          "type": "metal"
-        },
-        {
-          "id": "3c76565b7957c34011ad95fcd821be7238e1db56",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fvd50u0-4---gost-27130-94/",
-          "type": "metal"
-        },
-        {
-          "id": "7935527867e0a779a2cb07a2009c739ba3dc9703",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fvd40u0-5---gost-27130-94/",
-          "type": "metal"
-        },
-        {
-          "id": "1d866cc9abaed2b3b4d46e2e1d9a7de1c283ee4a",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fvd40u1---gost-27130-94/",
-          "type": "metal"
-        },
-        {
-          "id": "e30c420de6e28a50bc00d88a16743b4432895b86",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fvd50u0-5---gost-27130-94/",
-          "type": "metal"
-        },
-        {
-          "id": "50e6dc62eb4c2534ddd01b7722676d2b442ee6ff",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vnal-2d---tu-48-4-505-99/",
-          "type": "metal"
-        },
-        {
-          "id": "029a27f8c609cbeaf7e2a72ac7c52579c02014b3",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mch-t-1/",
-          "type": "metal"
-        },
-        {
-          "id": "66eb407e2996e37ed7bb6495e118aa8980a12d71",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mzpm-1/",
-          "type": "metal"
-        },
-        {
-          "id": "85b68bba6974af1a29d8169b27dca1d4cd9ebf23",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mp-1-1/",
-          "type": "metal"
-        },
-        {
-          "id": "7f714b880d4a73e116dba44ca519cfc795fc9183",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mpch-2/",
-          "type": "metal"
-        },
-        {
-          "id": "d96cf77c786b0cd9073eb0e2a8c23e97377b7092",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mpn-1/",
-          "type": "metal"
-        },
-        {
-          "id": "bf58535a150c32fae6d0e76ac089965f41a9e44a",
-          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vnm99-7---tu-1761-037-2587982-2002/",
-          "type": "metal"
-        },
-        {
-          "id": "5c665407487213df788be501a4fc46cfa0fb1320",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mbvp-2/",
-          "type": "metal"
-        },
-        {
-          "id": "018eeca6f320d57a2b69dc685144f664f4d58e96",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mv30-1/",
-          "type": "metal"
-        },
-        {
-          "id": "dced4d481101871580660fd0dbcb8b2185f5c132",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-ochm-om-1/",
-          "type": "metal"
-        },
-        {
-          "id": "25e4511b9b2056b954df63acb61cd38a5b5c6aa9",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-ml-zvp-1/",
-          "type": "metal"
-        },
-        {
-          "id": "0a18f7a94babcf715852637efebb96aa0042c438",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-nimo-25-3/",
-          "type": "metal"
-        },
-        {
-          "id": "46274b2abd6a6eece46a1106db59a0d5a3118b9d",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-md-25-1/",
-          "type": "metal"
-        },
-        {
-          "id": "74301bb376c2a02df2312ff9a48d143a686fc0d8",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-md-55-1/",
-          "type": "metal"
-        },
-        {
-          "id": "7deb85aeb6855c427b7ddc38e56df4077e0377c6",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-md-40-1/",
-          "type": "metal"
-        },
-        {
-          "id": "7664f6fd74bedf5af35dc335edbd9af89033dcf8",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-vm1d-1/",
-          "type": "metal"
-        },
-        {
-          "id": "92dc8995d4e3c6e6c5fdc1b129a4c1c767f73166",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-ms-2/",
-          "type": "metal"
-        },
-        {
-          "id": "3b2865248934211e7b3a3493c9296e39c7fddf27",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-vm2-2/",
-          "type": "metal"
-        },
-        {
-          "id": "d42ab08aca412dcf26df247b34e14ace114ace22",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mv20-1/",
-          "type": "metal"
-        },
-        {
-          "id": "b9753193c5ac6155302ce09e0d2e2415e8106748",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-pnmo49-1/",
-          "type": "metal"
-        },
-        {
-          "id": "c2d8b1545a2f2b320b6265cd581491d6ef3dce34",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-vm1-2/",
-          "type": "metal"
-        },
-        {
-          "id": "3cd4c4c64df678652271fa95d99ba093b1b4578a",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-p-mch-1/",
-          "type": "metal"
-        },
-        {
-          "id": "18610f42ff06dba714d637bdd991df29712b4c48",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-msh-1-1/",
-          "type": "metal"
-        },
-        {
-          "id": "324ff320b30c1d47a7e59ef9f30e3fc8cb6cce6f",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mshch-2-1/",
-          "type": "metal"
-        },
-        {
-          "id": "dc4ce8af7f4be8bb5f887860674389045794455b",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-md-60-1/",
-          "type": "metal"
-        },
-        {
-          "id": "07a800a0de918c3da66f879ca29719ed70fe0bba",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-ochm-2/",
-          "type": "metal"
-        },
-        {
-          "id": "4bff8fcb8dd4b690434d0855ebfeef359f39eb40",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-ochm-v-2/",
-          "type": "metal"
-        },
-        {
-          "id": "a4713080499e27e561173a75b16d0c751822e4ba",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-msh-2-1/",
-          "type": "metal"
-        },
-        {
-          "id": "45c31d847b25577b1fe8612559aeba15ba73b00c",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-sprabond-1/",
-          "type": "metal"
-        },
-        {
-          "id": "c456fac8207b27bf2b8118323ae8ffcc0eeb7c6f",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mv-50-1/",
-          "type": "metal"
-        },
-        {
-          "id": "877aed647ffb8232d3af1e60cb359b5538afed63",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-cm-2a-1/",
-          "type": "metal"
-        },
-        {
-          "id": "4f4a71a643e05e7a7bfac1a861f6d5f2ec16ebee",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-cm3-4/",
-          "type": "metal"
-        },
-        {
-          "id": "366ca3f32e55aeb6e763610ceb33558755e997f3",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mt-15-3/",
-          "type": "metal"
-        },
-        {
-          "id": "a583b6f9956cdca25e69b9f727c15b0b04aed52a",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-md-8/",
-          "type": "metal"
-        },
-        {
-          "id": "4e958be196698eadd5cbc48510a88a00f2a94a20",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-vm3-2/",
-          "type": "metal"
-        },
-        {
-          "id": "ead637e6d8ccb0183d50e9072f9db59134eefd4c",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-cm-2/",
-          "type": "metal"
-        },
-        {
-          "id": "267331980031b3367422e2c892872a03c347586d",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mshch-1-1/",
-          "type": "metal"
-        },
-        {
-          "id": "4321816649b0b3277db5031c9206fffa6ef152eb",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-fmo58-1/",
-          "type": "metal"
-        },
-        {
-          "id": "d04ce16ff04cd34ca6e9e63ae5e3c499ce133631",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-msh-v-1/",
-          "type": "metal"
-        },
-        {
-          "id": "a37c5bf15d2b2c7368bc2ec3230979c289e5e934",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-vm-1/",
-          "type": "metal"
-        },
-        {
-          "id": "6699646f1a56707928a750c988b3b9e38e7e3811",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-fmo55a-1/",
-          "type": "metal"
-        },
-        {
-          "id": "8d5622714ba33eaeb1547bc77d3f8304d33db69a",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-cm5-4/",
-          "type": "metal"
-        },
-        {
-          "id": "bc2426a4fbb9ed4903bad9c7842754fe5d9bcf8f",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-nimo-20-2/",
-          "type": "metal"
-        },
-        {
-          "id": "77d31eb2a096dc061826bc643fbbb60c559db569",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-md15np-1/",
-          "type": "metal"
-        },
-        {
-          "id": "c98e3e819f7194a5f0209e885a826f9cb57b0f0e",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-5/",
-          "type": "metal"
-        },
-        {
-          "id": "a9bf29af08b8dc3f76dfea53555381ce69a55db2",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-sm3-1/",
-          "type": "metal"
-        },
-        {
-          "id": "0dc2e7ccc9ed8aa4f4f855490018bb4da0b5fc37",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-cm10vd/",
-          "type": "metal"
-        },
-        {
-          "id": "256367a49b9652c95d66dd391460a9a952030e79",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-md50n2k-2/",
-          "type": "metal"
-        },
-        {
-          "id": "0e39b30ef54200b86368fb8668c7aa2d4bade56b",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mtc-9-1/",
-          "type": "metal"
-        },
-        {
-          "id": "2ba43e45e0d132bba3c4384d19eb41a7bec9ea4a",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-fmo60-1/",
-          "type": "metal"
-        },
-        {
-          "id": "67d7f164ecdc8561a26ae9a8311b7b2fc7d9fdb1",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-md-30-1/",
-          "type": "metal"
-        },
-        {
-          "id": "c29d1406e8c1ebc14f551f69d4bd6369df0d573a",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-md-50-1/",
-          "type": "metal"
-        },
-        {
-          "id": "2c6d1cb606d74f780b815605528f0f9ba9b0e578",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-ms-zhnh-2/",
-          "type": "metal"
-        },
-        {
-          "id": "ef1899074e9ed4cc06f1470ec62a58e9c37b44ac",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-cm-1-1/",
-          "type": "metal"
-        },
-        {
-          "id": "655f1af939505ffcec5800fa01cf3740b66e0b6b",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-fmo52-1/",
-          "type": "metal"
-        },
-        {
-          "id": "e52b0876312c9dc3adf17b35b07a6230643f375f",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mshvsh-2-1/",
-          "type": "metal"
-        },
-        {
-          "id": "7539086d302990b1d7bdf5edf06f2779332ca8c3",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-fmo55b-1/",
-          "type": "metal"
-        },
-        {
-          "id": "54c47c1220f8f54231e560f67259adb27d3d4a38",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-cm6-3/",
-          "type": "metal"
-        },
-        {
-          "id": "a16453bc5978378157140fd7057a1fbf43772c8f",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-cmv50-3/",
-          "type": "metal"
-        },
-        {
-          "id": "7468f607bda06463b3a0fe95178c060e1f831e38",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-cmv30-5/",
-          "type": "metal"
-        },
-        {
-          "id": "4bd70dff8434b82cb80eaeb5f0810470fc70867c",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-cu60-1/",
-          "type": "metal"
-        },
-        {
-          "id": "c937773f209082136f5e81ac392e58b9e1e49f44",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-pm-99-95-pm-m/",
-          "type": "metal"
-        },
-        {
-          "id": "9edbd440d6c367f28567a0b43623fd0688d580fd",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-cu10-1/",
-          "type": "metal"
-        },
-        {
-          "id": "68345349ec92f9477e9afcaaf8a41103926e8ff2",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-la-1/",
-          "type": "metal"
-        },
-        {
-          "id": "b12eb99544e1ec57481b9395a8295a22314ec7d0",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mr-lbv-1/",
-          "type": "metal"
-        },
-        {
-          "id": "c5443233d81de1756ef5c9425832734f2419edaf",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-tcm3-1/",
-          "type": "metal"
-        },
-        {
-          "id": "4d18cf0a6aebda9718cdab8323cb41fdf3e2c40b",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-sh-mch-1/",
-          "type": "metal"
-        },
-        {
-          "id": "4efacfc9c52d0beff2d91d12bcc8145031c96c7d",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-cu70-1/",
-          "type": "metal"
-        },
-        {
-          "id": "50aeed452798638dad105e27b66fe94fabf02290",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-kmf-6/",
-          "type": "metal"
-        },
-        {
-          "id": "a96a08952e8858ca2e606b829285013afebb5951",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-dmi-7/",
-          "type": "metal"
-        },
-        {
-          "id": "8d62cca0a4618e7dcf2f7321261a824c00e7e0cf",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-w30-1/",
-          "type": "metal"
-        },
-        {
-          "id": "d2860c503b09365496411125501a5f934bb649e6",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mvch/",
-          "type": "metal"
-        },
-        {
-          "id": "353d60b2400aa45ed11bd1998a11fa2d898ab149",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-cu20-1/",
-          "type": "metal"
-        },
-        {
-          "id": "55156acaa77f1dafc0e8c6f25b70e9e2c47c9a93",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-pmch/",
-          "type": "metal"
-        },
-        {
-          "id": "95be44317b7039ec028fc3366f235ea1b6ef6c33",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-e110k-1/provoloka-cirkonievaya-e110k/",
-          "type": "wire"
-        },
-        {
-          "id": "1543340e14eb7040473ce263f8fee6b6533b3b49",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mpv/",
-          "type": "metal"
-        },
-        {
-          "id": "2ce5881748bc1ddd4096ad2ec7464785ec0c4bbe",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-2/",
-          "type": "metal"
-        },
-        {
-          "id": "dd917b4029cf94de1cc6759bbf0a6c25c7a9a2be",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mr-10-1/",
-          "type": "metal"
-        },
-        {
-          "id": "1c9e830c0e05a663dd69f4aa3819d6398ab33ab7",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mr-47zvp-1/",
-          "type": "metal"
-        },
-        {
-          "id": "6e41252563703cf9642735208e4466d7b4610668",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-cu30-1/",
+          "id": "4fee96542c11ee87b5b36c1f8447452c15df99b9",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pcrk1m/",
           "type": "metal"
         },
         {
@@ -1434,2273 +1119,233 @@
           "type": "metal"
         },
         {
-          "id": "f533f3dd1bdbefd7e9dd4168b4008bb11a4af9e0",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-58/",
-          "type": "metal"
-        },
-        {
-          "id": "ee514a58cf856e0492f33d4ccfde9d93f9e59a30",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mr-47/",
-          "type": "metal"
-        },
-        {
-          "id": "0de1d599d4ea8945c6b648e5fcc8decc5148854a",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-dm-1/",
-          "type": "metal"
-        },
-        {
-          "id": "6bccf74a027da68d24e8bb8901855a73f2333980",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-cu50-1/",
-          "type": "metal"
-        },
-        {
-          "id": "4b81f95441c3f2b310e66c22b17148ad4caf207a",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-tzm-1/",
-          "type": "metal"
-        },
-        {
-          "id": "04376d4a36c51652d276c32ed832b83b39c73db9",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-tsm-1/",
-          "type": "metal"
-        },
-        {
-          "id": "b91ae00c2228095c9b20d5aa2a907d48ccc79246",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mrv-3/",
-          "type": "metal"
-        },
-        {
-          "id": "63e2da57aec6d0ce86d4fd1fc0de86d9b7a0a823",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-4605-1/",
-          "type": "metal"
-        },
-        {
-          "id": "6be0085e22bb326db0ee08c5c188bdae1dbb0a69",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-4604-1/",
-          "type": "metal"
-        },
-        {
-          "id": "0bcf8f77045afa87550a8dba2f141e9a586e223a",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mr-47vp-1/",
-          "type": "metal"
-        },
-        {
-          "id": "1048e8a0391c48b058d7dba78ab6b7f1ebbca492",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-8/",
-          "type": "metal"
-        },
-        {
-          "id": "d733b0825142cba8aa37b1ce4beacc36cf36d13a",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-tsm4605-1/",
-          "type": "metal"
-        },
-        {
-          "id": "d4de31b30a531da018af85b91f341cf1ef013cab",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mrn-3/",
-          "type": "metal"
-        },
-        {
-          "id": "84119101df2aabe42de37595758cd5374c172625",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-csdm-3/",
-          "type": "metal"
-        },
-        {
-          "id": "4365acaaba8de0b12d938fde4b2acc6deccd9eba",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-tzc-1/",
-          "type": "metal"
-        },
-        {
-          "id": "51d141641cbd2ba92209c3280edd4dff9d5b8b25",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-tsm4-1/",
-          "type": "metal"
-        },
-        {
-          "id": "3b0be0416399396dbf30309a50102a6c168faff1",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mlt-1/",
-          "type": "metal"
-        },
-        {
-          "id": "8cc41fe07c60489a94e9901cf75bd0e89bd1435b",
-          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-mo-cu40-1/",
-          "type": "metal"
-        },
-        {
           "id": "b2610d7c6359a7420b000c6eccf8218b653338c5",
           "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/gosty-i-tu-na-molibden/",
           "type": "metal"
         },
         {
-          "id": "7ef49f9e6266582915556c172cd7f25aef0f3889",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-6-pm/",
+          "id": "039ecfcba55a375043163a9cb20880864d98eccb",
+          "link": "https://redmetsplav.ru/store/gafniy-i-ego-splavy/gafniy-b-737-grade-r1---astm-b737/",
           "type": "metal"
         },
         {
-          "id": "ba5d754730d5a33800a03f49655c9e8d8fbac32a",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-704-zr-olovo-1/provoloka-cirkonievaya-704-zr-olovo/",
-          "type": "wire"
-        },
-        {
-          "id": "adc73ca1293fbfe7ac3734b6c2eb7a125c4ea83b",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-21/",
-          "type": "metal"
-        },
-        {
-          "id": "45bd7b76028653f001c571566e0cbf891ae62f40",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-6/",
-          "type": "metal"
-        },
-        {
-          "id": "127bd7868e0915a4b5ab0dfcd8c83b35fea64340",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-1c/",
-          "type": "metal"
-        },
-        {
-          "id": "f3064798a7d86c8521419d3ee4e301d3f0bca49f",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-12/",
-          "type": "metal"
-        },
-        {
-          "id": "e3409318b44205e82aad4edc7c1686bff9eca7ee",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-33/",
-          "type": "metal"
-        },
-        {
-          "id": "620f2e129b23bd942864d5cb1f566d0180e0a7d2",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-sf6/",
-          "type": "metal"
-        },
-        {
-          "id": "dd444d978b016a3863dfd39db99e7793ea3ee4f2",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-31/",
-          "type": "metal"
-        },
-        {
-          "id": "5b1ac4fe1233287e64f53b6af71652c0f21cde2b",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-35/",
-          "type": "metal"
-        },
-        {
-          "id": "1f991aad2617b657b1dffe359814edab27e9e114",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-12p/",
-          "type": "metal"
-        },
-        {
-          "id": "0b94108ba4c92feb3a1b4b13311da59197032da6",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-6k/",
-          "type": "metal"
-        },
-        {
-          "id": "9e503eef4db750e4bdec416f4d6aaab26614bcc8",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-95/",
-          "type": "metal"
-        },
-        {
-          "id": "8ddf81cca978d0043b3c13362a13d82aedd7a26c",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-36/",
-          "type": "metal"
-        },
-        {
-          "id": "88edec0ca93e1c7201a7d94b5af4f1d30bebd75f",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-e110k-1/poroshok-cirkonievyy-e110k/",
-          "type": "powder"
-        },
-        {
-          "id": "60539600e85eeac2feae87e10ea52c8bf05c8cd7",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-107/",
-          "type": "metal"
-        },
-        {
-          "id": "64aa09a14b26103133e85b21fcb7cbb7e4dbb02b",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-157/",
-          "type": "metal"
-        },
-        {
-          "id": "5c852ef6c22db94db55586f944589d1c0e58ff45",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-100/",
-          "type": "metal"
-        },
-        {
-          "id": "68559d9096b537f1edb9268b4f8e7ec12828aef0",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-25/",
-          "type": "metal"
-        },
-        {
-          "id": "76fab2ae1824f25352b159d530c52fb69131000a",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-1/",
-          "type": "metal"
-        },
-        {
-          "id": "bafc283f8bbb8c4aaa6bada30a9aed971d044fa1",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-3/",
-          "type": "metal"
-        },
-        {
-          "id": "96be022e355f1f81ca534f7f51e7a70b57968ff5",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-19/",
-          "type": "metal"
-        },
-        {
-          "id": "6a0681f3419ba4713df7cedca406a01d364a92d6",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-4b/",
-          "type": "metal"
-        },
-        {
-          "id": "ae42d7cefa8c21f1c69b959214f2eb0c2f8f467c",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-156/",
-          "type": "metal"
-        },
-        {
-          "id": "48fb6dd8ad8019d3c69373edbf8825689a81ade2",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-208/",
-          "type": "metal"
-        },
-        {
-          "id": "bd5143d55fe0aad5158b9c97db193d5817588292",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-6-kc/",
-          "type": "metal"
-        },
-        {
-          "id": "338a315ac9493ed6784223d2e9bcf692610c65b2",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-190/",
-          "type": "metal"
-        },
-        {
-          "id": "c65525041cd910d7cb11660d62537208137c4650",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-152/",
-          "type": "metal"
-        },
-        {
-          "id": "e0459fa3c314ad38bcf8278834930c1bbec120e1",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-4lc/",
-          "type": "metal"
-        },
-        {
-          "id": "5a114a78f92083f0d10c85da21778cbf3d1a8ca3",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-158-1/",
-          "type": "metal"
-        },
-        {
-          "id": "8d287c82560c1e49710c2737088d30395ce7b30f",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-159/",
-          "type": "metal"
-        },
-        {
-          "id": "5acafc7f6b8d6f77397223b1882a8c85f36045ec",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-6b/",
-          "type": "metal"
-        },
-        {
-          "id": "c3cf26b78574669875b683d6067a21b695b0775c",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-704-zr-olovo-1/poroshok-cirkonievyy-704-zr-olovo/",
-          "type": "powder"
-        },
-        {
-          "id": "996a7861c505ecfd935c155be5f854b6ffbcc55e",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-12h/",
-          "type": "metal"
-        },
-        {
-          "id": "a0ecf9c012e36c1e27bb341860a4c69585b333bf",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-4/",
-          "type": "metal"
-        },
-        {
-          "id": "604782b2ddc1c9438e734a6b809ab54da4bd2ef8",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-3-pm-1/",
-          "type": "metal"
-        },
-        {
-          "id": "dbf5739dc34521c9a7c15f910c214f928b48b0dd",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-190-pm-1/",
-          "type": "metal"
-        },
-        {
-          "id": "01c8fcaf3ba737b1ee53c6e5943ebb87a4e12cce",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-188/",
-          "type": "metal"
-        },
-        {
-          "id": "21744f2a0bb45c1ca7ab71325b8a7f561de0eeec",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-7/",
-          "type": "metal"
-        },
-        {
-          "id": "36f19f35d70a33eaef5eb992a1fde43b5ce2583c",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-20/",
-          "type": "metal"
-        },
-        {
-          "id": "57c70430b63d4e1343ed2af30fa71759f9f18849",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-2012/",
-          "type": "metal"
-        },
-        {
-          "id": "edd0a3a1e568a7166865e05a39f018ab7b7560b6",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-98m2/",
-          "type": "metal"
-        },
-        {
-          "id": "189d8674e550725523be9580677a5a2c29485cb6",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-238/",
-          "type": "metal"
-        },
-        {
-          "id": "f3cbecc3feafe43417a8190a57100e38387dac81",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-314-2/",
-          "type": "metal"
-        },
-        {
-          "id": "e9ee30cba2494e275b7f4ff73ffffe4f4e04e5ec",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-sf1/",
-          "type": "metal"
-        },
-        {
-          "id": "4c6cad611d89ff550ade1f8614717850b29f3887",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-306/",
-          "type": "metal"
-        },
-        {
-          "id": "ce54cea4d037d60fd1dbc11697d4fea44308067c",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-6113/",
-          "type": "metal"
-        },
-        {
-          "id": "f88076b88e1b9eff5b34de781fe9f0fec38598ac",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-125b-1/poroshok-cirkonievyy-125b/",
-          "type": "powder"
-        },
-        {
-          "id": "a3648063d6c260f6fbd06b569d5f943acd9259e5",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-125b-1/provoloka-cirkonievaya-125b/",
-          "type": "wire"
-        },
-        {
-          "id": "9ab831ea3a26f093f2164b8cad648ed8ad757634",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-706/",
-          "type": "metal"
-        },
-        {
-          "id": "3dacae051fc1680bbc807cb4550b398e1224a258",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-703/",
-          "type": "metal"
-        },
-        {
-          "id": "59d7a075725e63c0d2270543ab829b72fc494fca",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-506/",
-          "type": "metal"
-        },
-        {
-          "id": "3b7aab961fb06edc7dc9a87329b3d80eb791c84f",
-          "link": "https://redmetsplav.ru/store/kobalt/haynes/kobalt-haynes-6b-1/",
-          "type": "metal"
-        },
-        {
-          "id": "0883f8629d6e868441d46ce73d367b21402a8218",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-706k/",
-          "type": "metal"
-        },
-        {
-          "id": "e29782a5dd574c99eaf34676ec630f17f84be16d",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-1040/",
-          "type": "metal"
-        },
-        {
-          "id": "9e939ace829e94219a4b4905983b6792ac83bd9a",
-          "link": "https://redmetsplav.ru/store/kobalt/haynes/kobalt-haynes-25-2/",
-          "type": "metal"
-        },
-        {
-          "id": "3adb258c2fa79f248192bb0e74c1683e030778de",
-          "link": "https://redmetsplav.ru/store/kobalt/haynes/kobalt-haynes-31/",
-          "type": "metal"
-        },
-        {
-          "id": "e6ab4a7a638e2f5b5ccc7b2b9f71eca376d9eda6",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-sf12/",
-          "type": "metal"
-        },
-        {
-          "id": "12c4660c611014216abd559509909554500230f2",
-          "link": "https://redmetsplav.ru/store/kobalt/haynes/kobalt-haynes/",
-          "type": "metal"
-        },
-        {
-          "id": "d7ed2baf60bdf5ea89147044e560d7a3f363af37",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-t90/",
-          "type": "metal"
-        },
-        {
-          "id": "f8552fb02827e0a2c076e5390e725c5119062060",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-2006/",
-          "type": "metal"
-        },
-        {
-          "id": "ea3059c66e88263a143ad4eb7d65df88db03201b",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-f/",
-          "type": "metal"
-        },
-        {
-          "id": "6f74efd40b92afea5e559c6dce827a929c1da721",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-star-j/",
-          "type": "metal"
-        },
-        {
-          "id": "86846cf9ed19c1334775dafa412ee07f30740781",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-250/",
-          "type": "metal"
-        },
-        {
-          "id": "601c289956f2e66a09a3b0b255e0bfe6060d2090",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-251/",
-          "type": "metal"
-        },
-        {
-          "id": "e1a86fc56979088a4b5a0668546358932d42a848",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-720/",
-          "type": "metal"
-        },
-        {
-          "id": "8c3658b912711526d8a26eaaa40959f031faed5f",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-694/",
-          "type": "metal"
-        },
-        {
-          "id": "6db60f85ac801f239f7d6ad4ee8329e8b77188d3",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-sf20/",
-          "type": "metal"
-        },
-        {
-          "id": "78c198b96edb3fad7abb4914345fb15477a6eafc",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-228/",
-          "type": "metal"
-        },
-        {
-          "id": "4e2761857a0dedb0087df7ad3a781dbd3221cf45",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-790/",
-          "type": "metal"
-        },
-        {
-          "id": "271af9acb437b59670d8f006b0d1f087eacd8624",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-712/",
-          "type": "metal"
-        },
-        {
-          "id": "183f97591f1c61743911bcab302dd715246bd272",
-          "link": "https://redmetsplav.ru/store/kobalt/stellite/kobalt-stellite-701/",
-          "type": "metal"
-        },
-        {
-          "id": "e5626280ddcca5678678e5f7693422058fe83017",
-          "link": "https://redmetsplav.ru/store/kobalt/haynes/kobalt-haynes-ns-163-1/",
-          "type": "metal"
-        },
-        {
-          "id": "fdd8a6f240b419e5dabfee10a08feedcd73511da",
-          "link": "https://redmetsplav.ru/store/kobalt/wallex/kobalt-wallex-31/",
-          "type": "metal"
-        },
-        {
-          "id": "a66377c03416083133b41fe248cc417afd1343a2",
-          "link": "https://redmetsplav.ru/store/kobalt/wallex/kobalt-wallex-3-1/",
-          "type": "metal"
-        },
-        {
-          "id": "e07c4743e13b86051e25cb745938bdb8546a1729",
-          "link": "https://redmetsplav.ru/store/kobalt/haynes/kobalt-haynes-263-1/",
-          "type": "metal"
-        },
-        {
-          "id": "aba7047174253cbf615ea6cc9c9253882f3c6c17",
-          "link": "https://redmetsplav.ru/store/kobalt/wallex/kobalt-wallex-6-3/",
-          "type": "metal"
-        },
-        {
-          "id": "5b5d5d19760775264b601bc2a47a3478405d2ec9",
-          "link": "https://redmetsplav.ru/store/kobalt/haynes/kobalt-haynes-151-1/",
-          "type": "metal"
-        },
-        {
-          "id": "6519c679170a582846d3b69ff184ed827514e4ed",
-          "link": "https://redmetsplav.ru/store/kobalt/haynes/kobalt-haynes-188-3/",
-          "type": "metal"
-        },
-        {
-          "id": "d74d95fc61ab3d923e1576ebcef10a901f70084e",
-          "link": "https://redmetsplav.ru/store/kobalt/wallex/kobalt-wallex-250-2/",
-          "type": "metal"
-        },
-        {
-          "id": "630ce4a5a85d2260cfc0e8ee0e67ea99f7364767",
-          "link": "https://redmetsplav.ru/store/kobalt/wallex/kobalt-wallex-42-2/",
-          "type": "metal"
-        },
-        {
-          "id": "1c5cb41328a8dcd3042c02b0e4d5451a4c10be1c",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-125-1/poroshok-cirkonievyy-125/",
-          "type": "powder"
-        },
-        {
-          "id": "a24ee4052ec6a2c6a8642d0698d1a5f83720c0af",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-110b43-1/provoloka-cirkonievaya-110b43/",
-          "type": "wire"
-        },
-        {
-          "id": "e69e2ce48cbbde025c604dab1b96d3efc75e26ba",
-          "link": "https://redmetsplav.ru/store/kobalt/wallex/kobalt-wallex-21-2/",
-          "type": "metal"
-        },
-        {
-          "id": "a4f98b52b9730e21207be476a138a1ed9ea8de6b",
-          "link": "https://redmetsplav.ru/store/kobalt/haynes/kobalt-haynes-hr-160-1/",
-          "type": "metal"
-        },
-        {
-          "id": "555f5313eb0fd64a48610bd691a7f7ef4b76e98f",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pcrk1m/poroshok-cirkonievyy-pcrk1m/",
-          "type": "powder"
-        },
-        {
-          "id": "6d737e0d2aedaabb5c16f89dd19ecab51c9163d9",
-          "link": "https://redmetsplav.ru/store/kobalt/wallex/kobalt-wallex-4/",
-          "type": "metal"
-        },
-        {
-          "id": "655a6d242fe89531c43e756ebc4eaceba03d79e4",
-          "link": "https://redmetsplav.ru/store/kobalt/wallex/kobalt-wallex-25-2/",
-          "type": "metal"
-        },
-        {
-          "id": "1e6f9e5ecf4c28e3f9dd702346c8fb519ce8ab7c",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-110b43-1/poroshok-cirkonievyy-110b43/",
-          "type": "powder"
-        },
-        {
-          "id": "9f2ce24070c42ab4be8ca90db5fe51c8c8f0a888",
-          "link": "https://redmetsplav.ru/store/kobalt/wallex/kobalt-wallex-201040/",
-          "type": "metal"
-        },
-        {
-          "id": "f2107313782a71c312c57ceb373b6659769677cb",
-          "link": "https://redmetsplav.ru/store/kobalt/wallex/kobalt-wallex-55/",
-          "type": "metal"
-        },
-        {
-          "id": "e3e76d7c7f2ab70c1c459e5dbb8c23081437f1f8",
-          "link": "https://redmetsplav.ru/store/kobalt/wallex/kobalt-wallex-180/",
-          "type": "metal"
-        },
-        {
-          "id": "3d1209ff779996c3b01b1e2583810bef748274ba",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pcrk1/poroshok-cirkonievyy-pcrk1/",
-          "type": "powder"
-        },
-        {
-          "id": "e206452006e203f4f3209fd9192b1313408fc0ae",
-          "link": "https://redmetsplav.ru/store/kobalt/wallex/kobalt-wallex-20-2/",
-          "type": "metal"
-        },
-        {
-          "id": "81a692d449f3d50c1c1fb191b95ebe5a0ccf25a0",
-          "link": "https://redmetsplav.ru/store/kobalt/wallex/kobalt-wallex-50/",
-          "type": "metal"
-        },
-        {
-          "id": "957e61f600a0e909445946e0fb8a884edbbf01ee",
-          "link": "https://redmetsplav.ru/store/kobalt/wallex/kobalt-wallex-100/",
-          "type": "metal"
-        },
-        {
-          "id": "8b4c602a97215d7e4b97c5d460ad73436b59dd29",
-          "link": "https://redmetsplav.ru/store/kobalt/haynes/kobalt-haynes-150-1/",
-          "type": "metal"
-        },
-        {
-          "id": "dfc7e91f7e36589d41d4e313ba433452b28d66ed",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pcrk2/poroshok-cirkonievyy-pcrk2/",
-          "type": "powder"
-        },
-        {
-          "id": "4a50ae47c7cbbfa37b5fdf26e160ffe98fad5b5b",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-kcp-63/poroshok-cirkonievyy-kcp-63/",
-          "type": "powder"
-        },
-        {
-          "id": "6bd0b27830ff3479ba3bef4d59d833043f3a22b9",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-125-1/provoloka-cirkonievaya-125/",
-          "type": "wire"
-        },
-        {
-          "id": "7a3607c7cb3d1ee3fa86b39ea4e0e67a609228fc",
-          "link": "https://redmetsplav.ru/store/kobalt/wallex/kobalt-wallex-505-1/",
-          "type": "metal"
-        },
-        {
-          "id": "0cdd4f676d30d595593c0b6289890adb9bda2005",
-          "link": "https://redmetsplav.ru/store/kobalt/wallex/kobalt-wallex-1/",
-          "type": "metal"
-        },
-        {
-          "id": "702284b47234117f649e72d74a767147e734b8f1",
-          "link": "https://redmetsplav.ru/store/kobalt/wallex/kobalt-wallex-12/",
-          "type": "metal"
-        },
-        {
-          "id": "b6ce190199103b1eb7eaa71bad7bf8f79e9c1407",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-705-zr-nb-110-1/provoloka-cirkonievaya-705-zr-nb-110/",
-          "type": "wire"
-        },
-        {
-          "id": "cae821e73c5b888f2a937200cd54b8994659fa76",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy/provoloka-cirkonievaya/",
-          "type": "wire"
-        },
-        {
-          "id": "1433098bae68ee87007129da87a0bfeff8fb6f12",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-110b-1/poroshok-cirkonievyy-110b/",
-          "type": "powder"
-        },
-        {
-          "id": "a513dfa8b2c2ecfeb6976c6bf02f1d7d9e704792",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-702-chistyy-klass-1/provoloka-cirkonievaya-702-chistyy-klass/",
-          "type": "wire"
-        },
-        {
-          "id": "c9b9527dee02c64f0e5318b5e8adec46993d0221",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-702-chistyy-klass-1/poroshok-cirkonievyy-702-chistyy-klass/",
-          "type": "powder"
-        },
-        {
-          "id": "48fbc4ae3287248c0e3049e44ee15b2d5fb158dd",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pce-zrbm/poroshok-cirkonievyy-pce-zrbm/",
-          "type": "powder"
-        },
-        {
-          "id": "d375a4f05f6c997ce3807408c7985c9fc9f5db29",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pce-zr/poroshok-cirkonievyy-pce-zr/",
-          "type": "powder"
-        },
-        {
-          "id": "9760669371f876c456ff543c247ee9108042613a",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pc-or/poroshok-cirkonievyy-pc-or/",
-          "type": "powder"
-        },
-        {
-          "id": "65eded4494019c1fa6b78c293830f34bb8ed9d80",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-705-zr-nb-110-1/poroshok-cirkonievyy-705-zr-nb-110/",
-          "type": "powder"
-        },
-        {
-          "id": "3930f1e393c1f0242ba1f6f23f515c57cdeda461",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-110b4-1/provoloka-cirkonievaya-110b4/",
-          "type": "wire"
-        },
-        {
-          "id": "768c2d857cc55672e61209066af6f35385b09804",
-          "link": "https://redmetsplav.ru/store/gafniy-i-ego-splavy/gafnii-gfm-1/poroshok-gafnievii-gfm-1/",
-          "type": "powder"
-        },
-        {
-          "id": "1c95f6d1df294642df7f9c98eabba2b7b8ed68e5",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pcrk2m/poroshok-cirkonievyy-pcrk2m/",
-          "type": "powder"
-        },
-        {
-          "id": "8f2f5d7585e7681976045c2b16e1154f7ba77b47",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-110b-1/provoloka-cirkonievaya-110b/",
-          "type": "wire"
-        },
-        {
-          "id": "2305b6945b7b51564ee0855ea0d4caeeb939627c",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-110b4-1/poroshok-cirkonievyy-110b4/",
-          "type": "powder"
-        },
-        {
-          "id": "6010d2b1937907bd50f70eb8396a66d7e33b41f0",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-crk1/poroshok-cirkonievyy-crk1/",
-          "type": "powder"
-        },
-        {
-          "id": "f3576240d03aa3febfa348015fcc87fbdf869d8d",
-          "link": "https://redmetsplav.ru/store/gafniy-i-ego-splavy/gafnii-gfm-2/poroshok-gafnievyy-gfm-2/",
-          "type": "powder"
-        },
-        {
-          "id": "f0bd0ed329cded2293e734025368fb587f0d4a53",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pcrkzm/poroshok-cirkonievyy-pcrkzm/",
-          "type": "powder"
-        },
-        {
-          "id": "f943f230a48f1e7d0eb6865718dbbedd05454c36",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-cirkoloy-46/provoloka-cirkonievaya-cirkoloy-46/",
-          "type": "wire"
-        },
-        {
-          "id": "6c553f809f8205df70d5fa5d67bff6dba8041b57",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-e110-1/provoloka-cirkonievaya-e110/",
-          "type": "wire"
-        },
-        {
-          "id": "52e4eab92e3b62c3cb0d4e1466def3715fb810f3",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-e110-1/poroshok-cirkonievyy-e110/",
-          "type": "powder"
-        },
-        {
-          "id": "01591fdc54daa8c32c467be145a03b821236a71e",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-cirkoloy-46/poroshok-cirkonievyy-cirkoloy-46/",
-          "type": "powder"
-        },
-        {
-          "id": "0d423243dff393cfc0052a5872cca471d04891d4",
-          "link": "https://redmetsplav.ru/store/gafniy-i-ego-splavy/gafniy-b-776-grade-r3---astm-b776/poroshok-gafnievyy-b-776-grade-r3---astm-b776/",
-          "type": "powder"
-        },
-        {
-          "id": "710cd4bbd72ea4ebf6181fd08187275e23e33475",
-          "link": "https://redmetsplav.ru/store/gafniy-i-ego-splavy/gafniy-b-776-grade-r3---astm-b776/provoloka-gafnievaya-b-776-grade-r3---astm-b776/",
-          "type": "wire"
-        },
-        {
-          "id": "3a6266830ff1c81b8a4c5b51398f2f5d518da6f3",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pce-zro-ch/poroshok-cirkonievyy-pce-zro-ch/",
-          "type": "powder"
-        },
-        {
-          "id": "00b44dff2aa550405cb7576222b7eb6111bf6b51",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-cn25t3-1/poroshok-cirkonievyy-cn25t3/",
-          "type": "powder"
-        },
-        {
-          "id": "2ff19b2187c7c5b557c73d2da4e5f4933da695da",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-cirkoloy-3/poroshok-cirkonievyy-cirkoloy-3/",
-          "type": "powder"
-        },
-        {
-          "id": "2b3add269d809932900ab8724a3169380e57d81b",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-cirkoloy-2/poroshok-cirkonievyy-cirkoloy-2/",
-          "type": "powder"
-        },
-        {
-          "id": "b7fb7d87455e71a8f0204f01734c8f205a6527fb",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-cirkoloy-2/provoloka-cirkonievaya-cirkoloy-2/",
-          "type": "wire"
-        },
-        {
-          "id": "5880d781c5b4a5ab65c7c5ab1f897556aade10ef",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-cn25t3-1/provoloka-cirkonievaya-cn25t3/",
-          "type": "wire"
-        },
-        {
-          "id": "3ce61032e582d313441fbfd9c1433c71ae4516e9",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-cirkoloy-3/provoloka-cirkonievaya-cirkoloy-3/",
-          "type": "wire"
-        },
-        {
-          "id": "902fbf73824e1a308645f0e30c6a0f0a41f23ae2",
-          "link": "https://redmetsplav.ru/store/vismut/rossiyskie-splavy-2/vismut-vi00---gost-10928-90/",
-          "type": "metal"
-        },
-        {
-          "id": "2bb6749e109c1579022ff0e001d5f480ed168b83",
-          "link": "https://redmetsplav.ru/store/vismut/rossiyskie-splavy-2/vismut-vi1---gost-10928-90/",
-          "type": "metal"
-        },
-        {
-          "id": "1cdae30aa6c1767599f6384fd9d1d1e7bc484545",
-          "link": "https://redmetsplav.ru/store/vismut/rossiyskie-splavy-2/vismut-albi5---gost-r-53777-10/",
-          "type": "metal"
-        },
-        {
-          "id": "2dd3c630c148b0de8b9454c3610d54b65f5c9f56",
-          "link": "https://redmetsplav.ru/store/vismut/rossiyskie-splavy-2/vismut-psvio-25-30/",
-          "type": "metal"
-        },
-        {
-          "id": "668cd9ce6b0d6682734cd731aab42e88a47abb19",
-          "link": "https://redmetsplav.ru/store/vismut/rossiyskie-splavy-2/vismut-vi2---gost-10928-90/",
-          "type": "metal"
-        },
-        {
-          "id": "2521b68ed0e18e0b5af129ca5640507149b60b20",
-          "link": "https://redmetsplav.ru/store/vismut/rossiyskie-splavy-2/vismut-l68/",
-          "type": "metal"
-        },
-        {
-          "id": "69f34f8e6e3255f6b19e2359830ec5d37015eba8",
-          "link": "https://redmetsplav.ru/store/vismut/rossiyskie-splavy-2/vismut-vi-000/",
-          "type": "metal"
-        },
-        {
-          "id": "da0051efba99d3039959cce222a1151cb6020b4d",
-          "link": "https://redmetsplav.ru/store/gafniy-i-ego-splavy/gafniy-b-737-grade-r1---astm-b737/provoloka-gafnievaya-b-737-grade-r1---astm-b737/",
-          "type": "wire"
-        },
-        {
-          "id": "478c3e6eb636205b0f7771683b9b1fc15f5e0ad2",
-          "link": "https://redmetsplav.ru/store/vismut/rossiyskie-splavy-2/vismut-splav-roze---tu-6-09-4065-88/",
-          "type": "metal"
-        },
-        {
-          "id": "78a7f14ffc7a15fee5b8a454f712f3b2f51b1638",
-          "link": "https://redmetsplav.ru/store/vismut/rossiyskie-splavy-2/vismut-l141/",
-          "type": "metal"
-        },
-        {
-          "id": "1b25c9c16e939f2b7614f6dce164df875fdbae68",
-          "link": "https://redmetsplav.ru/store/vismut/rossiyskie-splavy-2/vismut-posvi-36-4/",
-          "type": "metal"
-        },
-        {
-          "id": "a2a46cf3df40343626f843200e9c078ca0c5f442",
-          "link": "https://redmetsplav.ru/store/vismut/rossiyskie-splavy-2/vismut-l47/",
-          "type": "metal"
-        },
-        {
-          "id": "36eb6a1564f97ca551554daa5cb3df62eedbadc4",
-          "link": "https://redmetsplav.ru/store/vismut/rossiyskie-splavy-2/vismut-l130/",
-          "type": "metal"
-        },
-        {
-          "id": "752970728cc04e4d15d502b1e75c0da647e3164f",
-          "link": "https://redmetsplav.ru/store/vismut/rossiyskie-splavy-2/vismut-vi-0000/",
-          "type": "metal"
-        },
-        {
-          "id": "e6283a0d415a31f8a6ce227eb1d2db5a2e9a7e00",
-          "link": "https://redmetsplav.ru/store/vismut/rossiyskie-splavy-2/vismut-l96/",
-          "type": "metal"
-        },
-        {
-          "id": "abf4faa5ad23aa5cfc3755be980c0263596e4531",
-          "link": "https://redmetsplav.ru/store/gafniy-i-ego-splavy/gafniy-b-737-grade-r1---astm-b737/poroshok-gafnievyy-b-737-grade-r1---astm-b737/",
-          "type": "powder"
-        },
-        {
-          "id": "9de5795108f129e07e3e1480deaca1c1445c1865",
-          "link": "https://redmetsplav.ru/store/vismut/rossiyskie-splavy-2/vismut-posvi-42-10-5/",
-          "type": "metal"
-        },
-        {
-          "id": "cb6380e71c8f27ad73c201c156f823470f94759e",
-          "link": "https://redmetsplav.ru/store/vismut/rossiyskie-splavy-2/vismut-l58/",
-          "type": "metal"
-        },
-        {
-          "id": "508ed55bd2b69c7fb0dd59b2cbd56f8564c527fb",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-e125-1/poroshok-cirkonievyy-e125/",
-          "type": "powder"
-        },
-        {
-          "id": "abba124f26c520c7e0311b082b1d9845db95f2d5",
-          "link": "https://redmetsplav.ru/store/gafniy-i-ego-splavy/gafniy-b-776-grade-r1---astm-b776/poroshok-gafnievyy-b-776-grade-r1---astm-b776/",
-          "type": "powder"
-        },
-        {
-          "id": "da2655f9f11c1c14dc60da0dd61f93ef111c8173",
-          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-e125-1/provoloka-cirkonievaya-e125/",
-          "type": "wire"
-        },
-        {
-          "id": "888e21745f7b6bc6597b025d0a889b5f3a43faa6",
-          "link": "https://redmetsplav.ru/store/gafniy-i-ego-splavy/gafniy-b-776-grade-r1---astm-b776/provoloka-gafnievaya-b-776-grade-r1---astm-b776/",
-          "type": "wire"
-        },
-        {
-          "id": "ffe5d5d8c27514810b4824e43a37fea039238fb8",
-          "link": "https://redmetsplav.ru/store/vismut/rossiyskie-splavy-2/vismut-splav-vuda---tu-6-09-4064-87/",
-          "type": "metal"
-        },
-        {
-          "id": "91b79546b6eb5eb7485d8f31c7d3bd6cf602992e",
-          "link": "https://redmetsplav.ru/store/gafniy-i-ego-splavy/gafniy-b-737-grade-r3---astm-b737/provoloka-gafnievaya-b-737-grade-r3---astm-b737/",
-          "type": "wire"
-        },
-        {
-          "id": "d6372537522cf3cd3b8e036ad21968f2843dfb31",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbti-46-5/",
-          "type": "metal"
-        },
-        {
-          "id": "7e9606969c88e5ba66afc298a5267010c2031332",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-vn-2-1/",
-          "type": "metal"
-        },
-        {
-          "id": "5c137f37fb985fa947ae28be72a3e250597985bb",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-2e-1/",
-          "type": "metal"
-        },
-        {
-          "id": "3865d1438bc078e775ed9c7231eec7a46bf962d1",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbzr-5-1/",
-          "type": "metal"
-        },
-        {
-          "id": "183a97eb5a8591b27820801a8f1ef5bfa80e156a",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbsh0---gost-16100-79-1/",
-          "type": "metal"
-        },
-        {
-          "id": "b5a2268d7e5227e7a699d181f8617d4a20dccc42",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-ta-nb20-1/",
-          "type": "metal"
-        },
-        {
-          "id": "c6af086b845ed41b0c143ed4fb7ec4be1e0b301f",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-vn-4-1/",
-          "type": "metal"
-        },
-        {
-          "id": "044b9d6b030bc64d3cfb0afdd0e43572ca97f5b4",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbp-3a---gost-26252-84-1/",
-          "type": "metal"
-        },
-        {
-          "id": "cfbcdd955fcb06b8039e24ce827116ab012d9cfb",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-vn-3-1/",
-          "type": "metal"
-        },
-        {
-          "id": "cc98cda42e9de0fdaf7176efeefc828479a49c0e",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbp-1b---gost-26252-84-1/",
-          "type": "metal"
-        },
-        {
-          "id": "2f4925675ce0a3195c2734d45d67f3c27fd955e4",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbp-4---gost-26252-84-1/",
-          "type": "metal"
-        },
-        {
-          "id": "9a316f4645d277c0f3379c3055c82b192d07baeb",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-ta-nb3-1/",
-          "type": "metal"
-        },
-        {
-          "id": "4aaf405d0d32dc3782821ea20abba5a6c75e8044",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nb10v5mcu---gost-26468-85-1/",
-          "type": "metal"
-        },
-        {
-          "id": "dadd5f3cb08c739d8cf3e93a11d35738dfdf3a64",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nb10v2mc---gost-26468-85-1/",
-          "type": "metal"
-        },
-        {
-          "id": "9f5679f14008e613159285ef26cd244dea807779",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbc-1-2/",
-          "type": "metal"
-        },
-        {
-          "id": "9cc8724ecdb4de69944f09a8cdc6611cc3e792af",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-50btc-vd-1/",
-          "type": "metal"
-        },
-        {
-          "id": "1dfeab90db8a1bc3e28a0061c882a590b7755ea5",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbsh1---gost-16100-79-1/",
-          "type": "metal"
-        },
-        {
-          "id": "15d24424304ea299f106a9cc42185364adf8c853",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nb5v2mc---gost-26468-85-1/",
-          "type": "metal"
-        },
-        {
-          "id": "46ea25b5bde3a0a4035c742728c2af3f50860a3b",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nb-1/",
-          "type": "metal"
-        },
-        {
-          "id": "6f1812039f9b44b2e2efbe65709ac3673f3292a4",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-4e-1/",
-          "type": "metal"
-        },
-        {
-          "id": "106543bfa249ad3fc0518467eed73133fb77a73d",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbzr-1-1/",
-          "type": "metal"
-        },
-        {
-          "id": "cf57bf1faa6845014c9adebc6b695d165009b5b5",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-btc-vd---gost-10994-74-1/",
-          "type": "metal"
-        },
-        {
-          "id": "d70192713fecad8a94579dd20adcf7f550f2affb",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbp-2a---gost-26252-84-1/",
-          "type": "metal"
-        },
-        {
-          "id": "8ae2c798ae2d80616d91bde68b243a2bb2b78fb1",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-rn-6-1/",
-          "type": "metal"
-        },
-        {
-          "id": "73a8b06790be6c16c344ca87b5c8e0884212ed20",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nb-zr-1/",
-          "type": "metal"
-        },
-        {
-          "id": "d60dbee5777476217e407f8c7ae90721041f632b",
-          "link": "https://redmetsplav.ru/store/gafniy-i-ego-splavy/gafniy-b-737-grade-r3---astm-b737/poroshok-gafnievyy-b-737-grade-r3---astm-b737/",
-          "type": "powder"
-        },
-        {
-          "id": "ec6fd9a88df9061e2e1e6dba5cd116a16108f077",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-vn-2a-1/",
-          "type": "metal"
-        },
-        {
-          "id": "edf1df2011e4ad8a817542c8ba88a3ca4b3589de",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbcu---gost-26468-85-1/",
-          "type": "metal"
-        },
-        {
-          "id": "cc0f39f4ab13f4d948e98254aaa87c4272a678c1",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-65bt---gost-10994-74-1/",
-          "type": "metal"
-        },
-        {
-          "id": "1e567df0ae9ad50cf6e93f6cec1bad88541bb9df",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbsh00---gost-16100-79-1/",
-          "type": "metal"
-        },
-        {
-          "id": "e914347fb53e179b7cd595183cd8f89244c4eb12",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbzr-10-1/",
-          "type": "metal"
-        },
-        {
-          "id": "8e846945093b30a9c6b99c7fdc67fd8cb40767c7",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-vn6-1/",
-          "type": "metal"
-        },
-        {
-          "id": "3b323ccbab6c1ca4d14c7958c288669303fcdf17",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbp-3b---gost-26252-84-1/",
-          "type": "metal"
-        },
-        {
-          "id": "590d99510c78eaf9521e14e43207e5ae055c3296",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-ta-nb30-1/",
-          "type": "metal"
-        },
-        {
-          "id": "331cd0e2c4584f9562180a667dcd0bc83c12f13b",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbti-50-1/",
-          "type": "metal"
-        },
-        {
-          "id": "7f08d7ead9b2fea640ad906167ce69b7ce421158",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbp-2b---gost-26252-84-1/",
-          "type": "metal"
-        },
-        {
-          "id": "2ced6d59a6757c75a32d444773e346546dccf939",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-fenb65---gost-16773-03-1/",
-          "type": "metal"
-        },
-        {
-          "id": "c2280153012421eac391f97a422dea85854fd76c",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-ta-nb40-5v2mc-1/",
-          "type": "metal"
-        },
-        {
-          "id": "7d2a91faff393a08acfb068102c8191f58182c87",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-hnbn1---tu-14-5-123-81-1/",
-          "type": "metal"
-        },
-        {
-          "id": "ad6f0e3105bebac424b106873c1526843959b92d",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbp-1a---gost-26252-84-1/",
-          "type": "metal"
-        },
-        {
-          "id": "627204948539ed5d69c9f9f970931e6eb326f5d6",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-niobiy/",
-          "type": "metal"
-        },
-        {
-          "id": "61229a9339eb17674e2360fc650b54020d0f6228",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-5vmc-1-1/",
-          "type": "metal"
-        },
-        {
-          "id": "ae599c37d9684a583d24623d8fba48f394f6216b",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-5v2mc-2-1/",
-          "type": "metal"
-        },
-        {
-          "id": "4c882264e7b221c6e7552002ec1a6e9d646dd7e5",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-10v5mcu-1-1/",
-          "type": "metal"
-        },
-        {
-          "id": "d5d579fa291b9e3574f06b429f22d3dc7390bdf7",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nb1-2/",
-          "type": "metal"
-        },
-        {
-          "id": "944c966cda0842f20e745a3f0209cafe008b066c",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-10v5mcu-2-1/",
-          "type": "metal"
-        },
-        {
-          "id": "af2ce987af45950a8dfff08a06c75c3d9adab0ad",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbp-2/",
-          "type": "metal"
-        },
-        {
-          "id": "c51f1b412c205926ebee65a7960a711cd90fd4f9",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbpg-3/",
-          "type": "metal"
-        },
-        {
-          "id": "95a4248726526e66ab308ac26c6665670bd71294",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbpl-2-1/",
-          "type": "metal"
-        },
-        {
-          "id": "6508f7a49349fc8b716b8bb17d0647c69f9e81a7",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbp-a/",
-          "type": "metal"
-        },
-        {
-          "id": "db6d2bd41fb65b0c3f0d615cd020d62a13d9f171",
-          "link": "https://redmetsplav.ru/store/niobiy1/splavy-niobiya-1/niobiy-nbp1-1/",
-          "type": "metal"
-        },
-        {
-          "id": "c44a4ac75f3c7ab638dcac631220c45c2732291a",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ma1---gost-14957-76/",
-          "type": "metal"
-        },
-        {
-          "id": "d6d62608c335ecabdddeebba5ed367513414f6df",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ma14/",
-          "type": "metal"
-        },
-        {
-          "id": "f2739ff83fab7cbd7747e3f3383b02f4e78a170f",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ma17---gost-14957-76/",
-          "type": "metal"
-        },
-        {
-          "id": "9927de26b881c9ca6bf182d5032b90fd4a5979dc",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ma2/",
-          "type": "metal"
-        },
-        {
-          "id": "63c72cac46bc5d00e4a2fef7bb204277c83cd545",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-l4---tu-1714-002-00545484-99-1/",
-          "type": "metal"
-        },
-        {
-          "id": "0b8a8afac160787d64265faaf94fbca5e7bd2ae4",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ma2-1-p-ch/",
-          "type": "metal"
-        },
-        {
-          "id": "0596ea5f5b4af040177217cd4356ef7857dc87d6",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ma11---gost-14957-76/",
-          "type": "metal"
-        },
-        {
-          "id": "8706550852e11897cf51d3760fc1bce7dc830bb9",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ma18/",
-          "type": "metal"
-        },
-        {
-          "id": "3201814be761edee10d8a8db25d6c9bf2707cec6",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ma15/",
-          "type": "metal"
-        },
-        {
-          "id": "b4b8f3488387af34f210a0b8efa4d269f126cdd8",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ma5/",
-          "type": "metal"
-        },
-        {
-          "id": "e152af429d3b032aa8b9c2a28b38915b31a2b0cd",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ml15---gost-2856-79/",
-          "type": "metal"
-        },
-        {
-          "id": "8103e6615f3c9674978407b24bf611d1f3d4738c",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ml11---gost-2856-79/",
-          "type": "metal"
-        },
-        {
-          "id": "70a8492eeb93fd567d8db776332fd8ebafb5fc39",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ma6c3/",
-          "type": "metal"
-        },
-        {
-          "id": "c458f933cff317684c67660efd7a4bc227862fb7",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ma8-p-ch---gost-14957-76/",
-          "type": "metal"
-        },
-        {
-          "id": "4d04483b4116900367332e91c94d2dd58d2c5d89",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ma8cb---tu-1714-018-00545484-97/",
-          "type": "metal"
-        },
-        {
-          "id": "6b9a4dd7e8fabfce438ab21f7f6d478ccd5d777c",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ma12---gost-14957-76/",
-          "type": "metal"
-        },
-        {
-          "id": "4c2f29e8eea179a9a28411853b0f052773427260",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ma8cch---gost-2581-78/",
-          "type": "metal"
-        },
-        {
-          "id": "9c1da18c1b2f5acb0383407b66a4198fa0237270",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ml8---gost-2856-79/",
-          "type": "metal"
-        },
-        {
-          "id": "30156d0f02733bbf8f7915f766cdab976e6a7834",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ml5on---gost-2856-79/",
-          "type": "metal"
-        },
-        {
-          "id": "5a7f1f8471223bbb6974c690422e719c66eba088",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ma19/",
-          "type": "metal"
-        },
-        {
-          "id": "c5fd74d46489f18f88f0af3664fb92e2f8418dc3",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ml19---gost-2856-79/",
-          "type": "metal"
-        },
-        {
-          "id": "362020f8c2effb20e2d5db00ad51ea717ec21d93",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-mg95---gost-804-93/",
-          "type": "metal"
-        },
-        {
-          "id": "13f129dda2ec81349a455f86f6f08a886ea05084",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-ml9---gost-2856-79/",
-          "type": "metal"
-        },
-        {
-          "id": "a1e1cb76e12937a2026dbe8c47d9b6caeeff891e",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-mg90---gost-804-93/",
-          "type": "metal"
-        },
-        {
-          "id": "10fd3994f55d29624450f9e6fff3117784f641f6",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-k0---gost-123-08/",
-          "type": "metal"
-        },
-        {
-          "id": "847b36434b39e0b29ba1bcf59e3aacc646f390a3",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-iso-5832-6---gost-r-iso-5832-6-2010/",
-          "type": "metal"
-        },
-        {
-          "id": "eb832afa59e36b8d9c3cf20d4e33e83641278b42",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-atd-6/",
-          "type": "metal"
-        },
-        {
-          "id": "1141a6e5cdc5285d686862e1169c9a5df3fdbf7d",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-atd-4/",
-          "type": "metal"
-        },
-        {
-          "id": "409055afe2442fd1d8ebd50a60f252a7a920260e",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-mpf-2/",
-          "type": "metal"
-        },
-        {
-          "id": "ab713b078ea03ce8b2910880e0e7199ffb774cba",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-atd-14/",
-          "type": "metal"
-        },
-        {
-          "id": "de8820ae78f2bcbd5345b0ba376f1afa4f78c3db",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-mpf-3/",
-          "type": "metal"
-        },
-        {
-          "id": "173c142ad1117729991c32b152284dab8e38c438",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-iso-5832-4---gost-r-iso-5832-4-2011/",
-          "type": "metal"
-        },
-        {
-          "id": "787eaf98961d78b762f30ab79a32f4ff1895a29f",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-k-65/",
-          "type": "metal"
-        },
-        {
-          "id": "fffd0aa42e9a3895ac9968562a5cd5e512bba72c",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-pr-3v14kb---tu-519722-003-76942199-2006/",
-          "type": "metal"
-        },
-        {
-          "id": "9243db116b347d8ce6ca9bf54db5c85bdd389813",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-sdp-6/",
-          "type": "metal"
-        },
-        {
-          "id": "4ca4a97b6f05b4cbd6bef8abef10143dae95df8f",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-pr-kh27v4s---gost-33258-15/",
-          "type": "metal"
-        },
-        {
-          "id": "742e965827906d5a30fa39022529eb626c665d7a",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-k1au/",
-          "type": "metal"
-        },
-        {
-          "id": "fa6ac62c55ef3ad41e88b3456ee673c2533f118f",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-k1a/",
-          "type": "metal"
-        },
-        {
-          "id": "91b1bed1321c9202ef5771cc6cbcbf35b70c9711",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-sdp-11a/",
-          "type": "metal"
-        },
-        {
-          "id": "95a697f89733b6d3e486c3025a5c95cb62f945b8",
-          "link": "https://redmetsplav.ru/store/magniy-i-ego-splavy/rossiyskie-splavy-1/magniy-mpf-4/",
-          "type": "metal"
-        },
-        {
-          "id": "b6aaa0f65bfbc2190e8e5bfc4de0f173c375eff8",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-sdp-3/",
-          "type": "metal"
-        },
-        {
-          "id": "58de839bf6972d4322c38d368a2a7240ebf53a25",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ek20/",
-          "type": "metal"
-        },
-        {
-          "id": "724a3c7dcc536d528d6401a129df5b99d01ff7f0",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-e-190k62h29v5s2---gost-10051-75/",
-          "type": "metal"
-        },
-        {
-          "id": "7c2fce42ed9b0d196aa0acb30e13edff4f57fc8a",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-f-75/",
-          "type": "metal"
-        },
-        {
-          "id": "bf0713e48cf7475202eacc7b61170a835351bf37",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-k50f2/",
-          "type": "metal"
-        },
-        {
-          "id": "320b5a432dbf8b7fd87ee8aace6b3472e6706fbe",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-hk62m6l---gost-31623-12/",
-          "type": "metal"
-        },
-        {
-          "id": "728b66a2676e563d9bb08a03750ec8de90e041fe",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ek102-id/",
-          "type": "metal"
-        },
-        {
-          "id": "9a83b326d506a21b8b0e5e61a52ef83f45623ad8",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-pr-v3k---gost-33258-15/",
-          "type": "metal"
-        },
-        {
-          "id": "43a1f73bb743b9c3b86e4926981bc63643fa37ec",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ei416/",
-          "type": "metal"
-        },
-        {
-          "id": "e558bffa60805397b2f0b1ba853b78dc459e317f",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep207/",
-          "type": "metal"
-        },
-        {
-          "id": "e3e3fa74830d9a99c4584b8398d383e0e358c21c",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep128/",
-          "type": "metal"
-        },
-        {
-          "id": "7de0cdeddf757dc9788be693429b1abcf78b7a90",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ek120-1/",
-          "type": "metal"
-        },
-        {
-          "id": "376c4cd8fed4dc18f391662d4ae5d7c2cadff718",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ek20-vi-1/",
-          "type": "metal"
-        },
-        {
-          "id": "8f931dd8a0ac2fb4693fbcc0082432154a5bb6e4",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep122-1/",
-          "type": "metal"
-        },
-        {
-          "id": "dbd1526b524a7f21b789726c720fdd257b5c6019",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep59/",
-          "type": "metal"
-        },
-        {
-          "id": "cf102da3c70f96311428dd360610796a42d1e1c2",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep131-1/",
-          "type": "metal"
-        },
-        {
-          "id": "19be0d3ee83f6be8f1f0257270c3822db55b7130",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep255/",
-          "type": "metal"
-        },
-        {
-          "id": "5c3fe91751fc88b8f7a5a661e65d27aec52a64f0",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep558/",
-          "type": "metal"
-        },
-        {
-          "id": "160c6a3ade6b7369ef8820da727da3ec285a208b",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep720---tu-14-1-3457-82/",
-          "type": "metal"
-        },
-        {
-          "id": "54d5f80865afed861b96e7f92b1324fa4d92bdef",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep482/",
-          "type": "metal"
-        },
-        {
-          "id": "4867a2ec08160560e9c3d597b4fca7ebbfb68dfe",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-yundk31t3ba/",
-          "type": "metal"
-        },
-        {
-          "id": "548a2e47feb531e91c20de7b85b33f4dd93c5414",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep431/",
-          "type": "metal"
-        },
-        {
-          "id": "905650f10b6978fae3cf5740d6d5e8ac3bf8ef27",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep635/",
-          "type": "metal"
-        },
-        {
-          "id": "cc418426977cc46b5ae3b74cf22d089ea54064f6",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep949/",
-          "type": "metal"
-        },
-        {
-          "id": "af94a811a72bff0a1d958db91ffb5d282033b89e",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-yundkt5aa---gost-17809-72/",
-          "type": "metal"
-        },
-        {
-          "id": "036df7c23cb9783ab65976269bd3e596160ea084",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-yundk38t7/",
-          "type": "metal"
-        },
-        {
-          "id": "da0008877dce4365279a075fec700e629a17a0be",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-yundk35t5/",
-          "type": "metal"
-        },
-        {
-          "id": "5e496d9837078c6d586d9dc0075ca55d0eae0ae8",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-yundk40t8aa/",
-          "type": "metal"
-        },
-        {
-          "id": "5356da6cafe6c0f3df9fdd2cdfdd66d3401a63ad",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-va-2/",
-          "type": "metal"
-        },
-        {
-          "id": "ca72c40936ef875eb2f684d589a23815aeda480a",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vr-27vp-1/",
-          "type": "metal"
-        },
-        {
-          "id": "e4973b453c8548b5bfaed6c5ca71f36746feb741",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-mr-47zvp/",
-          "type": "metal"
-        },
-        {
-          "id": "e469f931dcd01a6e584675f7d9a0ebc238787d60",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ek4-1/",
-          "type": "metal"
-        },
-        {
-          "id": "57c317e4eb262d092b952e2d904df83c5bd0419e",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ek102-id-1/",
-          "type": "metal"
-        },
-        {
-          "id": "bacd1f79d01b12249fde68f04c318743847479c3",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep581/",
-          "type": "metal"
-        },
-        {
-          "id": "96e997c52e4be9c648c539cff8277dd48f36f026",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep431-vi/",
-          "type": "metal"
-        },
-        {
-          "id": "952af15643617db529751f5adf0ed647199b4b0d",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-pk-1u/",
-          "type": "metal"
-        },
-        {
-          "id": "46c1eeab97557f826c9fc16f949554fcb2a3e690",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-yundk35t5aa/",
-          "type": "metal"
-        },
-        {
-          "id": "960c0f86a2f1f79dc1572beaa4b3dc7bbcc07016",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep131/",
-          "type": "metal"
-        },
-        {
-          "id": "b311a8e5e5cffda289730a04a340bed7bbd645c9",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ek20-1/",
-          "type": "metal"
-        },
-        {
-          "id": "306ff36b83e01d3dde76bc623248cb4d4fed6d64",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-w-1/",
-          "type": "metal"
-        },
-        {
-          "id": "1995f1e212155a4e3c4ea0a437bec0e5c48a84bf",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep207-1/",
-          "type": "metal"
-        },
-        {
-          "id": "6c4a50acae56855d7cf7025b003b322be5ce6196",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-pr-kh28m6/",
-          "type": "metal"
-        },
-        {
-          "id": "ba056c849cac4315d750f9f25809d22a8ad97c8d",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-yundkt8---gost-17809-72/",
-          "type": "metal"
-        },
-        {
-          "id": "629481ff6ad507deedd3cfa89e5641261ec2d570",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-w-cu10-1/",
-          "type": "metal"
-        },
-        {
-          "id": "eff49f6a1f8fa28b3e40014bc1b81f2d4efe2fa2",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep966---tu-14-1-4131-86/",
-          "type": "metal"
-        },
-        {
-          "id": "262aa97b6c3ad008319609aa9c1f4f8a9bcff95e",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-yundkt5---gost-17809-72/",
-          "type": "metal"
-        },
-        {
-          "id": "703c6afd4a76340a2dfd9461287162979b8b5b86",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vr-20/",
-          "type": "metal"
-        },
-        {
-          "id": "f1360d07383ce4172fe93e482d432c37e69f0ad4",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-mr-47---tu-48-19-250-86/",
-          "type": "metal"
-        },
-        {
-          "id": "f92841b93ebac8c0dd804b114cd63aa51fe1f31d",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep685/",
-          "type": "metal"
-        },
-        {
-          "id": "ee500c7ffd347c8457b503e9128351ba04bf562d",
-          "link": "https://redmetsplav.ru/store/kobalt/rossiyskie-splavy-3/kobalt-ep409/",
-          "type": "metal"
-        },
-        {
-          "id": "b693b0c582ad7f8b0fd8e05f32fa29153567295d",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-w-cu25-1/",
-          "type": "metal"
-        },
-        {
-          "id": "e4b5748566004ee0f5df991aa234e6d9d4549643",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-w-ni-fe-1/",
-          "type": "metal"
-        },
-        {
-          "id": "169b999ebebd98fc3f31cd56fc7a29d4a7c1a174",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-w-cu40-1/",
-          "type": "metal"
-        },
-        {
-          "id": "047dc5eb59ca9f98f35d8f403ba8c7ea12dc7f3b",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-w-cu20-1/",
-          "type": "metal"
-        },
-        {
-          "id": "1ad814cc85a328bd836c8413303d7f155e5a0bc1",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-w-re-1/",
-          "type": "metal"
-        },
-        {
-          "id": "bb6b4881193fc89077918ede1d3320a1361bc26e",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-w-la15-1/",
-          "type": "metal"
-        },
-        {
-          "id": "0fbaeb9deaf315eacfa485a1ec283c6b0bf2fb75",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-evt-15-1/",
-          "type": "metal"
-        },
-        {
-          "id": "1071633cd71fe4dc384d78765287948dbb0882d8",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-evl-1/",
-          "type": "metal"
-        },
-        {
-          "id": "1e746af3aa31c3e6a4ecf810ceea8d7d44df841a",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-csvd-1/",
-          "type": "metal"
-        },
-        {
-          "id": "82b0949a26e74c46dc4fd497a4339a3a6bd34a2c",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-w-ce20-1/",
-          "type": "metal"
-        },
-        {
-          "id": "dc428480ea8caa22b095d4402292413c22a465f5",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-w-al-1/",
-          "type": "metal"
-        },
-        {
-          "id": "6e1d74584f9396496774e559818fba8c475d42f9",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-evi-2-1/",
-          "type": "metal"
-        },
-        {
-          "id": "cc30fcf25f9116c7c0840d4d7eed31c58e6eb3d2",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-wl20-1/",
-          "type": "metal"
-        },
-        {
-          "id": "202046ca1068445524603055b8ba7d9b34e198af",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-wl10-1/",
-          "type": "metal"
-        },
-        {
-          "id": "a2c8d6eb867daf4ecf9fcb21e70c3d8914e22431",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vnzh-97-5/",
-          "type": "metal"
-        },
-        {
-          "id": "7af50a486ca974ed06ca2c3e188b02b862829ee5",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vnzh-90-1/",
-          "type": "metal"
-        },
-        {
-          "id": "c99e4971bd58722dff360c4357edbaa3bbae3e57",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vnm-2-1-1/",
-          "type": "metal"
-        },
-        {
-          "id": "550c6c0c251afc901718f377a3912e8f62537654",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-wt20-1/",
-          "type": "metal"
-        },
-        {
-          "id": "97e9a3fd61af3fdba6df52552e51584e17fd608a",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vd-40-1/",
-          "type": "metal"
-        },
-        {
-          "id": "4c92b6bf78f03ba11e8840a56c56f486d8396bee",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vd-10-1/",
-          "type": "metal"
-        },
-        {
-          "id": "92bf9558a9455ccc43b3dc0cc7828feb093daba7",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vi-20-1/",
-          "type": "metal"
-        },
-        {
-          "id": "8b825150b9a82935ad02b10b1805adb1f08baab3",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-va-pk-1/",
-          "type": "metal"
-        },
-        {
-          "id": "1674aa28f24ae8035f17e2856e02e8fc818692c8",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-va-m-1/",
-          "type": "metal"
-        },
-        {
-          "id": "30efa4e2dd0500c9a74310ebb0d6f5584918a852",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vm-5-20-1/",
-          "type": "metal"
-        },
-        {
-          "id": "f41e4aebf2bf5ce2126fafd44d48db629bad98c2",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vnm-3-2-2/",
-          "type": "metal"
-        },
-        {
-          "id": "fe7610b9ac810bacf4566334859b88dbeb1b90fc",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vd-25-1/",
-          "type": "metal"
-        },
-        {
-          "id": "95c9142edcecabfebaff948ed40255cf29fd543c",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-wc20-1/",
-          "type": "metal"
-        },
-        {
-          "id": "108448ad6ff159205756cd1fe79ba0fb3dc08202",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vnzh-7-3-2/",
-          "type": "metal"
-        },
-        {
-          "id": "3fbc6b1880aabc6d89907ae6c62725b54a3929eb",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-w-t20-1/",
-          "type": "metal"
-        },
-        {
-          "id": "98b9090a25fe0908b5d4fff4815ec22634a343be",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vam-5-1/",
-          "type": "metal"
-        },
-        {
-          "id": "5108c07f4e828b3612349299d0b0a4eff257cf78",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-w-cu30-1/",
-          "type": "metal"
-        },
-        {
-          "id": "7487cf176159efa47b4dd07fbb668f91a6c97307",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-evi-1-1/",
-          "type": "metal"
-        },
-        {
-          "id": "e3af42aa032214b5f5760403e4f48d98c521c39d",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vl-2/",
-          "type": "metal"
-        },
-        {
-          "id": "3205203d652781d550dd9baa7c7253710ae3d6cf",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vnzh-95-2/",
-          "type": "metal"
-        },
-        {
-          "id": "2499a69b0ff1fe78784be71cd6abd0e8f8a322f5",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-w-ni-cu-1/",
-          "type": "metal"
-        },
-        {
-          "id": "6c682647a686d2ff327856a08b556532aaffea3f",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vd-20-1/",
-          "type": "metal"
-        },
-        {
-          "id": "d77eae5d76b7c7678ec6e3fdbc991366c41639d5",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vd-30-1/",
-          "type": "metal"
-        },
-        {
-          "id": "d14ad46f9e8596b2446eed55a0bb66a2c743288d",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-w-la20-1/",
-          "type": "metal"
-        },
-        {
-          "id": "c304853b83b6f9cbbdea539f629d3479e779f8da",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vd-50-1/",
-          "type": "metal"
-        },
-        {
-          "id": "ad717a1b1a64a9e9b3a68e9fee180f0b5b0da00a",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-v-ppm-1/",
-          "type": "metal"
-        },
-        {
-          "id": "6f73ebeb81fc7a029e20ac697f924b7673f83789",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vi-10-1/",
-          "type": "metal"
-        },
-        {
-          "id": "bd984ccf6b1be6a9e93fb791cbb8432983e5231f",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-w-la10-1/",
-          "type": "metal"
-        },
-        {
-          "id": "61a04c027f4210d005738576d5764c50a49f98be",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-evi-3-1/",
-          "type": "metal"
-        },
-        {
-          "id": "4ae803150ff7a6d2fccac7bf51c20dd976d5abb6",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vi-30-1/",
-          "type": "metal"
-        },
-        {
-          "id": "0560f1e74f24e1d8aa787125f2fce31a909e4eef",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vnm-5-3-1/",
-          "type": "metal"
-        },
-        {
-          "id": "9b669501415a721124519a5c5e7cd68fd9fc4354",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-evch-1/",
-          "type": "metal"
-        },
-        {
-          "id": "95f75620aeebcd025e2c40326fd5c59a98f71b1c",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vm-20-30-1/",
-          "type": "metal"
-        },
-        {
-          "id": "221312199c312f3454e31ed83373ad4f04dbfddd",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-wl15-1/",
-          "type": "metal"
-        },
-        {
-          "id": "12fe3ff2cdd4141d739bc6dde5dc23816839224f",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-w-cu50-1/",
-          "type": "metal"
-        },
-        {
-          "id": "b3a1edd49366132a98122492bce4cca5d6d89986",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-v-pm-1/",
-          "type": "metal"
-        },
-        {
-          "id": "3909d5f950d330870b28b8e5ac52cc52e69a79b9",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vn-1/",
-          "type": "metal"
-        },
-        {
-          "id": "039361bbfe52e513c56e03722a8910ac120df8dd",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vch-1-1/",
-          "type": "metal"
-        },
-        {
-          "id": "0d9afa9584e8d0f85d877a52a47fbf6c6f090450",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vn-5-2/",
-          "type": "metal"
-        },
-        {
-          "id": "916172bbc036f023e03e2bf4ea2b6cad7a72f4d7",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vs-1/",
-          "type": "metal"
-        },
-        {
-          "id": "c3dfb9f2c77b63385dcad1ac814ee64a08148f98",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vr10t2-1/",
-          "type": "metal"
-        },
-        {
-          "id": "9d7d4b22aac94a0362c9fbe326c1ff54c80f6bd5",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vnzh-2-1/",
-          "type": "metal"
-        },
-        {
-          "id": "cba9a79896659d0966386133cccbdc47249fff21",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vt-15-1/",
-          "type": "metal"
-        },
-        {
-          "id": "d71d832237541b5b1da7ad7e7ddb00a8010b98cf",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vt-10-1/",
-          "type": "metal"
-        },
-        {
-          "id": "d7053c9497383ec8a783c7efae2168a9b0eec2a7",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-svi-1-1/",
-          "type": "metal"
-        },
-        {
-          "id": "5a52bf687224030af6d31e4738ea7fb6eb1885f0",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vnzh-5-5/",
-          "type": "metal"
-        },
-        {
-          "id": "e58f9951c9cb919257fde45b176edf759ecab04f",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk10hom/",
-          "type": "metal"
-        },
-        {
-          "id": "85fe9082805c74f1916f1fa09bb8c444d13c0414",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk10/",
-          "type": "metal"
-        },
-        {
-          "id": "58747e4f7562f6ee8efca15a81155d07931f42bb",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-a046/",
-          "type": "metal"
-        },
-        {
-          "id": "7dbcfb0e77e3e3d6c4eacfa940693b01e1a18df7",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk13/",
-          "type": "metal"
-        },
-        {
-          "id": "e66950e37a0d4e34949e49ca9d784593250b8138",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-va-4/",
-          "type": "metal"
-        },
-        {
-          "id": "eeff910cb8a888ae92a7bc68fc756497179578af",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk11vk/",
-          "type": "metal"
-        },
-        {
-          "id": "c2fbb6b8d99bd4df92875bc9ccbb55baa87cebfd",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-w-2/",
-          "type": "metal"
-        },
-        {
-          "id": "24cc7e1ab9296180874c3f63a7df0d52155fd167",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vnzh-3-5-1-5/",
-          "type": "metal"
-        },
-        {
-          "id": "6029681985978afe5619ee7ba3169d0fcda0f29b",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-ovch-1/",
-          "type": "metal"
-        },
-        {
-          "id": "354d7d04cd84b2ab7222e7ce91e64bfc6eb100f9",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vnzh-6-4/",
-          "type": "metal"
-        },
-        {
-          "id": "ce82466d812a2f684fdc8b183319561c5adfa552",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vm-2/",
-          "type": "metal"
-        },
-        {
-          "id": "8fabd49da4edf200e139f528e54f175089f706c7",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vchdk-1/",
-          "type": "metal"
-        },
-        {
-          "id": "ccec5c6e635c8ae547f1132b6698644f2a89d194",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vnzh-3-2a/",
-          "type": "metal"
-        },
-        {
-          "id": "a29eb773e763d49f0b99a36a6b602bfa4f76ce34",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk10ks/",
-          "type": "metal"
-        },
-        {
-          "id": "8a114c3c78dc658e86e17f2ae4e6aa965a8acb93",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk6ks/",
-          "type": "metal"
-        },
-        {
-          "id": "bc0bb124885fa047b2e0c7e2d1116247c8b42ee1",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk20ks/",
-          "type": "metal"
-        },
-        {
-          "id": "0aa3ce3ec4c640fa499823dfd21846d145df6f24",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-dc6/",
-          "type": "metal"
-        },
-        {
-          "id": "b7d233992c6f5cbe9832f479ef4308d2d9486d13",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk25/",
-          "type": "metal"
-        },
-        {
-          "id": "396fa6368c3120decd293662e66b70ad6f7a24a0",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk-8/",
-          "type": "metal"
-        },
-        {
-          "id": "798abba11083c9cc09cd3702fddb3906974fc1d1",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vrn-1/",
-          "type": "metal"
-        },
-        {
-          "id": "c9cd9ac38ce0eb163f3a993f0b148f75af85ea64",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vt-30-1/",
-          "type": "metal"
-        },
-        {
-          "id": "e8679323b4b2c497756b861a94d9073171657647",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk6om/",
-          "type": "metal"
-        },
-        {
-          "id": "f34cdeceb707d2f2515562f71991bed20f762b8e",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-a04/",
-          "type": "metal"
-        },
-        {
-          "id": "7e5f7a8be195b61d711b755b22a3ea86622b1581",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk3m/",
-          "type": "metal"
-        },
-        {
-          "id": "80efe47e62b4561f933e23f6a0890e2e766238c0",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk20/",
-          "type": "metal"
-        },
-        {
-          "id": "6d33d90265097a3ce4e2f3d85dfbb36919fd2f95",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk10om/",
-          "type": "metal"
-        },
-        {
-          "id": "4d3574793361ce45b16b418216a346621c214f11",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk4/",
-          "type": "metal"
-        },
-        {
-          "id": "fbc17f3879edeb3a99ac35ffdf89f6aa381d6975",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk12ks/",
-          "type": "metal"
-        },
-        {
-          "id": "532793c11596d885d311527e73f574120bd45aab",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk6/",
-          "type": "metal"
-        },
-        {
-          "id": "ca5b3639f5895f8af58b0a015a7eaf9b65162566",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk6vk/",
-          "type": "metal"
-        },
-        {
-          "id": "200ef816380fe3b06d9c3b9d10a92e9e2add40de",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk15/",
-          "type": "metal"
-        },
-        {
-          "id": "9767dbd349d19f60eeb345a469e7bb978eb4a448",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-wc/",
-          "type": "metal"
-        },
-        {
-          "id": "523fb92246adf2690741de955ae57517cb6ec54b",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vch-s-1/",
-          "type": "metal"
-        },
-        {
-          "id": "7b5e75209159c2a135a59d2b4308c1fbded09164",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vt-7-1/",
+          "id": "a8ff9cf99ffddd91695cca7f55554974fc4b697e",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-cr1---en-14700-2014/",
           "type": "metal"
         },
         {
-          "id": "1443f657dbb22fe5de5e3342ecde06c78e98f46a",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vnb-3-3/",
+          "id": "c37c714ae3f0dee2c8c27d5309819f79397d6bea",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pcrk2/",
           "type": "metal"
         },
         {
-          "id": "6a58a7175acb941eca013f19f58968332e152959",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vnzh-3-2/",
+          "id": "b60990a99d4c930cb4a36656f0718ba90841100e",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pce-zr/",
           "type": "metal"
         },
         {
-          "id": "0a7032880556e683c5aaa153116dd7018f2c303a",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vchg-1/",
+          "id": "8ff5011432810f1c25206824a3ea4b43708ca6f5",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-702-chistyy-klass-1/",
           "type": "metal"
         },
         {
-          "id": "3e96d141be04326a0677096b66a6f3d69a712761",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk3/",
+          "id": "6aaac0e8f80fb8ba49a4316b5adafdd7598fb573",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-125b-1/",
           "type": "metal"
         },
         {
-          "id": "0a8301bee9211ae2d6f599d6a17b470089f3172d",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vnm-1/",
+          "id": "581e3185e4bf16fdd7d22c9438d758c5a6509744",
+          "link": "https://redmetsplav.ru/store/cirkoniy-i-ego-splavy/cirkoniy-pce-zrbm/",
           "type": "metal"
         },
         {
-          "id": "321c9733c3dfa5a5b0c59d9bf4097caca9a02749",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vnzh-5-3/",
+          "id": "c937773f209082136f5e81ac392e58b9e1e49f44",
+          "link": "https://redmetsplav.ru/store/molibden-i-ego-splavy/molibden-pm-99-95-pm-m/",
           "type": "metal"
         },
         {
-          "id": "bdbacf8929e5500091e24ef9aeef20219dafc4f4",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk6s/",
+          "id": "5aa326da81f2baf0fdb8c1f7fb3edd40b3d8eb40",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev80al14---gost-27130-94/",
           "type": "metal"
         },
         {
-          "id": "1f2561eb8023343167294aa6c86861fa08ae459d",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-pvv/",
+          "id": "267a017b0bae327c6f4e949813805b1888d04c53",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev60---iso-5451/",
           "type": "metal"
         },
         {
-          "id": "c1a9848167da492e19af973733f5889af75a7692",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-pvp-1/",
+          "id": "f7fe4de80a9d2abade1b978527c704259f5f3d69",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev80al12---gost-27130-94/",
           "type": "metal"
         },
         {
-          "id": "beea5ffb5039f89a2918b52e6281e156c658b093",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk8v/",
+          "id": "977098df087493ed1dd7e0d5f48e9457948384ab",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vnal-1d---tu-48-4-505-99/",
           "type": "metal"
         },
         {
-          "id": "5214ed1b30bb7316f125d62582d1e63ff0f981ec",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk8ks/",
+          "id": "3c76565b7957c34011ad95fcd821be7238e1db56",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fvd50u0-4---gost-27130-94/",
           "type": "metal"
         },
         {
-          "id": "3c563b74745c47e356c629f14ae00e9e57e0c687",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-vk8vk/",
+          "id": "d30eb8969247a1c274104f5b53ed8bf6842c287e",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vnm99-5---tu-1761-037-2587982-2002/",
           "type": "metal"
         },
         {
-          "id": "bf5e00871bbf0fcc4ce6eef424927f4a40c03663",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-pv-1/",
+          "id": "c6009470de5255e7b37e7404ef5e7ba61ddc142b",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-low-aluminum---stratcor-1/",
           "type": "metal"
         },
         {
-          "id": "1f8a1ff924de96113e0ecee42793101dcc2083b4",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt1-0-1/",
+          "id": "61e1ae252d2542a7f7348c99f18d57a85f69c501",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-regular---stratcor-1/",
           "type": "metal"
         },
         {
-          "id": "ddf7ca27e7f3940325db372d7ca048aa8c2674f2",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt3/",
+          "id": "365f2bf5634aca176fe32a300d45ddd1022c3ef2",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-nitrovan-12---stratcor-1/",
           "type": "metal"
         },
         {
-          "id": "e7fc4bf5f2a3b41f92d67de14445b9d5d4a9bf43",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt1-2---gost-19807-91-1/",
+          "id": "6302c21ead857de7cf70235f361b18c605caeba1",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fvd50u0-75---gost-27130-94/",
           "type": "metal"
         },
         {
-          "id": "08c75dd8a8a27a5cad9ffbf05fe5048025fcc2a7",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt5-1kt/",
+          "id": "7b96a308588f6b208aba4af5f19dca71bd92ce37",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vnm99-8---tu-1761-037-2587982-2002/",
           "type": "metal"
         },
         {
-          "id": "dabb8984d5f3f1c74d488ad0d67598ee32d687e8",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt6sv---gost-27265-87-1/",
+          "id": "d634301c207a823ca25694364189f5eac589d690",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fvd50u0-3---gost-27130-94/",
           "type": "metal"
         },
         {
-          "id": "75cb5c41600b9f597e1cc69c98b6bef5040e550f",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt1-00svs---gost-27265-87/",
+          "id": "63931c368e37054f1707244c78ffaea67a1d48fb",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-nitrovan-12---stratcor/",
           "type": "metal"
         },
         {
-          "id": "b07676630c46363d43bef4b5f53297b9ca473400",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt6/",
+          "id": "fb73bc5121b0697bd50e4fd1d788df6e16b4665d",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-regular---stratcor/",
           "type": "metal"
         },
         {
-          "id": "3887b91017e438eb035c650679e5e45fb6870d89",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt4/",
+          "id": "bf58535a150c32fae6d0e76ac089965f41a9e44a",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vnm99-7---tu-1761-037-2587982-2002/",
           "type": "metal"
         },
         {
-          "id": "cd5d943d2f29194a8dac27bb9577e288e72df64b",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt3-1l/",
+          "id": "eb3f49a7f076809c9de94e383d2d085426d7ce62",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev80al12---iso-5451/",
           "type": "metal"
         },
         {
-          "id": "752e10a3a7cfa8bb409bf95b2c5478ae7df0b379",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt3-1---gost-19807-91/",
+          "id": "302938235f99f7cc0aaedd0a0d7b190363baa1ad",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vel-2/",
           "type": "metal"
         },
         {
-          "id": "a0c008a024697c84634a0c5d6a9bf2bc500909ab",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt5-1/",
+          "id": "bebd7815bccdaa7a2c59a0cefc13ea62c5f88c62",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vnm99-99---tu-1761-043-2587982-2002/",
           "type": "metal"
         },
         {
-          "id": "e825a8d8646b8fabdf3a6be05b8a64b38d977b6f",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt2sv---gost-27265-87/",
+          "id": "700d75d4d8ff42d8c5d2065e4d081431db2db7ad",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vnm-1---tu-48-4-272-73/",
           "type": "metal"
         },
         {
-          "id": "9ce3718b60cd9ed7ed7ca4f6622d378519407b3d",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt1l-1/",
+          "id": "7935527867e0a779a2cb07a2009c739ba3dc9703",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fvd40u0-5---gost-27130-94/",
           "type": "metal"
         },
         {
-          "id": "80c94b259d57370726f6f6ee22cb494b451e5d78",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt6l---ost-1-90060-92/",
+          "id": "d9677fa91dc97c6134f8a669730bbc7f500c1160",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fvd40u0-75---gost-27130-94/",
           "type": "metal"
         },
         {
-          "id": "f40f699e30273b937845fd63846449d059138fdd",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt8---gost-19807-91/",
+          "id": "3d0be93cb37e58848c8ec032b834fc809dd774fa",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev80al14---iso-5451/",
           "type": "metal"
         },
         {
-          "id": "1887a9fd0279d5938124778b1d1f89a6bf6b8ec6",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt1-00/",
+          "id": "072c20653af4b948e44dd5c6380a19141c88203a",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vel-1/",
           "type": "metal"
         },
         {
-          "id": "2dbbf942890fe1cff06cd5777ad35a4e2e76bb40",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt6-sv---ost-1-90015-77/",
+          "id": "50e6dc62eb4c2534ddd01b7722676d2b442ee6ff",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vnal-2d---tu-48-4-505-99/",
           "type": "metal"
         },
         {
-          "id": "adfa92f00c4615382185721cf7c0dc6550bd941c",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt9l---ost-1-90060-92-1/",
+          "id": "ad469ce76ff33c7d27a5f1e57a3423322ba0035c",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev80---gost-27130-94/",
           "type": "metal"
         },
         {
-          "id": "b5de22750a793976eebc84f16f49d168f03affd8",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt6ch---ost-1-90013-81/",
+          "id": "795fd6a6f40ab4e171c8c494d9af8f14a4ab35c2",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev60---gost-27130-94/",
           "type": "metal"
         },
         {
-          "id": "b16f406e2bbdc10c589f7c5d5ba8993376a24600",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt2-sv---ost-1-90015-77-1/",
+          "id": "91b4c55c61bf562f5a86fbaab9a8b2acb270e5b8",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fev80---iso-5451/",
           "type": "metal"
         },
         {
-          "id": "0794fd531be34836f313c596e28dd5a915da48d5",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt5l---ost-1-90060-92/",
+          "id": "e30c420de6e28a50bc00d88a16743b4432895b86",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fvd50u0-5---gost-27130-94/",
           "type": "metal"
         },
         {
-          "id": "9c9187146e7665f0ac1dc778462ae2da3d63bed5",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-pvn/",
+          "id": "65b9740f5ffad2224f71685a428da60554eaa6ce",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vnm99-9---tu-1761-037-2587982-2002/",
           "type": "metal"
         },
         {
-          "id": "d4e8251cfb62f1a382e677797587223fca7b5292",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt1-1/",
+          "id": "a31fae73f7279d6205ece2522a715980fedbc7e9",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fvd50u0-6---gost-27130-94/",
           "type": "metal"
         },
         {
-          "id": "dcc4ba4c7323e5815dbfc8d9707510bf42b92b71",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt8-1---ost-1-90013-81-1/",
+          "id": "34b2efe60c0e957b886e90c10f09ee5a802c2d06",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fvd20s20---tu-14-141-08-91/",
           "type": "metal"
         },
         {
-          "id": "090c10f8279a4525824dca957a429926ac9ad312",
-          "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-pvt-c/",
+          "id": "557ca94a8bbffd4e7d95b40eef234fcee9253082",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-vnm-2---tu-48-4-272-73/",
           "type": "metal"
         },
         {
-          "id": "d3b5167bfd3e0154f2a2c658d4350c39f408e378",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt14-1/",
+          "id": "1d866cc9abaed2b3b4d46e2e1d9a7de1c283ee4a",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-fvd40u1---gost-27130-94/",
           "type": "metal"
         },
         {
-          "id": "723c29f181ae31af1cdcc019256541c1493f2b34",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt5---gost-19807-91/",
+          "id": "c216321ea9f71e130143a65c9c9e1d1ea6244d60",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-low-aluminum---stratcor/",
           "type": "metal"
         },
         {
-          "id": "1fa783bab794ac7505e7f8984d103b3e64667d39",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt6s---gost-19807-91/",
+          "id": "951c6a196ec6dc9f51b65847c6939843bbc8a341",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-a-102---astm-a102-1/",
           "type": "metal"
         },
         {
-          "id": "504ac42a251c434c3578391a971ca43f51bf025c",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt8m-1---ost-1-90013-81-1/",
+          "id": "a8f5ca86d53bd23816c7be8df73b4cab04408001",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-nitrovan-16---stratcor/",
           "type": "metal"
         },
         {
-          "id": "305ec84188ade2cf63129a433cfd4446137c2272",
-          "link": "https://redmetsplav.ru/store/titan/rossiyskie-splavy-4/titan-vt9---gost-19807-91/",
+          "id": "547d8c25fe2044bfb72b37777214d2a8a3c57909",
+          "link": "https://redmetsplav.ru/store/vanadiy-i-ego-splavy/vanadiy-nitrovan-16---stratcor-1/",
           "type": "metal"
         }
       ]
