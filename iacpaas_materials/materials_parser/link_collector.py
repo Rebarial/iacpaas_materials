@@ -31,7 +31,8 @@ def collect_product_links(source: Dict[str, Any], max_pages: int = 777777, max_d
         url_to_id(url): {
             "link": url,
             "type": data['Type'],
-            "text": data["Text"]
+            "text": data["Text"],
+            "soup": data['Soup']
         }
         for url, data in results.items()
         if data.get("IsProduct") is True

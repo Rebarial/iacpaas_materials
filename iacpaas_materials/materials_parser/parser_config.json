@@ -82,6 +82,24 @@
           }
         ]
       }
+    },
+    {
+      "name": "Hyundai Welding",
+      "root_url": "http://hyundaiwelding-rus.ru/catalog/",
+      "product_detection": {
+        "or": [
+          {
+            "condition": {
+              "url_contains": "poroshkovye-provoloki",
+              "xpath": "//div[@class='shop_text']"
+            },
+            "type": "wire",
+            "extract": {
+              "xpath": "//div[@class='shop_text']"
+            }
+          }
+        ]
+      }
     }
   ]
 }

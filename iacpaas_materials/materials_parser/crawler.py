@@ -14,7 +14,7 @@ def is_internal_link(url: str, base_netloc: str) -> bool:
     except Exception:
         return False
 
-
+"""
 def extract_internal_links(tree, current_url: str, base_netloc: str) -> List[str]:
     cur_path = urlparse(current_url).path.strip('/')
     cur_segments = cur_path.split('/') if cur_path else []
@@ -34,28 +34,66 @@ def extract_internal_links(tree, current_url: str, base_netloc: str) -> List[str
             links.append(f"{parsed.scheme}://{base_netloc}/{path}/")
             
     return links
+"""
 
+def extract_internal_links(tree: etree._ElementTree, current_url: str, base_netloc: str) -> List[str]:
+    #All links
+    links = []
+    try:
+        hrefs = tree.xpath('//a[@href]/@href')
+        for href in hrefs:
+
+            #full_url = urljoin(current_url, href)
+            full_url = href
+            parsed = urlparse(full_url)
+
+            if parsed.scheme and parsed.scheme not in ('http', 'https'):
+                continue
+            
+            #parsed.scheme = urlparse(current_url).scheme
+            
+            if parsed.netloc == base_netloc or not parsed.netloc:
+                #clean_url = full_url.split('#')[0].split('?')[0]
+                #clean_url = full_url.split('#')[0]
+                clean_url = f"https://{parsed.netloc}{parsed.path}"
+                if parsed.query:
+                    clean_url += f"?{parsed.query}"
+                links.append(clean_url)
+    except Exception as e:
+        print(f"⚠️ Error extracting links from {current_url}: {e}")
+    return links
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+    "Accept-Language": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Upgrade-Insecure-Requests": "1",
+}
 
 def process_page(url: str, detection_rules: Dict) -> Tuple[List[str], Optional[Dict]]:
     try:
         print(f"Fetching: {url}")
-        resp = requests.get(url, timeout=50)
+        resp = requests.get(url, headers=headers, timeout=50)
         resp.raise_for_status()
         resp.encoding = 'utf-8'
+        #resp.encoding = resp.apparent_encoding
         tree = html.fromstring(resp.content)
         tree.make_links_absolute(url)
 
         base_netloc = urlparse(url).netloc
 
         # Проверка по правилам
-        detection_result = detect_and_extract(tree, detection_rules)
+        detection_result = detect_and_extract(tree, detection_rules, url)
         product_data = None
         if detection_result:
             print(f"✅ Product found at {url}: {detection_result['type']}")
             product_data = {
                 "IsProduct": True,
                 "Type": detection_result["type"],
-                "Text": detection_result["content"]["Text"]
+                "Text": detection_result["content"]["Text"],
+                "Soup": detection_result["content"]["Soup"]
             }
 
         new_links = extract_internal_links(tree, url, base_netloc)
@@ -67,21 +105,21 @@ def process_page(url: str, detection_rules: Dict) -> Tuple[List[str], Optional[D
 
 
 
-def detect_and_extract(tree: etree._ElementTree, detection_rules: Dict) -> Optional[Dict[str, Any]]:
-    return _match_and_extract(tree, detection_rules)
+def detect_and_extract(tree: etree._ElementTree, detection_rules: Dict, current_url) -> Optional[Dict[str, Any]]:
+    return _match_and_extract(tree, detection_rules, current_url)
 
 
-def _match_and_extract(tree: etree._ElementTree, rule: Any) -> Optional[Dict[str, Any]]:
+def _match_and_extract(tree: etree._ElementTree, rule: Any, current_url) -> Optional[Dict[str, Any]]:
     if isinstance(rule, dict):
         if "or" in rule:
             for item in rule["or"]:
-                result = _match_and_extract(tree, item)
+                result = _match_and_extract(tree, item, current_url)
                 if result is not None:
                     return result
             return None
 
         elif "condition" in rule and "type" in rule:
-            if _evaluate_condition(tree, rule["condition"]):
+            if _evaluate_condition(tree, rule["condition"], current_url):
                 extracted = None
                 if "extract" in rule:
                     extracted = _extract_value(tree, rule["extract"])
@@ -94,16 +132,19 @@ def _match_and_extract(tree: etree._ElementTree, rule: Any) -> Optional[Dict[str
     return None
 
 
-def _evaluate_condition(tree: etree._ElementTree, cond: Any) -> bool:
+def _evaluate_condition(tree: etree._ElementTree, cond: Any, current_url) -> bool:
     if isinstance(cond, list):
-        return all(_evaluate_condition(tree, c) for c in cond)
+        return all(_evaluate_condition(tree, c, current_url) for c in cond)
     if not isinstance(cond, dict):
         return False
     if "and" in cond:
-        return all(_evaluate_condition(tree, c) for c in cond["and"])
+        return all(_evaluate_condition(tree, c, current_url) for c in cond["and"])
     if "or" in cond:
-        return any(_evaluate_condition(tree, c) for c in cond["or"])
+        return any(_evaluate_condition(tree, c, current_url) for c in cond["or"])
 
+    if cond.get("url_contains"):
+        if cond["url_contains"] not in current_url:
+            return False
 
     xpath_expr = cond.get("xpath")
     if not xpath_expr:
