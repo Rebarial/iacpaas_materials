@@ -7,26 +7,19 @@
         "or": [
           {
             "condition": {
-              "and":[
+              "and": [
                 {
-                  "tag": "p",
-                  "text_contains": "Физико-химические свойства"
+                  "xpath": "//p[contains(text(), 'Физико-химические свойства')]"
                 },
                 {
-                  "tag": "div",
-                  "attribute": "class",
-                  "value":"product-description__wrap",
-                  "exists":"True"
+                  "xpath": "//div[contains(@class, 'product-description__wrap')]"
                 }
               ]
-                
-              },
+            },
             "type": "gas",
             "extract": {
-                "from_tag": "div",
-                "attribute": "class",
-                "value": "product-description__wrap"
-              }
+              "xpath": "//div[contains(@class, 'product-description__wrap')]"
+            }
           }
         ]
       }
@@ -38,39 +31,30 @@
         "or": [
           {
             "condition": {
-                "tag": "td",
-                "text_contains": "Сортамент"
-              },
+              "xpath": "//td[contains(text(), 'Сортамент')]"
+            },
             "type": "metal",
             "extract": {
-                "from_tag": "div",
-                "attribute": "class",
-                "value": "uss_shop_content2"
-              }
+              "xpath": "//div[contains(@class, 'uss_shop_content2')]"
+            }
           },
           {
             "condition": {
-              "tag": "th",
-              "text_contains": "Форма частиц"
+              "xpath": "//th[contains(text(), 'Форма частиц')]"
             },
             "type": "powder",
             "extract": {
-                "from_tag": "div",
-                "attribute": "class",
-                "value": "uss_shop_detail uss_shop_detail_pos order_one"
-              }
+              "xpath": "//div[contains(@class, 'uss_shop_detail') and contains(@class, 'order_one')]"
+            }
           },
           {
             "condition": {
-              "tag": "h1",
-              "text_contains": "Проволока"
+              "xpath": "//h1[contains(text(), 'Проволока')]"
             },
             "type": "wire",
             "extract": {
-                "from_tag": "div",
-                "attribute": "class",
-                "value": "uss_shop_detail uss_shop_detail_pos order_one"
-              }
+              "xpath": "//div[contains(@class, 'uss_shop_detail') and contains(@class, 'order_one')]"
+            }
           }
         ]
       }
@@ -82,24 +66,37 @@
         "or": [
           {
             "condition": {
-              "and":[
+              "and": [
                 {
-                  "tag": "h2",
-                  "text_contains": "Характеристики"
+                  "xpath": "//h2[contains(text(), 'Характеристики')]"
                 },
                 {
-                  "tag": "span",
-                  "text_contains": "Чистота:"
+                  "xpath": "//span[contains(text(), 'Чистота:')]"
                 }
               ]
-                
-              },
+            },
             "type": "gas",
             "extract": {
-                "from_tag": "div",
-                "attribute": "class",
-                "value": "page-content"
-              }
+              "xpath": "//div[contains(@class, 'page-content')]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Hyundai Welding",
+      "root_url": "http://hyundaiwelding-rus.ru/catalog/",
+      "product_detection": {
+        "or": [
+          {
+            "condition": {
+              "url_contains": "poroshkovye-provoloki",
+              "xpath": "//div[@class='shop_text']"
+            },
+            "type": "wire",
+            "extract": {
+              "xpath": "//div[@class='shop_text']"
+            }
           }
         ]
       }
