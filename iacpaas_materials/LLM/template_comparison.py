@@ -48,7 +48,7 @@ gas_mixture_comparison = {
         "mark_sort_or_grade": "grade",
         "brand": "brand",
         "standards": "standards",
-        # "link": "adress",  Нет поля в модели?
+        "link": "adress",
     },
     "GasMixtureComponent": {
         "gas_composition": {

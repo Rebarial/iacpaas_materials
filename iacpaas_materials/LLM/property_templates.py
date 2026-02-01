@@ -1,8 +1,9 @@
 
 
 powder_template = {
-    "base_material": "", # Добавить пример деления на base_material и grade
-    "grade": "Марка",
+    "full_name": "",
+    "base_material": "",
+    "grade": "",
     "standards": "",
     "analogs": [
         {
@@ -44,7 +45,7 @@ powder_template = {
 }
 
 gas_template = {
-    "name": "",
+    "full_name": "",
     "mark_sort_or_grade": "",
     "formula": "",
     "brand": "",
@@ -57,7 +58,7 @@ gas_template = {
     ],
 }
 gas_mixture_template = {
-    "name": "",
+    "full_name": "",
     "mark_sort_or_grade": "",
     "formula": "",
     "brand": "",
@@ -71,6 +72,7 @@ gas_mixture_template = {
 }
 
 metal_wire_template = {
+    "full_name": "",
     "brand": "",
     "base_material": "",
     "standards": "",
@@ -100,6 +102,7 @@ metal_wire_template = {
 }
 
 metal_template = {
+    "full_name": "",
     "metal_material": "",
     "brand": "",
     "standards": "",

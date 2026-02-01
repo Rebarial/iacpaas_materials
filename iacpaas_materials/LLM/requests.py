@@ -50,12 +50,12 @@ def LLM_generate_for_extracted_data(data, configs):
         text = product_link['text']
         responses = []
 
-        responses += LLM_generate_multiple(text, properties_template, configs)
-        responses += LLM_generate_multiple(text, properties_template, configs)        
-        # soup = product_link['soup']
-        # optimised_soup = optimise_soup(soup)
-        # responses += LLM_generate_multiple(optimised_soup, properties_template, configs)
-        # responses += LLM_generate_multiple(optimised_soup, properties_template, configs)
+        # responses += LLM_generate_multiple(text, properties_template, configs)
+        # responses += LLM_generate_multiple(text, properties_template, configs)        
+        soup = product_link['soup']
+        optimised_soup = optimise_soup(soup)
+        responses += LLM_generate_multiple(optimised_soup, properties_template, configs)
+        responses += LLM_generate_multiple(optimised_soup, properties_template, configs)
         
         response = compare_responses(responses, properties_template)
         print(responses)
@@ -74,5 +74,6 @@ def optimise_soup(soup):
         iend = soup.find("\"")
         c = b[(iend + 1):]
         soup = a + c
+    # soup = " ".join(soup.split())
     print(soup)
     return soup
