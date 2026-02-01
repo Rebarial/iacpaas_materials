@@ -120,6 +120,7 @@ def llm_parsing(request):
         json_path = os.path.join(settings.BASE_DIR, 'temp_llm_result.json')
 
         if use_preload and os.path.exists(json_path):
+            json_path = os.path.join(settings.BASE_DIR, 'temp_llm_result_test.json')
             with open(json_path, 'r', encoding='utf-8') as f:
                 result = json.load(f)
         else:
@@ -140,7 +141,7 @@ def llm_parsing(request):
     return render(request, "process/parsing_result.html", {"products": []})
 
 import re
-from .models import Gas, ChemicalDesignation, Element, Powder
+from .models import Gas, ChemicalDesignation, Element, Powder, Metal
 from django.shortcuts import redirect
 from django.contrib import messages
 import re
@@ -222,17 +223,21 @@ def save_selected_gases(request):
 
 from django.db.models import Q
 
+from .models import Gas, Powder, MetalWire, Metal  # добавьте Metal в импорты
+
+
 def material_list(request):
     available_types = []
     if Gas.objects.exists():
         available_types.append('gas')
-    if PowderClass.objects.exists():
+    if Powder.objects.exists():  # исправлено: было PowderClass
         available_types.append('powder')
     if MetalWire.objects.exists():
         available_types.append('wire')
+    if Metal.objects.exists():
+        available_types.append('metal')
 
     selected_type = request.GET.get('type')
-
     if not selected_type or selected_type not in available_types:
         selected_type = available_types[0] if available_types else None
 
@@ -240,10 +245,10 @@ def material_list(request):
         'selected_type': selected_type,
         'available_types': available_types,
         'gases': Gas.objects.all() if selected_type == 'gas' else Gas.objects.none(),
-        'powders': Powder.objects.all() if selected_type == 'powder' else PowderClass.objects.none(),
+        'powders': Powder.objects.all() if selected_type == 'powder' else Powder.objects.none(),  # исправлено
         'wires': MetalWire.objects.all() if selected_type == 'wire' else MetalWire.objects.none(),
+        'metals': Metal.objects.all() if selected_type == 'metal' else Metal.objects.none(),  # добавлено
     }
-
     return render(request, 'materials/material_list.html', context)
 
 def gas_list(request):
@@ -301,6 +306,8 @@ from ..IACPaaS_api.api_config import acount_login, acount_password, default_path
 from .serialize import gases_to_iacpaas_dicts
 from ..IACPaaS_api.gas_iasp import generate_gson_to_iacpaas_gase
 from ..IACPaaS_api.wire_iasp import generate_gson_to_iacpaas_wires
+from ..IACPaaS_api.powder_iasp import generate_json_to_iacpaas_powders
+from ..IACPaaS_api.metal_iasp import generate_json_to_iacpaas_metal
 
 from django.urls import reverse
 from urllib.parse import urlencode
@@ -323,12 +330,60 @@ def send_to_iacpaas(request):
             clearIfExists=True
         )
         if result.get('success'):
-            messages.success(request, f"Успешно отправлено {wires.count()} газ(ов) в IACPaaS.")
+            messages.success(request, f"Успешно отправлено {wires.count()} проволок в IACPaaS.")
         else:
             messages.error(request, f"Ошибка IACPaaS: {result.get('message', result)}")
 
         base_url = reverse('iacpaas:material_list')
         query_string = urlencode({'type': 'wire'})
+        url = f'{base_url}?{query_string}'
+
+        return redirect(url)
+
+    selected_powders_ids = request.POST.getlist('selected_powders')
+    if selected_powders_ids:
+        powders = Powder.objects.filter(id__in=selected_powders_ids)
+        username = os.getenv('IACPAAS_USERNAME', acount_login)
+        password = os.getenv('IACPAAS_PASSWORD', acount_password)
+        api_key = signin(username, password)
+        powders_json = generate_json_to_iacpaas_powders(powders)
+        result = import_resource(
+            API_KEY=api_key,
+            path=default_path,
+            json=powders_json,
+            clearIfExists=True
+        )
+        if result.get('success'):
+            messages.success(request, f"Успешно отправлено {powders.count()} порошков в IACPaaS.")
+        else:
+            messages.error(request, f"Ошибка IACPaaS: {result.get('message', result)}")
+
+        base_url = reverse('iacpaas:material_list')
+        query_string = urlencode({'type': 'powder'})
+        url = f'{base_url}?{query_string}'
+
+        return redirect(url)
+
+    selected_metals_ids = request.POST.getlist('selected_metals')
+    if selected_metals_ids:
+        metals = Metal.objects.filter(id__in=selected_metals_ids)
+        username = os.getenv('IACPAAS_USERNAME', acount_login)
+        password = os.getenv('IACPAAS_PASSWORD', acount_password)
+        api_key = signin(username, password)
+        metals_json = generate_json_to_iacpaas_metal(metals)
+        result = import_resource(
+            API_KEY=api_key,
+            path=default_path,
+            json=metals_json,
+            clearIfExists=True
+        )
+        if result.get('success'):
+            messages.success(request, f"Успешно отправлено {metals.count()} металлов в IACPaaS.")
+        else:
+            messages.error(request, f"Ошибка IACPaaS: {result.get('message', result)}")
+
+        base_url = reverse('iacpaas:material_list')
+        query_string = urlencode({'type': 'metal'})
         url = f'{base_url}?{query_string}'
 
         return redirect(url)
@@ -436,14 +491,25 @@ def generate_obj_dict(model, data_dict, item_data, base, main_obj):
             if prop_model.__name__ == 'Element':
                 value = Element.convert_to_subscript(item_data[key].strip())
 
+
             #print(value_without_digits)
-            model_param_without_digits = {f'{prop[1]}': value}
+            if type(value) == type("text"):
+                model_param_without_digits = {f'{prop[1]}__iexact': value}
+            else:
+                model_param_without_digits = {f'{prop[1]}': value}
+
             try:
-                element = prop_model.objects.get(**model_param_without_digits)
+                element = prop_model.objects.filter(**model_param_without_digits).first()
                 created = False
+                if not element:
+                    model_param_without_digits = {f'{prop[1]}': value}
+                    element, created = prop_model.objects.get_or_create(**model_param_without_digits)
             except prop_model.DoesNotExist:
+
                 model_param_with_digits = {f'{prop[1]}': value}
+
                 element, created = prop_model.objects.get_or_create(**model_param_with_digits)
+                print(element)
 
             obj_data[prop[0]] = element
         else:
@@ -485,6 +551,9 @@ def save_selected_products(request):
         if not mat_type or not link:
             continue
 
+        if mat_type == "gas_mixture":
+            continue
+
         item = raw_item
         item["link"] = link
         item["type"] = mat_type
@@ -493,6 +562,7 @@ def save_selected_products(request):
 
         first = True
         main_obj = None
+        print(comparison_type_dic[mat_type])
         for key, data in comparison_type_dic[mat_type].items():
             model = apps.get_model('IACAPaaS_interactions', f'{key}')
             obj_data = {}
@@ -573,18 +643,27 @@ def delete_wire(request, pk):
     except Exception as e:
         return JsonResponse({"success": False, "error": str(e)}, status=500)
 
+@require_http_methods(["POST"])
+def delete_metal(request, pk):
+    try:
+        metal = Metal.objects.get(pk=pk)
+        metal.delete()
+        return JsonResponse({"success": True})
+    except Metal.DoesNotExist:
+        return JsonResponse({"success": False, "error": "Metal not found"}, status=404)
+    except Exception as e:
+        return JsonResponse({"success": False, "error": str(e)}, status=500)
+
 
 
 from .element_fiiller import import_elements_from_json
 from pathlib import Path
-from ..IACPaaS_api.api_config import default_element_path_short, default_properties_path_short, acount_login, acount_password
+from ..IACPaaS_api.api_config import default_element_path_short, default_properties_path_short, default_terms_path_short, acount_login, acount_password
 from ..IACPaaS_api.api_connection import signin, export_resource
 
 def json_to_element(request):
     key = signin(acount_login, acount_password)
     elements = export_resource(key, default_element_path_short)
-    with open('test2.json', 'w', encoding='utf-8') as f:
-        json.dump(elements, f, ensure_ascii=False, indent=4)
 
     elements = elements['data']
     import_elements_from_json(elements)
@@ -602,6 +681,21 @@ def json_to_property(request):
     print(elements)
 
     import_properties_from_json(json.loads(elements))
+
+    referer = request.META.get('HTTP_REFERER')
+    return redirect(referer if referer else '/')
+
+
+from .terms_filler import import_terms_from_json
+
+def json_to_termin(request):
+    key = signin(acount_login, acount_password)
+
+    elements = export_resource(key, default_terms_path_short)['data']
+
+    print(elements)
+
+    import_terms_from_json(json.loads(elements))
 
     referer = request.META.get('HTTP_REFERER')
     return redirect(referer if referer else '/')
@@ -625,11 +719,6 @@ def elements_list(request):
     elif in_iacpaas_filter == 'false':
         elements = elements.filter(in_iacpaas=False)
 
-    #if composite_filter == 'true':
-    #    elements = elements.filter(formula__contains='+')
-    #elif composite_filter == 'false':
-    #    elements = elements.exclude(formula__contains='+')
-
     if element_type_filter and element_type_filter in dict(Element.TYPE_CHOICES):
         elements = elements.filter(element_type=element_type_filter)
 
@@ -646,7 +735,7 @@ def elements_list(request):
 
     context = {
         'elements': page_obj,
-        'element_type_choices': Element.TYPE_CHOICES,  # Передаём варианты в шаблон
+        'element_type_choices': Element.TYPE_CHOICES,
     }
     return render(request, 'elements/element_list.html', context)
 
@@ -696,3 +785,49 @@ def property_list(request):
     }
 
     return render(request, 'properties/property_list.html', context)
+
+
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.shortcuts import render
+from django.db.models import Q
+from .models import Termin, TerminType
+
+def termin_list(request):
+    """Список терминов с фильтрацией и пагинацией"""
+    queryset = Termin.objects.all().select_related('termin_type').order_by('name')
+
+    in_iacpaas = request.GET.get('in_iacpaas')
+    if in_iacpaas == 'true':
+        queryset = queryset.filter(in_iacpaas=True)
+    elif in_iacpaas == 'false':
+        queryset = queryset.filter(in_iacpaas=False)
+
+    termin_type_id = request.GET.get('termin_type')
+    if termin_type_id:
+        queryset = queryset.filter(termin_type_id=termin_type_id)
+
+    search = request.GET.get('search')
+    if search:
+        queryset = queryset.filter(
+            Q(name__icontains=search) |
+            Q(termin_type__name__icontains=search)
+        )
+
+    paginator = Paginator(queryset, 20)
+    page_number = request.GET.get('page')
+
+    try:
+        termins = paginator.page(page_number)
+    except PageNotAnInteger:
+        termins = paginator.page(1)
+    except EmptyPage:
+        termins = paginator.page(paginator.num_pages)
+
+    termin_types = TerminType.objects.all().order_by('name')
+
+    context = {
+        'termins': termins,
+        'termin_types': termin_types,
+    }
+
+    return render(request, 'termins/termin_list.html', context)

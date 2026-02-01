@@ -17,6 +17,9 @@ from .views import (
     elements_list,
     json_to_property,
     property_list,
+    delete_metal,
+    termin_list,
+    json_to_termin
 )
 
 app_name = "iacpaas"
@@ -40,11 +43,14 @@ urlpatterns = [
     path('delete-gas/<int:pk>/', delete_gas, name='delete_gas'),
     path('delete-powder/<int:pk>/', delete_powder, name='delete_powder'),
     path('delete-wire/<int:pk>/', delete_wire, name='delete_wire'),
+    path('delete-metal/<int:pk>/', delete_metal, name='delete_metal'),
 
     path('json_to_element/', json_to_element, name='json_to_element'),
     path('json_to_property/', json_to_property, name='json_to_property'),
+    path('json_to_terms/', json_to_termin, name='json_to_terms'),
 
     path('property_list/', property_list, name='properties_list'),
     path('elements_list/', elements_list, name='elements_list'),
+    path('termins_list/', termin_list, name='termins_list'),
 
 ]

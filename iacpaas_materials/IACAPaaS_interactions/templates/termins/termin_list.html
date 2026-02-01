@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block title %}Термины — IACPaaS_materials{% endblock %}
+
+{% block content %}
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h3>Термины</h3>
+          <a href="{% url 'iacpaas:json_to_terms' %}" class="btn btn-warning" onclick="return confirm('Вы уверены, что хотите обновить данные из базы терминов? Это может занять некоторое время.');">
+            <i class="bi bi-arrow-clockwise"></i> Обновить из базы IACPaaS
+          </a>
+        </div>
+
+        <!-- Фильтры -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5 class="mb-0">Фильтры</h5>
+          </div>
+          <div class="card-body">
+            <form method="get" action="{% url 'iacpaas:termins_list' %}" class="row g-3">
+              <div class="col-md-4">
+                <label class="form-label">Есть в IACPaaS</label>
+                <select class="form-select" name="in_iacpaas">
+                  <option value="">Все</option>
+                  <option value="true" {% if request.GET.in_iacpaas == 'true' %}selected{% endif %}>Да</option>
+                  <option value="false" {% if request.GET.in_iacpaas == 'false' %}selected{% endif %}>Нет</option>
+                </select>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label">Тип термина</label>
+                <select class="form-select" name="termin_type">
+                  <option value="">Все</option>
+                  {% for termin_type in termin_types %}
+                    <option value="{{ termin_type.id }}" {% if request.GET.termin_type == termin_type.id|stringformat:"i" %}selected{% endif %}>
+                      {{ termin_type.name }}
+                    </option>
+                  {% endfor %}
+                </select>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label">Поиск</label>
+                <input type="text" class="form-control" name="search" placeholder="Название термина..." value="{{ request.GET.search }}">
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Применить</button>
+                <a href="{% url 'iacpaas:termins_list' %}" class="btn btn-secondary">Сбросить</a>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Таблица с терминами -->
+        <div class="card">
+          <div class="card-header">
+            <h5 class="mb-0">Список терминов ({{ termins.paginator.count }})</h5>
+          </div>
+          <div class="card-body">
+            {% if termins %}
+              <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                  <thead>
+                    <tr>
+                      <th>Название</th>
+                      <th>Тип термина</th>
+                      <th>Есть в IACPaaS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for termin in termins %}
+                      <tr>
+                        <td><strong>{{ termin.name }}</strong></td>
+                        <td>{{ termin.termin_type.name }}</td>
+                        <td>
+                          {% if termin.in_iacpaas %}
+                            <span class="badge bg-success">Да</span>
+                          {% else %}
+                            <span class="badge bg-secondary">Нет</span>
+                          {% endif %}
+                        </td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Пагинация -->
+              {% if termins.has_other_pages %}
+                <nav aria-label="Страницы">
+                  <ul class="pagination justify-content-center">
+                    {% if termins.has_previous %}
+                      <li class="page-item">
+                        <a class="page-link" href="?page=1{% if request.GET.in_iacpaas %}&in_iacpaas={{ request.GET.in_iacpaas }}{% endif %}{% if request.GET.termin_type %}&termin_type={{ request.GET.termin_type }}{% endif %}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">Первая</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="?page={{ termins.previous_page_number }}{% if request.GET.in_iacpaas %}&in_iacpaas={{ request.GET.in_iacpaas }}{% endif %}{% if request.GET.termin_type %}&termin_type={{ request.GET.termin_type }}{% endif %}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">Предыдущая</a>
+                      </li>
+                    {% endif %}
+
+                    <li class="page-item active">
+                      <span class="page-link">Страница {{ termins.number }} из {{ termins.paginator.num_pages }}</span>
+                    </li>
+
+                    {% if termins.has_next %}
+                      <li class="page-item">
+                        <a class="page-link" href="?page={{ termins.next_page_number }}{% if request.GET.in_iacpaas %}&in_iacpaas={{ request.GET.in_iacpaas }}{% endif %}{% if request.GET.termin_type %}&termin_type={{ request.GET.termin_type }}{% endif %}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">Следующая</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="?page={{ termins.paginator.num_pages }}{% if request.GET.in_iacpaas %}&in_iacpaas={{ request.GET.in_iacpaas }}{% endif %}{% if request.GET.termin_type %}&termin_type={{ request.GET.termin_type }}{% endif %}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">Последняя</a>
+                      </li>
+                    {% endif %}
+                  </ul>
+                </nav>
+              {% endif %}
+            {% else %}
+              <div class="alert alert-info">
+                Термины не найдены
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

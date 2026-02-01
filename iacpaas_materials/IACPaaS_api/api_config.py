@@ -10,7 +10,10 @@ default_element_path_short = f"Загрузки / База химических 
 default_element_path = f"{acount_login} / Мой Фонд / {default_element_path_short}$"
 
 default_properties_path_short = f"Загрузки / База свойств материалов"
-default_properties_path = f"{acount_login} / Мой Фонд / {default_element_path_short}$"
+default_properties_path = f"{acount_login} / Мой Фонд / {default_properties_path_short}$"
+
+default_terms_path_short = f"Загрузки / Терминологический справочник"
+default_terms_path = f"{acount_login} / Мой Фонд / {default_terms_path_short}$"
 
 default_ontology_path_gase = f"{acount_login} / Мой Фонд / Загрузки / Онтология базы технологических газов$;"
 default_ontology_path_powder = f"{acount_login} / Мой Фонд / Загрузки / Онтология базы металлопорошковых материалов$;"

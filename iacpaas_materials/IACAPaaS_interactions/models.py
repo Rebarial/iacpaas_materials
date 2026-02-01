@@ -1,6 +1,20 @@
 from django.db import models
 
 # =========================
+# Терминология
+# =========================
+
+class TerminType(models.Model):
+
+    name = models.CharField(max_length=250)
+
+class Termin(models.Model):
+    name = models.CharField(max_length=250)
+    termin_type = models.ForeignKey(TerminType, null=True, blank=True, on_delete=models.SET_NULL)
+
+    in_iacpaas = models.BooleanField(default=False)
+
+# =========================
 # Элементный состав
 # =========================
 
@@ -122,7 +136,7 @@ class ElementalComposition_powder(models.Model):
 
 class Particle_form(models.Model):
     powder = models.ForeignKey(Powder, on_delete=models.CASCADE, verbose_name="Порошок")
-    name = models.CharField("Название опции", max_length=100)
+    termin = models.ForeignKey(Termin, on_delete=models.CASCADE, verbose_name="Термин")
     obtaining_method = models.CharField("Метод получения", max_length=300)
 
     def __str__(self):
@@ -276,17 +290,17 @@ class MetalClass(models.Model):
 
 class Metal(models.Model):
     metal_class = models.ForeignKey(MetalClass, on_delete=models.CASCADE, verbose_name="Класс сплава")
-    name = models.CharField("Стандарты", max_length=200)
+    name = models.CharField("Название", max_length=200)
     adress = models.CharField("Источник", max_length=200)
     date = models.DateTimeField("Дата внесения", auto_now_add=True)
     standards = models.CharField("Стандарты", max_length=300)
 
     def __str__(self):
-        return f"{self.powder_class}"
+        return f"{self.metal_class.name}  {self.name}"
 
     class Meta:
-        verbose_name = "Тип сплава"
-        verbose_name_plural = "Типы сплавов"
+        verbose_name = "Металл"
+        verbose_name_plural = "Металл"
 
 class MetalPropertyValue(models.Model):
     metal = models.ForeignKey(Metal, on_delete=models.CASCADE, verbose_name="Металл")

@@ -21,7 +21,7 @@
                 <div class="form-check me-3">
                   <input class="form-check-input" type="checkbox" name="selected_products" value="{{ forloop.counter0 }}" checked>
                   <label class="form-check-label">
-                    <strong>{{ product.name }}</strong>
+                    <strong>{{ product.type }} {{ product.name }}{{ product.full_name }}{{ product.metal_material }} {{ product.brand }}</strong>
                   </label>
                 </div>
                 <button type="button" class="btn btn-sm btn-outline-secondary toggle-details" data-target="details-{{ forloop.counter0 }}">

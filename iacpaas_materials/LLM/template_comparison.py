@@ -5,11 +5,11 @@ powder_comparison = {
         "standards": "standards",
         "link": "adress"
     },
-    "PowderAnalog": {
-        "analogs": {
-            "name": "analog"
-        }
-    },
+#    "PowderAnalog": {
+ #       "analogs": {
+  #          "name": "analog"
+   #     }
+   # },
     "PowderPropertyValue": {
         "properties": {
             "property": "property.name",
@@ -18,7 +18,7 @@ powder_comparison = {
     },
     "Particle_form": {
         "powder_particle_shape": { ##Скорее всего другое название и тд надо доделать я только для газов сделал
-            "shape": "name",
+            "shape": "termin.name",
             "obtaining_method": "obtaining_method",
         }
     }
@@ -43,12 +43,13 @@ gas_comparison = {
 }
 
 gas_mixture_comparison = {
+    '''
     "GasMixture" : {
         "formula": "formula",
         "mark_sort_or_grade": "grade",
         "brand": "brand",
         "standards": "standards",
-        # "link": "adress",  Нет поля в модели?
+        "link": "adress",#  Нет поля в модели?
     },
     "GasMixtureComponent": {
         "gas_composition": {
@@ -56,6 +57,7 @@ gas_mixture_comparison = {
             "concentration": "concentration",
         }
     },
+    '''
 }
 
 metal_wire_comparison = {
@@ -76,11 +78,11 @@ metal_wire_comparison = {
             "value": "value",
         }
     },
-    "WireAnalog": {
-        "analogs": {
-            "name": "analog.name",
-        }
-    },
+ #   "WireAnalog": {
+  #      "analogs": {
+   #         "name": "analog.name",
+    #    }
+   # },
     "ElementalComposition_wire": {
         "elemental_composition": {
             "element": "element.formula",
