@@ -6,12 +6,13 @@ powder_comparison = {
         "link": "adress"
     },
     "PowderAnalog": {
-      "analogs": {
-          "name": "analog"
-      }
+        "analogs": {
+            "name": "analog"
+        }
     },
     "PowderPropertyValue": {
         "properties": {
+            "property_type": "property.type.name",
             "property": "property.name",
             "value": "property_value"
         }
@@ -28,14 +29,14 @@ gas_comparison = {
     "Gas" : {
         "name": "name",
         "formula": "formula",
-        "grade": "grade",
+        "mark_sort_or_grade": "grade",
         "brand": "brand",
-        "standard": "standards",
+        "standards": "standards",
         "link": "adress",
     },
     "ChemicalDesignation": {
-        "chemical_designations": {
-            "component_formula": "element.formula",
+        "chemical_composition": {
+            "component_name": "element.name",
             "percent_value": "percent_value",
         }
     },
@@ -45,32 +46,34 @@ gas_comparison = {
 gas_mixture_comparison = {
     "GasMixture" : {
         "formula": "formula",
-        "grade": "grade",
+        "mark_sort_or_grade": "grade",
         "brand": "brand",
-        "standard": "standards",
+        "standards": "standards",
         # "link": "adress",  Нет поля в модели?
     },
     "GasMixtureComponent": {
-        "chemical_designations": {
-            "component_formula": "gas.name",
-            "percent_value": "concentration",
+        "gas_composition": {
+            "gas": "gas.formula",
+            "concentration": "concentration",
         }
     },
 }
 
 metal_wire_comparison = {
     "MetalWire" : {
-        "name": "name",
-        "wire_class": "wire_class.name",
+        "base_material": "wire_class.name",
+        "full_name": "name",
+        "standards": "standards",
         "link": "adress",
     },
     "MetalWire_diametrs": {
         "diameter_options": {
-            "value": "value",
+            "size_value": "value",
         }
     },
     "MetalWirePropertyValue": {
         "properties": {
+            "property_type": "property.type.name",
             "property": "property.name",
             "value": "value",
         }
@@ -90,20 +93,16 @@ metal_wire_comparison = {
 
 metal_comparison = {
     "MetalWire" : {
-        "metal_class": "metal_class.name",
-        "name": "name",
+        "metal_material": "metal_class.name",
+        "full_name": "name",
         "standards": "standards",
         "link": "adress",
     },
     "MetalPropertyValue": {
         "properties": {
+            "property_type": "property.type.name",
             "property": "property.name",
             "value": "value",
-        }
-    },
-    "WireAnalog": {
-        "analogs": {
-            "name": "analog.name",
         }
     },
     "ElementalComposition_metal": {

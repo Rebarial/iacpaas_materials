@@ -3,7 +3,7 @@
 powder_template = {
     "base_material": "", # Добавить пример деления на base_material и grade
     "grade": "Марка",
-    "standarts_list": "Стандарты (через запятую)",
+    "standards": "",
     "analogs": [
         {
             "name": "",
@@ -27,41 +27,41 @@ powder_template = {
     ],
     "powder_particle_sizes": [ #Не нужно?
         {
-            "size_value": "",
-            "size_value_min": "",
-            "size_value_max": "",
+            "size_range": "",
+            "size_min": "",
+            "size_max": "",
             "size_value_unit": "",
-            "application_method": "",
+            "coating_application_method": "",
         },
     ],
     "properties": [
         {
             "property": "",
             "value": "",
+            "property_type": "{Физическое/Механическое/...} свойство)",
         },
     ],
 }
 
 gas_template = {
-    "name": "", # Добавить пример деления на name и grade
-    "grade": "",
-    "formula": "Химическая формула (Например: H)",
+    "name": "", 
+    "mark_sort_or_grade": "",
+    "formula": "",
     "brand": "",
-    "standard": "Стандарты (через запятую)",
-    "chemical_designations": [
+    "standards": "",
+    "chemical_composition": [
         {
-            "component_formula": "",
-            # "designation_type": "",
+            "component_name": "",
             "percent_value": "",
         },
     ],
 }
 gas_mixture_template = {
-    "name": "", # Добавить пример деления на name и grade
-    "grade": "",
-    "formula": "Химическая формула (Например: H2O)",
+    "name": "", 
+    "mark_sort_or_grade": "",
+    "formula": "",
     "brand": "",
-    "standard": "Стандарты (через запятую)",
+    "standards": "",
     "gas_composition": [
         {
             "gas": "",
@@ -71,11 +71,12 @@ gas_mixture_template = {
 }
 
 metal_wire_template = {
-    "name": "", # Добавить пример деления на name и wire_class
-    "wire_class": "",
+    "full_name": "",
+    "base_material": "",
+    "standards": "",
     "diameter_options": [
         {
-            "value": "",
+            "size_value": "",
         },
     ],
     "analogs": [
@@ -93,14 +94,15 @@ metal_wire_template = {
         {
             "property": "",
             "value": "",
+            "property_type": "{Физическое/Механическое/...} свойство",
         },
     ],
 }
 
 metal_template = {
-    "name": "", # Добавить пример деления на name и metal_class
-    "metal_class": "",
-    "standards": "Стандарты (через запятую)",
+    "metal_material": "",
+    "full_name": "",
+    "standards": "",
     "elemental_composition": [
         {
             "element": "",
@@ -111,6 +113,7 @@ metal_template = {
         {
             "property": "",
             "value": "",
+            "property_type": "{Физическое/Механическое/...} свойство)",
         },
     ],
 }

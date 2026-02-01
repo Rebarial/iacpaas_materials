@@ -16,6 +16,7 @@ def compare_responses(responses, properties_template):
                 parsed_responses.append(parsed_response)
             except:
                 print("Неверный формат1")
+                # print(response)
         else:
             print("Неверный формат2")
 
@@ -66,7 +67,7 @@ def compare_lists(lists, properties_template):
     score = []
     groups = []
 
-    main_key_options = ['name', 'property', 'size_value', 'shape', 'component', 'gas', 'component_formula', 'element']
+    main_key_options = ['name', 'property', 'size_range', 'size_value', 'shape', 'component', 'gas', 'component_formula', 'component_name', 'element']
     main_key = ''
     for option in main_key_options:
         if option in properties_template:
@@ -80,7 +81,7 @@ def compare_lists(lists, properties_template):
         groups.append([-1] * len(lists[i]))
     for i1 in range(n):
         for j1 in range(m[i1]):
-            if (score[i1][j1] == 0 and (main_key in lists[i1][j1])):
+            if (score[i1][j1] == 0 and (main_key in lists[i1][j1]) and (lists[i1][j1][main_key] != '-') and (lists[i1][j1][main_key] != properties_template[main_key])):
                 best_matches = [-1] * n
                 best_matches_len = [0] * n
                 match_count = 0

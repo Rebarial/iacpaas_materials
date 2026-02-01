@@ -1,4 +1,5 @@
 import requests
+import time
 from .fefu_cluster_auth_key_placeholder import auth_key
 
 
@@ -26,15 +27,23 @@ def get_prompt_fefu_cluster(text, auth_token, model_name):
     }
 
 def send_request_fefu_cluster(prompt, generate_url):
-    response = requests.post(generate_url, json=prompt, timeout=1200)
-    # print(response)
-    if response.status_code == 200:
-        if "exception" in response.json():
-            print(response.json()["exception"])
+    max_retry = 3
+    wait_before_retry = 20
+    for i in range(max_retry):
+        response = requests.post(generate_url, json=prompt)
+        if response.status_code == 200:
+            if "exception" in response.json():
+                print(response.status_code)
+                print(response.json()["exception"])
+            else:
+                response_text = response.json()["output"]
+                print(response_text)
+                return response_text
         else:
-            response_text = response.json()["output"]
-            print(response_text)
-            return response_text
+            print(response.status_code)
+        time.sleep(wait_before_retry)
+        
+
 
 config_fefu_cluster_qwen_3_4b = {
     "name": "fefu_cluster_qwen_3_4b",
