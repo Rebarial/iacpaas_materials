@@ -143,7 +143,7 @@ class PowderAnalog(models.Model):
 class PowderPropertyValue(models.Model):
     powder = models.ForeignKey(Powder, on_delete=models.CASCADE, verbose_name="Порошок")
     property = models.ForeignKey(Property, on_delete=models.CASCADE, verbose_name="Свойство")
-    property_value = models.CharField("Значение", max_length=100)
+    property_value = models.FloatField("Значение")
 
     class Meta:
         verbose_name = "Свойство порошка"
@@ -171,7 +171,7 @@ class Gas(models.Model):
 class ChemicalDesignation(models.Model):
     gas = models.ForeignKey(Gas, on_delete=models.CASCADE, verbose_name="Газ")
     element = models.ForeignKey(Element, on_delete=models.CASCADE, verbose_name="Компонент")
-    percent_value = models.CharField("Мин. %", max_length=100)
+    percent_value = models.FloatField("Массовая доля")
 
     class Meta:
         verbose_name = "Химическое обозначение газа"
@@ -237,7 +237,7 @@ class MetalWire_diametrs(models.Model):
 class MetalWirePropertyValue(models.Model):
     wire = models.ForeignKey(MetalWire, on_delete=models.CASCADE, verbose_name="Проволока")
     property = models.ForeignKey(Property, on_delete=models.CASCADE, verbose_name="Свойство")
-    value = models.CharField("Значение", max_length=200)
+    value = models.FloatField("Значение")
 
     class Meta:
         verbose_name = "Свойство проволоки"
@@ -291,7 +291,7 @@ class Metal(models.Model):
 class MetalPropertyValue(models.Model):
     metal = models.ForeignKey(Metal, on_delete=models.CASCADE, verbose_name="Металл")
     property = models.ForeignKey(Property, on_delete=models.CASCADE, verbose_name="Свойство")
-    value = models.CharField("Значение", max_length=200)
+    value = models.FloatField("Значение")
 
     class Meta:
         verbose_name = "Свойство металла"

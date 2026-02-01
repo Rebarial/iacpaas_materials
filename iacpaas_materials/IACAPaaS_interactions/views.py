@@ -44,7 +44,7 @@ def choice_materials(request):
     preload = request.GET.get('preload')
     max_pages_raw = request.GET.get('max_pages', '')
 
-    max_pages = int(max_pages_raw) if max_pages_raw.strip().isdigit() else 50
+    max_pages = int(max_pages_raw) if max_pages_raw.strip().isdigit() else 100
 
     config = get_parser_config()
     all_sources = config["sources"]
@@ -65,7 +65,6 @@ def choice_materials(request):
         for src in sources_to_show:
             process_and_save_source(
                 src,
-                "product_links.json",
                 max_pages=max_pages
             )
 
@@ -301,10 +300,39 @@ from ..IACPaaS_api.serialize_gas import Gas_serialize
 from ..IACPaaS_api.api_config import acount_login, acount_password, default_path
 from .serialize import gases_to_iacpaas_dicts
 from ..IACPaaS_api.gas_iasp import generate_gson_to_iacpaas_gase
+from ..IACPaaS_api.wire_iasp import generate_gson_to_iacpaas_wires
+
+from django.urls import reverse
+from urllib.parse import urlencode
 
 def send_to_iacpaas(request):
     if request.method != "POST":
         return redirect('iacpaas:gas_list')
+
+    selected_wires_ids = request.POST.getlist('selected_wires')
+    if selected_wires_ids:
+        wires = MetalWire.objects.filter(id__in=selected_wires_ids)
+        username = os.getenv('IACPAAS_USERNAME', acount_login)
+        password = os.getenv('IACPAAS_PASSWORD', acount_password)
+        api_key = signin(username, password)
+        wires_json = generate_gson_to_iacpaas_wires(wires)
+        result = import_resource(
+            API_KEY=api_key,
+            path=default_path,
+            json=wires_json,
+            clearIfExists=True
+        )
+        if result.get('success'):
+            messages.success(request, f"Успешно отправлено {wires.count()} газ(ов) в IACPaaS.")
+        else:
+            messages.error(request, f"Ошибка IACPaaS: {result.get('message', result)}")
+
+        base_url = reverse('iacpaas:material_list')
+        query_string = urlencode({'type': 'wire'})
+        url = f'{base_url}?{query_string}'
+
+        return redirect(url)
+
 
     selected_ids = request.POST.getlist('selected_gases')
     if not selected_ids:
@@ -327,9 +355,6 @@ def send_to_iacpaas(request):
         api_key = signin(username, password)
         if not api_key:
             raise Exception("Не удалось получить токен доступа")
-
-        gas_serialize = Gas_serialize()
-        json_data = Gas_serialize()
 
         # Сериализация
         gases_json = generate_gson_to_iacpaas_gase(gases)

@@ -35,7 +35,7 @@ gas_comparison = {
     },
     "ChemicalDesignation": {
         "chemical_composition": {
-            "component_formula": "element.name",
+            "component_formula": "element.formula",
             "percent_value": "percent_value",
         }
     },
@@ -83,7 +83,7 @@ metal_wire_comparison = {
     },
     "ElementalComposition_wire": {
         "elemental_composition": {
-            "element": "element.name",
+            "element": "element.formula",
             "fraction": "fraction",
         },
     },
@@ -104,7 +104,7 @@ metal_comparison = {
     },
     "ElementalComposition_metal": {
         "elemental_composition": {
-            "element": "element.name",
+            "element": "element.formula",
             "fraction": "fraction",
         },
     },
