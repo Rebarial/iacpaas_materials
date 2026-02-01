@@ -226,11 +226,35 @@ from django.db.models import Q
 from .models import Gas, Powder, MetalWire, Metal  # добавьте Metal в импорты
 
 
+def is_field_empty(value):
+    """Проверяет, является ли значение незаполненным"""
+    if value is None or value == '':
+        return True
+    str_value = str(value).strip()
+    return str_value in ['?', '-', '0']
+
+
+def has_empty_fields(obj, fields_to_check=None):
+    """Проверяет, есть ли у объекта незаполненные поля"""
+    if fields_to_check is None:
+        # Проверяем все поля модели
+        fields_to_check = [f.name for f in obj._meta.fields]
+
+    for field_name in fields_to_check:
+        try:
+            value = getattr(obj, field_name)
+            if is_field_empty(value):
+                return True
+        except AttributeError:
+            continue
+    return False
+
+
 def material_list(request):
     available_types = []
     if Gas.objects.exists():
         available_types.append('gas')
-    if Powder.objects.exists():  # исправлено: было PowderClass
+    if Powder.objects.exists():
         available_types.append('powder')
     if MetalWire.objects.exists():
         available_types.append('wire')
@@ -241,13 +265,24 @@ def material_list(request):
     if not selected_type or selected_type not in available_types:
         selected_type = available_types[0] if available_types else None
 
+    show_empty = request.GET.get('filter')
+
+    def filter_empty(queryset):
+        if show_empty == 'filled':
+            return [obj for obj in queryset if not has_empty_fields(obj)]
+        if show_empty == 'empty':
+            return [obj for obj in queryset if has_empty_fields(obj)]
+        else:
+            return queryset
+
     context = {
         'selected_type': selected_type,
         'available_types': available_types,
-        'gases': Gas.objects.all() if selected_type == 'gas' else Gas.objects.none(),
-        'powders': Powder.objects.all() if selected_type == 'powder' else Powder.objects.none(),  # исправлено
-        'wires': MetalWire.objects.all() if selected_type == 'wire' else MetalWire.objects.none(),
-        'metals': Metal.objects.all() if selected_type == 'metal' else Metal.objects.none(),  # добавлено
+        'show_empty': show_empty,
+        'gases': filter_empty(Gas.objects.all()) if selected_type == 'gas' else Gas.objects.none(),
+        'powders': filter_empty(Powder.objects.all()) if selected_type == 'powder' else Powder.objects.none(),
+        'wires': filter_empty(MetalWire.objects.all()) if selected_type == 'wire' else MetalWire.objects.none(),
+        'metals': filter_empty(Metal.objects.all()) if selected_type == 'metal' else Metal.objects.none(),
     }
     return render(request, 'materials/material_list.html', context)
 

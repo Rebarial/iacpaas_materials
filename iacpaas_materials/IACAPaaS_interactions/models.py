@@ -8,11 +8,17 @@ class TerminType(models.Model):
 
     name = models.CharField(max_length=250)
 
+    def __str__(self):
+        return self.name
+
 class Termin(models.Model):
     name = models.CharField(max_length=250)
     termin_type = models.ForeignKey(TerminType, null=True, blank=True, on_delete=models.SET_NULL)
 
     in_iacpaas = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name
 
 # =========================
 # Элементный состав
@@ -140,7 +146,7 @@ class Particle_form(models.Model):
     obtaining_method = models.CharField("Метод получения", max_length=300)
 
     def __str__(self):
-        return f"{self.powder} — {self.name}"
+        return f"{self.powder} — {self.termin.name}"
 
     class Meta:
         verbose_name = "Форма частиц"

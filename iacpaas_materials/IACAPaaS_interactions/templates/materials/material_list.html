@@ -6,22 +6,34 @@
 
     <!-- Фильтр по типу -->
     <form method="get" class="mb-3">
-        <label for="type_filter" class="form-label">Тип материала:</label>
-        <select name="type" id="type_filter" class="form-select" onchange="this.form.submit()">
-            {% if 'gas' in available_types %}
-                <option value="gas"{% if selected_type == 'gas' %} selected{% endif %}>Газы</option>
-            {% endif %}
-            {% if 'powder' in available_types %}
-                <option value="powder"{% if selected_type == 'powder' %} selected{% endif %}>Порошки</option>
-            {% endif %}
-            {% if 'wire' in available_types %}
-                <option value="wire"{% if selected_type == 'wire' %} selected{% endif %}>Проволока</option>
-            {% endif %}
-            {% if 'metal' in available_types %}
-                <option value="metal"{% if selected_type == 'metal' %} selected{% endif %}>Металлы</option>
-            {% endif %}
-        </select>
-    </form>
+    <div class="row g-3">
+        <div class="col-md-8">
+            <label for="type_filter" class="form-label">Тип материала:</label>
+            <select name="type" id="type_filter" class="form-select" onchange="this.form.submit()">
+                {% if 'gas' in available_types %}
+                    <option value="gas"{% if selected_type == 'gas' %} selected{% endif %}>Газы</option>
+                {% endif %}
+                {% if 'powder' in available_types %}
+                    <option value="powder"{% if selected_type == 'powder' %} selected{% endif %}>Порошки</option>
+                {% endif %}
+                {% if 'wire' in available_types %}
+                    <option value="wire"{% if selected_type == 'wire' %} selected{% endif %}>Проволока</option>
+                {% endif %}
+                {% if 'metal' in available_types %}
+                    <option value="metal"{% if selected_type == 'metal' %} selected{% endif %}>Металлы</option>
+                {% endif %}
+            </select>
+        </div>
+                <div class="col-md-6">
+            <label for="filter_select" class="form-label">Фильтр заполненности:</label>
+            <select name="filter" id="filter_select" class="form-select" onchange="this.form.submit()">
+                <option value="all"{% if show_empty == 'all' %} selected{% endif %}>Все материалы</option>
+                <option value="filled"{% if show_empty == 'filled' %} selected{% endif %}>Только заполненные</option>
+                <option value="empty"{% if show_empty == 'empty' %} selected{% endif %}>Только незаполненные</option>
+            </select>
+        </div>
+    </div>
+</form>
 
     {% if not gases and not powders and not wires and not metals %}
         <div class="alert alert-info" role="alert">
