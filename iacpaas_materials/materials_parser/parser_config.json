@@ -20,6 +20,19 @@
             "extract": {
               "xpath": "//div[contains(@class, 'product-description__wrap')]"
             }
+          },
+          {
+            "condition": {
+              "and": [
+                {
+                  "xpath": "//h1[contains(text(), 'Смесь газовая сварочная')]"
+                }
+              ]
+            },
+            "type": "gas_mixture",
+            "extract": {
+              "xpath": "//div[contains(@class, 'product-description__wrap')]"
+            }
           }
         ]
       }
@@ -44,7 +57,7 @@
             },
             "type": "powder",
             "extract": {
-              "xpath": "//div[contains(@class, 'uss_shop_detail') and contains(@class, 'order_one')]"
+              "xpath": "//div[contains(@class, 'la_right')]"
             }
           },
           {
@@ -53,7 +66,7 @@
             },
             "type": "wire",
             "extract": {
-              "xpath": "//div[contains(@class, 'uss_shop_detail') and contains(@class, 'order_one')]"
+              "xpath": "//div[contains(@class, 'la_right')]"
             }
           }
         ]
@@ -95,7 +108,7 @@
             },
             "type": "wire",
             "extract": {
-              "xpath": "//div[@class='shop_text']"
+              "xpath": "//div[@class='home_aboutarea']"
             }
           }
         ]

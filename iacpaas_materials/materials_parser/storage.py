@@ -40,6 +40,38 @@ def save_sources(links: Dict[str, Any], data: Dict[str, Any], links_filename: st
 def update_or_add_source(sources_data: Dict[str, Any], new_source: Dict[str, Any]) -> None:
     for i, existing in enumerate(sources_data["sources"]):
         if existing.get("name") == new_source["name"]:
-            sources_data["sources"][i]["product_links"] = new_source["product_links"]
+            existing_links: List[Dict] = existing.get("product_links", [])
+            new_links: List[Dict] = new_source.get("product_links", [])
+            
+
+            existing_by_id = {
+                link["id"]: link 
+                for link in existing_links 
+                if link.get("id")
+            }
+            
+
+            new_by_id = {
+                link["id"]: link 
+                for link in new_links 
+                if link.get("id")
+            }
+            
+
+            for link_id, existing_link in existing_by_id.items():
+                if link_id in new_by_id:
+                    existing_by_id[link_id].update(new_by_id[link_id])
+            
+
+            for link_id, new_link in new_by_id.items():
+                if link_id not in existing_by_id:
+                    existing_by_id[link_id] = new_link
+            
+            merged_links = list(existing_by_id.values())
+            
+
+            sources_data["sources"][i]["product_links"] = merged_links
             return
+    
+
     sources_data["sources"].append(new_source)
