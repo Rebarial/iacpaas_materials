@@ -12,7 +12,6 @@ powder_comparison = {
     },
     "PowderPropertyValue": {
         "properties": {
-            "property_type": "property.type.name",
             "property": "property.name",
             "value": "property_value"
         }
@@ -36,7 +35,7 @@ gas_comparison = {
     },
     "ChemicalDesignation": {
         "chemical_composition": {
-            "component_name": "element.name",
+            "component_formula": "element.name",
             "percent_value": "percent_value",
         }
     },
@@ -62,7 +61,7 @@ gas_mixture_comparison = {
 metal_wire_comparison = {
     "MetalWire" : {
         "base_material": "wire_class.name",
-        "full_name": "name",
+        "brand": "name",
         "standards": "standards",
         "link": "adress",
     },
@@ -73,7 +72,6 @@ metal_wire_comparison = {
     },
     "MetalWirePropertyValue": {
         "properties": {
-            "property_type": "property.type.name",
             "property": "property.name",
             "value": "value",
         }
@@ -92,15 +90,14 @@ metal_wire_comparison = {
 }
 
 metal_comparison = {
-    "MetalWire" : {
+    "Metal" : {
         "metal_material": "metal_class.name",
-        "full_name": "name",
+        "brand": "name",
         "standards": "standards",
         "link": "adress",
     },
     "MetalPropertyValue": {
         "properties": {
-            "property_type": "property.type.name",
             "property": "property.name",
             "value": "value",
         }

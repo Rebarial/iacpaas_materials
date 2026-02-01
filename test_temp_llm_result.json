@@ -1,0 +1,132 @@
+[
+  {
+    "name": "Аргон",
+    "formula": "Argon",
+    "grade": "высший сорт",
+    "brand": "НИИ КМ",
+    "standard": "ГОСТ 10157 - 2016",
+    "chemical_designations": [
+      {
+        "component_formula": "Ar",
+        "designation_type": "Объёмная доля",
+        "percent_value": "99,993 %",
+        "result_appearance": 1.0
+      },
+      {
+        "component_formula": "O2",
+        "designation_type": "Объёмная доля",
+        "percent_value": "0,0007 %",
+        "result_appearance": 1.0
+      },
+      {
+        "component_formula": "N2",
+        "designation_type": "Объёмная доля",
+        "percent_value": "0,005 %",
+        "result_appearance": 1.0
+      },
+      {
+        "component_formula": "  H2O",
+        "designation_type": "Объёмная доля",
+        "percent_value": "0,0009 %",
+        "result_appearance": 1.0
+      },
+      {
+        "component_formula": "CO2",
+        "designation_type": "Объёмная доля (в пересчете)",
+        "percent_value": "0,0005 %",
+        "result_appearance": 1.0
+      }
+    ],
+    "link": "https://www.niikm.ru/products/argon/liquid_argon/",
+    "type": "gas"
+
+  },
+  {
+    "name": "Водород газообразный",
+    "formula": "Hydrogenium",
+    "grade": "Чистый второй сорт",
+    "brand": "НИИ КМ",
+    "standard": "ГОСТ 51673-2000",
+    "chemical_designations": [
+      {
+        "component_formula": "H2",
+        "designation_type": "Объемная доля",
+        "percent_value": "?",
+        "result_appearance": 1.0
+      },
+      {
+        "component_formula": "O2 + Ar",
+        "designation_type": "Суммарная объемная доля",
+        "percent_value": "?",
+        "result_appearance": 1.0
+      },
+      {
+        "component_formula": "N2",
+        "designation_type": "Объемная доля",
+        "percent_value": "?",
+        "result_appearance": 1.0
+      },
+      {
+        "component_formula": "CH4",
+        "designation_type": "Объемная доля",
+        "percent_value": "?",
+        "result_appearance": 1.0
+      },
+      {
+        "component_formula": "H2O",
+        "designation_type": "Объемная доля",
+        "percent_value": "?",
+        "result_appearance": 1.0
+      }
+    ],
+    "link": "https://www.niikm.ru/products/hydrogen/hydrogen_hs/",
+    "type": "gas"
+  },
+  {
+    "link": "https://www.niikm.ru/products/azot/liquid_nitrogen_26/",
+    "type": "gas",
+    "name": "Азот",
+    "formula": "N",
+    "grade": "1 сорт",
+    "brand": "НИИ КМ",
+    "standard": "ГОСТ 9293 - 74",
+    "chemical_designations": [
+      {
+        "component_formula": "N2",
+        "designation_type": "Объёмная доля",
+        "percent_value": "99,6 %",
+        "result_appearance": 1.0
+      },
+      {
+        "component_formula": "O2",
+        "designation_type": "Объёмная доля",
+        "percent_value": "0,4 %",
+        "result_appearance": 1.0
+      }
+    ]
+  },
+  {
+    "link": "https://redmetsplav.ru/store/volfram/splavy-volframa-1/volfram-mr-47zvp/provoloka-volframovaya-mr-47zvp/",
+    "type": "wire",
+    "name": "МР-47ЗВП",
+    "wire_class": "Проволока вольфрамовая",
+    "diameter_options": [],
+    "analogs": [
+    ],
+    "material": "вольфрам",
+    "elemental_composition": [
+    ],
+    "properties": [
+      {
+        "property": "Соответствие стандартам",
+        "value": "ГОСТ, ТУ, AISI, ANSI, AMS, ASI, API, ASME, ASTM, AWS, SAE, UNS",
+        "result_appearance": 1.0
+      },
+      {
+        "property": "Форма",
+        "value": "катушка, бухты",
+        "result_appearance": 1.0
+      }
+    ]
+  }
+]

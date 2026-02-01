@@ -44,20 +44,20 @@ powder_template = {
 }
 
 gas_template = {
-    "name": "", 
+    "name": "",
     "mark_sort_or_grade": "",
     "formula": "",
     "brand": "",
     "standards": "",
     "chemical_composition": [
         {
-            "component_name": "",
+            "component_formula": "",
             "percent_value": "",
         },
     ],
 }
 gas_mixture_template = {
-    "name": "", 
+    "name": "",
     "mark_sort_or_grade": "",
     "formula": "",
     "brand": "",
@@ -71,7 +71,7 @@ gas_mixture_template = {
 }
 
 metal_wire_template = {
-    "full_name": "",
+    "brand": "",
     "base_material": "",
     "standards": "",
     "diameter_options": [
@@ -94,14 +94,14 @@ metal_wire_template = {
         {
             "property": "",
             "value": "",
-            "property_type": "{Физическое/Механическое/...} свойство",
+            "property_type": "",
         },
     ],
 }
 
 metal_template = {
     "metal_material": "",
-    "full_name": "",
+    "brand": "",
     "standards": "",
     "elemental_composition": [
         {
@@ -113,7 +113,7 @@ metal_template = {
         {
             "property": "",
             "value": "",
-            "property_type": "{Физическое/Механическое/...} свойство)",
+            "property_type": "",
         },
     ],
 }

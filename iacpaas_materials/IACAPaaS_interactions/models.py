@@ -182,6 +182,7 @@ class GasMixture(models.Model):
     grade = models.CharField("Марка", max_length=50)
     brand = models.CharField("Бренд", max_length=50)
     standards = models.CharField("Стандарты", max_length=300)
+    adress = models.CharField("Источник", max_length=200)
 
     def __str__(self):
         return f"{self.formula} ({self.brand})"

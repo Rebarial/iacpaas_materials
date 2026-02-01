@@ -141,7 +141,7 @@ def llm_parsing(request):
     return render(request, "process/parsing_result.html", {"products": []})
 
 import re
-from .models import Gas, ChemicalDesignation, Element
+from .models import Gas, ChemicalDesignation, Element, Powder
 from django.shortcuts import redirect
 from django.contrib import messages
 import re
@@ -241,7 +241,7 @@ def material_list(request):
         'selected_type': selected_type,
         'available_types': available_types,
         'gases': Gas.objects.all() if selected_type == 'gas' else Gas.objects.none(),
-        'powders': PowderClass.objects.all() if selected_type == 'powder' else PowderClass.objects.none(),
+        'powders': Powder.objects.all() if selected_type == 'powder' else PowderClass.objects.none(),
         'wires': MetalWire.objects.all() if selected_type == 'wire' else MetalWire.objects.none(),
     }
 
@@ -376,16 +376,36 @@ from django.apps import apps
 
 from ..LLM.template_comparison import comparison_type_dic
 
+import re
+
+def extract_last_number(s):
+    """
+    Извлекает последнее число из строки и возвращает как float.
+    Поддерживает целые и дробные числа (с точкой или запятой).
+    """
+    # Ищем все числа: возможны варианты 42, 3.14, 2,5
+    numbers = re.findall(r'\d+(?:[.,]\d+)?', s)
+    if numbers:
+        # Заменяем запятую на точку для корректного преобразования
+        return float(numbers[-1].replace(',', '.'))
+
+    return 0
+
 def generate_obj_dict(model, data_dict, item_data, base, main_obj):
     obj_data = {}
     for key, prop in data_dict.items():
         item_data[key] = item_data[key].replace('%', '').replace(',', '.')
+
         if "." in prop:
             prop = prop.split(".")
             prop_model = model._meta.get_field(prop[0]).related_model#apps.get_model('IACAPaaS_interactions', f'{prop[0]}')
 
-
             value = f'{item_data[key]}'
+
+            field = model._meta.get_field(prop[0])
+            if field.get_internal_type() == 'FloatField':
+                value = extract_last_number(value)
+
             #value_without_digits = ''.join(char for char in str(item_data[key]) if not char.isdigit())
 
             if prop_model.__name__ == 'Element':
@@ -402,7 +422,12 @@ def generate_obj_dict(model, data_dict, item_data, base, main_obj):
 
             obj_data[prop[0]] = element
         else:
-            obj_data[prop] = item_data[key]
+            value = item_data[key]
+            field = model._meta.get_field(prop)
+            if field.get_internal_type() == 'FloatField':
+                value = extract_last_number(value)
+
+            obj_data[prop] = value
 
     if hasattr(model, base):
         obj_data[base] = main_obj

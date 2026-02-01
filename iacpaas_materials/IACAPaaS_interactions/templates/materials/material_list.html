@@ -57,11 +57,11 @@
                                     {% for cd in gas.chemicaldesignation_set.all %}
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                       {% if cd.percent_value == "?" %}
-                                          <span style="color: red;">{{ cd.element.formula }} {{ cd.designation_type.name }}</span>
+                                          <span style="color: red;">{{ cd.element.name }} {{ cd.designation_type.name }}</span>
                                       {% elif cd.element.in_iacpaas %}
                                           <span>{{ cd.element.formula }} {{ cd.designation_type.name }}</span>
                                       {% else %}
-                                          <span style="color: orange;">{{ cd.element.formula }} {{ cd.designation_type.name }}</span>
+                                          <span style="color: orange;">{{ cd.element.name }} {{ cd.designation_type.name }}</span>
                                       {% endif %}
                                         <span class="badge bg-secondary">{{ cd.percent_value }}%</span>
                                     </li>
@@ -89,24 +89,42 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ powder.powder_type.name }}</h5>
                             <p class="card-text">
-                                <strong>Класс:</strong> {{ powder.powder_type.name }}<br>
-                                <strong>Метод заполнения:</strong> {{ powder.filling_method.name }}<br>
-                                <strong>Источник:</strong>
-                                <a href="{{ powder.adress_pow }}" target="_blank" rel="noopener">{{ powder.adress_pow }}</a>
+                                <strong>Название:</strong> {{ powder.name }}<br>
+                                <strong>Класс:</strong> {{ powder.powder_class.name }}<br>
+                                <strong>Стандарт:</strong> {{ powder.standards }}<br>
+                                <strong>Ссылка:</strong> {{ powder.adress }}<br>
                             </p>
+                            <h6 class="mt-3">Форма и метод получения:</h6>
+                            {% with pform=powder.particle_form_set.all %}
+                                {% if pform %}
+                                    <ul class="list-group list-group-flush">
+                                        {% for pf in pform %}
+                                        <li class="list-group-item">
+                                            {{ pf.name }}:
+                                            {{ pf.obtaining_method }}
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    <p class="text-muted"><em>Нет свойств</em></p>
+                                {% endif %}
+                            {% endwith %}
 
                             <!-- Свойства порошка (если есть) -->
                             <h6 class="mt-3">Свойства:</h6>
-                            {% with props=powder.powderproperty_set.all %}
+                            {% with props=powder.powderpropertyvalue_set.all %}
                                 {% if props %}
                                     <ul class="list-group list-group-flush">
                                         {% for pp in props %}
-                                        <li class="list-group-item">
-                                            {{ pp.property_value.property.name }}:
-                                            {{ pp.property_value.text_value|default:pp.property_value.property_value.name }}
-                                            {% if pp.property_value.unit %}
-                                                {{ pp.property_value.unit.name }}
-                                            {% endif %}
+                                        {% if pp.property_value == "-" or not pp.property_value %}
+                                            <li style="color: red;" class="list-group-item">
+                                        {% elif not pp.property.in_iacpaas %}
+                                            <li style="color: orange;" class="list-group-item">
+                                        {% else %}
+                                            <li class="list-group-item">
+                                        {% endif %}
+                                            {{ pp.property.name }}:
+                                            {{ pp.property_value }}
                                         </li>
                                         {% endfor %}
                                     </ul>
@@ -133,21 +151,26 @@
                             <h5 class="card-title">{{ wire.wire_class.name }} - {{ wire.name }}</h5>
 
                             <p class="card-text">
+                                <strong>Стандарт:</strong> {{ wire.standards }}<br>
                                 <strong>Ссылка:</strong> {{ wire.adress }}<br>
                                 <strong>Диаметр:</strong> {{ wire.diameter_value }} {{ wire.diameter_unit.name }}<br>
                                 {% if wire.interval %}
                                     <strong>Интервал:</strong> {{ wire.interval }} {{ wire.diameter_unit.name }}<br>
                                 {% endif %}
 
-                                <!-- Источник: берём из первого MetalWireProperty -->
-                                {% with first_prop=wire.metalwireproperty_set.first %}
-                                    {% if first_prop and first_prop.adress_wire %}
-                                        <strong>Источник:</strong>
-                                        <a href="{{ first_prop.adress_wire }}" target="_blank" rel="noopener">
-                                            {{ first_prop.adress_wire }}
-                                        </a><br>
-                                    {% endif %}
-                                {% endwith %}
+                                {% with diametrs=wire.metalwire_diametrs_set.all %}
+                                  {% if diametrs %}
+                                    <ul class="list-group list-group-flush">
+                                        {% for dia in diametrs %}
+                                        <li class="list-group-item">
+                                            {{ dia.value }}
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                  {% else %}
+                                    <p class="text-muted"><em>Нет свойств</em></p>
+                                  {% endif %}
+                            {% endwith %}
                             </p>
 
                             <!-- Свойства проволоки -->
