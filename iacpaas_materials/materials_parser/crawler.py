@@ -77,7 +77,10 @@ def process_page(url: str, detection_rules: Dict) -> Tuple[List[str], Optional[D
         print(f"Fetching: {url}")
         resp = requests.get(url, headers=headers, timeout=50)
         resp.raise_for_status()
-        resp.encoding = 'utf-8'
+        if "hyundaiwelding-rus.ru" in url:
+            resp.encoding = "utf-8"
+        else:
+            resp.encoding = resp.apparent_encoding
         #resp.encoding = resp.apparent_encoding
         tree = html.fromstring(resp.text)
         tree.make_links_absolute(url)
