@@ -20,7 +20,7 @@
           </div>
           <div class="card-body">
             <form method="get" action="{% url 'iacpaas:elements_list' %}" class="row g-3">
-              <div class="col-md-4">
+              <div class="col-md-3">
                 <label class="form-label">Есть в IACPaaS</label>
                 <select class="form-select" name="in_iacpaas">
                   <option value="">Все</option>
@@ -29,18 +29,23 @@
                 </select>
               </div>
 
-              <div class="col-md-4">
-                <label class="form-label">Составные</label>
-                <select class="form-select" name="composite">
-                  <option value="">Все</option>
-                  <option value="true" {% if request.GET.composite == 'true' %}selected{% endif %}>Да</option>
-                  <option value="false" {% if request.GET.composite == 'false' %}selected{% endif %}>Нет</option>
+              <div class="col-md-3">
+                <label class="form-label">Тип элемента</label>
+                <select class="form-select" name="element_type">
+                  <option value="">Все типы</option>
+                  {% for value, label in element_type_choices %}
+                    <option value="{{ value }}" {% if request.GET.element_type == value %}selected{% endif %}>
+                      {{ label }}
+                    </option>
+                  {% endfor %}
                 </select>
               </div>
 
-              <div class="col-md-4">
+              <div class="col-md-3">
                 <label class="form-label">Поиск</label>
-                <input type="text" class="form-control" name="search" placeholder="Название или формула..." value="{{ request.GET.search }}">
+                <input type="text" class="form-control" name="search"
+                       placeholder="Название или формула..."
+                       value="{{ request.GET.search }}">
               </div>
 
               <div class="col-12">
@@ -64,6 +69,7 @@
                     <tr>
                       <th>Формула</th>
                       <th>Название</th>
+                      <th>Тип</th>
                       <th>Есть в IACPaaS</th>
                     </tr>
                   </thead>
@@ -72,6 +78,7 @@
                       <tr>
                         <td><strong>{{ element.formula }}</strong></td>
                         <td>{{ element.name }}</td>
+                        <td>{{ element.get_element_type_display }}</td>
                         <td>
                           {% if element.in_iacpaas %}
                             <span class="badge bg-success">Да</span>

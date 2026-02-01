@@ -30,7 +30,7 @@ gas_comparison = {
         "formula": "formula",
         "grade": "grade",
         "brand": "brand",
-        "standard": "standard",
+        "standard": "standards",
         "link": "adress",
     },
     "ChemicalDesignation": {
@@ -47,7 +47,7 @@ gas_mixture_comparison = {
         "formula": "formula",
         "grade": "grade",
         "brand": "brand",
-        "standard": "standard",
+        "standard": "standards",
         # "link": "adress",  Нет поля в модели?
     },
     "GasMixtureComponent": {
@@ -92,7 +92,7 @@ metal_comparison = {
     "MetalWire" : {
         "metal_class": "metal_class.name",
         "name": "name",
-        "standards": "adress",
+        "standards": "standards",
         "link": "adress",
     },
     "MetalPropertyValue": {

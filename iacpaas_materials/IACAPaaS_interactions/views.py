@@ -384,14 +384,20 @@ def generate_obj_dict(model, data_dict, item_data, base, main_obj):
             prop = prop.split(".")
             prop_model = model._meta.get_field(prop[0]).related_model#apps.get_model('IACAPaaS_interactions', f'{prop[0]}')
 
-            value_without_digits = ''.join(char for char in str(item_data[key]) if not char.isdigit())
 
-            model_param_without_digits = {f'{prop[1]}': value_without_digits}
+            value = f'{item_data[key]}'
+            #value_without_digits = ''.join(char for char in str(item_data[key]) if not char.isdigit())
+
+            if prop_model.__name__ == 'Element':
+                value = Element.convert_to_subscript(item_data[key].strip())
+
+            #print(value_without_digits)
+            model_param_without_digits = {f'{prop[1]}': value}
             try:
                 element = prop_model.objects.get(**model_param_without_digits)
                 created = False
             except prop_model.DoesNotExist:
-                model_param_with_digits = {f'{prop[1]}': f'{item_data[key]}'}
+                model_param_with_digits = {f'{prop[1]}': value}
                 element, created = prop_model.objects.get_or_create(**model_param_with_digits)
 
             obj_data[prop[0]] = element
@@ -557,11 +563,9 @@ from .models import Element
 
 
 def elements_list(request):
-    """
-    Отображение списка химических элементов с фильтрами
-    """
     in_iacpaas_filter = request.GET.get('in_iacpaas')
     composite_filter = request.GET.get('composite')
+    element_type_filter = request.GET.get('element_type')  # Новый фильтр
     search_query = request.GET.get('search', '').strip()
 
     elements = Element.objects.all()
@@ -571,10 +575,13 @@ def elements_list(request):
     elif in_iacpaas_filter == 'false':
         elements = elements.filter(in_iacpaas=False)
 
-    if composite_filter == 'true':
-        elements = elements.filter(formula__contains='+')
-    elif composite_filter == 'false':
-        elements = elements.exclude(formula__contains='+')
+    #if composite_filter == 'true':
+    #    elements = elements.filter(formula__contains='+')
+    #elif composite_filter == 'false':
+    #    elements = elements.exclude(formula__contains='+')
+
+    if element_type_filter and element_type_filter in dict(Element.TYPE_CHOICES):
+        elements = elements.filter(element_type=element_type_filter)
 
     if search_query:
         elements = elements.filter(
@@ -583,15 +590,14 @@ def elements_list(request):
         )
 
     elements = elements.order_by('formula')
-
     paginator = Paginator(elements, 20)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
     context = {
         'elements': page_obj,
+        'element_type_choices': Element.TYPE_CHOICES,  # Передаём варианты в шаблон
     }
-
     return render(request, 'elements/element_list.html', context)
 
 

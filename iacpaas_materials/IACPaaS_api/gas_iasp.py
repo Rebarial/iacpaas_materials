@@ -49,7 +49,7 @@ def generate_element(element):
     gas_name = element.name
     formula = element.formula
     grade = element.grade
-    standard = element.standard
+    standard = element.standards
     adress = element.adress
     date = element.date
     components = element.chemicaldesignation_set.all()
@@ -149,6 +149,17 @@ def generate_components(components: list, successor: list):
         if not value or value == "?":
             continue
 
+        external_path = ""
+
+        if component.element.element_type == "element":
+            external_path = "Химические элементы/"
+        elif component.element.element_type == "compound_element":
+            external_path = "Химические элементы/"
+        elif component.element.element_type == "simple_substance":
+            external_path = "Химические вещества/Простые вещества/"
+        elif component.element.element_type == "complex_substance":
+            external_path = "Химические вещества/Сложные вещества/"
+
         component_template = {
             "name": f"{index}",
             "type": "НЕТЕРМИНАЛ",
@@ -159,7 +170,7 @@ def generate_components(components: list, successor: list):
                         "name": f"{formula}",
                         "type": "НЕТЕРМИНАЛ",
                         "meta": "Химическое обозначение",
-                        "original": f"{default_element_path}/{component.element.name}/{component.element.formula};",
+                        "original": f"{default_element_path}/{external_path}{component.element.name}/{component.element.formula};",
                         "successors":
                             [
                                 {

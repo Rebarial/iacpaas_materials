@@ -5,12 +5,60 @@ from django.db import models
 # =========================
 
 class Element(models.Model):
+
+    TYPE_CHOICES = [
+        ('element', 'Элемент'),
+        ('compound_element', 'Составной элемент'),
+        ('simple_substance', 'Простое вещество'),
+        ('complex_substance', 'Сложное вещество'),
+    ]
+
     formula =models.CharField("Формула", max_length=100)
     name = models.CharField("Название", max_length=100)
+    element_type = models.CharField(
+        "Тип",
+        max_length=20,
+        choices=TYPE_CHOICES,
+        blank=True,
+        null=True
+    )
     in_iacpaas = models.BooleanField(default=False)
 
     def __str__(self):
         return self.formula
+
+    def save(self, *args, **kwargs):
+        if not self.element_type:
+            self.element_type = self.determine_type()
+
+        self.formula = self.convert_to_subscript(self.formula)
+
+        super().save(*args, **kwargs)
+
+    @staticmethod
+    def convert_to_subscript(text):
+        """Преобразует цифры в тексте в подстрочные индексы"""
+        subscript_map = {
+            '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄',
+            '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉'
+        }
+        return ''.join(subscript_map.get(c, c) for c in text)
+
+    def determine_type(self):
+        formula = self.formula
+
+        if '+' in formula:
+            return 'compound_element'
+
+        import re
+        parts = re.split(r'\d+', formula)
+        parts = [p for p in parts if p]
+
+        has_digits = any(c.isdigit() for c in formula)
+        if has_digits and len(parts) == 1:
+            return 'simple_substance'
+
+        return 'complex_substance'
 
     class Meta:
         verbose_name = "Химический элемент"
