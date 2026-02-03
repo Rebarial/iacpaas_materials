@@ -134,52 +134,59 @@ def generate_element(element):
 
 from collections import defaultdict
 
+from collections import defaultdict
+
 
 def generate_properties(properties: list, successor: list):
     """
     Генерирует структуру свойств с интервалами для классов с несколькими значениями.
 
-    Для классов свойств с >=2 записями формирует интервал "От ... до ..."
-    через два блока: "Не менее" (≥ мин) и "Не более" (≤ макс).
-    Для классов с 1 записью — стандартный блок "Не более".
+    Для свойств с >=2 записями формирует числовой интервал (нижняя/верхняя граница).
+    Для свойств с 1 записью — блок "Не более".
+    Все свойства одного класса объединяются в один блок "Класс свойств".
     """
     valid_items = [
         p for p in properties
         if p.property.in_iacpaas and p.value is not None and p.value != 0.0
     ]
 
-    # Шаг 2: Группировка ПО ИДЕНТИФИКАТОРУ СВОЙСТВА (не по типу!)
-    # Это позволяет собрать все значения одного и того же свойства
-    groups = defaultdict(list)
-    for item in valid_items:
-        # Используем уникальный ID свойства для корректной группировки
-        property_id = item.property.id  # предполагается, что id существует
-        groups[property_id].append(item)
+    groups_by_class = defaultdict(lambda: defaultdict(list))
 
-    # Шаг 3: Обработка каждой группы свойств
-    for property_id, items in groups.items():
-        if not items:
+    for item in valid_items:
+        property_type = item.property.type
+        property_type_name = property_type.name if property_type else "Без класса"
+        property_id = item.property.id
+        groups_by_class[property_type_name][property_id].append(item)
+
+    for property_type_name, properties_map in groups_by_class.items():
+        if not properties_map:
             continue
 
-        # Получаем имя класса и свойства из первого элемента группы
-        first_item = items[0]
-        property_type_name = first_item.property.type.name if first_item.property.type else "Без класса"
-        property_name = first_item.property.name
+        class_original_path = f"{default_properties_path}/{property_type_name};"
 
-        original_path = f"{default_properties_path}/{property_type_name}/{property_name};"
+        class_block = {
+            "name": property_type_name,
+            "type": "НЕТЕРМИНАЛ",
+            "meta": "Класс свойств",
+            "original": class_original_path,
+            "successors": []
+        }
 
-        if len(items) == 1:
-            item = items[0]
-            successor.append({
-                "name": property_type_name,
-                "type": "НЕТЕРМИНАЛ",
-                "meta": "Класс свойств",
-                "original": f"{default_properties_path}/{property_type_name};",
-                "successors": [{
-                    "name": f"{property_name}",
+        for property_id, items in properties_map.items():
+            if not items:
+                continue
+
+            first_item = items[0]
+            property_name = first_item.property.name
+            property_original_path = f"{default_properties_path}/{property_type_name}/{property_name};"
+
+            if len(items) == 1:
+                item = items[0]
+                property_block = {
+                    "name": property_name,
                     "type": "НЕТЕРМИНАЛ",
                     "meta": "Свойство",
-                    "original": original_path,
+                    "original": property_original_path,
                     "successors": [
                         {
                             "name": "Не более",
@@ -201,29 +208,27 @@ def generate_properties(properties: list, successor: list):
                             ]
                         }
                     ]
-                }]
-            })
-        else:
-            values = [item.value for item in items]
-            min_val = min(values)
-            max_val = max(values)
-            successor.append({
-                "name": property_type_name,
-                "type": "НЕТЕРМИНАЛ",
-                "meta": "Свойство",
-                "original": original_path,
-                "successors": [
-                    {
-                        "name": f"Числовой интервал",
-                        "type": "НЕТЕРМИНАЛ",
-                        "meta": "Числовой интервал",
-                        "successors": [
-                            {
-                                "name": "Нижняя граница",
-                                "type": "НЕТЕРМИНАЛ",
-                                "meta": "Нижняя граница",
-                                "successors":
-                                    [
+                }
+            else:
+                values = [item.value for item in items]
+                min_val = min(values)
+                max_val = max(values)
+                property_block = {
+                    "name": property_name,
+                    "type": "НЕТЕРМИНАЛ",
+                    "meta": "Свойство",
+                    "original": property_original_path,
+                    "successors": [
+                        {
+                            "name": "Числовой интервал",
+                            "type": "НЕТЕРМИНАЛ",
+                            "meta": "Числовой интервал",
+                            "successors": [
+                                {
+                                    "name": "Нижняя граница",
+                                    "type": "НЕТЕРМИНАЛ",
+                                    "meta": "Нижняя граница",
+                                    "successors": [
                                         {
                                             "value": min_val,
                                             "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
@@ -231,13 +236,12 @@ def generate_properties(properties: list, successor: list):
                                             "meta": "Числовое значение"
                                         }
                                     ]
-                            },
-                            {
-                                "name": "Верхняя граница",
-                                "type": "НЕТЕРМИНАЛ",
-                                "meta": "Верхняя граница",
-                                "successors":
-                                    [
+                                },
+                                {
+                                    "name": "Верхняя граница",
+                                    "type": "НЕТЕРМИНАЛ",
+                                    "meta": "Верхняя граница",
+                                    "successors": [
                                         {
                                             "value": max_val,
                                             "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
@@ -245,11 +249,15 @@ def generate_properties(properties: list, successor: list):
                                             "meta": "Числовое значение"
                                         }
                                     ]
-                            }
-                        ]
-                    }]}
-            )
+                                }
+                            ]
+                        }
+                    ]
+                }
 
+            class_block["successors"].append(property_block)
+
+        successor.append(class_block)
 
 def generate_graumetric(graumetric: list, successor: list):
     shape_sucessor = []

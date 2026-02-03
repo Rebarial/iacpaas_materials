@@ -303,4 +303,7 @@ def generate_gson_to_iacpaas_gase(gases):
 
         class_successor.append(generate_element(gase))
 
+    with open('test2.json', 'w', encoding='utf-8') as f:
+        json.dump(base, f, ensure_ascii=False, indent=4)
+
     return json.dumps(base)

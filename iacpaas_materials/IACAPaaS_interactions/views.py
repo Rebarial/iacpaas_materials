@@ -120,7 +120,7 @@ def llm_parsing(request):
         json_path = os.path.join(settings.BASE_DIR, 'temp_llm_result.json')
 
         if use_preload and os.path.exists(json_path):
-            json_path = os.path.join(settings.BASE_DIR, 'temp_llm_result_test.json')
+            json_path = os.path.join(settings.BASE_DIR, 'temp_llm_result.json')
             with open(json_path, 'r', encoding='utf-8') as f:
                 result = json.load(f)
         else:

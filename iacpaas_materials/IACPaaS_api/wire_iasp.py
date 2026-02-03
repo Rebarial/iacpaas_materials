@@ -261,13 +261,19 @@ def generate_diametrs(diametrs: list, successor: list):
         "meta": "мм"
     })
 
-    for diametr in diametrs:
+    seen_values = set()
 
+    for diametr in diametrs:
         if not diametr:
             continue
 
+        value = diametr.value
+        if value is None or value in seen_values:
+            continue
+
+        seen_values.add(value)
         successor.append({
-            "value": diametr.value,
+            "value": value,
             "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
             "valtype": "REAL",
             "meta": "Числовое значение"
@@ -437,5 +443,8 @@ def generate_gson_to_iacpaas_wires(wires):
         class_template, class_successor = get_or_create_class(type_successor, class_name)
 
         class_successor.append(generate_element(wire))
+
+    with open('test2.json', 'w', encoding='utf-8') as f:
+        json.dump(base, f, ensure_ascii=False, indent=4)
 
     return json.dumps(base)
