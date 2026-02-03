@@ -69,6 +69,7 @@
                                     <strong>Бренд:</strong> {{ gas.brand }}<br>
                                     <strong>Марка:</strong> {{ gas.grade }}<br>
                                     <strong>Стандарт:</strong> {{ gas.standards }}<br>
+                                    <strong>Дата получения:</strong> {{ gas.date }}<br>
                                     <strong>Источник:</strong>
                                     <a href="{{ gas.adress }}" target="_blank" rel="noopener">{{ gas.adress }}</a>
                                 </p>
@@ -121,6 +122,7 @@
                                     <strong>Название:</strong> {{ powder.name }}<br>
                                     <strong>Класс:</strong> {{ powder.powder_class.name }}<br>
                                     <strong>Стандарт:</strong> {{ powder.standards }}<br>
+                                    <strong>Дата получения:</strong> {{ powder.date }}<br>
                                     <strong>Источник:</strong>
                                     <a href="{{ powder.adress }}" target="_blank" rel="noopener">{{ powder.adress }}</a>
                                 </p>
@@ -216,6 +218,7 @@
                             <div class="card-body collapsible-content" id="wire-details-{{ wire.id }}" style="display: none;">
                                 <p class="card-text">
                                     <strong>Стандарт:</strong> {{ wire.standards }}<br>
+                                    <strong>Дата получения:</strong> {{ wire.date }}<br>
                                     <strong>Источник:</strong>
                                     <a href="{{ wire.adress }}" target="_blank" rel="noopener">{{ wire.adress }}</a>
                                 </p>
@@ -309,6 +312,7 @@
                             <div class="card-body collapsible-content" id="metal-details-{{ metal.id }}" style="display: none;">
                                 <p class="card-text">
                                     <strong>Стандарт:</strong> {{ metal.standards }}<br>
+                                    <strong>Дата получения:</strong> {{ metal.date }}<br>
                                     <strong>Источник:</strong>
                                     <a href="{{ metal.adress }}" target="_blank" rel="noopener">{{ metal.adress }}</a>
                                 </p>
