@@ -27,7 +27,7 @@ powder_comparison = {
 gas_comparison = {
     "Gas" : {
         "name": "name",
-        "formula": "formula",
+        "formula": "formula.formula",
         "mark_sort_or_grade": "grade",
         "brand": "brand",
         "standards": "standards",

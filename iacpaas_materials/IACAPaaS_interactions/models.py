@@ -175,7 +175,7 @@ class PowderPropertyValue(models.Model):
 
 class Gas(models.Model):
     name = models.CharField("Название", max_length=100)
-    formula = models.CharField("Формула", max_length=50)
+    formula = models.ForeignKey(Element, on_delete=models.CASCADE, verbose_name="Элемент")
     grade = models.CharField("Марка", max_length=50)
     brand = models.CharField("Бренд", max_length=50)
     standards = models.CharField("Стандарты", max_length=300)

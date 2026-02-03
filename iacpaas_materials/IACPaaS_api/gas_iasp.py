@@ -50,7 +50,7 @@ def get_or_create_class(type_successor, class_name):
 def generate_element(element):
     components_successor = []
     gas_name = element.name
-    formula = element.formula
+    formula = element.formula.formula
     grade = element.grade
     standard = element.standards
     adress = element.adress
@@ -58,6 +58,13 @@ def generate_element(element):
     components = element.chemicaldesignation_set.all()
 
     generate_components(components, components_successor)
+
+    external_path = generate_external_path(element.formula)
+
+    if element.formula.in_iacpaas:
+        formula_path = {"original":  f"{default_element_path}/{external_path}{element.formula.name}/{element.formula.formula};"}
+    else:
+        formula_path = {}
 
     element_template = {
         "name": f"{gas_name}",
@@ -70,7 +77,7 @@ def generate_element(element):
                     "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
                     "valtype": "STRING",
                     "meta": "Химическое обозначение",
-                    # "original": "iagolnitckii.si@dvfu.ru / Мой Фонд / Загрузки / База химических элементов$/Гелий/He;"
+                    **formula_path,
                 },
                 {
                     "value": f"{grade}",
