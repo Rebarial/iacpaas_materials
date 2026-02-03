@@ -1,6 +1,5 @@
 # Подробнее в ReadMe.docx
 
-
 git clone https://github.com/Rebarial/iacpaas_materials
 
 cd iacpaas_materials
