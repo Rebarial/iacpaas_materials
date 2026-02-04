@@ -155,7 +155,7 @@ def generate_properties(properties: list, successor: list):
     # Шаг 1: Фильтрация валидных свойств
     valid_items = [
         p for p in properties
-        if p.property.in_iacpaas and p.value is not None and p.value != 0.0  # сохраняем логику "not value"
+        if p.property.in_iacpaas and p.property_value is not None and p.property_value != 0.0  # сохраняем логику "not value"
     ]
 
     # Шаг 2: Группировка по типу свойства (используем ID для эффективности)
@@ -178,6 +178,35 @@ def generate_properties(properties: list, successor: list):
 
         if len(items) == 1:
             item = items[0]
+            value_successor = []
+
+            value_successor.append(
+                {
+                    "value": "≤",
+                    "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
+                    "valtype": "STRING",
+                    "meta": "≤"
+                }
+            )
+
+            value_successor.append(
+                {
+                    "value": item.property_value,
+                    "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
+                    "valtype": "REAL",
+                    "meta": "Числовое значение"
+                },
+            )
+
+            if (items[0].unit and items[0].unit != "-" and items[0].unit != ""):
+                value_successor.append({
+                    "value": items[0].unit,
+                    "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
+                    "valtype": "STRING",
+                    "meta": "единица измерения",
+                }
+                )
+
             successor.append({
                 "name": property_name,
                 "type": "НЕТЕРМИНАЛ",
@@ -188,27 +217,56 @@ def generate_properties(properties: list, successor: list):
                         "name": "Не более",
                         "type": "НЕТЕРМИНАЛ",
                         "meta": "Не более",
-                        "successors": [
-                            {
-                                "value": "≤",
-                                "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
-                                "valtype": "STRING",
-                                "meta": "≤"
-                            },
-                            {
-                                "value": item.value,
-                                "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
-                                "valtype": "REAL",
-                                "meta": "Числовое значение"
-                            }
-                        ]
+                        "successors": value_successor
                     }
                 ]
             })
         else:
-            values = [item.value for item in items]
+            values = [item.property_value for item in items]
             min_val = min(values)
             max_val = max(values)
+
+            value_successor = []
+
+            value_successor.append({
+                "name": "Нижняя граница",
+                "type": "НЕТЕРМИНАЛ",
+                "meta": "Нижняя граница",
+                "successors":
+                    [
+                        {
+                            "value": min_val,
+                            "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
+                            "valtype": "REAL",
+                            "meta": "Числовое значение"
+                        }
+                    ]
+            })
+
+            value_successor.append({
+                "name": "Верхняя граница",
+                "type": "НЕТЕРМИНАЛ",
+                "meta": "Верхняя граница",
+                "successors":
+                    [
+                        {
+                            "value": max_val,
+                            "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
+                            "valtype": "REAL",
+                            "meta": "Числовое значение"
+                        }
+                    ]
+            })
+
+            if (items[0].unit and items[0].unit != "-" and items[0].unit != ""):
+                value_successor.append(
+                    {
+                        "value": items[0].unit,
+                        "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
+                        "valtype": "STRING",
+                        "meta": "единица измерения",
+                    })
+
             successor.append({
                 "name": property_type_name,
                 "type": "НЕТЕРМИНАЛ",
@@ -219,36 +277,7 @@ def generate_properties(properties: list, successor: list):
                         "name": f"Числовой интервал",
                         "type": "НЕТЕРМИНАЛ",
                         "meta": "Числовой интервал",
-                        "successors": [
-                            {
-                                "name": "Нижняя граница",
-                                "type": "НЕТЕРМИНАЛ",
-                                "meta": "Нижняя граница",
-                                "successors":
-                                    [
-                                        {
-                                            "value": min_val,
-                                            "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
-                                            "valtype": "REAL",
-                                            "meta": "Числовое значение"
-                                        }
-                                    ]
-                            },
-                            {
-                                "name": "Верхняя граница",
-                                "type": "НЕТЕРМИНАЛ",
-                                "meta": "Верхняя граница",
-                                "successors":
-                                    [
-                                        {
-                                            "value": max_val,
-                                            "type": "ТЕРМИНАЛ-ЗНАЧЕНИЕ",
-                                            "valtype": "REAL",
-                                            "meta": "Числовое значение"
-                                        }
-                                    ]
-                            }
-                        ]
+                        "successors": value_successor
                     }]}
             )
 

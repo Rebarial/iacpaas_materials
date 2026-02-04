@@ -83,7 +83,7 @@ class PowderAnalogInline(admin.TabularInline):
 class PowderPropertyValueInline(admin.TabularInline):
     model = PowderPropertyValue
     extra = 1
-    fields = ('property', 'property_value')
+    fields = ('property', 'property_value', 'unit')
     autocomplete_fields = ('property',)
     verbose_name = _('Свойство')
     verbose_name_plural = _('Свойства')
@@ -205,7 +205,7 @@ class MetalWireDiametrsInline(admin.TabularInline):
 class MetalWirePropertyValueInline(admin.TabularInline):
     model = MetalWirePropertyValue
     extra = 1
-    fields = ('property', 'value')
+    fields = ('property', 'value', 'unit')
     autocomplete_fields = ('property',)
     verbose_name = _('Свойство')
     verbose_name_plural = _('Свойства')
@@ -272,7 +272,7 @@ class MetalWireAdmin(BaseAdmin):
 class MetalPropertyValueInline(admin.TabularInline):
     model = MetalPropertyValue
     extra = 1
-    fields = ('property', 'value')
+    fields = ('property', 'value', 'unit')
     autocomplete_fields = ('property',)
     verbose_name = _('Свойство')
     verbose_name_plural = _('Свойства')
@@ -349,7 +349,7 @@ class PowderAnalogAdmin(BaseAdmin):
 
 @admin.register(PowderPropertyValue)
 class PowderPropertyValueAdmin(BaseAdmin):
-    list_display = ('powder', 'property', 'property_value')
+    list_display = ('powder', 'property', 'property_value', 'unit')
     list_filter = ('property',)
     search_fields = ('powder__name',)
 
@@ -377,7 +377,7 @@ class MetalWireDiametrsAdmin(BaseAdmin):
 
 @admin.register(MetalWirePropertyValue)
 class MetalWirePropertyValueAdmin(BaseAdmin):
-    list_display = ('wire', 'property', 'value')
+    list_display = ('wire', 'property', 'value', 'unit')
     list_filter = ('property',)
     search_fields = ('wire__name',)
 
@@ -397,7 +397,7 @@ class ElementalCompositionWireAdmin(BaseAdmin):
 
 @admin.register(MetalPropertyValue)
 class MetalPropertyValueAdmin(BaseAdmin):
-    list_display = ('metal', 'property', 'value')
+    list_display = ('metal', 'property', 'value', 'unit')
     list_filter = ('property',)
     search_fields = ('metal__name',)
 

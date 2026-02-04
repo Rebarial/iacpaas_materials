@@ -38,7 +38,8 @@ powder_template = {
         {
             "property": "",
             "value": "",
-            "property_type": "{Физическое/Механическое/...} свойство)",
+            "property_type": "",
+            "unit": "",
         },
     ],
 }
@@ -95,6 +96,7 @@ metal_wire_template = {
             "property": "",
             "value": "",
             "property_type": "",
+            "unit": "",
         },
     ],
 }
@@ -114,6 +116,7 @@ metal_template = {
             "property": "",
             "value": "",
             "property_type": "",
+            "unit": "",
         },
     ],
 }

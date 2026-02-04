@@ -164,6 +164,7 @@ class PowderPropertyValue(models.Model):
     powder = models.ForeignKey(Powder, on_delete=models.CASCADE, verbose_name="Порошок")
     property = models.ForeignKey(Property, on_delete=models.CASCADE, verbose_name="Свойство")
     property_value = models.FloatField("Значение")
+    unit = models.CharField("ед.изм", max_length=100, blank=True, null=True, default="")
 
     class Meta:
         verbose_name = "Свойство порошка"
@@ -258,6 +259,7 @@ class MetalWirePropertyValue(models.Model):
     wire = models.ForeignKey(MetalWire, on_delete=models.CASCADE, verbose_name="Проволока")
     property = models.ForeignKey(Property, on_delete=models.CASCADE, verbose_name="Свойство")
     value = models.FloatField("Значение")
+    unit = models.CharField("ед.изм", max_length=100, blank=True, null=True)
 
     class Meta:
         verbose_name = "Свойство проволоки"
@@ -312,6 +314,7 @@ class MetalPropertyValue(models.Model):
     metal = models.ForeignKey(Metal, on_delete=models.CASCADE, verbose_name="Металл")
     property = models.ForeignKey(Property, on_delete=models.CASCADE, verbose_name="Свойство")
     value = models.FloatField("Значение")
+    unit = models.CharField("ед.изм", max_length=100, blank=True, null=True)
 
     class Meta:
         verbose_name = "Свойство металла"

@@ -160,7 +160,7 @@
                                                 {% else %}
                                                     <li class="list-group-item">
                                                 {% endif %}
-                                                    {{ pp.property.name }}: {{ pp.property_value }}
+                                                    {{ pp.property.name }}: {{ pp.property_value }}: {{ pp.unit }}
                                                 </li>
                                             {% endfor %}
                                         </ul>
@@ -254,7 +254,7 @@
                                                 {% else %}
                                                     <li class="list-group-item">
                                                 {% endif %}
-                                                    {{ mwp.property.name }}: {{ mwp.value }}
+                                                    {{ mwp.property.name }}: {{ mwp.value }}: {{ mwp.unit }}
                                                 </li>
                                             {% endfor %}
                                         </ul>
@@ -355,7 +355,7 @@
                                                 {% else %}
                                                     <li class="list-group-item">
                                                 {% endif %}
-                                                    {{ mp.property.name }}: {{ mp.value }}
+                                                    {{ mp.property.name }}: {{ mp.value }}: {{ mp.unit }}
                                                 </li>
                                             {% endfor %}
                                         </ul>

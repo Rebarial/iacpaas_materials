@@ -13,7 +13,8 @@ powder_comparison = {
     "PowderPropertyValue": {
         "properties": {
             "property": "property.name",
-            "value": "property_value"
+            "value": "property_value",
+            "unit": "unit"
         }
     },
     "Particle_form": {
@@ -76,6 +77,7 @@ metal_wire_comparison = {
         "properties": {
             "property": "property.name",
             "value": "value",
+            "unit": "unit"
         }
     },
  #   "WireAnalog": {
@@ -102,6 +104,7 @@ metal_comparison = {
         "properties": {
             "property": "property.name",
             "value": "value",
+            "unit": "unit"
         }
     },
     "ElementalComposition_metal": {
