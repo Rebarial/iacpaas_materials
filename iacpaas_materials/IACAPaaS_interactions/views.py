@@ -426,7 +426,7 @@ def send_to_iacpaas(request):
 
     selected_ids = request.POST.getlist('selected_gases')
     if not selected_ids:
-        messages.warning(request, "Не выбрано ни одного газа для отправки.")
+        messages.warning(request, "Нет данных для отправки.")
         return redirect('iacpaas:material_list')
 
     gases = Gas.objects.filter(id__in=selected_ids)
