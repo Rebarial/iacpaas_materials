@@ -143,6 +143,9 @@ def generate_element(element):
 
 from collections import defaultdict
 
+def get_canonical_property(property_obj):
+    """Возвращает оригинальное свойство, если оно есть, иначе само свойство"""
+    return property_obj.original if property_obj.original else property_obj
 
 def generate_properties(properties: list, successor: list):
     """
@@ -155,13 +158,15 @@ def generate_properties(properties: list, successor: list):
     # Шаг 1: Фильтрация валидных свойств
     valid_items = [
         p for p in properties
-        if p.property.in_iacpaas and p.property_value is not None and p.property_value != 0.0  # сохраняем логику "not value"
+        if get_canonical_property(p.property).in_iacpaas
+        and p.property_value is not None
+        and p.property_value != 0.0
     ]
 
     # Шаг 2: Группировка по типу свойства (используем ID для эффективности)
     groups = defaultdict(list)
     for item in valid_items:
-        type_id = item.property.type_id if item.property.type else None
+        type_id = get_canonical_property(item.property).type_id if get_canonical_property(item.property).type else None
         groups[type_id].append(item)
 
     # Шаг 3: Обработка каждой группы
@@ -171,8 +176,11 @@ def generate_properties(properties: list, successor: list):
 
         # Получаем имя класса и свойства из первого элемента группы
         first_item = items[0]
-        property_type_name = first_item.property.type.name if first_item.property.type else "Без класса"
-        property_name = first_item.property.name
+
+        canonical_property = get_canonical_property(first_item.property)
+
+        property_type_name = canonical_property.type.name if canonical_property.type else "Без класса"
+        property_name = canonical_property.name
 
         original_path = f"{default_properties_path}/{property_type_name}/{property_name};"
 

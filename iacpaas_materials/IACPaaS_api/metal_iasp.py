@@ -136,26 +136,26 @@ from collections import defaultdict
 
 from collections import defaultdict
 
+def get_canonical_property(property_obj):
+    """Возвращает оригинальное свойство, если оно есть, иначе само свойство"""
+    return property_obj.original if property_obj.original else property_obj
 
 def generate_properties(properties: list, successor: list):
-    """
-    Генерирует структуру свойств с интервалами для классов с несколькими значениями.
-
-    Для свойств с >=2 записями формирует числовой интервал (нижняя/верхняя граница).
-    Для свойств с 1 записью — блок "Не более".
-    Все свойства одного класса объединяются в один блок "Класс свойств".
-    """
     valid_items = [
         p for p in properties
-        if p.property.in_iacpaas and p.value is not None and p.value != 0.0
+        if get_canonical_property(p.property).in_iacpaas
+        and p.value is not None
+        and p.value != 0.0
     ]
 
     groups_by_class = defaultdict(lambda: defaultdict(list))
 
     for item in valid_items:
-        property_type = item.property.type
+        canonical_property = get_canonical_property(item.property)
+
+        property_type = canonical_property.type
         property_type_name = property_type.name if property_type else "Без класса"
-        property_id = item.property.id
+        property_id = canonical_property.id
         groups_by_class[property_type_name][property_id].append(item)
 
     for property_type_name, properties_map in groups_by_class.items():
@@ -177,7 +177,7 @@ def generate_properties(properties: list, successor: list):
                 continue
 
             first_item = items[0]
-            property_name = first_item.property.name
+            property_name = get_canonical_property(first_item.property).name
             property_original_path = f"{default_properties_path}/{property_type_name}/{property_name};"
 
             if len(items) == 1:

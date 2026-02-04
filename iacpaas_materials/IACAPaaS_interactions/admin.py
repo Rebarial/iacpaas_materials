@@ -407,3 +407,19 @@ class ElementalCompositionMetalAdmin(BaseAdmin):
     list_display = ('metal', 'element', 'fraction')
     list_filter = ('metal', 'element')
     search_fields = ('metal__name', 'element__formula')
+
+
+@admin.register(PropertySynonym)
+class PropertySynonymAdmin(admin.ModelAdmin):
+    """Отдельная админка для синонимов"""
+    list_display = ('name', 'property', 'property_type')
+    list_filter = ('property__type',)
+    search_fields = ('name', 'property__name', 'property__type__name')
+    raw_id_fields = ('property',)  # Удобный поиск для свойства
+
+    def property_type(self, obj):
+        """Отображение типа свойства"""
+        return obj.property.type if obj.property else None
+
+    property_type.short_description = 'Класс свойства'
+    property_type.admin_order_field = 'property__type__name'

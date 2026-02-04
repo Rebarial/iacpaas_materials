@@ -95,13 +95,40 @@ class PropertyType(models.Model):
     def __str__(self):
         return self.name
 
+
 class Property(models.Model):
     name = models.CharField("Название", max_length=200)
     type = models.ForeignKey(PropertyType, null=True, blank=True, on_delete=models.SET_NULL, verbose_name="Класс свойства")
     in_iacpaas = models.BooleanField(default=False)
 
+    @property
+    def is_synonym(self):
+        """Проверяет, является ли название свойства синонимом другого свойства"""
+        return PropertySynonym.objects.filter(name=self.name).exists()
+
+    @property
+    def original(self):
+        """Возвращает оригинальное свойство, если текущее является синонимом"""
+        try:
+            synonym = PropertySynonym.objects.get(name=self.name)
+            return synonym.property
+        except PropertySynonym.DoesNotExist:
+            return None
+
     def __str__(self):
         return f"{self.type} - {self.name}"
+
+class PropertySynonym(models.Model):
+    name = models.CharField("Синоним", max_length=200)
+    property = models.ForeignKey(
+        Property,
+        on_delete=models.CASCADE,
+        related_name="synonyms",
+        verbose_name="Свойство"
+    )
+
+    def __str__(self):
+        return f"{self.name} → {self.property.name}"
 
 # =========================
 # Порошки

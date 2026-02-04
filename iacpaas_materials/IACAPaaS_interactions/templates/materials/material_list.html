@@ -155,6 +155,8 @@
                                             {% for pp in props %}
                                                 {% if pp.property_value == "-" or not pp.property_value %}
                                                     <li style="color: red;" class="list-group-item">
+                                                {% elif pp.property.is_synonym %}
+                                                    <li style="color: gray;" class="list-group-item">
                                                 {% elif not pp.property.in_iacpaas %}
                                                     <li style="color: orange;" class="list-group-item">
                                                 {% else %}
@@ -249,6 +251,8 @@
                                             {% for mwp in props %}
                                                 {% if mwp.value == "-" or not mwp.value %}
                                                     <li style="color: red;" class="list-group-item">
+                                                {% elif mwp.property.is_synonym %}
+                                                    <li style="color: gray;" class="list-group-item">
                                                 {% elif not mwp.property.in_iacpaas %}
                                                     <li style="color: orange;" class="list-group-item">
                                                 {% else %}
@@ -350,6 +354,8 @@
                                             {% for mp in props %}
                                                 {% if mp.value == "-" or not mp.value %}
                                                     <li style="color: red;" class="list-group-item">
+                                                {% elif mp.property.is_synonym %}
+                                                    <li style="color: gray;" class="list-group-item">
                                                 {% elif not mp.property.in_iacpaas %}
                                                     <li style="color: orange;" class="list-group-item">
                                                 {% else %}
